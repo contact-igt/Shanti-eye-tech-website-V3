@@ -28,8 +28,8 @@ const technology = [
 export default function Home() {
   return (
     <>
-      <Header />
-      <main>
+      <Header active="home" />
+      <main className="home-page">
         <section className="home-hero">
           <div className="shell hero-layout">
             <div className="hero-copy">
@@ -96,6 +96,8 @@ export default function Home() {
               ))}
               <Link className="button button-outline service-cta" href="/services/lasik">Explore Services →</Link>
             </div>
+            <img className="service-float service-float-left" src="/assets/eye-surgery.webp" alt="" aria-hidden="true" />
+            <img className="service-float service-float-right" src="/assets/glasses.webp" alt="" aria-hidden="true" />
           </div>
         </section>
 
@@ -153,7 +155,7 @@ export default function Home() {
         <FAQ />
         <AppointmentSection />
       </main>
-      <Footer />
+      <Footer home />
     </>
   );
 }

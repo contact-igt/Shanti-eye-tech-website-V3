@@ -3,7 +3,7 @@ import { AppointmentForm } from "./client";
 
 export function Header({ active = "" }: { active?: string }) {
   return (
-    <header className="site-header">
+    <header className={`site-header ${active === "home" ? "home-header" : ""}`}>
       <div className="shell nav-wrap">
         <Link className="brand" href="/" aria-label="Shanthi EyeTech home">
           <img src="/assets/logo.png" alt="Shanthi EyeTech" />
@@ -201,9 +201,9 @@ export function AppointmentSection({
   );
 }
 
-export function Footer() {
+export function Footer({ home = false }: { home?: boolean }) {
   return (
-    <footer className="site-footer">
+    <footer className={`site-footer ${home ? "home-footer" : ""}`}>
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
@@ -229,4 +229,3 @@ export function Footer() {
     </footer>
   );
 }
-
