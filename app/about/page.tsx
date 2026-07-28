@@ -9,6 +9,8 @@ import {
 } from "../site-components";
 
 
+
+
 function LeadershipIcon({ type }: { type: "award" | "book" | "users" | "calendar" }) {
   const paths = {
     award: <><circle cx="12" cy="8" r="4" /><path d="M9 12 7.5 20l4.5-2.5 4.5 2.5L15 12" /></>,
