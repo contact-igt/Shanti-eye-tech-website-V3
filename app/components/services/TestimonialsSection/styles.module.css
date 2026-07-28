@@ -1,0 +1,110 @@
+.section {
+  padding: 108px 0 118px;
+  background: #eef6ff;
+}
+
+.shell {
+  width: min(1294px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grid {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  min-height: 330px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 34px 32px;
+  border: 1px solid #eaeff5;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(27, 43, 76, .06);
+}
+
+.card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.pin {
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1fc6df, #2f73f5);
+}
+
+.stars {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.stars img {
+  width: 16px;
+  height: 16px;
+}
+
+.quote {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 46px;
+  height: 40px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.card p,
+.card hr,
+.card strong,
+.card small {
+  position: relative;
+  z-index: 2;
+}
+
+.card p {
+  flex: 1;
+  color: #556275;
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+
+.card hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #e4e9f1;
+}
+
+.card strong {
+  color: #111827;
+}
+
+.card small {
+  color: #718096;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(2) {
+    transform: none;
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+

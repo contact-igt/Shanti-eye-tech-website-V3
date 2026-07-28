@@ -1,0 +1,15 @@
+.page,
+.page :is(h1, h2, h3, h4, p, a, button, span, b, small, li, input, select, textarea) {
+  font-family: var(--font-sans);
+}
+
+.page {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@supports not (overflow: clip) {
+  .page {
+    overflow-x: hidden;
+  }
+}
