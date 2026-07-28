@@ -13,10 +13,10 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
     const riskCheck = content.checks[4];
 
     const defaultWarningImages = [
-      { image: "/assets/retina-treatment.webp", label: "Blurred Vision" },
-      { image: "/assets/dark-spots.webp", label: "Dark Spots" },
-      { image: "/assets/low-light.webp", label: "Low Light" },
-      { image: "/assets/retina-medical.webp", label: "Side Vision" },
+      { image: "/assets/blur_vision.png", label: "Blurred Vision" },
+      { image: "/assets/dark_spots.png", label: "Dark Spots" },
+      { image: "/assets/low_vision.png", label: "Low Light" },
+      { image: "/assets/side_vision.png", label: "Side Vision" },
     ];
     const warningImages = content.warningImages && content.warningImages.length > 0 ? content.warningImages : defaultWarningImages;
 

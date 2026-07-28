@@ -344,10 +344,10 @@ const retinaContent: ServicePageContent = {
     note: "Early evaluation is key: If you experience any of these symptoms or have risk factors, schedule a comprehensive retinal examination.",
     image: "/assets/retina-exam.webp",
     warningImages: [
-      { image: "/assets/retina-treatment.webp", label: "Blurred Vision" },
-      { image: "/assets/dark-spots.webp", label: "Dark Spots" },
-      { image: "/assets/low-light.webp", label: "Low Light" },
-      { image: "/assets/retina-medical.webp", label: "Side Vision" },
+      { image: "/assets/blur_vision.png", label: "Blurred Vision" },
+      { image: "/assets/dark_spots.png", label: "Dark Spots" },
+      { image: "/assets/low_vision.png", label: "Low Light" },
+      { image: "/assets/side_vision.png", label: "Side Vision" },
     ],
   },
   treatmentOptions: {
