@@ -73,3 +73,23 @@ export function ContactForm() {
   );
 }
 
+
+
+export function FaqAccordion({ questions }: { questions: [string, string][] }) {
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  return (
+    <>
+      {questions.map(([question, answer], index) => (
+        <details
+          open={activeIndex === index}
+          key={question}
+          onToggle={(event) => setActiveIndex(event.currentTarget.open ? index : -1)}
+        >
+          <summary>{question}<b>{activeIndex === index ? "-" : "+"}</b></summary>
+          <p>{answer}</p>
+        </details>
+      ))}
+    </>
+  );
+}
