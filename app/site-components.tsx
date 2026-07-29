@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { AppointmentForm, FaqAccordion } from "./client";
 
@@ -43,6 +44,75 @@ export function Header({ active = "" }: { active?: string }) {
   );
 }
 
+export function QuickActionButtons() {
+  const actions = [
+    {
+      key: "phone",
+      label: "Phone",
+      href: "tel:+919179191939",
+      className: "phone",
+      image: "/assets/callcta.png",
+    },
+    {
+      key: "whatsapp",
+      label: "WA",
+      href: "https://wa.me/919179191939",
+      className: "whatsapp",
+      image: "/assets/whatsapp.png",
+    },
+    {
+      key: "youtube",
+      label: "YouTube",
+      href: "https://www.youtube.com/@ShantieyetechbyDrAmitSolanki",
+      className: "youtube",
+      image: "/assets/youtube.png",
+    },
+    {
+      key: "book",
+      label: "Book",
+      href: "/contact",
+      className: "book",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <rect x="4" y="5" width="16" height="15" rx="2" />
+          <path d="M8 3v4M16 3v4M4 10h16" />
+        </svg>
+      ),
+    },
+    {
+      key: "address",
+      label: "Address",
+      href: "/contact#location",
+      className: "address",
+      icon: (
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" />
+          <circle cx="12" cy="10" r="2.3" />
+        </svg>
+      ),
+    },
+  ];
+
+  return (
+    <nav className="quick-actions" aria-label="Quick contact actions">
+      {actions.map((action) => (
+        <a
+          className={`quick-action quick-action-${action.className}`}
+          href={action.href}
+          key={action.key}
+          target={action.href.startsWith("http") ? "_blank" : undefined}
+          rel={action.href.startsWith("http") ? "noreferrer" : undefined}
+          aria-label={action.label === "WA" ? "WhatsApp" : action.label}
+        >
+          <span className="quick-action-icon" aria-hidden="true">
+            {action.image ? <Image src={action.image} alt="" width={86} height={78} sizes="(max-width: 768px) 28px, 86px" /> : action.icon}
+          </span>
+          <span className="quick-action-label">{action.label}</span>
+        </a>
+      ))}
+    </nav>
+  );
+}
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return <span className="eyebrow"><i />{children}</span>;
 }
