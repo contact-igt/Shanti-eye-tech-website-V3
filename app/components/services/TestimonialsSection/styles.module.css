@@ -1,0 +1,426 @@
+.section {
+  padding: 108px 0 118px;
+  background: #eef6ff;
+}
+
+.shell {
+  width: min(1294px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grid {
+  width: min(1140px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.card {
+  min-height: 330px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 38px 34px 32px;
+  border: 1px solid #eaeff5;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 12px 36px rgba(27, 43, 76, .06);
+}
+
+.card:nth-child(2) {
+  transform: rotate(1deg);
+}
+
+.pin {
+  position: absolute;
+  top: -8px;
+  left: calc(50% - 8px);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #1fc6df, #2f73f5);
+}
+
+.stars {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  gap: 4px;
+  margin-bottom: 20px;
+}
+
+.stars img {
+  width: 16px;
+  height: 16px;
+}
+
+.quote {
+  position: absolute;
+  top: 30px;
+  right: 30px;
+  width: 46px;
+  height: 40px;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.card p,
+.card hr,
+.card strong,
+.card small {
+  position: relative;
+  z-index: 2;
+}
+
+.card p {
+  flex: 1;
+  color: #556275;
+  font-size: 14.5px;
+  line-height: 1.62;
+}
+
+.card hr {
+  width: 100%;
+  border: 0;
+  border-top: 1px solid #e4e9f1;
+}
+
+.card strong {
+  color: #111827;
+}
+
+.card small {
+  color: #718096;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .card:nth-child(2) {
+    transform: none;
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+
+
+/* Shared patient-stories carousel styling for all service pages. */
+.section :global(.testimonial-carousel-container) {
+  width: 100%;
+  margin: 54px auto 0;
+}
+
+.section :global(.testimonial-grid-wrapper) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 28px;
+  width: 100%;
+}
+
+.section :global(.cataract-testimonial-card) {
+  position: relative;
+  min-height: 330px;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 32px 28px;
+  overflow: hidden;
+  border: 1px solid #dce7f4;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 32px rgba(27, 52, 91, .07);
+}
+
+.section :global(.testimonial-pin) {
+  position: absolute;
+  top: 18px;
+  left: 24px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #20c4df;
+}
+
+.section :global(.testimonial-stars) {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.section :global(.testimonial-stars img) {
+  width: 17px;
+  height: 17px;
+  object-fit: contain;
+}
+
+.section :global(.testimonial-quote-mark) {
+  position: absolute;
+  top: 26px;
+  right: 26px;
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  opacity: .85;
+}
+
+.section :global(.cataract-testimonial-card p) {
+  flex: 1;
+  margin: 0 0 24px;
+  color: #566782;
+  font-size: 16px;
+  line-height: 1.65;
+}
+
+.section :global(.cataract-testimonial-card hr) {
+  width: 100%;
+  margin: 0 0 18px;
+  border: 0;
+  border-top: 1px solid #e2e9f2;
+}
+
+.section :global(.cataract-testimonial-card strong) {
+  color: #111827;
+  font-size: 16px;
+}
+
+.section :global(.cataract-testimonial-card small) {
+  margin-top: 5px;
+  color: #71809a;
+  font-size: 13px;
+}
+
+.section :global(.testimonial-carousel-controls) {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.section :global(.testimonial-nav-btn) {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #d5e1ef;
+  border-radius: 50%;
+  color: #168fca;
+  background: #fff;
+  cursor: pointer;
+  font-size: 23px;
+  line-height: 1;
+}
+
+.section :global(.testimonial-dots) {
+  display: flex;
+  gap: 7px;
+}
+
+.section :global(.testimonial-dot) {
+  width: 8px;
+  height: 8px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #cbd8e7;
+  cursor: pointer;
+}
+
+.section :global(.testimonial-dot.active) {
+  width: 22px;
+  border-radius: 999px;
+  background: #18bdd7;
+}
+
+@media (max-width: 900px) {
+  .section :global(.testimonial-grid-wrapper.visible-3) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .section :global(.cataract-testimonial-card) {
+    min-height: 310px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section :global(.testimonial-grid-wrapper.visible-2),
+  .section :global(.testimonial-grid-wrapper.visible-3) {
+    grid-template-columns: 1fr;
+  }
+
+  .section :global(.cataract-testimonial-card) {
+    min-height: 290px;
+    padding: 30px 24px 24px;
+  }
+
+  .section :global(.cataract-testimonial-card p) {
+    font-size: 15px;
+  }
+}
+/* Reference card tilt, stagger, and patient-story colors. */
+.section {
+  background: #f6f9fd;
+}
+
+.section :global(.testimonial-carousel-container) {
+  width: min(1050px, 100%);
+  margin-top: 48px;
+}
+
+.section :global(.testimonial-grid-wrapper) {
+  align-items: start;
+  gap: 22px;
+}
+
+.section :global(.cataract-testimonial-card) {
+  min-height: 258px;
+  padding: 28px 24px 24px;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: 0 12px 22px rgba(26, 47, 79, .11);
+}
+
+.section :global(.cataract-testimonial-card:nth-child(1)) {
+  transform: rotate(-.8deg);
+}
+
+.section :global(.cataract-testimonial-card:nth-child(2)) {
+  transform: translateY(2px) rotate(.9deg);
+}
+
+.section :global(.cataract-testimonial-card:nth-child(3)) {
+  transform: rotate(-.6deg);
+}
+
+.section :global(.testimonial-pin) {
+  top: -6px;
+  left: 18px;
+  width: 14px;
+  height: 14px;
+  background: #ff922f;
+  box-shadow: 0 2px 5px rgba(255, 146, 47, .24);
+}
+
+.section :global(.testimonial-stars) {
+  margin-bottom: 16px;
+}
+
+.section :global(.testimonial-stars img) {
+  width: 14px;
+  height: 14px;
+}
+
+.section :global(.testimonial-quote-mark) {
+  top: 22px;
+  right: 20px;
+  width: 42px;
+  height: 42px;
+  opacity: .7;
+}
+
+.section :global(.cataract-testimonial-card p) {
+  margin-bottom: 18px;
+  color: #687791;
+  font-size: 13px;
+  line-height: 1.55;
+}
+
+.section :global(.cataract-testimonial-card hr) {
+  margin-bottom: 13px;
+}
+
+.section :global(.cataract-testimonial-card strong) {
+  font-size: 13px;
+}
+
+.section :global(.cataract-testimonial-card small) {
+  margin-top: 3px;
+  font-size: 10px;
+}
+
+.section :global(.testimonial-carousel-controls) {
+  margin-top: 24px;
+}
+
+@media (max-width: 900px) {
+  .section :global(.cataract-testimonial-card:nth-child(n)) {
+    transform: none;
+  }
+}
+/* Final patient-story card scale and centered pin. */
+@media (min-width: 901px) {
+  .section :global(.cataract-testimonial-card) {
+    min-height: 300px;
+    padding: 34px 28px 28px;
+  }
+
+  .section :global(.testimonial-pin) {
+    top: -7px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 15px;
+  }
+
+  .section :global(.testimonial-stars) {
+    margin-bottom: 20px;
+  }
+
+  .section :global(.testimonial-stars img) {
+    width: 16px;
+    height: 16px;
+  }
+
+  .section :global(.cataract-testimonial-card p) {
+    font-size: 15px;
+    line-height: 1.6;
+  }
+
+  .section :global(.cataract-testimonial-card strong) {
+    font-size: 14px;
+  }
+
+  .section :global(.cataract-testimonial-card small) {
+    font-size: 11px;
+  }
+}
+@media (min-width: 901px) {
+  .section :global(.cataract-testimonial-card) {
+    min-height: 350px;
+  }
+}
+@media (min-width: 1201px) {
+  .section :global(.testimonial-carousel-container) {
+    width: 1163px;
+    max-width: 100%;
+  }
+
+  .section :global(.testimonial-grid-wrapper) {
+    grid-template-columns: repeat(3, 373px);
+    justify-content: center;
+    gap: 22px;
+  }
+
+  .section :global(.cataract-testimonial-card) {
+    width: 373px;
+    min-height: 437px;
+    height: 437px;
+  }
+}
+
+@media (max-width: 1200px) and (min-width: 901px) {
+  .section :global(.testimonial-grid-wrapper) {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .section :global(.cataract-testimonial-card) {
+    min-height: 390px;
+  }
+}
+/* Shared patient stories responsive cards. */
+@media (max-width: 900px) { .section { padding: 88px 0 100px; } .section :global(.testimonial-carousel-container) { width: min(720px, calc(100% - 40px)); } }
+@media (max-width: 640px) { .section { padding: 72px 0 82px; } .section :global(.testimonial-carousel-container) { width: min(100% - 30px, 520px); } .section :global(.testimonial-grid-wrapper.visible-2), .section :global(.testimonial-grid-wrapper.visible-3) { grid-template-columns: 1fr; gap: 18px; } .section :global(.cataract-testimonial-card) { width: min(100%, 373px); height: 390px; min-height: 390px; margin-inline: auto; } }

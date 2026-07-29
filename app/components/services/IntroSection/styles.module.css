@@ -1,0 +1,734 @@
+.section {
+  padding: 104px 0;
+  background: #fff;
+}
+
+.shell {
+  width: min(1120px, calc(100% - 44px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1.15fr;
+  gap: 54px;
+  align-items: center;
+}
+
+.copy h2 {
+  margin: 20px 0 18px;
+  color: #10141d;
+  font-size: clamp(38px, 4vw, 56px);
+  line-height: 1.06;
+  letter-spacing: 0;
+}
+
+.copy h2 span {
+  color: var(--cyan);
+}
+
+.copy p {
+  color: #65718a;
+  font-size: 15px;
+  line-height: 1.65;
+}
+
+.callout {
+  margin-top: 22px;
+  display: grid;
+  grid-template-columns: 40px 1fr;
+  gap: 14px;
+  align-items: center;
+  padding: 20px 22px;
+  border-radius: 12px;
+  color: #fff;
+  background: linear-gradient(120deg, #22bfd6, #24a7ef);
+}
+
+.callout > span {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.75);
+}
+
+.callout b {
+  display: block;
+  margin-bottom: 6px;
+}
+
+.callout small {
+  color: rgba(255,255,255,.86);
+  font-size: 13px;
+}
+
+.imageStack,
+.lasikVisual {
+  position: relative;
+}
+
+.imageStack img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 22px;
+  box-shadow: 0 20px 40px rgba(31, 59, 105, .14);
+}
+
+.lasikVisual {
+  display: grid;
+  grid-template-columns: 1.6fr .9fr;
+  gap: 16px;
+}
+
+.lasikVisual img {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 18px;
+}
+
+.patient,
+.room {
+  height: 190px;
+}
+
+.eye {
+  height: 260px;
+  grid-column: 1 / -1;
+}
+
+.badge {
+  position: absolute;
+  left: 47%;
+  top: 30%;
+  padding: 20px 24px;
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 15px 35px rgba(32, 66, 110, .16);
+}
+
+.badge b {
+  display: block;
+  color: #2f73f5;
+  font-size: 28px;
+}
+
+.badge small {
+  color: #7c8798;
+}
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .copy h2 {
+    font-size: 38px;
+  }
+
+  .lasikVisual {
+    grid-template-columns: 1fr;
+  }
+
+  .patient,
+  .room,
+  .eye,
+  .imageStack img {
+    height: 260px;
+  }
+
+  .badge {
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+
+
+/* Service-specific section artwork */
+.section {
+  background-color: #ffffff;
+  background-image: var(--section-bg, none);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.classic {
+  background-position: center top;
+}
+
+.cataract {
+  background-position: center center;
+}
+
+@media (max-width: 576px) {
+  .section {
+    background-size: auto 100%;
+    background-position: center top;
+  }
+}
+
+/* Retina intro Figma layout */
+.retina {
+  min-height: 780px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
+  background-position: center center;
+  background-size: cover;
+}
+
+.retina .shell {
+  width: min(1050px, calc(100% - 44px));
+  grid-template-columns: .92fr 1.18fr;
+  gap: 72px;
+}
+
+.retina .copy h2 {
+  margin: 18px 0 18px;
+  font-size: clamp(38px, 3.2vw, 48px);
+}
+
+.retina .copy p {
+  margin: 0 0 18px;
+}
+
+.infoParagraph {
+  padding: 20px 24px;
+  border: 1px solid #d7edf7;
+  border-radius: 12px;
+  background: rgba(237, 250, 255, .88);
+  color: #253248 !important;
+  line-height: 1.55 !important;
+}
+
+.retinaCallout {
+  margin-top: 12px;
+  padding: 18px 24px;
+  grid-template-columns: 0 1fr;
+  gap: 0;
+  border: 1px solid #e1e8f0;
+  background: rgba(255, 255, 255, .9);
+  color: #5f6b7c;
+}
+
+.retinaCallout > span {
+  display: none;
+}
+
+.retinaCallout b {
+  display: inline;
+  margin: 0 4px 0 0;
+  color: #0abe2e;
+}
+
+.retinaCallout small {
+  display: inline;
+  color: #5f6b7c;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+.retinaVisual {
+  display: grid;
+  gap: 22px;
+  justify-items: end;
+}
+
+.retinaTopWrap {
+  position: relative;
+  width: 520px;
+  max-width: 100%;
+}
+
+.retinaTop,
+.retinaBottom {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  box-shadow: 0 18px 36px rgba(32, 66, 110, .14);
+}
+
+.retinaTop {
+  height: 300px;
+}
+
+.retinaBottom {
+  width: 660px;
+  max-width: 100%;
+  height: 290px;
+}
+
+.retinaTopWrap span {
+  position: absolute;
+  left: 18px;
+  bottom: 16px;
+  padding: 9px 16px;
+  border-radius: 6px;
+  background: rgba(255, 255, 255, .94);
+  color: #2f73f5;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+@media (max-width: 900px) {
+  .retina {
+    min-height: 0;
+  }
+
+  .retina .shell {
+    grid-template-columns: 1fr;
+    gap: 34px;
+  }
+
+  .retinaVisual {
+    justify-items: stretch;
+  }
+
+  .retinaTopWrap,
+  .retinaBottom {
+    width: 100%;
+  }
+}
+
+@media (max-width: 576px) {
+  .retina .copy h2 {
+    font-size: 36px;
+  }
+
+  .retinaTop,
+  .retinaBottom {
+    height: 230px;
+  }
+}
+
+/* Retina intro final image placement */
+@media (min-width: 901px) {
+  .retina {
+    min-height: 820px;
+    padding: 110px 0 96px;
+    align-items: center;
+    background-position: center center;
+  }
+
+  .retina .shell {
+    width: min(1180px, calc(100% - 44px));
+    grid-template-columns: 390px 660px;
+    gap: 76px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .retina .copy {
+    align-self: center;
+  }
+
+  .retina .copy h2 {
+    margin: 18px 0 18px;
+    font-size: 46px;
+    line-height: 1.08;
+  }
+
+  .retinaVisual {
+    width: 660px;
+    height: 540px;
+    position: relative;
+    display: block;
+    justify-self: end;
+  }
+
+  .retinaTopWrap {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 520px;
+  }
+
+  .retinaTop {
+    width: 520px;
+    height: 300px;
+  }
+
+  .retinaBottom {
+    position: absolute;
+    right: 0;
+    bottom: -50px;
+    width: 580px;
+    height: 300px;
+  }
+
+  .retinaTopWrap span {
+    left: 18px;
+    bottom: 16px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1200px) {
+  .retina .shell {
+    grid-template-columns: 360px 560px;
+    gap: 52px;
+  }
+
+  .retinaVisual {
+    width: 560px;
+    height: 480px;
+  }
+
+  .retinaTopWrap,
+  .retinaTop {
+    width: 450px;
+  }
+
+  .retinaTop {
+    height: 260px;
+  }
+
+  .retinaBottom {
+    width: 500px;
+    height: 260px;
+  }
+}
+
+/* Retina intro desktop alignment correction */
+@media (min-width: 901px) {
+  .retina .shell {
+    width: min(1080px, calc(100% - 44px));
+    grid-template-columns: 390px 520px;
+    gap: 86px;
+    justify-content: center;
+  }
+
+  .retina .copy {
+    width: 390px;
+  }
+
+  .retina .copy h2 {
+    font-size: 44px;
+  }
+
+  .retinaCallout {
+    display: block;
+    min-height: 0;
+    width: 100%;
+  }
+
+  .retinaCallout div {
+    display: block;
+    width: 100%;
+  }
+
+  .retinaCallout b,
+  .retinaCallout small {
+    display: inline;
+    white-space: normal;
+  }
+
+  .retinaVisual {
+    width: 520px;
+    height: 470px;
+    justify-self: end;
+  }
+
+  .retinaTopWrap {
+    width: 370px;
+    left: 0;
+    top: 0;
+  }
+
+  .retinaTop {
+    width: 370px;
+    height: 257px;
+  }
+
+  .retinaBottom {
+    width: 440px;
+    height: 246px;
+    right: 0;
+    bottom: -50px;
+  }
+}
+
+@media (min-width: 1201px) {
+  .retina .shell {
+    width: min(1120px, calc(100% - 44px));
+    grid-template-columns: 390px 560px;
+    gap: 86px;
+  }
+
+  .retinaVisual {
+    width: 560px;
+  }
+
+  .retinaTopWrap,
+  .retinaTop {
+    width: 370px;
+  }
+
+  .retinaBottom {
+    width: 440px;
+  }
+}
+
+/* Retina intro responsive correction */
+@media (max-width: 900px) {
+  .retina {
+    padding: 72px 0 76px;
+    display: block;
+    min-height: 0;
+    background-size: cover;
+    background-position: center top;
+  }
+
+  .retina .shell {
+    width: min(100% - 36px, 680px);
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 34px;
+    align-items: start;
+  }
+
+  .retina .copy {
+    width: 100%;
+  }
+
+  .retina .copy h2 {
+    font-size: 40px;
+    line-height: 1.08;
+  }
+
+  .retina .copy p,
+  .infoParagraph,
+  .retinaCallout {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .retinaCallout {
+    display: block;
+    min-height: 0;
+    padding: 18px 20px;
+  }
+
+  .retinaCallout div {
+    display: block;
+    width: 100%;
+  }
+
+  .retinaCallout b,
+  .retinaCallout small {
+    display: inline;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: normal;
+  }
+
+  .retinaVisual {
+    width: 100%;
+    height: auto;
+    display: grid;
+    gap: 16px;
+    justify-items: stretch;
+  }
+
+  .retinaTopWrap,
+  .retinaTop,
+  .retinaBottom {
+    position: relative;
+    inset: auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .retinaTop,
+  .retinaBottom {
+    height: 280px;
+  }
+}
+
+@media (max-width: 576px) {
+  .retina .shell {
+    width: min(100% - 28px, 480px);
+    gap: 28px;
+  }
+
+  .retina .copy h2 {
+    font-size: 34px;
+  }
+
+  .infoParagraph,
+  .retinaCallout {
+    padding: 16px 18px;
+  }
+
+  .retinaTop,
+  .retinaBottom {
+    height: 230px;
+  }
+}
+
+@media (max-width: 430px) {
+  .retina .shell {
+    width: min(100% - 24px, 390px);
+  }
+
+  .retina .copy h2 {
+    font-size: 31px;
+  }
+
+  .retinaTop,
+  .retinaBottom {
+    height: 205px;
+  }
+}
+
+@media (max-width: 390px) {
+  .retina .shell {
+    width: min(100% - 20px, 360px);
+  }
+
+  .retina .copy h2 {
+    font-size: 29px;
+  }
+
+  .retinaTop,
+  .retinaBottom {
+    height: 190px;
+  }
+}
+
+/* Cataract intro image age tag */
+.ageTag {
+  position: absolute;
+  z-index: 3;
+  top: 22px;
+  left: -28px;
+  min-width: 88px;
+  min-height: 74px;
+  display: grid;
+  place-items: center;
+  padding: 12px 14px;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 16px 34px rgba(32, 66, 110, .16);
+  text-align: center;
+}
+
+.ageTag small,
+.ageTag b {
+  display: block;
+}
+
+.ageTag small {
+  color: #8c97a8;
+  font-size: 11px;
+  line-height: 1.1;
+}
+
+.ageTag b {
+  color: var(--green);
+  font-size: 24px;
+  line-height: 1;
+}
+
+@media (max-width: 900px) {
+  .cataract .imageStack {
+    width: min(100%, 620px);
+    margin: 0 auto;
+  }
+
+  .ageTag {
+    top: 18px;
+    left: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .ageTag {
+    min-width: 74px;
+    min-height: 62px;
+    padding: 10px 12px;
+    border-radius: 12px;
+  }
+
+  .ageTag b {
+    font-size: 21px;
+  }
+}
+/* LASIK intro procedure badge mobile placement */
+@media (max-width: 576px) {
+  .classic .badge {
+    left: auto;
+    left: 35px;
+    top: calc(260px + 16px + 78px);
+    width: 148px;
+    min-height: 92px;
+    padding: 18px 16px;
+    border-radius: 14px;
+    transform: none;
+    text-align: center;
+  }
+
+  .classic .badge b {
+    font-size: 28px;
+    line-height: 1;
+  }
+
+  .classic .badge small {
+    margin-top: 10px;
+    display: block;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 430px) {
+  .classic .badge {
+    left: 35px;
+    top: calc(260px + 16px + 82px);
+    width: 134px;
+    min-height: 82px;
+    padding: 15px 14px;
+  }
+
+  .classic .badge b {
+    font-size: 24px;
+  }
+
+  .classic .badge small {
+    margin-top: 8px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 390px) {
+  .classic .badge {
+    left: 30px;
+    top: calc(260px + 16px + 88px);
+    width: 120px;
+    min-height: 76px;
+    padding: 13px 12px;
+  }
+
+  .classic .badge b {
+    font-size: 22px;
+  }
+
+  .classic .badge small {
+    font-size: 11px;
+  }
+}
+
+
+/* Shared intro section tablet/mobile flow. */
+@media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 42px; } .copy { max-width: 620px; } .imageStack, .lasikVisual, .retinaVisual { width: min(100%, 560px); margin-inline: auto; } }
+@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); gap: 32px; } .copy h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); line-height: 1.12; } .copy p { font-size: 15px; line-height: 1.55; } .callout { padding: 18px; } .imageStack img, .lasikVisual .patient, .retinaVisual img { border-radius: 18px; } }

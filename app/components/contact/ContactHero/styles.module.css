@@ -1,0 +1,201 @@
+.section {
+  position: relative;
+  min-height: 540px;
+  overflow: hidden;
+  background: #ffffff url("/assets/contactbanner_bg.png") left center / cover no-repeat;
+}
+
+.shell {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+  min-height: 540px;
+  display: flex;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.copy {
+  pointer-events: auto;
+  max-width: 480px;
+}
+
+.copy h1 {
+  margin: 0 0 16px;
+  font-size: clamp(3.4rem, 4.8vw, 4.8rem);
+  line-height: 1.06;
+  letter-spacing: -1.5px;
+  font-weight: 700;
+  color: #111827;
+}
+
+.copy h1 span {
+  color: #18c6df;
+}
+
+.copy p {
+  margin: 0;
+  color: #64748b;
+  font-size: 1.15rem;
+  font-weight: 400;
+}
+
+.doctorWrap {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(56vw, 900px);
+  height: 540px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.clinicImage {
+  position: absolute;
+  right: -100px;
+  bottom: 0;
+  width: 100%;
+  height: 390px;
+  object-fit: cover;
+  border-radius: 60px 0 0 0;
+  filter: blur(1px);
+}
+
+.doctorImage {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: auto;
+  max-width: none;
+  object-fit: contain;
+  object-position: bottom right;
+}
+
+@media (min-width: 769px) and (max-width: 992px) {
+  .section {
+    min-height: 480px;
+  }
+
+  .shell {
+    min-height: 480px;
+    display: grid;
+    grid-template-columns: 420px 1fr;
+    align-items: center;
+  }
+
+  .copy {
+    max-width: 100%;
+  }
+
+  .doctorImage {
+  position: absolute;
+  right: -90px;
+  }
+  .copy h1 {
+    font-size: clamp(3rem, 5.5vw, 4.2rem);
+    line-height: 1.08;
+    margin-bottom: 12px;
+  }
+
+  .copy p {
+    font-size: 1.08rem;
+  }
+
+  .doctorWrap {
+    height: 480px;
+    width: min(58vw, 650px);
+  }
+
+  .clinicImage {
+    height: 340px;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 42px 0 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .shell {
+    min-height: auto;
+    width: 100%;
+    display: block;
+    text-align: center;
+    margin-bottom: 16px;
+    z-index: 2;
+  }
+
+  .copy {
+    max-width: 100%;
+    text-align: center;
+    padding: 0 16px;
+  }
+
+  .copy h1 {
+    font-size: clamp(2.4rem, 7.5vw, 3.2rem);
+    margin-bottom: 10px;
+    line-height: 1.1;
+  }
+
+  .copy p {
+    font-size: 1rem;
+    margin-bottom: 0;
+  }
+
+  .doctorWrap {
+    position: relative;
+    top: auto;
+    right: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 480px;
+    height: 280px;
+    margin: 28px auto 0;
+    z-index: 1;
+  }
+
+  .clinicImage {
+    right: 0;
+    width: 92%;
+    height: 200px;
+    border-radius: 30px 0 0 0;
+  }
+
+  .doctorImage {
+    right: 50%;
+    transform: translateX(50%);
+    height: 100%;
+    object-position: bottom center;
+  }
+}
+
+@media (max-width: 480px) {
+  .section {
+    padding-top: 36px;
+  }
+
+  .shell {
+    margin-bottom: 12px;
+  }
+
+  .copy h1 {
+    font-size: clamp(2.1rem, 8.5vw, 2.7rem);
+    margin-bottom: 6px;
+  }
+
+  .doctorWrap {
+    height: 250px;
+    margin-top: 24px;
+  }
+
+  .clinicImage {
+    height: 170px;
+  }
+}

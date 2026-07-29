@@ -1,0 +1,196 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 84px 0 96px;
+  background: #ffffff;
+}
+
+.section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: .5;
+  background: url("/assets/chooseus.png") center 18% / 100% auto no-repeat;
+  pointer-events: none;
+}
+
+.shell {
+  width: min(1200px, calc(100% - 44px));
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+}
+
+.grid {
+  width: 100%;
+  margin: 44px auto 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.card {
+  min-height: 220px;
+  padding: 32px 28px 28px;
+  border: 1px solid #e2eaf5;
+  border-radius: 16px;
+  background: #f8fbff;
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: #cbd5e1;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.05);
+}
+
+.iconGroup {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 22px;
+}
+
+.numBadge {
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--green);
+  background: #f0fdf4;
+  border: 1px solid #dcfce7;
+  padding: 4px 10px;
+  border-radius: 999px;
+  line-height: 1;
+}
+
+.icon {
+  width: 36px;
+  height: 36px;
+  margin-bottom: 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #e7eef8;
+  border-radius: 10px;
+  color: var(--green);
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.03);
+}
+
+.icon svg {
+  width: 17px;
+  height: 17px;
+  stroke: var(--green);
+  color: var(--green);
+}
+
+.card h3 {
+  margin: 0 0 10px;
+  color: #111827;
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1.34;
+  letter-spacing: 0;
+}
+
+.card p {
+  margin: 0;
+  color: #64748b;
+  font-size: 14px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 56px 0 64px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 24px 22px;
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+/* Larger service feature cards to match the reference layout. */
+@media (min-width: 901px) {
+  .grid {
+    gap: 28px;
+    margin-top: 52px;
+  }
+
+  .card {
+    min-height: 276px;
+    padding: 40px 34px 34px;
+    border-radius: 20px;
+  }
+
+  .icon {
+    width: 46px;
+    height: 46px;
+    margin-bottom: 30px;
+    border-radius: 12px;
+  }
+
+  .icon svg {
+    width: 23px;
+    height: 23px;
+    stroke-width: 1.9;
+  }
+
+  .card h3 {
+    margin-bottom: 14px;
+    font-size: 21px;
+    line-height: 1.3;
+  }
+
+  .card p {
+    max-width: 250px;
+    font-size: 17px;
+    line-height: 1.5;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 577px) {
+  .card {
+    min-height: 245px;
+    padding: 32px 28px;
+  }
+
+  .icon {
+    width: 42px;
+    height: 42px;
+  }
+
+  .icon svg {
+    width: 21px;
+    height: 21px;
+  }
+
+  .card h3 {
+    font-size: 19px;
+  }
+
+  .card p {
+    font-size: 16px;
+  }
+}
+/* Shared why-choose card flow. */
+@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } .card { min-height: 230px; padding: 30px; } }
+@media (max-width: 640px) { .grid { grid-template-columns: 1fr; gap: 16px; } .card { min-height: 210px; padding: 28px; border-radius: 18px; } .icon { width: 52px; height: 52px; } .card h3 { margin-top: 18px; font-size: 20px; } .card p { font-size: 15px; } }

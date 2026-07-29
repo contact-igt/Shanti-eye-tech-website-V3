@@ -1,4 +1,7 @@
-import { env } from "cloudflare:workers";
+// @ts-expect-error Cloudflare virtual module is provided by the worker build.
+import * as cloudflareWorkers from "cloudflare:workers";
+
+const { env } = cloudflareWorkers as unknown as { env: { DB?: D1Database } };
 import { drizzle } from "drizzle-orm/d1";
 import * as schema from "./schema";
 

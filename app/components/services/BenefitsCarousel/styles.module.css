@@ -1,0 +1,333 @@
+.section {
+  padding: 108px 0 118px;
+  background: #fff;
+}
+
+.shell {
+  width: min(1240px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.carousel {
+  min-height: 470px;
+  position: relative;
+  display: grid;
+  align-items: center;
+}
+
+.track {
+  width: min(1220px, 100%);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 344px 412px 344px;
+  gap: 26px;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  height: 296px;
+  border-radius: 12px;
+  background: #dbe8ef;
+  box-shadow: 0 12px 24px rgba(8, 18, 35, .16);
+  transform: translateY(18px);
+}
+
+.active {
+  height: 380px;
+  z-index: 2;
+  transform: none;
+}
+
+.card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(3,10,20,.44) 0%, rgba(3,10,20,.08) 38%, rgba(3,10,20,.18) 62%, rgba(3,10,20,.78) 100%);
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card h3,
+.card p {
+  position: absolute;
+  z-index: 2;
+  left: 24px;
+  right: 24px;
+  color: #fff;
+}
+
+.card h3 {
+  top: 24px;
+  bottom: auto;
+  margin: 0;
+  font-size: 22px;
+  line-height: 1.18;
+}
+
+.active h3 {
+  top: 28px;
+  font-size: 27px;
+}
+
+.card p {
+  bottom: 22px;
+  margin: 0;
+  color: rgba(255,255,255,.86);
+  font-size: 14px;
+  line-height: 1.42;
+}
+
+.active p {
+  bottom: 28px;
+  font-size: 15px;
+}
+
+.arrow {
+  position: absolute;
+  z-index: 4;
+  top: 50%;
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  border: 0;
+  border-radius: 50%;
+  color: #123c5a;
+  background: #e8f7ff;
+  box-shadow: 0 12px 28px rgba(32, 66, 110, .13);
+  font-size: 42px;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+.prev {
+  left: 0;
+}
+
+.next {
+  right: 0;
+}
+
+@media (max-width: 1200px) {
+  .track {
+    grid-template-columns: 280px 340px 280px;
+    gap: 20px;
+  }
+
+  .card {
+    height: 250px;
+  }
+
+  .active {
+    height: 330px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carousel {
+    min-height: 330px;
+    overflow: hidden;
+  }
+
+  .track {
+    width: min(100%, 620px);
+    grid-template-columns: 66% 34%;
+    justify-content: start;
+  }
+
+  .card,
+  .active {
+    height: 296px;
+    transform: none;
+  }
+
+  .side:last-child {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 72px 0 82px;
+  }
+
+  .track {
+    grid-template-columns: 1fr;
+  }
+
+  .side {
+    display: none;
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+
+
+/* Carousel active card and arrow refinements */
+@media (min-width: 1201px) {
+  .carousel {
+    min-height: 530px;
+  }
+
+  .active {
+    height: 456px;
+  }
+}
+
+.arrow {
+  width: 46px;
+  height: 46px;
+  font-size: 0;
+}
+
+.arrow img {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+}
+
+
+
+@media (max-width: 1200px) and (min-width: 769px) {
+  .carousel {
+    min-height: 460px;
+  }
+
+  .active {
+    height: 390px;
+  }
+
+  .arrow {
+    width: 44px;
+    height: 44px;
+    top: 50%;
+  }
+
+  .arrow img {
+    width: 17px;
+    height: 17px;
+  }
+}
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 42px;
+    height: 42px;
+  }
+
+  .arrow img {
+    width: 16px;
+    height: 16px;
+  }
+}
+
+/* Prevent tablet horizontal page scroll */
+@media (min-width: 769px) and (max-width: 992px) {
+  .shell {
+    width: min(100% - 36px, 720px);
+  }
+
+  .carousel {
+    min-height: 420px;
+    overflow: hidden;
+  }
+
+  .track {
+    width: 100%;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .card,
+  .active {
+    width: 100%;
+    max-width: 560px;
+    height: 350px;
+    margin: 0 auto;
+    transform: none;
+  }
+
+  .side {
+    display: none;
+  }
+
+  .prev {
+    left: 8px;
+  }
+
+  .next {
+    right: 8px;
+  }
+}
+
+/* Figma arrow button match */
+.arrow {
+  width: 48px;
+  height: 48px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: #eaf8ff;
+  border: 1px solid rgba(207, 236, 249, .95);
+  box-shadow: none;
+  color: transparent;
+}
+
+.arrow img {
+  width: 15px;
+  height: 15px;
+  display: block;
+  object-fit: contain;
+}
+
+
+
+@media (max-width: 768px) {
+  .arrow {
+    width: 44px;
+    height: 44px;
+  }
+
+  .arrow img {
+    width: 14px;
+    height: 14px;
+  }
+}
+/* Final carousel text and arrow alignment */
+.arrow {
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.card h3 {
+  top: 24px;
+  width: 100%;
+  bottom: auto;
+}
+
+.active h3 {
+  top: 28px;
+}
+
+.card p {
+  bottom: 22px;
+}
+
+.active p {
+  bottom: 28px;
+}
+
+
+/* Shared benefits carousel mobile sizing. */
+@media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); } .carousel { min-height: 400px; } .track { grid-template-columns: minmax(0, 1fr); width: min(500px, calc(100% - 100px)); } .side { display: none; } .active { height: 360px; } }
+@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); } .carousel { min-height: 340px; } .track { width: calc(100% - 64px); } .card, .active { height: 320px; border-radius: 16px; } .card h3, .active h3 { top: 22px; font-size: 22px; } .card p, .active p { right: 20px; bottom: 20px; left: 20px; font-size: 14px; } .arrow { width: 42px; height: 42px; } .prev { left: 0; } .next { right: 0; } }

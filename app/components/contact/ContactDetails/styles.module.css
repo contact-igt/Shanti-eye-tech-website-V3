@@ -1,0 +1,135 @@
+.section {
+  padding: 104px 0;
+  background: #ffffff;
+}
+
+.shell {
+  width: min(1280px, calc(100% - 48px));
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+  align-items: stretch;
+}
+
+.card {
+  min-height: 280px;
+  height: 100%;
+  padding: 28px;
+  border: 1px solid var(--line, #e2e8f0);
+  border-radius: 18px;
+  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  transition: all 0.28s ease;
+  cursor: pointer;
+}
+
+.card h3 {
+  margin: 18px 0 8px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  transition: color 0.28s ease;
+}
+
+.card p {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin: 0 0 16px;
+  flex: 1;
+  transition: color 0.28s ease;
+}
+
+.cardLink {
+  color: #10b981;
+  font-weight: 700;
+  font-size: 13px;
+  margin-top: auto;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.28s ease;
+}
+
+.iconBox {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+  background: #eef9ff;
+  color: #18c6df;
+  font-size: 20px;
+  transition: all 0.28s ease;
+}
+
+/* Featured / Active Hovered Card */
+.featuredCard {
+  color: #ffffff !important;
+  background: linear-gradient(145deg, #1cc5dc, #2f73f5) !important;
+  border-color: transparent !important;
+  box-shadow: 0 16px 36px rgba(28, 197, 220, 0.28) !important;
+  transform: translateY(-4px);
+}
+
+.featuredCard h3 {
+  color: #ffffff !important;
+}
+
+.featuredCard p {
+  color: rgba(255, 255, 255, 0.88) !important;
+}
+
+.featuredIconBox {
+  background: rgba(255, 255, 255, 0.2) !important;
+  color: #ffffff !important;
+}
+
+.lightButton {
+  min-height: 44px;
+  padding: 0 22px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  border-radius: 999px;
+  background: #ffffff !important;
+  color: #18c6df !important;
+  font-size: 14px;
+  font-weight: 700;
+  margin-top: auto;
+  text-decoration: none;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.24s ease;
+}
+
+.lightButton:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 72px 0;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    padding: 52px 0;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}

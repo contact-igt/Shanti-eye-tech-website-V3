@@ -1,0 +1,203 @@
+.section {
+  padding: 108px 0 118px;
+  background: #fff;
+}
+
+.shell {
+  width: min(1120px, calc(100% - 44px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 342px minmax(0, 1fr);
+  gap: 48px;
+  align-items: start;
+}
+
+.card {
+  max-width: 342px;
+  min-height: 292px;
+  padding: 34px 30px 32px;
+  border-radius: 16px;
+  color: #fff;
+  background: linear-gradient(135deg, #0e73eb 0%, #00bced 100%);
+  box-shadow: 0 16px 40px rgba(14, 115, 235, .20);
+}
+
+.card h3 {
+  margin: 0 0 16px;
+  max-width: 240px;
+  color: #fff;
+  font-size: 30px;
+  line-height: 1.16;
+}
+
+.card p {
+  margin-bottom: 24px;
+  color: rgba(255,255,255,.9);
+  font-size: 14px;
+}
+
+.actions {
+  display: grid;
+  gap: 12px;
+}
+
+.primary,
+.outline {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 999px;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.primary {
+  color: #0c69dd;
+  background: #fff;
+}
+
+.outline {
+  color: #fff;
+  border: 1.5px solid rgba(255,255,255,.85);
+}
+
+.faqBox {
+  padding: 34px 38px;
+  border: 1px solid #e3ebf5;
+  border-radius: 22px;
+  background: #f8fbff;
+}
+
+.faqBox details {
+  border-bottom: 1px solid #e1e8f0;
+}
+
+.faqBox details:last-child {
+  border-bottom: 0;
+}
+
+.faqBox summary {
+  min-height: 62px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  color: #111827;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.faqBox summary::-webkit-details-marker {
+  display: none;
+}
+
+.faqBox summary b {
+  width: 30px;
+  height: 30px;
+  flex: 0 0 30px;
+  border-radius: 50%;
+  background: #e8f7ff;
+  position: relative;
+}
+
+.faqBox summary b::before,
+.faqBox summary b::after {
+  content: "";
+  position: absolute;
+  left: 9px;
+  right: 9px;
+  top: 14px;
+  height: 2px;
+  background: var(--blue);
+}
+
+.faqBox summary b::after {
+  transform: rotate(90deg);
+}
+
+.faqBox details[open] summary b {
+  background: var(--blue);
+}
+
+.faqBox details[open] summary b::before {
+  background: #fff;
+}
+
+.faqBox details[open] summary b::after {
+  display: none;
+}
+
+.faqBox p {
+  margin: 0;
+  padding: 0 52px 24px 0;
+  color: #60708a;
+}
+
+@media (max-width: 992px) {
+  .shell {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .right {
+    display: contents;
+  }
+
+  .card {
+    order: 3;
+    width: 100%;
+    max-width: none;
+  }
+
+  .faqBox {
+    order: 2;
+  }
+}
+
+.cataract {}
+.classic {}
+.retina {}
+
+
+.header {
+  width: 100%;
+  margin-bottom: 34px;
+}
+
+.header h2 {
+  margin: 24px 0 0;
+  color: #10141d;
+  font-size: clamp(46px, 4.3vw, 64px);
+  line-height: 1.05;
+  letter-spacing: 0;
+  white-space: nowrap;
+}
+
+.header h2 span {
+  color: var(--cyan);
+}
+
+@media (max-width: 992px) {
+  .header {
+    order: 1;
+    text-align: center;
+  }
+
+  .header > span {
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 576px) {
+  .header h2 {
+    font-size: 40px;
+    white-space: normal;
+  }
+}
+
+
+
+/* Shared FAQ mobile flow. */
+@media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 38px; } .card, .faqBox { max-width: none; width: 100%; } }
+@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); gap: 30px; } .card { min-height: 0; padding: 28px; border-radius: 18px; } .card h3 { font-size: 24px; } .faqBox { padding: 14px 22px; border-radius: 18px; } .faqBox summary { min-height: 58px; font-size: 15px; } .faqBox details p { font-size: 14px; line-height: 1.55; } }
