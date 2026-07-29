@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
+import { QuickActionButtons } from "./site-components";
 import "./globals.css";
 
 
@@ -36,7 +37,10 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        {children}
+        <QuickActionButtons />
+      </body>
     </html>
   );
 }
