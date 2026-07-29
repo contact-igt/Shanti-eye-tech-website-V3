@@ -1,6 +1,7 @@
 "use client";
 
 import { FormEvent, useEffect, useRef, useState } from "react";
+import { useRouter } from "next/navigation";
 import {
   findIpAddress,
   registerContactLead,
@@ -91,6 +92,7 @@ export function CountUp({ value, suffix = "", duration = 1400 }: { value: number
   return <span ref={targetRef}>{display}{suffix}</span>;
 }
 export function AppointmentForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -157,24 +159,21 @@ export function AppointmentForm() {
           : "";
 
       const payload = {
-        fullName: formData.name.trim(),
-        mobile: formData.phone.trim(),
-        treatment: formData.service,
-        message: formData.notes ? `[Email: ${formData.email}] ${formData.notes}` : `[Email: ${formData.email}]`,
+        name: formData.name.trim(),
+        mobile_number: formData.phone.trim(),
+        service: formData.service,
+        message: formData.notes.trim(),
         ip_address,
         utm_source,
       };
 
-      await registerContactLead(payload).catch(() => null);
+      await registerContactLead(payload);
       await submitContactLeadToGoogleSheets(payload, "Appointment");
 
-      setSent(true);
-      setFormData({ name: "", email: "", phone: "", service: "", notes: "" });
-      setTouched({});
-      setErrors({});
+      router.push("/thank-you");
     } catch (err: unknown) {
       console.error(err);
-      setErrors((prev) => ({ ...prev, form: getErrorMessage(err) }));
+      router.push("/error");
     } finally {
       setLoading(false);
     }
@@ -231,11 +230,11 @@ export function AppointmentForm() {
           className={touched.service && errors.service ? "input-error" : ""}
         >
           <option value="" disabled>Select a service</option>
-          <option>Advanced Cataract Surgery</option>
-          <option>LASIK Surgery</option>
-          <option>Retina Care</option>
-          <option>Glaucoma Management</option>
-          <option>Pediatric Ophthalmology</option>
+          <option value="Cataract">Cataract</option>
+          <option value="Lasik">Lasik</option>
+          <option value="Pediatric">Pediatric</option>
+          <option value="Glaucoma">Glaucoma</option>
+          <option value="Retina">Retina</option>
         </select>
         {touched.service && errors.service && <span className="field-error-text">{errors.service}</span>}
       </label>
@@ -258,6 +257,7 @@ export function AppointmentForm() {
 }
 
 export function ContactForm() {
+  const router = useRouter();
   const [formData, setFormData] = useState({
     fullName: "",
     mobile: "",
@@ -323,24 +323,21 @@ export function ContactForm() {
           : "";
 
       const payload = {
-        fullName: formData.fullName.trim(),
-        mobile: formData.mobile.trim(),
-        treatment: formData.treatment,
+        name: formData.fullName.trim(),
+        mobile_number: formData.mobile.trim(),
+        service: formData.treatment,
         message: formData.message.trim(),
         ip_address,
         utm_source,
       };
 
-      await registerContactLead(payload).catch(() => null);
+      await registerContactLead(payload);
       await submitContactLeadToGoogleSheets(payload, "Contact");
 
-      setSent(true);
-      setFormData({ fullName: "", mobile: "", treatment: "", message: "" });
-      setTouched({});
-      setErrors({});
+      router.push("/thank-you");
     } catch (err: unknown) {
       console.error("Contact Form Submission Error:", err);
-      setErrors((prev) => ({ ...prev, form: getErrorMessage(err) }));
+      router.push("/error");
     } finally {
       setLoading(false);
     }
@@ -392,11 +389,11 @@ export function ContactForm() {
             className={touched.treatment && errors.treatment ? "input-error" : ""}
           >
             <option value="" disabled>Select treatment option</option>
-            <option>Advanced Cataract Surgery</option>
-            <option>LASIK Surgery</option>
-            <option>Retina Care</option>
-            <option>Glaucoma Management</option>
-            <option>Pediatric Ophthalmology</option>
+            <option value="Cataract">Cataract</option>
+            <option value="Lasik">Lasik</option>
+            <option value="Pediatric">Pediatric</option>
+            <option value="Glaucoma">Glaucoma</option>
+            <option value="Retina">Retina</option>
           </select>
           {touched.treatment && errors.treatment && <span className="field-error-text">{errors.treatment}</span>}
         </label>
