@@ -1,13 +1,7 @@
 import type { Metadata } from "next";
-import { Manrope } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 
-const manrope = Manrope({
-  subsets: ["latin"],
-  variable: "--font-manrope",
-  display: "swap",
-});
 
 export async function generateMetadata(): Promise<Metadata> {
   const requestHeaders = await headers();
@@ -41,7 +35,7 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en" className={manrope.variable}>
+    <html lang="en">
       <body>{children}</body>
     </html>
   );

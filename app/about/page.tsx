@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CountUp } from "../client";
 import {
   AppointmentSection,
   Eyebrow,
@@ -129,7 +130,7 @@ export default function AboutPage() {
 <section className="section capabilities-section">
           <div className="shell">
             <SectionHeading eyebrow="OUR CAPABILITIES" title="Expertise Backed by" accent="Advanced Technology" />
-            <img className="wide-equipment" src="/assets/wide-phoropter.webp" alt="Eye diagnostic technology" />
+            <img className="wide-equipment" src="/assets/outcombg.png" alt="Advanced ophthalmology technology" />
             <FeatureGrid columns={4} items={[
               { icon: "♙", title: "Advanced Equipment", text: "State-of-the-art surgical microscopes and diagnostic tools." },
               { icon: "⌁", title: "Precision Diagnostics", text: "OCT, Topography, and biometry systems for accurate analysis." },
@@ -152,7 +153,7 @@ export default function AboutPage() {
         </section>
 
         <section className="impact-band">
-          <div className="shell"><h2>Our Impact in Numbers</h2><p>Two decades of excellence in eye care</p><div><b>25+<small>Years of Service</small></b><b>49999+<small>Successful Procedures</small></b><b>15+<small>Expert Ophthalmologists</small></b><b>97%<small>Patient Satisfaction</small></b></div></div>
+          <div className="shell"><h2>Our Impact in Numbers</h2><p>Two decades of excellence in eye care</p><div><b><CountUp value={25} suffix="+" /><small>Years of Service</small></b><b><CountUp value={49999} suffix="+" /><small>Successful Procedures</small></b><b><CountUp value={15} suffix="+" /><small>Expert Ophthalmologists</small></b><b><CountUp value={97} suffix="%" /><small>Patient Satisfaction</small></b></div></div>
         </section>
 
         <section className="section facilities-section">
@@ -165,9 +166,11 @@ export default function AboutPage() {
             </div>
           </div>
         </section>
-        <AppointmentSection />
+        <div className="home-page">
+          <AppointmentSection />
+        </div>
       </main>
-      <Footer />
+      <Footer home />
     </>
   );
 }

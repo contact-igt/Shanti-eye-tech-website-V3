@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { CountUp } from "./client";
 import {
   AppointmentSection,
   Eyebrow,
@@ -62,19 +63,19 @@ export default function Home() {
                   <span className="metric-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10" /><path d="M12 7.5 14.2 11l-2.2 1.5L9.8 11 12 7.5Z" /><path d="M9.5 14.5h5M10.5 17h3" /></svg>
                   </span>
-                  <span className="metric-copy"><b>25+</b><span>Years Excellence</span></span>
+                  <span className="metric-copy"><b><CountUp value={25} suffix="+" /></b><span>Years Excellence</span></span>
                 </div>
                 <div>
                   <span className="metric-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="9" cy="9" r="3" /><path d="M3.5 19c.7-3.1 2.5-4.7 5.5-4.7s4.8 1.6 5.5 4.7" /><path d="M16 7.5c2.6.1 4.1 1.7 4.5 4.2M16.2 14.4c2.4.4 3.7 1.9 4.1 4.6" /></svg>
                   </span>
-                  <span className="metric-copy"><b>50K+</b><span>Happy Patients</span></span>
+                  <span className="metric-copy"><b><CountUp value={50} suffix="K+" /></b><span>Happy Patients</span></span>
                 </div>
                 <div>
                   <span className="metric-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="8" /><path d="M12 7v5l3 2" /></svg>
                   </span>
-                  <span className="metric-copy"><b>24/7</b><span>Emergency Care</span></span>
+                  <span className="metric-copy"><b><CountUp value={24} suffix="/7" /></b><span>Emergency Care</span></span>
                 </div>
               </div>
             </div>
@@ -111,10 +112,10 @@ export default function Home() {
           <div className="shell">
             <SectionHeading eyebrow="TRUSTED BY THOUSANDS" title="Numbers That Speak" accent="Our Excellence" />
             <div className="numbers-grid">
-              <article><span className="number-watermark" aria-hidden="true">25</span><b>25+</b><span>Years of Excellence in Eye Care</span></article>
-              <article><span className="number-watermark" aria-hidden="true">2000</span><b>2000+</b><span>Successful Procedures Completed</span></article>
-              <article><span className="number-watermark" aria-hidden="true">97</span><b>97%</b><span>Patient Satisfaction Rate</span></article>
-              <article><span className="number-watermark" aria-hidden="true">15</span><b>15+</b><span>Expert Ophthalmologists</span></article>
+              <article><span className="number-watermark" aria-hidden="true">25</span><b><CountUp value={25} suffix="+" /></b><span>Years of Excellence in Eye Care</span></article>
+              <article><span className="number-watermark" aria-hidden="true">2000</span><b><CountUp value={2000} suffix="+" /></b><span>Successful Procedures Completed</span></article>
+              <article><span className="number-watermark" aria-hidden="true">97</span><b><CountUp value={97} suffix="%" /></b><span>Patient Satisfaction Rate</span></article>
+              <article><span className="number-watermark" aria-hidden="true">15</span><b><CountUp value={15} suffix="+" /></b><span>Expert Ophthalmologists</span></article>
             </div>
           </div>
         </section>
