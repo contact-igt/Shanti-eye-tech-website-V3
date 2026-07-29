@@ -424,3 +424,42 @@
 /* Shared patient stories responsive cards. */
 @media (max-width: 900px) { .section { padding: 88px 0 100px; } .section :global(.testimonial-carousel-container) { width: min(720px, calc(100% - 40px)); } }
 @media (max-width: 640px) { .section { padding: 72px 0 82px; } .section :global(.testimonial-carousel-container) { width: min(100% - 30px, 520px); } .section :global(.testimonial-grid-wrapper.visible-2), .section :global(.testimonial-grid-wrapper.visible-3) { grid-template-columns: 1fr; gap: 18px; } .section :global(.cataract-testimonial-card) { width: min(100%, 373px); height: 390px; min-height: 390px; margin-inline: auto; } }
+/* Service patient stories: prevent narrow carousel cards on phones. */
+@media (max-width: 640px) {
+  .section :global(.testimonial-grid-wrapper.visible-1),
+  .section :global(.testimonial-grid-wrapper.visible-2),
+  .section :global(.testimonial-grid-wrapper.visible-3) {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) !important;
+    justify-items: center;
+    gap: 0;
+    width: 100%;
+  }
+
+  .section :global(.cataract-testimonial-card) {
+    box-sizing: border-box;
+    width: min(100%, 373px) !important;
+    height: 420px !important;
+    min-height: 420px !important;
+    margin: 0 auto;
+    padding: 32px 28px 28px;
+    border-radius: 18px;
+  }
+
+  .section :global(.testimonial-pin) {
+    top: -7px;
+    left: 50%;
+    width: 15px;
+    height: 15px;
+    transform: translateX(-50%);
+  }
+
+  .section :global(.testimonial-stars) { margin-bottom: 18px; }
+  .section :global(.testimonial-stars img) { width: 16px; height: 16px; }
+  .section :global(.cataract-testimonial-card p) { margin-bottom: 18px; font-size: 15px; line-height: 1.58; }
+  .section :global(.testimonial-carousel-controls) { margin-top: 26px; }
+}
+
+@media (max-width: 380px) {
+  .section :global(.cataract-testimonial-card) { height: 400px !important; min-height: 400px !important; padding: 28px 24px 24px; }
+}
