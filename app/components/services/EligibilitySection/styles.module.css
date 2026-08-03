@@ -1,5 +1,5 @@
 .section {
-  padding: 104px 0;
+  padding: 56px 0 64px;
   background: #f7fbff;
 }
 
@@ -50,7 +50,7 @@
   gap: 14px;
   padding: 14px 18px;
   border-radius: 12px;
-  background: rgba(255,255,255,.82);
+  background: rgba(255, 255, 255, .82);
   color: #344156;
 }
 
@@ -91,7 +91,7 @@
   position: absolute;
   width: 38%;
   border-radius: 18px;
-  box-shadow: 0 16px 34px rgba(32,66,110,.18);
+  box-shadow: 0 16px 34px rgba(32, 66, 110, .18);
 }
 
 .floatImage {
@@ -128,7 +128,9 @@
 }
 
 .cataract {}
+
 .classic {}
+
 .retina {}
 
 
@@ -147,10 +149,10 @@
 }
 
 .classic .floatImage {
-  width: 392px;
-  height: 250px;
-  right: 0;
-  bottom: 28px;
+  width: 480px;
+  height: 310px;
+  right: -40px;
+  bottom: -167px;
   border-radius: 18px;
   object-fit: cover;
 }
@@ -286,10 +288,10 @@
   }
 
   .classic .floatImage {
-    width: 392px;
-    height: 250px;
-    right: 0;
-    bottom: 18px;
+    width: 480px;
+    height: 310px;
+    right: -40px;
+    bottom: -167px;
   }
 
   .classic .ageBadge {
@@ -313,10 +315,10 @@
   }
 
   .classic .floatImage {
-    width: 330px;
-    height: 220px;
-    right: 0;
-    bottom: 18px;
+    width: 350px;
+    height: 240px;
+    right: 39px;
+    bottom: -130px;
   }
 
   .classic .ageBadge {
@@ -797,6 +799,7 @@
   min-height: 600px;
   justify-self: end;
 }
+
 .cataract .copy h2 {
   max-width: 490px;
   font-size: clamp(46px, 3.4vw, 58px);
@@ -832,7 +835,7 @@
   height: 72px;
   border-radius: 8px;
   object-fit: cover;
-  box-shadow: 0 16px 34px rgba(32,66,110,.18);
+  box-shadow: 0 16px 34px rgba(32, 66, 110, .18);
   z-index: 3;
 }
 
@@ -1205,5 +1208,52 @@
 
 
 /* Shared eligibility section tablet/mobile flow. */
-@media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 40px; } .card, .visual, .faqBox { max-width: 100%; } }
-@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); gap: 30px; } .card { min-height: 0; padding: 26px; border-radius: 18px; } .card h3 { font-size: 23px; } .card p, .checks li, .note { font-size: 15px; } .visual { min-height: 280px; } .mainImage { height: 280px; border-radius: 18px; } }
+@media (max-width: 900px) {
+  .shell {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .card,
+  .visual,
+  .faqBox {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0 82px;
+  }
+
+  .shell {
+    width: min(100% - 30px, 520px);
+    gap: 30px;
+  }
+
+  .card {
+    min-height: 0;
+    padding: 26px;
+    border-radius: 18px;
+  }
+
+  .card h3 {
+    font-size: 23px;
+  }
+
+  .card p,
+  .checks li,
+  .note {
+    font-size: 15px;
+  }
+
+  .visual {
+    min-height: 280px;
+  }
+
+  .mainImage {
+    height: 280px;
+    border-radius: 18px;
+  }
+}

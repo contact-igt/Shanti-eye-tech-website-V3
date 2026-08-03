@@ -134,9 +134,9 @@ const cataractLensFeatures = [
   "Typical starting cost (per eye)",
 ];
 const cataractBenefits = [
-  { image: "/assets/cataractbenefit2.png", title: "Improved color perception" },
-  { image: "/assets/cataractbenefit1.png", title: "Clearer, brighter vision" },
-  { image: "/assets/cataractbenefit3.png", title: "Better quality of life" },
+  { image: "/assets/cataract/cataractbenefit2.jpeg", title: "Improved color perception" },
+  { image: "/assets/cataract/cataractbenefit1.jpeg", title: "Clearer, brighter vision" },
+  { image: "/assets/cataract/cataractbenefit3.jpeg", title: "Better quality of life" },
 ];
 const cataractTestimonials = [
   {
@@ -173,11 +173,11 @@ const cataractTestimonials = [
 const serviceBenefitItems: Record<ServiceConfig["kind"], { image: string; title: string; description?: string }[]> = {
   cataract: cataractBenefits,
   lasik: [
-    { image: "/assets/slit-lamp.webp", title: "Quick Recovery Time", description: "Most patients return to normal activities within 24 hours with minimal discomfort." },
-    { image: "/assets/eligibility.webp", title: "Long-Lasting Results", description: "LASIK provides permanent vision correction that can last a lifetime." },
-    { image: "/assets/exam-chair.webp", title: "Improved Quality of Life", description: "Freedom from glasses and contacts opens up new lifestyle possibilities." },
-    { image: "/assets/lasikbenefit4.png", title: "Cost-Effective Solution", description: "Save money long-term by eliminating glasses, contacts, and solutions." },
-    { image: "/assets/lasikbenefit5.png", title: "Enhanced Sports Performance", description: "Participate in activities without worrying about glasses or contacts." },
+    { image: "/assets/lasik/quick_recovery.jpeg", title: "Quick Recovery Time", description: "Most patients return to normal activities within 24 hours with minimal discomfort." },
+    { image: "/assets/lasik/long_lasting.jpeg", title: "Long-Lasting Results", description: "LASIK provides permanent vision correction that can last a lifetime." },
+    { image: "/assets/lasik/vision_journey.jpeg", title: "Improved Quality of Life", description: "Freedom from glasses and contacts opens up new lifestyle possibilities." },
+    { image: "/assets/lasik/improve_quality.jpeg", title: "Cost-Effective Solution", description: "Save money long-term by eliminating glasses, contacts, and solutions." },
+    { image: "/assets/lasik/lasik-eye.webp", title: "Enhanced Sports Performance", description: "Participate in activities without worrying about glasses or contacts." },
   ],
   retina: [
     { image: "/assets/active-life.webp", title: "Maintain an active life" },
@@ -308,7 +308,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
               <h1>{config.title}<br /><span>{config.accent}</span></h1>
               <p>{config.heroText}</p>
                             <div className="hero-buttons">
-                <Link className="button button-primary" href="#appointment">
+                <Link className="button button-primary" href="/contact">
                   <svg className="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
                   {isRetina ? "Book Consultation" : "Start a Consultation"}
                 </Link>
@@ -317,7 +317,35 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                   Check Your Eligibility
                 </Link>
               </div>
-              <div className="hero-metrics"><div><b>{config.metricA}</b><span>{isRetina ? "Retina Expertise" : "Procedures"}</span></div><div><b>{config.metricB}</b><span>Success Rate</span></div><div><b>{config.metricC}</b><span>{isRetina ? "Early Detection" : "Recovery"}</span></div></div>
+              <div className="hero-metrics">
+                <div>
+                  <span className="metric-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 7.5 14.2 11l-2.2 1.5L9.8 11 12 7.5Z" /><path d="M9.5 14.5h5M10.5 17h3" /></svg>
+                  </span>
+                  <span className="metric-copy">
+                    <b style={{ fontSize: "22px", fontWeight: 800, color: "#0f172a", lineHeight: 1.1, display: "block" }}>{config.metricA}</b>
+                    <span style={{ fontSize: "13px", fontWeight: 700, color: "#334155", display: "block", marginTop: "2px" }}>{isRetina ? "Retina Expertise" : "Procedures"}</span>
+                  </span>
+                </div>
+                <div>
+                  <span className="metric-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="9" cy="9" r="3" /><path d="M3.5 19c.7-3.1 2.5-4.7 5.5-4.7s4.8 1.6 5.5 4.7" /><path d="M16 7.5c2.6.1 4.1 1.7 4.5 4.2M16.2 14.4c2.4.4 3.7 1.9 4.1 4.6" /></svg>
+                  </span>
+                  <span className="metric-copy">
+                    <b style={{ fontSize: "22px", fontWeight: 800, color: "#0f172a", lineHeight: 1.1, display: "block" }}>{config.metricB}</b>
+                    <span style={{ fontSize: "13px", fontWeight: 700, color: "#334155", display: "block", marginTop: "2px" }}>Success Rate</span>
+                  </span>
+                </div>
+                <div>
+                  <span className="metric-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><circle cx="12" cy="12" r="10" /><path d="M12 6v6l4 2" /></svg>
+                  </span>
+                  <span className="metric-copy">
+                    <b style={{ fontSize: "22px", fontWeight: 800, color: "#0f172a", lineHeight: 1.1, display: "block" }}>{config.metricC}</b>
+                    <span style={{ fontSize: "13px", fontWeight: 700, color: "#334155", display: "block", marginTop: "2px" }}>{isRetina ? "Early Detection" : "Recovery"}</span>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
@@ -355,8 +383,8 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
               </div>
               <div className="lasik-visual-container">
                 <div className="lasik-top-images">
-                  <img className="lasik-img-patient" src="/assets/whatlasik1.png" alt="Patient undergoing LASIK laser eye procedure" />
-                  <img className="lasik-img-room" src="/assets/whatlasik2.png" alt="Modern LASIK procedure room" />
+                  <img className="lasik-img-patient" src="/assets/lasik/lasik-procedure.webp" alt="Patient undergoing LASIK laser eye procedure" />
+                  <img className="lasik-img-room" src="/assets/lasik/lasik-machine.webp" alt="Modern LASIK procedure room" />
                 </div>
                 <div className="lasik-bottom-image">
                   <img className="lasik-img-eye" src="/assets/whatlasik3.png" alt="Close-up LASIK precision laser procedure" />
@@ -396,15 +424,15 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
             </div>
             {config.kind === "cataract" ? (
               <div className="eligibility-image consider-surgery-visual">
-                <img className="consider-main" src="/assets/consider_surgery2.png" alt="Cataract consultation room" />
-                <img className="consider-eye consider-eye-cloudy" src="/assets/consider_surgery1.png" alt="Cloudy cataract eye" />
-                <img className="consider-eye consider-eye-clear" src="/assets/consider_surgery3.png" alt="Eye after evaluation" />
+                <img className="consider-main" src="/assets/cataract/consider_surgery2.jpeg" alt="Cataract consultation room" />
+                <img className="consider-eye consider-eye-cloudy" src="/assets/cataract/consider_surgery1.jpeg" alt="Cloudy cataract eye" />
+                <img className="consider-eye consider-eye-clear" src="/assets/cataract/consider_surgery3.jpeg" alt="Eye after evaluation" />
                 <span><small>Common Age</small>60+<small>Years Old</small></span>
               </div>
             ) : config.kind === "lasik" ? (
               <div className="eligibility-image lasik-eligibility-visual">
-                <img className="lasik-right-primary" src="/assets/lasik_right1.png" alt="LASIK candidate vision check" />
-                <img className="lasik-right-secondary" src="/assets/lasik_right2.png" alt="LASIK eye examination consultation" />
+                <img className="lasik-right-primary" src="/assets/lasik/lasik_right.jpeg" alt="LASIK candidate vision check" />
+                <img className="lasik-right-secondary" src="/assets/lasik/lasikright2.jpeg" alt="LASIK eye examination consultation" />
                 <span>18-45<small>Ideal Age Range</small></span>
               </div>
             ) : (
@@ -449,7 +477,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     {option.bullets ? (
                       <ul>{option.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
                     ) : (
-                      config.kind !== "lasik" && <Link href="#appointment">Book Consultation →</Link>
+                      config.kind !== "lasik" && <Link href="/contact">Book Consultation →</Link>
                     )}
                   </div>
                 </article>
@@ -501,7 +529,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     <span>The &quot;best&quot; lens is the one that matches your eyes, your prescription, and how you live your life. We do a detailed evaluation before recommending anything - and we will always explain why.</span>
                   </div>
                 </div>
-                <Link className="button button-primary center-button" href="#appointment">Get a Personalised Lens Recommendation &rarr;</Link>
+                <Link className="button button-primary center-button" href="/contact">Get a Personalised Lens Recommendation &rarr;</Link>
               </div>
             </section>
           ) : (
@@ -549,7 +577,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     <span>The best procedure is not the most popular one. The best procedure is the one that is safest for your eyes, your cornea, your power, and your lifestyle. That is why we do a detailed evaluation before recommending anything.</span>
                   </div>
                 </div>
-                <Link className="button button-primary center-button lasik-recommendation-button" href="#appointment"><span>Get My Personalised Vision Correction Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
+                <Link className="button button-primary center-button lasik-recommendation-button" href="/contact"><span>Get My Personalised Vision Correction Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
               </div>
             </section>
           )
@@ -567,7 +595,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
           </div>
         </section>
         <FAQ title={`${config.serviceName}`} accent="FAQs" service={config.serviceName.toLowerCase()} />
-        <AppointmentSection withForm={false} kind={config.kind} image={config.kind === "lasik" ? "/assets/slit-lamp.webp" : config.kind === "retina" ? "/assets/retina-chair.webp" : "/assets/cataract-chair.webp"} />
+        <AppointmentSection withForm={false} kind={config.kind} image={config.kind === "lasik" ? "/assets/lasik/vision_journey.jpeg" : config.kind === "retina" ? "/assets/retina-chair.webp" : "/assets/cataract-chair.webp"} />
       </main>
       <Footer home />
     </>

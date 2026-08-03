@@ -34,7 +34,7 @@ export function TreatmentOptions({ content, kind }: { content: TreatmentOptionsC
                 {option.bullets ? (
                   <ul>{option.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
                 ) : null}
-                <Link href="#appointment" className={styles.ctaLink}>
+                <Link href="/contact" className={styles.ctaLink}>
                   Book Consultation <img src="/assets/arrow_green.png" alt="" className={styles.ctaArrow} />
                 </Link>
               </div>

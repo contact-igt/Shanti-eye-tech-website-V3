@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { ArrowRight, Award, Users, Clock, Calendar, Eye, Stethoscope, ShieldCheck, Star, Target } from "lucide-react";
 import { CountUp } from "./client";
 import {
   AppointmentSection,
@@ -20,10 +21,10 @@ const services = [
 ];
 
 const technology = [
-  { icon: "â™™", title: "Zeiss Ophthalmic Systems", text: "Premium German-engineered surgical microscopes for precision in every procedure." },
-  { icon: "âŒ—", title: "OCT Imaging", text: "Advanced Optical Coherence Tomography for detailed retinal and anterior segment analysis." },
-  { icon: "â—Ž", title: "Femto Laser Technology", text: "Blade-free cataract and LASIK surgeries with unmatched accuracy and safety." },
-  { icon: "âŒ", title: "Digital Diagnostics", text: "Comprehensive automated perimetry, topography, and biometry systems." },
+  { icon: "♙", title: "Zeiss Ophthalmic Systems", text: "Premium German-engineered surgical microscopes for precision in every procedure." },
+  { icon: "⌗", title: "OCT Imaging", text: "Advanced Optical Coherence Tomography for detailed retinal and anterior segment analysis." },
+  { icon: "◎", title: "Femto Laser Technology", text: "Blade-free cataract and LASIK surgeries with unmatched accuracy and safety." },
+  { icon: "⌏", title: "Digital Diagnostics", text: "Comprehensive automated perimetry, topography, and biometry systems." },
 ];
 
 function ServiceIcon({ index }: { index: number }) {
@@ -52,46 +53,76 @@ export default function Home() {
           <div className="shell hero-layout">
             <div className="hero-copy">
               <Eyebrow>ADVANCED EYE CARE</Eyebrow>
-              <h1>Your Vision,<br /><span>Our<br />Precision</span></h1>
+              <h1>Your Vision,<br /><span>Our Precision</span></h1>
               <p>Experience world-class ophthalmology care with cutting-edge technology and compassionate specialists dedicated to preserving and enhancing your vision.</p>
               <div className="hero-buttons">
-                <Link className="button button-primary" href="#appointment">Book Consultation &rarr;</Link>
-                <Link className="button button-outline" href="#services">Explore Services &rarr;</Link>
+                <Link className="button button-primary" href="/contact" style={{ display: "flex", alignItems: "center", gap: "6px" }}>Book Consultation <ArrowRight size={18} /></Link>
+                <a className="button button-outline" href="tel:+919179191939" style={{ display: "flex", alignItems: "center", gap: "6px" }}>Call Now <ArrowRight size={18} /></a>
               </div>
               <div className="hero-metrics" aria-label="Shanthi EyeTech highlights">
                 <div>
                   <span className="metric-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="10" /><path d="M12 7.5 14.2 11l-2.2 1.5L9.8 11 12 7.5Z" /><path d="M9.5 14.5h5M10.5 17h3" /></svg>
+                    <Award size={20} strokeWidth={2} color="#22c44a" />
                   </span>
-                  <span className="metric-copy"><b><CountUp value={25} suffix="+" /></b><span>Years Excellence</span></span>
+                  <span className="metric-copy">
+                    <b>
+                      <CountUp value={25} suffix="+" />
+                    </b>
+                    <span>Years Excellence</span>
+                  </span>
                 </div>
                 <div>
                   <span className="metric-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="9" cy="9" r="3" /><path d="M3.5 19c.7-3.1 2.5-4.7 5.5-4.7s4.8 1.6 5.5 4.7" /><path d="M16 7.5c2.6.1 4.1 1.7 4.5 4.2M16.2 14.4c2.4.4 3.7 1.9 4.1 4.6" /></svg>
+                    <Users size={20} strokeWidth={2} color="#22c44a" />
                   </span>
-                  <span className="metric-copy"><b><CountUp value={50} suffix="K+" /></b><span>Happy Patients</span></span>
+                  <span className="metric-copy">
+                    <b>
+                      <CountUp value={50} suffix="K+" />
+                    </b>
+                    <span>Happy Patients</span>
+                  </span>
                 </div>
                 <div>
                   <span className="metric-icon" aria-hidden="true">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8"><circle cx="12" cy="12" r="8" /><path d="M12 7v5l3 2" /></svg>
+                    <Clock size={20} strokeWidth={2} color="#22c44a" />
                   </span>
-                  <span className="metric-copy"><b><CountUp value={24} suffix="/7" /></b><span>Emergency Care</span></span>
+                  <span className="metric-copy">
+                    <b>
+                      <CountUp value={24} suffix="/7" />
+                    </b>
+                    <span>Emergency Care</span>
+                  </span>
                 </div>
               </div>
             </div>
           </div>
+          <div className="hero-image">
+            <img src="/assets/solsanki_bg.png" alt="" className="hero-doctor-bg" />
+            <img src="/assets/solanski.png" alt="Dr. Solanki Specialist" className="hero-doctor-img" />
+          </div>
         </section>
 
-        <section className="trust-strip" aria-label="Shanthi EyeTech credentials">
-          <ul className="trust-strip-list">
-            <li><span aria-hidden="true">&#9733;</span>Best Eye Hospital 2024</li>
-            <li><span aria-hidden="true">&#10003;</span>NABH Accredited</li>
-            <li><span aria-hidden="true">&#10022;</span>25+ Years Excellence</li>
-            <li><span aria-hidden="true">&#9733;</span>98% Success Rate</li>
-            <li><span aria-hidden="true">&#9678;</span>State-of-the-Art Technology</li>
-            <li><span aria-hidden="true">&#10022;</span>ISO 9001:2015 Certified</li>
-          </ul>
+        <section className="trust-strip" aria-hidden="true">
+          <div className="trust-strip-marquee">
+            <ul className="trust-strip-list">
+              <li><span><Award size={20} /></span> Best Eye Hospital 2024</li>
+              <li><span><ShieldCheck size={20} /></span> NABH Accredited</li>
+              <li><span><Award size={20} /></span> 25+ Years Excellence</li>
+              <li><span><Star size={20} /></span> 98% Success Rate</li>
+              <li><span><Target size={20} /></span> State-of-the-Art Technology</li>
+              <li><span><ShieldCheck size={20} /></span> ISO 9001:2015 Certified</li>
+            </ul>
+            <ul className="trust-strip-list">
+              <li><span><Award size={20} /></span> Best Eye Hospital 2024</li>
+              <li><span><ShieldCheck size={20} /></span> NABH Accredited</li>
+              <li><span><Award size={20} /></span> 25+ Years Excellence</li>
+              <li><span><Star size={20} /></span> 98% Success Rate</li>
+              <li><span><Target size={20} /></span> State-of-the-Art Technology</li>
+              <li><span><ShieldCheck size={20} /></span> ISO 9001:2015 Certified</li>
+            </ul>
+          </div>
         </section>
+
         <section className="section numbers-section">
           <svg className="numbers-world-map" viewBox="0 0 1440 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true" focusable="false">
             <defs>
@@ -139,15 +170,14 @@ export default function Home() {
             </div>
             <div className="service-grid">
               {services.map(([number, title, text, href], index) => (
-                <article className={index === 2 ? "service-card featured" : "service-card"} key={title}>
+                <article className="service-card" key={title}>
                   <span className="service-number">{number}</span>
                   <span className={`service-icon service-icon-${index + 1}`} aria-hidden="true"><ServiceIcon index={index} /></span>
                   <h3>{title}</h3><p>{text}</p>
-                  <Link href={href}>Learn More <span aria-hidden="true">&rarr;</span></Link>
+                  <Link href={href} style={{ display: "flex", alignItems: "center", gap: "6px" }}>Learn More <ArrowRight size={16} aria-hidden="true" /></Link>
                 </article>
               ))}
-              <Link className="button button-outline service-cta" href="/services/lasik">Explore Services &rarr;</Link>
-
+              {/* <Link className="button button-outline service-cta" href="/services/lasik" style={{ display: "flex", alignItems: "center", gap: "6px" }}>Explore Services <ArrowRight size={18} /></Link> */}
             </div>
           </div>
         </section>
@@ -161,7 +191,7 @@ export default function Home() {
               body="We invest in the latest diagnostic and surgical technology to ensure the highest standards of precision and patient safety."
             />
             <FeatureGrid items={technology} columns={2} showNumbers />
-            <img className="wide-equipment" src="/assets/outcombg.png" alt="Advanced technology outcomes" />
+            <img className="wide-equipment" src="/assets/home/outcome.jpeg" alt="Advanced technology outcomes" />
           </div>
         </section>
 
@@ -169,8 +199,8 @@ export default function Home() {
           <div className="shell doctor-layout">
             <span className="doctor-number" aria-hidden="true">01</span>
             <div className="doctor-photo">
-              <span>Available Today</span>
-              <img src="/assets/doctor-profile.webp" alt="Dr. Amit N Solanki" />
+              <span><span className="green-dot"></span>Available Today</span>
+              <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
               <small>Medical Director of Shanthi Eye Care</small>
             </div>
             <div className="doctor-copy">
@@ -179,8 +209,8 @@ export default function Home() {
               <h4>Chief Ophthalmologist &amp; Medical Director</h4>
               <p>With over 25 years of experience in advanced cataract and refractive surgery, Dr. Solanki is recognized for his expertise in premium lens implants and complex anterior segment procedures.</p>
               <ul><li>MBBS, MS Ophthalmology</li><li>FRCS (Glasgow), Fellowship in Phaco &amp; Refractive Surgery</li><li>Former Consultant - All India Institute of Medical Sciences</li></ul>
-              <div className="doctor-stats"><div><DoctorStatIcon type="award" /><b>15+</b><span>Awards &amp; Recognition</span></div><div><DoctorStatIcon type="cap" /><b>FRCS</b><span>Fellowship Royal College</span></div><div><DoctorStatIcon type="people" /><b>25K+</b><span>Surgeries Performed</span></div></div>
-              <div className="hero-buttons"><Link className="button green-button" href="#appointment"><svg className="doctor-action-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16" /></svg>Book Consultation &rarr;</Link><Link className="button button-outline" href="/about#leadership">View Full Profile</Link></div>
+              <div className="doctor-stats"><div><DoctorStatIcon type="award" /><b><CountUp value={15} suffix="+" /></b><span>Awards &amp; Recognition</span></div><div><DoctorStatIcon type="cap" /><b>FRCS</b><span>Fellowship Royal College</span></div><div><DoctorStatIcon type="people" /><b><CountUp value={25} suffix="K+" /></b><span>Surgeries Performed</span></div></div>
+              <div className="hero-buttons"><Link className="button green-button" href="/contact" style={{ display: "flex", alignItems: "center", gap: "6px" }}><svg className="doctor-action-icon" viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2" /><path d="M8 3v4M16 3v4M4 10h16" /></svg>Book Consultation <ArrowRight size={18} /></Link><Link className="button button-outline" href="/about#leadership">View Full Profile</Link></div>
             </div>
           </div>
         </section>
@@ -199,7 +229,7 @@ export default function Home() {
               { icon: "â™¢", title: "Proven Excellence", text: "With over 50,000 successful procedures and 98% patient satisfaction, our track record speaks to our commitment to exceptional outcomes." },
               { icon: "âœ¦", title: "Innovation & Research", text: "We stay at the forefront of ophthalmology through continuous training, research participation, and adoption of cutting-edge technologies." },
             ]} />
-            <Link className="button button-primary center-button" href="#appointment">Experience the Difference &rarr;</Link>
+            <Link className="button button-primary center-button" href="/contact" style={{ display: "flex", alignItems: "center", gap: "6px", justifyContent: "center" }}>Experience the Difference <ArrowRight size={18} /></Link>
           </div>
         </section>
 

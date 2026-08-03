@@ -1,5 +1,5 @@
 .section {
-  padding: 108px 0 118px;
+  padding: 56px 0 64px;
   color: #fff;
   background: linear-gradient(135deg, #0e73eb 0%, #00bced 100%);
   overflow: hidden;
@@ -26,7 +26,7 @@
 }
 
 .copy p {
-  color: rgba(255,255,255,.86);
+  color: rgba(255, 255, 255, .86);
   font-size: 17px;
 }
 
@@ -59,7 +59,7 @@
 
 .ghostButton {
   color: #fff;
-  border: 1.5px solid rgba(255,255,255,.85);
+  border: 1.5px solid rgba(255, 255, 255, .85);
 }
 
 .check {
@@ -74,7 +74,7 @@
   display: grid;
   place-items: center;
   border-radius: 50%;
-  background: rgba(255,255,255,.18);
+  background: rgba(255, 255, 255, .18);
 }
 
 .check strong,
@@ -83,7 +83,7 @@
 }
 
 .check small {
-  color: rgba(255,255,255,.78);
+  color: rgba(255, 255, 255, .78);
 }
 
 .image {
@@ -148,7 +148,9 @@
 }
 
 .cataract {}
+
 .classic {}
+
 .retina {}
 
 
@@ -166,11 +168,64 @@
   object-fit: contain;
 }
 
-.lightButton > img:first-child,
-.ghostButton > img:first-child {
+.lightButton>img:first-child,
+.ghostButton>img:first-child {
   margin-right: 2px;
 }
 
 /* Shared appointment CTA mobile flow. */
-@media (max-width: 900px) { .section { padding: 88px 0 100px; } .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 42px; } .copy { max-width: 560px; } .image { width: min(100%, 560px); } }
-@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); gap: 32px; } .copy h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); line-height: 1.1; } .copy p { font-size: 15px; } .actions { gap: 10px; margin-top: 26px; } .lightButton, .ghostButton { min-height: 50px; height: 50px; font-size: 14px; } .image img { height: 300px; } }
+@media (max-width: 900px) {
+  .section {
+    padding: 88px 0 100px;
+  }
+
+  .shell {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .copy {
+    max-width: 560px;
+  }
+
+  .image {
+    width: min(100%, 560px);
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0 82px;
+  }
+
+  .shell {
+    width: min(100% - 30px, 520px);
+    gap: 32px;
+  }
+
+  .copy h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    line-height: 1.1;
+  }
+
+  .copy p {
+    font-size: 15px;
+  }
+
+  .actions {
+    gap: 10px;
+    margin-top: 26px;
+  }
+
+  .lightButton,
+  .ghostButton {
+    min-height: 50px;
+    height: 50px;
+    font-size: 14px;
+  }
+
+  .image img {
+    height: 300px;
+  }
+}

@@ -1,5 +1,5 @@
 .section {
-  padding: 108px 0 118px;
+  padding: 56px 0 64px;
   background: #fff;
 }
 
@@ -330,4 +330,4 @@
 
 /* Shared benefits carousel mobile sizing. */
 @media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); } .carousel { min-height: 400px; } .track { grid-template-columns: minmax(0, 1fr); width: min(500px, calc(100% - 100px)); } .side { display: none; } .active { height: 360px; } }
-@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); } .carousel { min-height: 340px; } .track { width: calc(100% - 64px); } .card, .active { height: 320px; border-radius: 16px; } .card h3, .active h3 { top: 22px; font-size: 22px; } .card p, .active p { right: 20px; bottom: 20px; left: 20px; font-size: 14px; } .arrow { width: 42px; height: 42px; } .prev { left: 0; } .next { right: 0; } }
+@media (max-width: 640px) { .section { padding: 36px 0 42px; } .shell { width: min(100% - 30px, 520px); } .carousel { min-height: 340px; } .track { width: calc(100% - 64px); } .card, .active { height: 320px; border-radius: 16px; } .card h3, .active h3 { top: 22px; font-size: 22px; } .card p, .active p { right: 20px; bottom: 20px; left: 20px; font-size: 14px; } .arrow { width: 42px; height: 42px; } .prev { left: 0; } .next { right: 0; } }

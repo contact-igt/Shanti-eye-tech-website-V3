@@ -13,7 +13,7 @@ export function FAQSection({ content, kind }: { content: FAQContent; kind: Servi
           <h3>{content.cardTitle}</h3>
           <p>{content.cardText}</p>
           <div className={styles.actions}>
-            <Link className={styles.primary} href="#appointment">Schedule Consultation</Link>
+            <Link className={styles.primary} href="/contact">Schedule Consultation</Link>
             <a className={styles.outline} href="tel:+919179191939">Call Us Now</a>
           </div>
         </div>
