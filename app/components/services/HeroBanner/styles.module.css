@@ -1,5 +1,5 @@
 .section {
-  min-height: 760px;
+  min-height: 600px;
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -13,14 +13,14 @@
 }
 
 .shell {
-  width: min(1120px, calc(100% - 44px));
-  min-height: 720px;
+  width: min(1180px, calc(100% - 64px));
+  min-height: 520px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
   display: flex;
   align-items: center;
-  padding: 48px 0 60px;
+  padding: 36px 0 48px;
 }
 
 .copy {
@@ -237,27 +237,28 @@
 /* Match service heroes to the homepage hero alignment and rhythm. */
 @media (min-width: 901px) {
   .section {
-    min-height: 800px;
-    background-position: center right;
+    min-height: 680px;
+    background-position: 100% right;
   }
 
   .shell {
     width: min(1324px, calc(100% - 64px));
-    min-height: 800px;
+    min-height: 630px;
     align-items: flex-start;
-    padding: 80px 0 40px;
+    padding: 60px 0 48px;
   }
 
   .copy {
+    margin-top: 90px;
     width: min(620px, 50%);
   }
 
   .copy h1 {
     max-width: 620px;
-    margin: 0 0 32px;
-    font-size: 84px;
-    line-height: 1;
-    letter-spacing: -.055em;
+    margin: 0 0 28px;
+    font-size: var(--font-h1);
+    line-height: 1.05;
+    letter-spacing: -.03em;
   }
 
   .copy p {
@@ -294,17 +295,17 @@
 
 @media (max-width: 1200px) and (min-width: 901px) {
   .section {
-    min-height: 740px;
+    min-height: 600px;
   }
 
   .shell {
     width: min(1040px, calc(100% - 52px));
-    min-height: 740px;
-    padding-top: 68px;
+    min-height: 600px;
+    padding-top: 52px;
   }
 
   .copy h1 {
-    font-size: 72px;
+    font-size: clamp(2.4rem, 3.8vw, 3.1rem);
   }
 
   .copy p {
@@ -324,9 +325,9 @@
 @media (max-width: 900px) {
   .shell {
     width: min(720px, calc(100% - 40px));
-    min-height: 700px;
+    min-height: 560px;
     align-items: flex-start;
-    padding: 62px 0 40px;
+    padding: 50px 0 36px;
   }
 
   .copy {
@@ -335,8 +336,8 @@
 
   .copy h1 {
     margin-bottom: 24px;
-    font-size: 62px;
-    line-height: .98;
+    font-size: clamp(2.1rem, 4vw, 2.6rem);
+    line-height: 1.05;
   }
 
   .copy p {
@@ -352,8 +353,8 @@
 @media (max-width: 640px) {
   .shell {
     width: min(100% - 30px, 520px);
-    min-height: 720px;
-    padding: 50px 0 36px;
+    min-height: 520px;
+    padding: 44px 0 32px;
   }
 
   .copy h1 {
@@ -379,9 +380,9 @@
 }
 /* Shared service hero mobile alignment. */
 @media (max-width: 640px) {
-  .section { min-height: 700px; background-position: 68% center; }
+  .section { min-height: 520px; background-position: 68% center; }
   .overlay { background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.91) 50%, rgba(255,255,255,.22) 100%); }
-  .shell { display: block; min-height: 700px; width: min(100% - 30px, 520px); padding: 48px 0 38px; }
+  .shell { display: block; min-height: 520px; width: min(100% - 30px, 520px); padding: 44px 0 32px; }
   .copy { width: 100%; max-width: 365px; }
   .copy h1 { margin: 18px 0; font-size: clamp(2.7rem, 12.5vw, 3.6rem); line-height: .98; }
   .copy p { font-size: 15px; line-height: 1.52; }
@@ -391,4 +392,111 @@
   .metrics div { min-width: 0; grid-template-columns: 20px minmax(0, 1fr); column-gap: 7px; }
   .metrics b { font-size: 19px; }
   .metrics span { font-size: 10px; }
+}
+
+/* ============================================================
+   SERVICE HERO BANNER — 992px & BELOW HEIGHT REDUCTION & VISIBILITY
+   ============================================================ */
+@media (max-width: 992px) {
+  .section {
+    position: relative !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: auto !important;
+    background-position: right center !important;
+    background-size: cover !important;
+    background-repeat: no-repeat !important;
+    background-color: #ffffff !important;
+  }
+
+  .overlay {
+    display: block !important;
+    position: absolute !important;
+    inset: 0 !important;
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0.95) 45%, rgba(255, 255, 255, 0.55) 75%, rgba(255, 255, 255, 0.2) 100%) !important;
+    z-index: 1 !important;
+    pointer-events: none !important;
+  }
+
+  .shell {
+    position: relative !important;
+    z-index: 2 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    min-height: auto !important;
+    padding-top: 140px !important;
+    padding-bottom: 50px !important;
+    width: min(1120px, calc(100% - 36px)) !important;
+    max-width: 100% !important;
+    margin-inline: auto !important;
+    box-sizing: border-box !important;
+  }
+
+  .copy {
+    width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 100% !important;
+    margin-top: 0 !important;
+  }
+
+  .copy h1 {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: clamp(2rem, 4.5vw, 2.6rem) !important;
+    line-height: 1.08 !important;
+    margin: 16px 0 20px !important;
+    color: #0f172a !important;
+  }
+
+  .copy p {
+    width: 100% !important;
+    max-width: 100% !important;
+    font-size: 15px !important;
+    line-height: 1.55 !important;
+    color: #334155 !important;
+    font-weight: 500 !important;
+  }
+
+  .actions {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 12px !important;
+    margin: 24px 0 !important;
+  }
+
+  .metrics {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px !important;
+    margin-top: 16px !important;
+  }
+
+  .metrics b {
+    color: #0f172a !important;
+    font-weight: 800 !important;
+  }
+
+  .metrics span {
+    color: #334155 !important;
+    font-weight: 600 !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .section {
+    background-position: 70% center !important;
+  }
+
+  .overlay {
+    background: linear-gradient(180deg, #ffffff 0%, rgba(255, 255, 255, 0.95) 55%, rgba(255, 255, 255, 0.5) 100%) !important;
+  }
+
+  .shell {
+    padding-top: 130px !important;
+    padding-bottom: 50px !important;
+  }
 }

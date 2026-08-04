@@ -13,10 +13,10 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
     const riskCheck = content.checks[4];
 
     const defaultWarningImages = [
-      { image: "/assets/blur_vision.png", label: "Blurred Vision" },
-      { image: "/assets/dark_spots.png", label: "Dark Spots" },
-      { image: "/assets/low_vision.png", label: "Low Light" },
-      { image: "/assets/side_vision.png", label: "Side Vision" },
+      { image: "/assets/retina/low-light.webp", label: "Blurred Vision" },
+      { image: "/assets/retina/dark_spot.jpeg", label: "Dark Spots" },
+      { image: "/assets/retina/low_vision.jpeg", label: "Low Light" },
+      { image: "/assets/retina/side_vision.jpeg", label: "Side Vision" },
     ];
     const warningImages = content.warningImages && content.warningImages.length > 0 ? content.warningImages : defaultWarningImages;
 
@@ -90,16 +90,16 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
         <div className={styles.visual}>
           {kind === "cataract" ? (
             <>
-              <img className={`${styles.mainImage} ${styles.cataractMainImage}`} src="/assets/consider_surgery_right.png" alt="Cataract surgery consultation room" />
-              <img className={`${styles.eyeOne} ${styles.cataractEyeOne}`} src="/assets/consider_surgery1.png" alt="Cloudy cataract eye" />
-              <img className={`${styles.eyeThree} ${styles.cataractEyeThree}`} src="/assets/consider_surgery3.png" alt="Cataract eye close-up" />
-              <img className={`${styles.eyeTwo} ${styles.cataractEyeTwo}`} src="/assets/consider_surgery2.png" alt="Eye after evaluation" />
+              <img className={`${styles.mainImage} ${styles.cataractMainImage}`} src="/assets/cataract/consider_surgery_right.jpeg" alt="Cataract surgery consultation room" />
+              <img className={`${styles.eyeOne} ${styles.cataractEyeOne}`} src="/assets/cataract/consider_surgery1.jpeg" alt="Cloudy cataract eye" />
+              <img className={`${styles.eyeThree} ${styles.cataractEyeThree}`} src="/assets/cataract/consider_surgery3.jpeg" alt="Cataract eye close-up" />
+              <img className={`${styles.eyeTwo} ${styles.cataractEyeTwo}`} src="/assets/cataract/consider_surgery2.jpeg" alt="Eye after evaluation" />
               <span className={styles.cataractAgeBadge}><small>Common Age</small><b>60+</b><em>Years Old</em></span>
             </>
           ) : kind === "classic" ? (
             <>
-              <img className={`${styles.mainImage} ${styles.classicMainImage}`} src="/assets/lasik_right1.png" alt="LASIK candidate vision check" />
-              <img className={styles.floatImage} src="/assets/lasik_right2.png" alt="LASIK eye examination consultation" />
+              <img className={`${styles.mainImage} ${styles.classicMainImage}`} src="/assets/lasik/lasik_right.jpeg" alt="LASIK candidate vision check" />
+              <img className={styles.floatImage} src="/assets/lasik/lasikright2.jpeg" alt="LASIK eye examination consultation" />
               <span className={styles.ageBadge}><b>18-45</b><small>Ideal Age Range</small></span>
             </>
           ) : (

@@ -13,12 +13,14 @@ export function TestimonialCarousel({ items }: { items: TestimonialItem[] }) {
   const [visibleCount, setVisibleCount] = useState(3);
   const [isHovered, setIsHovered] = useState(false);
 
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+
   useEffect(() => {
     function handleResize() {
       const w = window.innerWidth;
-      if (w <= 576) {
+      if (w <= 768) {
         setVisibleCount(1);
-      } else if (w <= 992) {
+      } else if (w <= 1024) {
         setVisibleCount(2);
       } else {
         setVisibleCount(3);
@@ -49,6 +51,22 @@ export function TestimonialCarousel({ items }: { items: TestimonialItem[] }) {
     setCurrentIndex((prev) => (prev + 1) % total);
   };
 
+  const handleTouchStart = (e: React.TouchEvent) => {
+    setTouchStart(e.touches[0].clientX);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart === null) return;
+    const touchEnd = e.changedTouches[0].clientX;
+    const diff = touchStart - touchEnd;
+    if (diff > 50) {
+      goNext();
+    } else if (diff < -50) {
+      goPrev();
+    }
+    setTouchStart(null);
+  };
+
   const visibleItems = [];
   for (let i = 0; i < visibleCount; i++) {
     visibleItems.push(items[(currentIndex + i) % total]);
@@ -60,6 +78,8 @@ export function TestimonialCarousel({ items }: { items: TestimonialItem[] }) {
       aria-label="Patient reviews carousel"
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <div className={`testimonial-grid-wrapper visible-${visibleCount}`}>
         {visibleItems.map((item, idx) => (

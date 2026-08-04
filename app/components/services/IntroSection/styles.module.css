@@ -1,5 +1,5 @@
 .section {
-  padding: 104px 0;
+  padding: 56px 0 64px;
   background: #fff;
 }
 
@@ -42,13 +42,13 @@
   background: linear-gradient(120deg, #22bfd6, #24a7ef);
 }
 
-.callout > span {
+.callout>span {
   width: 34px;
   height: 34px;
   display: grid;
   place-items: center;
   border-radius: 50%;
-  border: 1px solid rgba(255,255,255,.75);
+  border: 1px solid rgba(255, 255, 255, .75);
 }
 
 .callout b {
@@ -57,7 +57,7 @@
 }
 
 .callout small {
-  color: rgba(255,255,255,.86);
+  color: rgba(255, 255, 255, .86);
   font-size: 13px;
 }
 
@@ -150,7 +150,9 @@
 }
 
 .cataract {}
+
 .classic {}
+
 .retina {}
 
 
@@ -222,7 +224,7 @@
   color: #5f6b7c;
 }
 
-.retinaCallout > span {
+.retinaCallout>span {
   display: none;
 }
 
@@ -665,6 +667,7 @@
     font-size: 21px;
   }
 }
+
 /* LASIK intro procedure badge mobile placement */
 @media (max-width: 576px) {
   .classic .badge {
@@ -730,5 +733,52 @@
 
 
 /* Shared intro section tablet/mobile flow. */
-@media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 42px; } .copy { max-width: 620px; } .imageStack, .lasikVisual, .retinaVisual { width: min(100%, 560px); margin-inline: auto; } }
-@media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); gap: 32px; } .copy h2 { font-size: clamp(2.2rem, 10vw, 2.8rem); line-height: 1.12; } .copy p { font-size: 15px; line-height: 1.55; } .callout { padding: 18px; } .imageStack img, .lasikVisual .patient, .retinaVisual img { border-radius: 18px; } }
+@media (max-width: 900px) {
+  .shell {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .copy {
+    max-width: 620px;
+  }
+
+  .imageStack,
+  .lasikVisual,
+  .retinaVisual {
+    width: min(100%, 560px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .section {
+    padding: 72px 0 82px;
+  }
+
+  .shell {
+    width: min(100% - 30px, 520px);
+    gap: 32px;
+  }
+
+  .copy h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+    line-height: 1.12;
+  }
+
+  .copy p {
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .callout {
+    padding: 18px;
+  }
+
+  .imageStack img,
+  .lasikVisual .patient,
+  .retinaVisual img {
+    border-radius: 18px;
+  }
+}

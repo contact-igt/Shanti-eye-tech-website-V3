@@ -1,6 +1,6 @@
 .section {
   position: relative;
-  min-height: 540px;
+  min-height: 680px;
   overflow: hidden;
   background: #ffffff url("/assets/contactbanner_bg.png") left center / cover no-repeat;
 }
@@ -8,7 +8,7 @@
 .shell {
   width: min(1280px, calc(100% - 48px));
   margin: 0 auto;
-  min-height: 540px;
+  min-height: 680px;
   display: flex;
   align-items: center;
   position: relative;
@@ -44,20 +44,20 @@
 .doctorWrap {
   position: absolute;
   top: 0;
-  right: 0;
+  right: -100px;
   bottom: 0;
   width: min(56vw, 900px);
-  height: 540px;
+  height: 680px;
   z-index: 1;
   pointer-events: none;
 }
 
 .clinicImage {
   position: absolute;
-  right: -100px;
+  right: 0;
   bottom: 0;
   width: 100%;
-  height: 390px;
+  height: 420px;
   object-fit: cover;
   border-radius: 60px 0 0 0;
   filter: blur(1px);
@@ -73,14 +73,29 @@
   object-fit: contain;
   object-position: bottom right;
 }
+@media (max-width: 1400px){
+  .copy{
+    margin-left: 25px;
+  }
+}
 
+@media (max-width: 1200px){
+  .doctorWrap {
+    height: 580px;
+    width: min(70vw, 100%);
+}
+.clinicImage{
+  height: 380px;
+  right: -60px;
+}
+}
 @media (min-width: 769px) and (max-width: 992px) {
   .section {
-    min-height: 480px;
+    min-height: 580px;
   }
 
   .shell {
-    min-height: 480px;
+    min-height: 580px;
     display: grid;
     grid-template-columns: 420px 1fr;
     align-items: center;
@@ -105,19 +120,20 @@
   }
 
   .doctorWrap {
-    height: 480px;
+    height: 580px;
     width: min(58vw, 650px);
   }
 
   .clinicImage {
-    height: 340px;
+    height: 350px;
+    right: -10px;
   }
 }
 
 @media (max-width: 768px) {
   .section {
     min-height: auto;
-    padding: 42px 0 0;
+    padding: 140px 0 0;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -156,7 +172,7 @@
     bottom: auto;
     width: 100%;
     max-width: 480px;
-    height: 280px;
+    height: 320px;
     margin: 28px auto 0;
     z-index: 1;
   }
@@ -178,7 +194,7 @@
 
 @media (max-width: 480px) {
   .section {
-    padding-top: 36px;
+    padding-top: 120px;
   }
 
   .shell {

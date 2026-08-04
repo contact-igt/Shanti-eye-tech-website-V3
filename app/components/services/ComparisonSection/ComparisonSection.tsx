@@ -54,7 +54,7 @@ export function ComparisonSection({ content, kind }: { content: ComparisonConten
             <span>{content.noteText}</span>
           </div>
         </div>
-        <Link className={styles.cta} href="#appointment">
+        <Link className={styles.cta} href="/contact">
           <span>{content.cta}</span>
           <img src="/assets/white_arrow.png" alt="" aria-hidden="true" />
         </Link>

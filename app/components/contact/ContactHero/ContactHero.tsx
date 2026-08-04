@@ -14,10 +14,10 @@ export function ContactHero() {
         </div>
       </div>
       <div className={styles.doctorWrap}>
-        <img className={styles.clinicImage} src="/assets/contact-clinic.png" alt="" />
+        <img className={styles.clinicImage} src="/assets/home/contact-clinic.jpeg" alt="" />
         <img
           className={styles.doctorImage}
-          src="/assets/contact-doctor.png"
+          src="/assets/home/contact-doctor.jpeg"
           alt="Shanthi EyeTech doctor beside eye examination equipment"
         />
       </div>

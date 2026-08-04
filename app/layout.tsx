@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { QuickActionButtons } from "./site-components";
+import { GSAPProvider } from "./components/GSAPProvider";
 import "./globals.css";
 
 
@@ -38,8 +39,10 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
   return (
     <html lang="en">
       <body>
-        {children}
-        <QuickActionButtons />
+        <GSAPProvider>
+          {children}
+          <QuickActionButtons />
+        </GSAPProvider>
       </body>
     </html>
   );

@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { Calendar, Phone } from "lucide-react";
 import { CountUp } from "../client";
 import {
   AppointmentSection,
@@ -34,19 +35,19 @@ export default function AboutPage() {
               <Eyebrow>OUR STORY</Eyebrow>
               <h1>Building a<br />Legacy of<br /><span>Visionary Care</span></h1>
               <p>For over two decades, Shanthi EyeTech has been at the forefront of ophthalmology in India, combining clinical excellence with compassionate care to restore and preserve the gift of sight.</p>
-              <div className="hero-buttons"><Link className="button button-primary" href="#appointment">▣ Book Consultation</Link><a className="button button-outline" href="tel:+919179191939">☎ Call Us</a></div>
+              <div className="hero-buttons"><Link className="button button-primary" href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}><Calendar size={18} /> Book Consultation</Link><a className="button button-outline" href="tel:+919179191939" style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}><Phone size={18} /> Call Us</a></div>
             </div>
             <div className="about-hero-photos">
               <img className="main-photo" src="/assets/clinic-lounge.webp" alt="Shanthi EyeTech clinic lounge" />
               <img className="side-photo" src="/assets/clinic-reception.webp" alt="Clinic reception" />
-              <div className="photo-stats"><div><b>25+</b><span>Years</span></div><div><b>50K+</b><span>Patients</span></div><div><b>15+</b><span>Specialists</span></div></div>
+              <div className="photo-stats"><div><b><CountUp value={25} suffix="+" /></b><span>Years</span></div><div><b><CountUp value={50} suffix="K+" /></b><span>Patients</span></div><div><b><CountUp value={15} suffix="+" /></b><span>Specialists</span></div></div>
             </div>
           </div>
         </section>
 
         <section className="section story-section">
           <div className="shell story-layout">
-            <div className="story-image"><img src="/assets/Shanthi EyeTech Facility.png" alt="Modern examination room" /><b><i aria-hidden="true">♡</i><strong>98%</strong><small>Patient Satisfaction</small></b></div>
+            <div className="story-image"><img src="/assets/about/modern.jpeg" alt="Modern examination room" /><b><i aria-hidden="true">♡</i><strong><CountUp value={98} suffix="%" /></strong><small>Patient Satisfaction</small></b></div>
             <div>
               <Eyebrow>WHO WE ARE</Eyebrow>
               <h2>A Vision for<br /><span>Exceptional Eye Care</span></h2>
@@ -73,7 +74,7 @@ export default function AboutPage() {
 
         <section className="section philosophy-section">
           <div className="shell">
-            <SectionHeading eyebrow="OUR PHILOSOPHY" title="Mission, Vision &" accent="Values" />
+            <SectionHeading eyebrow="OUR PHILOSOPHY" title="Mission, Vision &" accent="Values" singleLine />
             <div className="philosophy-grid">
               <article className="philosophy-card philosophy-mission">
                 <span className="philosophy-number" aria-hidden="true">01</span>
@@ -107,22 +108,22 @@ export default function AboutPage() {
             <SectionHeading eyebrow="LEADERSHIP" title="The Visionary Behind" accent="Shanthi EyeTech" />
             <div className="leadership-layout">
               <div className="leadership-photo-wrap">
-                <img src="/assets/doctor-profile.webp" alt="Dr. Amit N Solanki" />
+                <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
                 <span>Founder &amp; Medical Director</span>
               </div>
               <div className="leadership-copy">
                 <h2>Dr. Amit N Solanki</h2>
                 <h4>MBBS, MS, FRCS (Glasgow)</h4>
                 <p>With over 25 years of dedicated service in ophthalmology, Dr. Amit N Solanki is a pioneer in advanced cataract and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanthi EyeTech’s success.</p>
-                <p>After completing his fellowship at the prestigious All India Institute of Medical Sciences and advanced training at Royal College of Surgeons, Glasgow, Dr. Kumar returned to establish a center that would bring world-class eye care to the community.</p>
-                <p>His expertise in premium IOL implants and complex anterior segment procedures has helped restore vision for thousands of patients. Beyond clinical practice, Dr. Kumar is actively involved in training young ophthalmologists and conducting research in phacoemulsification techniques.</p>
+                <p>After completing his fellowship at the prestigious All India Institute of Medical Sciences and advanced training at Royal College of Surgeons, Glasgow, Dr. Solanki returned to establish a center that would bring world-class eye care to the community.</p>
+                <p>His expertise in premium IOL implants and complex anterior segment procedures has helped restore vision for thousands of patients. Beyond clinical practice, Dr. Solanki is actively involved in training young ophthalmologists and conducting research in phacoemulsification techniques.</p>
                 <div className="leadership-stats">
-                  <article><span className="leadership-stat-icon"><LeadershipIcon type="award" /></span><b>15+</b><strong>Awards</strong><small>National Recognition</small></article>
-                  <article><span className="leadership-stat-icon"><LeadershipIcon type="book" /></span><b>50+</b><strong>Papers</strong><small>Published Research</small></article>
-                  <article><span className="leadership-stat-icon"><LeadershipIcon type="users" /></span><b>25K+</b><strong>Surgeries</strong><small>Performed</small></article>
-                  <article><span className="leadership-stat-icon"><LeadershipIcon type="calendar" /></span><b>25+ Years</b><strong>Experience</strong></article>
+                  <article><span className="leadership-stat-icon"><LeadershipIcon type="award" /></span><b><CountUp value={15} suffix="+" /></b><strong>Awards</strong><small>National Recognition</small></article>
+                  <article><span className="leadership-stat-icon"><LeadershipIcon type="book" /></span><b><CountUp value={50} suffix="+" /></b><strong>Papers</strong><small>Published Research</small></article>
+                  <article><span className="leadership-stat-icon"><LeadershipIcon type="users" /></span><b><CountUp value={25} suffix="K+" /></b><strong>Surgeries</strong><small>Performed</small></article>
+                  <article><span className="leadership-stat-icon"><LeadershipIcon type="calendar" /></span><b><CountUp value={25} suffix="+" /> Years</b><strong>Experience</strong></article>
                 </div>
-                <Link className="button button-primary leadership-cta" href="#appointment">Book with Dr. Kumar</Link>
+                <Link className="button button-primary leadership-cta" href="/contact">Book with Dr. Amit N Solanki</Link>
               </div>
             </div>
           </div>
@@ -130,7 +131,7 @@ export default function AboutPage() {
 <section className="section capabilities-section">
           <div className="shell">
             <SectionHeading eyebrow="OUR CAPABILITIES" title="Expertise Backed by" accent="Advanced Technology" />
-            <img className="wide-equipment" src="/assets/outcombg.png" alt="Advanced ophthalmology technology" />
+            <img className="wide-equipment" src="/assets/home/outcome.jpeg" alt="Advanced ophthalmology technology" />
             <FeatureGrid columns={4} items={[
               { icon: "♙", title: "Advanced Equipment", text: "State-of-the-art surgical microscopes and diagnostic tools." },
               { icon: "⌁", title: "Precision Diagnostics", text: "OCT, Topography, and biometry systems for accurate analysis." },
@@ -142,7 +143,7 @@ export default function AboutPage() {
 
         <section className="section soft-section">
           <div className="shell">
-            <SectionHeading eyebrow="WHY CHOOSE US" title="What Sets Us" accent="Apart" />
+            <SectionHeading eyebrow="WHY CHOOSE US" title="What Sets Us" accent="Apart" singleLine />
             <FeatureGrid columns={2} items={[
               { icon: "♡", title: "Patient-Centered Care", text: "Every treatment plan is personalized to your unique needs and lifestyle goals." },
               { icon: "♙", title: "Expert Team", text: "15+ experienced ophthalmologists with specialized training in all subspecialties." },
@@ -160,9 +161,9 @@ export default function AboutPage() {
           <div className="shell">
             <SectionHeading eyebrow="OUR FACILITIES" title="World-Class Infrastructure" accent="For Your Comfort" />
             <div className="facility-grid">
-              <article><img src="/assets/slit-lamp.webp" alt="" /><div><h3>Modern Examination Rooms</h3><p>Comfortable, well-equipped consultation spaces</p></div></article>
-              <article><img src="/assets/clinical-team.webp" alt="" /><div><h3>Reception & Waiting Area</h3><p>Welcoming and calming environment</p></div></article>
-              <article><img src="/assets/phoropter-patient.webp" alt="" /><div><h3>Advanced Diagnostic Lab</h3><p>State-of-the-art equipment for precise diagnosis</p></div></article>
+              <article><img src="/assets/about/modern.jpeg" alt="Modern Examination Rooms" /><div><h3>Modern Examination Rooms</h3><p>Comfortable, well-equipped consultation spaces</p></div></article>
+              <article><img src="/assets/about/waiting_room.jpeg" alt="Reception & Waiting Area" /><div><h3>Reception & Waiting Area</h3><p>Welcoming and calming environment</p></div></article>
+              <article><img src="/assets/about/room.jpeg" alt="Advanced Diagnostic Lab" /><div><h3>Advanced Diagnostic Lab</h3><p>State-of-the-art equipment for precise diagnosis</p></div></article>
             </div>
           </div>
         </section>

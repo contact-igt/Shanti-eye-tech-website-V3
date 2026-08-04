@@ -2,6 +2,7 @@
 
 import { FormEvent, useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
+import { ArrowRight } from "lucide-react";
 import {
   findIpAddress,
   registerContactLead,
@@ -227,14 +228,14 @@ export function AppointmentForm() {
           value={formData.service}
           onChange={(e) => handleChange("service", e.target.value)}
           onBlur={() => handleBlur("service")}
-          className={touched.service && errors.service ? "input-error" : ""}
+          className={`${touched.service && errors.service ? "input-error" : ""} ${!formData.service ? "select-placeholder" : "select-selected"}`}
         >
-          <option value="" disabled>Select a service</option>
-          <option value="Cataract">Cataract</option>
-          <option value="Lasik">Lasik</option>
-          <option value="Pediatric">Pediatric</option>
-          <option value="Glaucoma">Glaucoma</option>
-          <option value="Retina">Retina</option>
+          <option value="" disabled className="option-placeholder">Select a service</option>
+          <option value="Cataract" className="option-item">Cataract</option>
+          <option value="Lasik" className="option-item">Lasik</option>
+          <option value="Pediatric" className="option-item">Pediatric</option>
+          <option value="Glaucoma" className="option-item">Glaucoma</option>
+          <option value="Retina" className="option-item">Retina</option>
         </select>
         {touched.service && errors.service && <span className="field-error-text">{errors.service}</span>}
       </label>
@@ -248,7 +249,7 @@ export function AppointmentForm() {
         />
       </label>
       <button className="button button-primary button-wide" type="submit" disabled={loading}>
-        {loading ? "Submitting..." : sent ? "Appointment Request Sent ✓" : "Confirm Appointment →"}
+        {loading ? "Submitting..." : sent ? "Appointment Request Sent ✓" : <><span>Confirm Appointment</span><ArrowRight size={18} /></>}
       </button>
       {errors.form && <p className="field-error-text" style={{ marginTop: 8 }}>{errors.form}</p>}
       {sent && <p className="form-success">Thank you. Our care team will contact you shortly.</p>}
@@ -386,14 +387,14 @@ export function ContactForm() {
             value={formData.treatment}
             onChange={(e) => handleChange("treatment", e.target.value)}
             onBlur={() => handleBlur("treatment")}
-            className={touched.treatment && errors.treatment ? "input-error" : ""}
+            className={`${touched.treatment && errors.treatment ? "input-error" : ""} ${!formData.treatment ? "select-placeholder" : "select-selected"}`}
           >
-            <option value="" disabled>Select treatment option</option>
-            <option value="Cataract">Cataract</option>
-            <option value="Lasik">Lasik</option>
-            <option value="Pediatric">Pediatric</option>
-            <option value="Glaucoma">Glaucoma</option>
-            <option value="Retina">Retina</option>
+            <option value="" disabled className="option-placeholder">Select treatment option</option>
+            <option value="Cataract" className="option-item">Cataract</option>
+            <option value="Lasik" className="option-item">Lasik</option>
+            <option value="Pediatric" className="option-item">Pediatric</option>
+            <option value="Glaucoma" className="option-item">Glaucoma</option>
+            <option value="Retina" className="option-item">Retina</option>
           </select>
           {touched.treatment && errors.treatment && <span className="field-error-text">{errors.treatment}</span>}
         </label>
