@@ -7,30 +7,36 @@ import { MobileNavDrawer } from "./components/MobileNavDrawer";
 
 export function Header({ active = "" }: { active?: string }) {
   const isServicesPage = active === "services";
-  
+  // const isDoctorsPage = active === "doctors";
+
   return (
     <header className={`site-header ${isServicesPage ? "site-header-services" : "site-header-transparent"}`}>
       <div className="shell nav-wrap">
-        <Link className="brand" href="/" aria-label="Shanthi EyeTech home">
-          <img src="/assets/logo.png" alt="Shanthi EyeTech" />
+        <Link className="brand" href="/" aria-label="Shanti EyeTech home">
+          <img src="/assets/logo.png" alt="Shanti EyeTech" />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
+          <Link className={active === "home" ? "active" : ""} href="/">Home</Link>
           <Link className={active === "about" ? "active" : ""} href="/about">About</Link>
-          <details className="nav-services">
-            <summary className={active === "services" ? "active" : ""}>
-              <span>Services</span>
+          <div className="nav-services">
+            <Link className={`nav-services-trigger ${active === "services" ? "active" : ""}`} href="/services">
+              Treatments
               <svg className="nav-caret" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
                 <path d="m6 9 6 6 6-6" />
               </svg>
-            </summary>
+            </Link>
             <div className="nav-menu">
-              <Link href="/services/lasik">LASIK Surgery</Link>
+              <Link href="/services">Treatments Overview</Link>
               <Link href="/services/cataract">Cataract Surgery</Link>
+              <Link href="/services/lasik">LASIK Surgery</Link>
               <Link href="/services/retina">Retina Care</Link>
+              <Link href="/services/glaucoma">Glaucoma Treatment</Link>
+              <Link href="/services/squint">Squint Treatment</Link>
+              <Link href="/services/keratoconus">Keratoconus Care</Link>
             </div>
-          </details>
-          <Link href="/about#leadership">Doctors</Link>
-          <Link href="/#technology">Technology</Link>
+          </div>
+          <Link className={active === "doctors" ? "active" : ""} href="/doctors">Doctors</Link>
+          <Link className={active === "blogs" ? "active" : ""} href="/blogs">Blog</Link>
           <Link className={active === "contact" ? "active" : ""} href="/contact">Contact</Link>
         </nav>
         <div className="nav-actions">
@@ -135,7 +141,6 @@ export function SectionHeading({
   accent,
   body,
   align = "center",
-  singleLine = false,
 }: {
   eyebrow?: string;
   title: string;
@@ -147,7 +152,7 @@ export function SectionHeading({
   return (
     <div className={`section-heading ${align}`}>
       {eyebrow && <Eyebrow>{eyebrow}</Eyebrow>}
-      <h2>{title} {singleLine ? null : <br className="desktop-only-br" />}<span>{accent}</span></h2>
+      <h2>{title} <span>{accent}</span></h2>
       {body && <p>{body}</p>}
     </div>
   );
@@ -241,7 +246,7 @@ export function Testimonials({
 }) {
   const quotes: TestimonialItem[] = [
     { quote: "Best decision I ever made! I can finally wake up and see clearly without reaching for glasses. The procedure was quick and painless, and Dr. Kumar made me feel completely comfortable throughout.", name: "Priya Sharma", meta: "LASIK Surgery" },
-    { quote: "I was nervous about the surgery, but the team at Shanthi EyeTech was amazing. Within 24 hours, my vision was crystal clear. No more contacts, no more hassle!", name: "Raj Patel", meta: "Blade-Free LASIK" },
+    { quote: "I was nervous about the surgery, but the team at Shanti EyeTech was amazing. Within 24 hours, my vision was crystal clear. No more contacts, no more hassle!", name: "Raj Patel", meta: "Blade-Free LASIK" },
     { quote: "As someone who wore glasses for 20 years, I cannot express how life-changing LASIK has been. The precision and care I received here exceeded all expectations.", name: "Anita Desai", meta: "Custom LASIK" },
   ];
 
@@ -309,22 +314,41 @@ export function AppointmentSection({
   image?: string;
   kind?: string;
 }) {
-  const isModernService = ["cataract", "lasik", "retina"].includes(kind);
-  const serviceLabel = kind === "lasik" ? "LASIK" : kind === "retina" ? "retina care" : "cataract treatment";
+  const isModernService = ["cataract", "lasik", "retina", "glaucoma"].includes(kind);
+  const isOverview = kind === "overview";
+  const serviceLabel = kind === "lasik" ? "LASIK" : kind === "retina" ? "retina care" : kind === "glaucoma" ? "glaucoma care" : "cataract treatment";
   const journeyCopy = kind === "lasik"
     ? "Take the first step toward freedom from glasses. Our experienced team is ready to guide you through safe, precise LASIK treatment."
     : kind === "retina"
       ? "Protect your sight with timely retina evaluation and expert care. Our specialists are ready to guide you through every step."
-      : "Restore your clear vision and rediscover life's precious moments. Our experienced team is ready to guide you through safe, effective cataract treatment.";
+      : kind === "glaucoma"
+        ? "Protect your sight with timely glaucoma screening and long-term monitoring. Our specialists are ready to guide you through every step."
+        : "Restore your clear vision and rediscover life's precious moments. Our experienced team is ready to guide you through safe, effective cataract treatment.";
 
   return (
-    <section className={`appointment-section ${withForm && !isModernService ? "appointment-home-style" : ""} ${isModernService ? "cataract-journey-section" : ""}`} id="appointment">
+    <section className={`appointment-section ${withForm && !isModernService && !isOverview ? "appointment-home-style" : ""} ${isModernService ? "cataract-journey-section" : ""}`} id="appointment">
       <div className={`shell appointment-layout ${isModernService ? "cataract-journey-layout" : ""}`}>
         <div className="appointment-copy">
           <Eyebrow>{isModernService ? "TAKE THE FIRST STEP" : "BOOK NOW"}</Eyebrow>
-          <h2>{withForm ? "Ready to See" : "Start Your"}<br />{withForm ? "the World Clearly?" : "Vision Journey"}</h2>
-          <p>{isModernService ? journeyCopy : "Schedule your consultation today and take the first step towards better vision. Our expert team is ready to provide personalised care."}</p>
-          {withForm ? (
+          <h2>
+            {isOverview
+              ? "Not Sure Which Service You Need?"
+              : withForm
+                ? <>{"Ready to See"}<br />{"the World Clearly?"}</>
+                : <>{"Start Your"}<br />{"Vision Journey"}</>}
+          </h2>
+          <p>{isOverview
+            ? "Start with a comprehensive eye examination and let the clinical team guide you toward the appropriate care."
+            : isModernService
+              ? journeyCopy
+              : "Schedule your consultation today and take the first step towards better vision. Our expert team is ready to provide personalised care."}</p>
+          {isOverview ? (
+            <Link className="button light-button" href="/contact"
+              style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
+              Book an Appointment
+            </Link>
+          ) : withForm ? (
             <ul className="appointment-points">
               <li><span><AppointmentIcon type="clock" /></span><b>Quick Appointments</b><small>Same-day consultations available</small></li>
               <li><span><AppointmentIcon type="people" /></span><b>Expert Specialists</b><small>15+ experienced ophthalmologists</small></li>
@@ -334,11 +358,11 @@ export function AppointmentSection({
             <>
               <div className="cataract-journey-actions">
                 <Link className="button light-button cataract-journey-btn-primary" href="/contact">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
                   Book Consultation <img className="btn-arrow" src="/assets/blue_arrow.png" alt="" aria-hidden="true" />
                 </Link>
                 <a className="button ghost-light cataract-journey-btn-outline" href="tel:+919179191939">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
                   Call: +91 91791 91939
                 </a>
               </div>
@@ -378,11 +402,11 @@ export function Footer({ home = false }: { home?: boolean }) {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/assets/logo.png" alt="Shanthi EyeTech" />
+            <img src="/assets/logo.png" alt="Shanti EyeTech" />
             <p>Providing world-class ophthalmology care with cutting-edge technology and compassionate specialists for over 25 years.</p>
           </div>
-          <div><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/about#leadership">Our Doctors</Link><Link href="/services/lasik">Services</Link><Link href="/#technology">Technology</Link><Link href="/">Blog</Link></div>
-          <div><h4>Services</h4><Link href="/services/cataract">Cataract Surgery</Link><Link href="/services/lasik">LASIK Surgery</Link><Link href="/services/retina">Retina Care</Link><Link href="/services/cataract">Glaucoma Treatment</Link><Link href="/services/retina">Pediatric Care</Link></div>
+          <div><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
+          <div><h4>Services</h4><Link href="/services/cataract">Cataract Surgery</Link><Link href="/services/lasik">LASIK Surgery</Link><Link href="/services/retina">Retina Care</Link><Link href="/services/glaucoma">Glaucoma Treatment</Link><Link href="/services/squint">Squint Treatment</Link><Link href="/services/keratoconus">Keratoconus Care</Link></div>
           <div><h4>Resources</h4><Link href="/contact">Patient Guide</Link><Link href="/contact">Insurance Info</Link><Link href="/contact#faq">FAQs</Link><Link href="/#testimonials">Testimonials</Link><Link href="/contact">Contact Us</Link></div>
           <div className="socials">
             <a href="https://www.facebook.com/shantieyetech" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z" /></svg></a>
@@ -391,14 +415,14 @@ export function Footer({ home = false }: { home?: boolean }) {
           </div>
         </div>
         <div className="footer-contact">
-          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>123 Medical Plaza, Bangalore<br />Karnataka 560001, India</span></div></div>
-          <div className="footer-phone"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 3.5 8.8 3l1.7 4.2-2.1 1.7c1.2 2.5 3.2 4.5 5.7 5.7l1.7-2.1 4.2 1.7-.5 3.3c-.2 1.2-1.2 2-2.4 1.8C9.9 18.4 5.6 14.1 4.7 6.9c-.2-1.2.6-2.2 1.8-2.4Z" /></svg></span><div><b>Call Us</b><span>+91 (123) 456-7890<br />24/7 Emergency</span></div></div>
-          <div className="footer-email"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg></span><div><b>Email Us</b><span>info@shanthieyetech.com</span></div></div>
+          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>Shekhar Central, M1&amp;M2, Palasia Square,<br />Manorama Ganj, Indore, MP 452001</span></div></div>
+          <div className="footer-phone"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 3.5 8.8 3l1.7 4.2-2.1 1.7c1.2 2.5 3.2 4.5 5.7 5.7l1.7-2.1 4.2 1.7-.5 3.3c-.2 1.2-1.2 2-2.4 1.8C9.9 18.4 5.6 14.1 4.7 6.9c-.2-1.2.6-2.2 1.8-2.4Z" /></svg></span><div><b>Call Us</b><span>+91 91791 91939<br />24/7 Emergency</span></div></div>
+          <div className="footer-email"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg></span><div><b>Email Us</b><span>info@shantieyetech.com</span></div></div>
           <div className="footer-hours"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></svg></span><div><b>Working Hours</b><span>Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: 10:00 AM - 4:00 PM</span></div></div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Shanthi EyeTech. All rights reserved.</span>
-          <div><a href="#">Privacy Policy</a><a href="#">Terms of Service</a><a href="#">Cookie Policy</a></div>
+          <span>© 2026 Shanti EyeTech. All rights reserved.</span>
+          <div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-conditions">Terms &amp; Conditions</Link><a href="#">Cookie Policy</a></div>
         </div>
       </div>
     </footer>

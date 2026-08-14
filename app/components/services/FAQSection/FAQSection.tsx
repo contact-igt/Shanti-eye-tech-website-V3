@@ -1,11 +1,14 @@
 "use client";
 
+import { useState } from "react";
 import Link from "next/link";
 import { Eyebrow } from "../common/Eyebrow/Eyebrow";
 import type { FAQContent, ServiceKind } from "@/app/services/types";
 import styles from "./styles.module.css";
 
 export function FAQSection({ content, kind }: { content: FAQContent; kind: ServiceKind }) {
+  const [openIndex, setOpenIndex] = useState<number>(0);
+
   return (
     <section className={`${styles.section} ${styles[kind]}`}>
       <div className={styles.shell}>
@@ -20,11 +23,21 @@ export function FAQSection({ content, kind }: { content: FAQContent; kind: Servi
         <div className={styles.right}>
           <div className={styles.header}>
             <Eyebrow>{content.eyebrow}</Eyebrow>
-            <h2>{content.title} <span>{content.accent}</span></h2>
+            <h2>
+              {content.title}{" "}
+              <span>{content.accent}</span>
+            </h2>
           </div>
           <div className={styles.faqBox}>
             {content.items.map((item, index) => (
-              <details open={index === 0} key={item.question}>
+              <details
+                open={openIndex === index}
+                key={item.question}
+                onToggle={(e) => {
+                  if (e.currentTarget.open) setOpenIndex(index);
+                  else if (openIndex === index) setOpenIndex(-1);
+                }}
+              >
                 <summary><span>{item.question}</span><b aria-hidden="true" /></summary>
                 <p>{item.answer}</p>
               </details>
@@ -35,3 +48,4 @@ export function FAQSection({ content, kind }: { content: FAQContent; kind: Servi
     </section>
   );
 }
+

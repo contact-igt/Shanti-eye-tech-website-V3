@@ -126,8 +126,8 @@ const cardData = [
     id: "email",
     icon: <MailIcon size={22} />,
     title: "Email Us",
-    body: "info@shanthieyetech.com",
-    linkHref: "mailto:info@shanthieyetech.com",
+    body: "info@shantieyetech.com",
+    linkHref: "mailto:info@shantieyetech.com",
     linkLabel: (
       <>
         <MailIcon size={14} /> Send Email

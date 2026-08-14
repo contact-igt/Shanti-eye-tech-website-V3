@@ -1,0 +1,7 @@
+.page {
+  background: #fff;
+}
+
+.bodySection {
+  padding-top: clamp(72px, 8vw, 104px);
+}

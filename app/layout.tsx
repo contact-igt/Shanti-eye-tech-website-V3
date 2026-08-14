@@ -14,21 +14,21 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(origin),
     title: {
-      default: "Shanthi EyeTech | Advanced Eye Care",
-      template: "%s | Shanthi EyeTech",
+      default: "Shanti EyeTech | Advanced Eye Care",
+      template: "%s | Shanti EyeTech",
     },
     description: "World-class ophthalmology care with advanced technology and compassionate specialists in Indore.",
     icons: { icon: "/assets/logo.png", shortcut: "/assets/logo.png" },
     openGraph: {
-      title: "Shanthi EyeTech | Your Vision, Our Precision",
+      title: "Shanti EyeTech | Your Vision, Our Precision",
       description: "Advanced eye care in Indore with compassionate specialists and modern technology.",
       type: "website",
       url: origin,
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Shanthi EyeTech - Your Vision, Our Precision" }],
+      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Shanti EyeTech - Your Vision, Our Precision" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Shanthi EyeTech | Your Vision, Our Precision",
+      title: "Shanti EyeTech | Your Vision, Our Precision",
       description: "Advanced eye care in Indore.",
       images: [`${origin}/og.png`],
     },

@@ -155,6 +155,8 @@
 
 .retina {}
 
+.glaucoma {}
+
 
 /* Service-specific section artwork */
 .section {
@@ -241,6 +243,204 @@
   line-height: 1.55;
 }
 
+.glaucoma {
+  overflow: hidden;
+  padding: 112px 0 116px;
+  background-color: #f5f9fd;
+  background-position: center top;
+  background-size: cover;
+}
+
+.glaucoma .shell {
+  width: min(1180px, calc(100% - 44px));
+  grid-template-columns: 430px 640px;
+  gap: 86px;
+  align-items: center;
+  justify-content: center;
+}
+
+.glaucoma .copy h2 {
+  max-width: 380px;
+  margin: 18px 0 20px;
+  color: #0b1220;
+  font-size: 48px;
+  line-height: 1.04;
+  letter-spacing: -.02em;
+}
+
+.glaucoma .copy h2 span {
+  display: block;
+}
+
+.glaucoma .copy p {
+  max-width: 480px;
+  margin: 0 0 22px;
+  color: #66758b;
+  font-size: 15px;
+  line-height: 1.7;
+}
+
+.glaucomaCallout {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 480px;
+  margin-top: 22px;
+  padding: 20px 24px;
+  border: 1px solid #ffd79d;
+  border-radius: 14px;
+  background: #fff8ef;
+  color: #6f5b3f;
+  box-shadow: none;
+}
+
+.warningIcon {
+  flex: 0 0 20px;
+  width: 20px;
+  height: 20px;
+  margin-top: 2px;
+  stroke: #f59e0b;
+}
+
+.glaucomaCallout b {
+  display: block;
+  margin: 0 0 6px;
+  color: #1d2939;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.glaucomaCallout small {
+  display: block;
+  color: #7b6b57;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.glaucoma .shell {
+  width: min(1240px, calc(100% - 44px));
+  grid-template-columns: 520px 560px;
+  gap: 40px;
+  align-items: center;
+}
+
+.glaucomaVisual {
+  position: relative;
+  min-height: 440px;
+  width: 540px;
+}
+
+.glaucomaPhotoCard {
+  position: relative;
+  width: 540px;
+  height: 340px;
+  overflow: hidden;
+  border-radius: 18px;
+  background: transparent;
+}
+
+.glaucomaMain {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  filter: none;
+}
+
+.glaucomaPhotoCard::before {
+  display: none;
+}
+
+.glaucomaInset {
+  position: absolute;
+  left: 24px;
+  bottom: 0;
+  z-index: 2;
+  width: 230px;
+  height: 175px;
+  object-fit: cover;
+  object-position: center;
+  border: 0;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+.glaucomaPanel {
+  position: absolute;
+  left: 220px;
+  bottom: 45px;
+  z-index: 4;
+  width: 112px;
+  padding: 14px 14px;
+  border: 1px solid rgba(225, 238, 247, .95);
+  border-radius: 16px;
+  background: #ffffff;
+  box-shadow: 0 16px 30px rgba(39, 70, 112, .14);
+}
+
+.glaucomaPanel span,
+.glaucomaPanel strong {
+  display: block;
+}
+
+.glaucomaPanel span {
+  margin-bottom: 4px;
+  color: #8a96a8;
+  font-size: 10px;
+  font-weight: 500;
+}
+
+.glaucomaPanel strong {
+  color: var(--cyan);
+  font-size: 20px;
+  line-height: 1.05;
+}
+
+.visionDots {
+  position: absolute;
+  z-index: 3;
+  left: 36px;
+  top: 134px;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.visionDots span {
+  width: 64px;
+  height: 64px;
+  display: block;
+  overflow: hidden;
+  border-radius: 50%;
+  background-image: url("/assets/side_vision.png");
+  background-size: 250px 188px;
+  background-position: center;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .42);
+}
+
+.visionDots .dotClear {
+  filter: brightness(1.18) saturate(1.1);
+}
+
+.visionDots .dotMild {
+  filter: brightness(.88) saturate(.86);
+}
+
+.visionDots .dotMedium {
+  filter: brightness(.62) saturate(.72);
+}
+
+.visionDots .dotSevere {
+  filter: brightness(.46) saturate(.6);
+}
+
+.visionDots .dotDark {
+  filter: brightness(.32) saturate(.5);
+}
+
 .retinaVisual {
   display: grid;
   gap: 22px;
@@ -301,6 +501,104 @@
   .retinaTopWrap,
   .retinaBottom {
     width: 100%;
+  }
+}
+
+@media (max-width: 900px) {
+  .glaucoma {
+    padding: 72px 0 82px;
+  }
+
+  .glaucoma .shell {
+    width: min(720px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .glaucoma .copy h2,
+  .glaucoma .copy p,
+  .glaucomaCallout {
+    max-width: 100%;
+  }
+
+  .glaucomaVisual {
+    min-height: 520px;
+    width: min(100%, 640px);
+    margin-inline: auto;
+  }
+
+  .glaucomaPhotoCard {
+    width: 100%;
+  }
+
+  .glaucomaMain {
+    width: 100%;
+  }
+
+  .glaucomaInset {
+    width: 260px;
+    height: 200px;
+  }
+}
+
+@media (max-width: 640px) {
+  .glaucoma {
+    padding: 64px 0 72px;
+  }
+
+  .glaucoma .shell {
+    width: min(100% - 30px, 520px);
+    gap: 30px;
+  }
+
+  .glaucoma .copy h2 {
+    font-size: clamp(2.2rem, 10vw, 2.8rem);
+  }
+
+  .glaucomaVisual {
+    min-height: 0;
+    display: grid;
+    gap: 16px;
+    width: 100%;
+  }
+
+  .glaucomaPhotoCard {
+    width: 100%;
+    height: 330px;
+    border-radius: 18px;
+  }
+
+  .glaucomaMain {
+    position: static;
+    width: 100%;
+    height: 100%;
+    border-radius: 0;
+  }
+
+  .glaucomaInset {
+    position: static;
+    width: 100%;
+    height: 240px;
+    border-radius: 18px;
+  }
+
+  .visionDots {
+    left: 18px;
+    right: 18px;
+    top: 126px;
+    gap: 10px;
+    justify-content: center;
+  }
+
+  .visionDots span {
+    width: 50px;
+    height: 50px;
+  }
+
+  .glaucomaPanel {
+    position: static;
+    width: 100%;
+    order: 3;
   }
 }
 

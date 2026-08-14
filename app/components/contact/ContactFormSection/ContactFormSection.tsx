@@ -69,7 +69,7 @@ export function ContactFormSection() {
                 <LocationIcon size={18} />
               </span>
               <div>
-                <h3>Shanthi EyeTech</h3>
+                <h3>Shanti EyeTech</h3>
                 <p>
                   Shekhar Central, M1 &amp; M2,
                   <br />

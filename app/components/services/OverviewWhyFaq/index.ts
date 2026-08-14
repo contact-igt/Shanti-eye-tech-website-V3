@@ -1,0 +1,1 @@
+export { OverviewWhyFaq } from "./OverviewWhyFaq";

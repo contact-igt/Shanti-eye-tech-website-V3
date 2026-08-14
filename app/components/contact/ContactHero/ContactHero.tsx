@@ -18,7 +18,7 @@ export function ContactHero() {
         <img
           className={styles.doctorImage}
           src="/assets/home/contact-doctor.jpeg"
-          alt="Shanthi EyeTech doctor beside eye examination equipment"
+          alt="Shanti EyeTech doctor beside eye examination equipment"
         />
       </div>
     </section>
