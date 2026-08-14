@@ -20,6 +20,7 @@
   .page.classic :global(.section-heading h2),
   .page.cataract :global(.section-heading h2),
   .page.retina :global(.section-heading h2),
+  .page.glaucoma :global(.section-heading h2),
   .page > section:not(:first-child) h2 {
     font-size: clamp(2.5rem, 4.2vw, 3.45rem) !important;
     line-height: 1.08 !important;

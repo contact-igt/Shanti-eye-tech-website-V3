@@ -1,0 +1,284 @@
+.milestoneSection {
+  padding: 64px 0 72px;
+  background: #f8fafc;
+}
+
+.milestoneSection :global(.shell) {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.milestoneSection :global(.section-heading) {
+  width: min(800px, 100%);
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.milestoneSection :global(.timeline) {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: min(720px, calc(100% - 64px));
+  margin: 0 auto;
+  gap: 0;
+}
+
+.milestoneSection :global(.timeline) article {
+  position: relative;
+  display: grid;
+  grid-template-columns: 230px 38px 1fr;
+  align-items: center;
+  min-height: 154px;
+}
+
+.milestoneSection :global(.timeline) article > b {
+  color: #d8f6ff;
+  font-size: 76px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.06em;
+  text-align: right;
+  padding-right: 24px;
+}
+
+.milestoneSection :global(.timeline) article > span {
+  position: relative;
+  align-self: stretch;
+  display: block;
+}
+
+.milestoneSection :global(.timeline) article > span::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 2px;
+  transform: translateX(-50%);
+  background: linear-gradient(#4a8bff, #d7e6ff);
+}
+
+.milestoneSection :global(.timeline) article > span::after {
+  content: "";
+  position: absolute;
+  width: 13px;
+  height: 13px;
+  left: calc(50% - 6px);
+  top: calc(50% - 6px);
+  border-radius: 50%;
+  background: #18c51d;
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 1px #18c51d;
+}
+
+.milestoneSection :global(.timeline) article > div {
+  width: 250px;
+  min-height: 94px;
+  padding: 17px 20px;
+  border-radius: 11px;
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 5px 10px rgba(23, 46, 73, 0.18);
+  margin-left: 24px;
+}
+
+.milestoneSection :global(.timeline) h3 {
+  margin: 0 0 8px;
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.2;
+  color: #0f172a;
+}
+
+.milestoneSection :global(.timeline) article > div p {
+  margin: 0;
+  font-size: 12px;
+  line-height: 1.45;
+  color: #64748b;
+}
+
+.milestoneSection :global(.timeline) article:last-child {
+  min-height: 92px;
+}
+
+.milestoneSection :global(.timeline) article:last-child > b,
+.milestoneSection :global(.timeline) article:last-child > span {
+  visibility: hidden;
+}
+
+@media (min-width: 901px) {
+  .milestoneSection.milestoneSection {
+    min-height: auto;
+    padding-top: 64px;
+    padding-bottom: 55px;
+    background: url("/assets/about/journeybg.jpeg") center center / cover no-repeat;
+  }
+
+  .milestoneSection :global(.section-heading) {
+    max-width: 860px;
+    margin-bottom: 95px;
+  }
+
+  .milestoneSection :global(.section-heading) :global(.eyebrow) {
+    margin-bottom: 28px;
+    padding: 9px 17px;
+    color: #14bde1;
+    border-color: #dbe6f3;
+    background: #fff;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  .milestoneSection :global(.section-heading) h2 {
+    margin-bottom: 22px;
+    font-size: var(--font-h2);
+    line-height: 0.98;
+  }
+
+  .milestoneSection :global(.section-heading) p {
+    max-width: 790px;
+    font-size: 20px;
+    line-height: 1.48;
+  }
+
+  .milestoneSection :global(.timeline) {
+    width: min(770px, calc(100% - 64px));
+  }
+
+  .milestoneSection :global(.timeline) article {
+    grid-template-columns: 390px 62px 1fr;
+    min-height: 240px;
+  }
+
+  .milestoneSection :global(.timeline) article > b {
+    padding-right: 20px;
+    font-size: 132px;
+    line-height: 0.9;
+  }
+
+  .milestoneSection :global(.timeline) article > span::after {
+    width: 14px;
+    height: 14px;
+    left: calc(50% - 7px);
+    top: calc(50% - 7px);
+    border-width: 3px;
+  }
+
+  .milestoneSection :global(.timeline) article > div {
+    width: 320px;
+    min-height: 132px;
+    padding: 24px 25px;
+    border-radius: 11px;
+    box-shadow: 0 5px 10px rgba(23, 46, 73, 0.18);
+  }
+
+  .milestoneSection :global(.timeline) h3 {
+    margin-bottom: 22px;
+    font-size: 17px;
+    line-height: 1.1;
+  }
+
+  .milestoneSection :global(.timeline) article > div p {
+    font-size: 12px;
+    line-height: 1.38;
+  }
+
+  .milestoneSection :global(.timeline) article:last-child {
+    min-height: 120px;
+  }
+
+  .milestoneSection :global(.timeline) article:last-child > div {
+    width: 320px;
+    transform: translateX(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .milestoneSection :global(.shell) {
+    width: min(100%, calc(100% - 32px));
+  }
+  .milestoneSection :global(.timeline) {
+    width: 100%;
+  }
+  .milestoneSection :global(.timeline) article {
+    grid-template-columns: 72px 20px 1fr;
+    min-height: 120px;
+  }
+  .milestoneSection :global(.timeline) article > b {
+    font-size: 36px;
+    padding-right: 8px;
+  }
+  .milestoneSection :global(.timeline) article > div {
+    width: 100%;
+    margin-left: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .milestoneSection {
+    padding: 48px 0 32px;
+  }
+  .milestoneSection :global(.section-heading) {
+    margin-bottom: 36px;
+  }
+  .milestoneSection :global(.timeline) {
+    width: 100%;
+    padding-left: 28px;
+    position: relative;
+  }
+  /* Vertical line running down the left side */
+  .milestoneSection :global(.timeline)::before {
+    content: "";
+    position: absolute;
+    left: 6px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(#4a8bff, #d7e6ff);
+  }
+  .milestoneSection :global(.timeline) article {
+    display: block;
+    position: relative;
+    min-height: auto;
+    padding: 0 0 28px 0;
+  }
+  /* Hide the year column and middle connector column */
+  .milestoneSection :global(.timeline) article > b {
+    display: block;
+    font-size: 22px;
+    color: #94c5f8;
+    font-weight: 800;
+    letter-spacing: -0.04em;
+    padding: 0 0 6px 0;
+    text-align: left;
+    line-height: 1;
+  }
+  /* Dot on the left line */
+  .milestoneSection :global(.timeline) article > span {
+    display: none;
+  }
+  .milestoneSection :global(.timeline) article::before {
+    content: "";
+    position: absolute;
+    left: -25px;
+    top: 4px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #18c51d;
+    border: 3px solid #fff;
+    box-shadow: 0 0 0 1px #18c51d;
+  }
+  .milestoneSection :global(.timeline) article > div {
+    width: 100%;
+    margin-left: 0;
+    padding: 14px 16px;
+  }
+  .milestoneSection :global(.timeline) article:last-child {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+  .milestoneSection :global(.timeline) article:last-child > b {
+    visibility: visible;
+  }
+}

@@ -188,11 +188,38 @@ p {
   backdrop-filter: none !important;
 }
 
+/* Doctor hero navigation must remain fully transparent at every breakpoint. */
+.site-header.site-header-doctors,
+.site-header.site-header-doctors .nav-wrap {
+  background-color: transparent !important;
+  background-image: none !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
+.site-header.site-header-doctors::before,
+.site-header.site-header-doctors::after,
+.site-header.site-header-doctors .nav-wrap::before,
+.site-header.site-header-doctors .nav-wrap::after {
+  display: none !important;
+  content: none !important;
+}
+
+.site-header-doctors {
+  background: transparent !important;
+  border-color: transparent !important;
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  -webkit-backdrop-filter: none !important;
+}
+
 .site-header-services {
   background: linear-gradient(90deg, transparent 0%, transparent 30%, rgba(255, 255, 255, 0.85) 55%, rgba(255, 255, 255, 0.98) 100%) !important;
   backdrop-filter: blur(12px) !important;
   /* border-bottom: 1px solid rgba(210, 225, 245, 0.4) !important; */
-  box-shadow: 0 4px 20px rgba(18, 39, 74, 0.03) !important;
+  /* box-shadow: 0 4px 20px rgba(18, 39, 74, 0.03) !important; */
 }
 
 .nav-wrap {
@@ -233,7 +260,7 @@ p {
 }
 
 .desktop-nav a,
-.nav-services summary {
+.nav-services-trigger {
   color: #334155;
   font-weight: 500;
   cursor: pointer;
@@ -244,36 +271,76 @@ p {
 .desktop-nav a:hover,
 .desktop-nav a.active,
 .desktop-nav .active,
-.nav-services summary:hover,
-.nav-services summary.active {
+.nav-services-trigger:hover,
+.nav-services-trigger.active {
   color: #179fdd;
 }
 
 .nav-services {
   position: relative;
+  display: flex;
+  align-items: center;
+  align-self: stretch;
 }
 
-.nav-services summary::-webkit-details-marker {
-  display: none;
+.nav-services-trigger {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  white-space: nowrap;
+}
+
+.nav-caret {
+  transition: transform 180ms ease;
 }
 
 .nav-menu {
   position: absolute;
-  top: 30px;
-  left: -24px;
-  width: 190px;
+  top: calc(100% + 8px);
+  left: -20px;
+  z-index: 100;
+  width: 220px;
   display: grid;
   gap: 4px;
   padding: 12px;
   background: white;
   border: 1px solid var(--line);
   border-radius: 14px;
-  box-shadow: var(--shadow);
+  box-shadow: 0 12px 32px rgba(35, 66, 108, 0.12);
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(-6px);
+  transition: opacity 160ms ease, transform 160ms ease, visibility 160ms ease;
+}
+
+.nav-menu::before {
+  content: "";
+  position: absolute;
+  top: -14px;
+  left: 0;
+  right: 0;
+  height: 14px;
+}
+
+.nav-services:hover .nav-menu,
+.nav-services:focus-within .nav-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateY(0);
+}
+
+.nav-services:hover .nav-caret,
+.nav-services:focus-within .nav-caret {
+  transform: rotate(180deg);
 }
 
 .nav-menu a {
-  padding: 10px 12px;
+  padding: 10px 14px;
   border-radius: 8px;
+  white-space: nowrap;
+  font-size: 14px;
 }
 
 .nav-menu a:hover {
@@ -501,6 +568,57 @@ p {
 .mobile-drawer-link:hover,
 .mobile-drawer-link.active {
   color: #18c6df;
+}
+
+.mobile-drawer-group {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.mobile-drawer-group .mobile-drawer-link {
+  border-bottom: 0;
+}
+
+.mobile-drawer-dropdown-trigger {
+  width: 100%;
+  border: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  cursor: pointer;
+}
+
+.mobile-drawer-caret {
+  flex: 0 0 auto;
+  transition: transform 0.2s ease;
+}
+
+.mobile-drawer-group.open .mobile-drawer-caret {
+  transform: rotate(180deg);
+}
+
+.mobile-drawer-submenu {
+  display: grid;
+  gap: 4px;
+  padding: 0 0 12px 14px;
+}
+
+.mobile-drawer-sublink {
+  display: block;
+  padding: 9px 12px;
+  border-radius: 10px;
+  color: #475569;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.25;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.mobile-drawer-sublink:hover,
+.mobile-drawer-sublink.active {
+  color: #0ea5c9;
+  background: #eef9fc;
 }
 
 /* Social icons row at drawer bottom */
@@ -9522,7 +9640,7 @@ option.option-placeholder {
 }
 
 .site-header.home-header .desktop-nav a,
-.site-header.home-header .nav-services summary {
+.site-header.home-header .nav-services-trigger {
   white-space: nowrap;
 }
 
@@ -11495,6 +11613,11 @@ option.option-placeholder {
   margin: 0 0 20px;
   font-size: 14px;
   line-height: 1.6;
+  max-width: 520px;
+  display: block;
+  overflow: visible;
+  -webkit-line-clamp: initial;
+  -webkit-box-orient: initial;
 }
 
 .home-page .faq-list summary b {
@@ -11675,6 +11798,12 @@ option.option-placeholder {
 
   .home-page .faq-list details p {
     font-size: 14px;
+    line-height: 1.55;
+    max-width: 100%;
+    display: block;
+    overflow: visible;
+    -webkit-line-clamp: initial;
+    -webkit-box-orient: initial;
   }
 
   .home-page .faq-list summary b {
@@ -13239,7 +13368,7 @@ option.option-placeholder {
   .about-hero-layout {
     min-height: 760px !important;
     padding-top: 125px !important;
-    padding-bottom: 65px !important;
+    padding-bottom: 30px !important;
   }
 
   .service-hero-copy h1,

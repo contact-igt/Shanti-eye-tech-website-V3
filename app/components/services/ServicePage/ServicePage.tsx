@@ -18,8 +18,8 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
       <Header active="services" />
       <main className={`${styles.page} ${styles[content.kind]}`}>
         <HeroBanner content={content.hero} kind={content.kind} />
-        <WhyChoose content={content.whyChoose} kind={content.kind} />
         <IntroSection content={content.intro} kind={content.kind} />
+        <WhyChoose content={content.whyChoose} kind={content.kind} />
         <EligibilitySection content={content.eligibility} kind={content.kind} />
         <TreatmentOptions content={content.treatmentOptions} kind={content.kind} />
         {content.comparison ? <ComparisonSection content={content.comparison} kind={content.kind} /> : null}

@@ -40,3 +40,18 @@ next-env.d.ts
 /.wrangler/
 /outputs/
 /work/
+*.tsbuildinfo
+
+# agent & tool artifacts
+.agents/
+.claude/
+.codex/
+.codex-artifacts/
+.openai/
+skills-lock.json
+
+# temporary scratch files
+app/scratch_*.json
+app/*_extracted.css
+app/phase5_audit_full.md
+

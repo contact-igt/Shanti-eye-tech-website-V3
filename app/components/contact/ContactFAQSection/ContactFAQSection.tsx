@@ -52,8 +52,8 @@ export function ContactFAQSection() {
             <PhoneIcon size={16} /> Book a call
           </a>
           <small className={styles.asideDivider}>or</small>
-          <a className={styles.asideEmailLink} href="mailto:info@shanthieyetech.com">
-            <MailIcon size={15} /> info@shanthieyetech.com
+          <a className={styles.asideEmailLink} href="mailto:info@shantieyetech.com">
+            <MailIcon size={15} /> info@shantieyetech.com
           </a>
         </aside>
         <div className={styles.faqContentContainer}>

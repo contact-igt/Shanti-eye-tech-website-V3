@@ -1,7 +1,7 @@
-import { SectionHeading } from "../common/SectionHeading/SectionHeading";
-import type { ServiceKind, TestimonialsContent } from "@/app/services/types";
-import styles from "./styles.module.css";
 import { TestimonialCarousel } from "@/app/testimonials-carousel";
+import type { ServiceKind, TestimonialsContent } from "@/app/services/types";
+import { SectionHeading } from "../common/SectionHeading/SectionHeading";
+import styles from "./styles.module.css";
 
 export function TestimonialsSection({ content, kind }: { content: TestimonialsContent; kind: ServiceKind }) {
   return (

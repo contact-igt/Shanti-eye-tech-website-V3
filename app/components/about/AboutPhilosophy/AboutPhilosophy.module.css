@@ -1,0 +1,133 @@
+.philosophySection {
+  padding: 64px 0 72px;
+  background: #fff;
+}
+
+.philosophySection :global(.shell) {
+  width: min(1180px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.philosophySection :global(.section-heading) {
+  width: min(800px, 100%);
+  margin: 0 auto 58px;
+  text-align: center;
+}
+
+.philosophySection :global(.philosophy-grid) {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 34px;
+}
+
+.philosophySection :global(.philosophy-card) {
+  position: relative;
+  min-height: 440px;
+  overflow: hidden;
+  padding: 54px 52px;
+  border: 1px solid #dce5f1;
+  border-radius: 24px;
+  background: #fff;
+}
+
+.philosophySection :global(.philosophy-number) {
+  position: absolute;
+  top: 10px;
+  right: 24px;
+  font-size: 104px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -0.09em;
+  color: #edf3fc;
+  pointer-events: none;
+}
+
+.philosophySection :global(.philosophy-icon) {
+  position: relative;
+  z-index: 1;
+  display: block;
+  margin-bottom: 30px;
+  color: #11b80e;
+  font-size: 65px;
+  font-weight: 400;
+  line-height: 0.8;
+}
+
+.philosophySection :global(.philosophy-card) h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 20px;
+  font-size: 34px;
+  line-height: 1.08;
+  letter-spacing: -0.04em;
+}
+
+.philosophySection :global(.philosophy-card) p,
+.philosophySection :global(.philosophy-card) li {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: #6c7a94;
+  font-size: 18px;
+  line-height: 1.65;
+}
+
+.philosophySection :global(.philosophy-mission) {
+  border: 0;
+  color: #fff;
+  background: linear-gradient(135deg, #2e72f5 0%, #15c7d8 100%);
+}
+
+.philosophySection :global(.philosophy-mission) h3 {
+  color: #fff;
+}
+
+.philosophySection :global(.philosophy-mission) :global(.philosophy-number) {
+  color: rgba(255, 255, 255, 0.12);
+}
+
+.philosophySection :global(.philosophy-mission) :global(.philosophy-icon) {
+  color: #fff;
+}
+
+.philosophySection :global(.philosophy-mission) p {
+  color: rgba(255, 255, 255, 0.93);
+}
+
+.philosophySection :global(.philosophy-values) {
+  background: #edf4ff;
+}
+
+.philosophySection :global(.philosophy-values) ul {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: 18px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.philosophySection :global(.philosophy-values) li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.philosophySection :global(.philosophy-values) li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: #17bbd8;
+  font-weight: bold;
+}
+
+@media (max-width: 900px) {
+  .philosophySection :global(.philosophy-grid) {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .philosophySection :global(.philosophy-card) {
+    min-height: auto;
+    padding: 38px 32px;
+  }
+}

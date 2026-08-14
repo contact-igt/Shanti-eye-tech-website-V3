@@ -1,6 +1,6 @@
 import type { ReactNode } from "react";
 
-export type ServiceKind = "cataract" | "classic" | "retina";
+export type ServiceKind = "cataract" | "classic" | "retina" | "glaucoma" | "squint" | "keratoconus";
 
 export type HeroMetric = {
   value: string;
@@ -158,7 +158,7 @@ export type AppointmentContent = {
 
 export type ServicePageContent = {
   kind: ServiceKind;
-  navService: "cataract" | "lasik" | "retina";
+  navService: "cataract" | "lasik" | "retina" | "glaucoma" | "squint" | "keratoconus";
   hero: HeroContent;
   whyChoose: WhyChooseContent;
   intro: IntroContent;

@@ -8,9 +8,56 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
     ? ({ "--section-bg": `url(${content.backgroundImage})` } as CSSProperties)
     : undefined;
 
-  if (kind === "retina") {
-    const warningChecks = content.checks.slice(0, 4);
-    const riskCheck = content.checks[4];
+  if (kind === "keratoconus") {
+    const warningChecks = content.checks;
+    const defaultWarningImages = [
+      { image: "/assets/keratoconus/frequent_power.png", label: "Frequent Power Change" },
+      { image: "/assets/keratoconus/blurred_vision.png", label: "Blurred / Distorted Vision" },
+      { image: "/assets/keratoconus/light_sesitivity.png", label: "Light Sensitivity" },
+      { image: "/assets/keratoconus/halos.png", label: "Halos & Glare" },
+      { image: "/assets/keratoconus/astigmatism.png", label: "Increasing Astigmatism" },
+    ];
+    const warningImages = content.warningImages && content.warningImages.length > 0 ? content.warningImages : defaultWarningImages;
+
+    return (
+      <section className={`${styles.section} ${styles.retina} ${styles.keratoconusEligibility}`} id="eligibility" style={sectionStyle}>
+        <div className={styles.retinaShell}>
+          <div className={styles.retinaHeader}>
+            <Eyebrow>{content.eyebrow}</Eyebrow>
+            <h2>{content.title} <br className={styles.desktopBr} /><span className={styles.spacePrefix}> </span><span>{content.accent}</span></h2>
+          </div>
+          <div className={styles.keratoconusBody}>
+            <div className={styles.retinaCopy}>
+              <h3>Watch Out for These<br /><span>Warning Signs</span></h3>
+              <ul className={styles.retinaChecks}>
+                {warningChecks.map((item) => (
+                  <li key={item}>
+                    <img src="/assets/blue_check.png" alt="" aria-hidden="true" />
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            <div className={styles.bentoGrid} aria-label="Keratoconus warning signs visual examples">
+              {warningImages.slice(0, 5).map((item, index) => (
+                <figure key={item.label || index} className={`${styles.bentoCard} ${styles[`bentoCard${index + 1}`]}`}>
+                  <img src={item.image} alt={item.label || `Keratoconus visual ${index + 1}`} />
+                  {item.label ? <figcaption>{item.label}</figcaption> : null}
+                </figure>
+              ))}
+            </div>
+
+            <div className={styles.keratoconusNote}><b>Important:</b> {content.note}</div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (kind === "retina" || kind === "squint") {
+    const warningChecks = kind === "squint" ? content.checks : content.checks.slice(0, 4);
+    const riskCheck = kind === "squint" ? null : content.checks[4];
 
     const defaultWarningImages = [
       { image: "/assets/retina/low-light.webp", label: "Blurred Vision" },
@@ -62,7 +109,51 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
                   </figure>
                 ))}
               </div>
-              <div className={styles.retinaNote}><b>Early evaluation is key.</b> {content.note.replace("Early evaluation is key: ", "")}</div>
+              <div className={styles.retinaNote}><b>Important:</b> {content.note}</div>
+            </div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (kind === "glaucoma") {
+    return (
+      <section className={`${styles.section} ${styles.glaucoma}`} id="eligibility" style={sectionStyle}>
+        <div className={styles.glaucomaShell}>
+          <div className={styles.glaucomaCopy}>
+            <Eyebrow>{content.eyebrow}</Eyebrow>
+            <h2>
+              When Should You <br />
+              <span>Consider a</span> <br />
+              <span>Glaucoma Evaluation?</span>
+            </h2>
+            <p>{content.body}</p>
+            <ul className={styles.glaucomaChecks}>
+              {content.checks.map((item) => (
+                <li key={item}>
+                  <svg className={styles.glaucomaCheckIcon} width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10b981" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12" />
+                  </svg>
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
+            <div className={styles.glaucomaNote}><b>Note:</b> {content.note}</div>
+          </div>
+
+          <div className={styles.glaucomaVisual} aria-label="Glaucoma warning signs visual examples">
+            <img className={styles.glaucomaSideVision} src="/assets/glaucoma/consider1.png" alt="Family history and glaucoma risk evaluation" />
+            <img className={styles.glaucomaHeadache} src="/assets/glaucoma/consider2.png" alt="Age-related glaucoma screening" />
+            <img className={styles.glaucomaLowVision} src="/assets/glaucoma/consider4.png" alt="Halos around lights visual symptoms" />
+            <img className={styles.glaucomaHalos} src="/assets/glaucoma/consider3.png" alt="Peripheral vision loss assessment" />
+            <div className={styles.glaucomaAgeBadge}>
+              <strong>40+</strong>
+              <span>Recommended Screening Age</span>
+            </div>
+            <div className={styles.glaucomaHaloBadge}>
+              <strong>HALOS</strong>
+              <span>Around Lights</span>
             </div>
           </div>
         </div>

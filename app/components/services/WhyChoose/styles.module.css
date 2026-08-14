@@ -125,11 +125,13 @@
   }
 }
 
-.cataract {}
-.classic {}
-.retina {}
-/* Larger service feature cards to match the reference layout. */
 @media (min-width: 901px) {
+  .glaucoma .grid,
+  .squint .grid,
+  .keratoconus .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
   .grid {
     gap: 28px;
     margin-top: 52px;
@@ -167,7 +169,15 @@
   }
 }
 
-@media (max-width: 900px) and (min-width: 577px) {
+@media (max-width: 900px) and (min-width: 641px) {
+  .grid,
+  .glaucoma .grid,
+  .squint .grid,
+  .keratoconus .grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 20px !important;
+  }
+
   .card {
     min-height: 245px;
     padding: 32px 28px;
@@ -191,6 +201,35 @@
     font-size: 16px;
   }
 }
-/* Shared why-choose card flow. */
-@media (max-width: 900px) { .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; } .card { min-height: 230px; padding: 30px; } }
-@media (max-width: 640px) { .grid { grid-template-columns: 1fr; gap: 16px; } .card { min-height: 210px; padding: 28px; border-radius: 18px; } .icon { width: 52px; height: 52px; } .card h3 { margin-top: 18px; font-size: 20px; } .card p { font-size: 15px; } }
+
+@media (max-width: 640px) {
+  .grid,
+  .glaucoma .grid,
+  .squint .grid,
+  .keratoconus .grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  .card {
+    min-height: 0 !important;
+    padding: 24px 20px !important;
+    border-radius: 18px !important;
+  }
+
+  .icon {
+    width: 44px !important;
+    height: 44px !important;
+    margin-bottom: 18px !important;
+  }
+
+  .card h3 {
+    margin-top: 0 !important;
+    font-size: 19px !important;
+  }
+
+  .card p {
+    font-size: 14.5px !important;
+    max-width: 100% !important;
+  }
+}

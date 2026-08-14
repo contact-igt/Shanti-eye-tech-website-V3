@@ -61,7 +61,7 @@
 }
 
 .note {
-  padding: 18px 20px;
+  padding: 12px 20px;
   border: 1px solid #d9eafa;
   border-radius: 14px;
   background: #fff;
@@ -190,7 +190,7 @@
   background: #f0f4ff;
   border: 1px solid #dbe6fe;
   border-radius: 14px;
-  padding: 18px 20px;
+  padding: 12px 20px;
   color: #475569;
 }
 
@@ -353,7 +353,7 @@
 
 /* Retina warning signs section */
 .retina {
-  padding: 118px 0 104px;
+  padding: 80px 0 54px;
   background-color: #f8fbff;
   background-image: var(--section-bg, none);
   background-repeat: no-repeat;
@@ -520,7 +520,7 @@
 }
 
 .retinaNote {
-  padding: 18px 22px;
+  padding: 12px 20px;
   border: 1px solid #c7e1f8;
   border-radius: 10px;
   background: rgba(255, 255, 255, .96);
@@ -532,6 +532,116 @@
 
 .retinaNote b {
   color: #2f73f5;
+}
+
+/* ── Keratoconus 5-image bento grid layout ── */
+.keratoconusBody {
+  display: grid;
+  grid-template-columns: 440px 700px;
+  column-gap: 80px;
+  row-gap: 20px;
+  align-items: start;
+}
+
+.keratoconusNote {
+  grid-column: 1 / -1;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: 0;
+  padding: 12px 20px;
+  border: 1px solid #c7e1f8;
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.96);
+  color: #5f6b7c;
+  font-size: 13.5px;
+  line-height: 1.55;
+  box-shadow: 0 12px 24px rgba(32, 66, 110, 0.08);
+}
+
+.keratoconusNote b {
+  color: #2f73f5;
+  font-weight: 700;
+}
+
+.bentoGrid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 2fr;
+  grid-template-rows: 175px 175px 175px;
+  gap: 14px;
+  width: 100%;
+}
+
+.bentoCard {
+  position: relative;
+  margin: 0;
+  border-radius: 18px;
+  overflow: hidden;
+  background: #dbe8ef;
+  box-shadow: 0 14px 30px rgba(8, 18, 35, 0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bentoCard:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 18px 36px rgba(8, 18, 35, 0.18);
+}
+
+.bentoCard img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.bentoCard figcaption {
+  position: absolute;
+  left: 14px;
+  bottom: 12px;
+  z-index: 2;
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 700;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.6);
+}
+
+.bentoCard::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 50%, rgba(0, 0, 0, 0.68) 100%);
+  pointer-events: none;
+}
+
+.bentoCard1 { grid-column: 1 / 3; grid-row: 1; }
+.bentoCard2 { grid-column: 3 / 4; grid-row: 1; }
+.bentoCard3 { grid-column: 2 / 4; grid-row: 2; }
+.bentoCard4 { grid-column: 1 / 3; grid-row: 3; }
+.bentoCard5 { grid-column: 3 / 4; grid-row: 3; }
+
+@media (max-width: 1100px) {
+  .keratoconusBody {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .bentoGrid {
+    grid-template-rows: 150px 150px 150px;
+  }
+}
+
+@media (max-width: 640px) {
+  .bentoGrid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 130px 130px 130px;
+    gap: 10px;
+  }
+
+  .bentoCard1 { grid-column: 1 / 3; grid-row: 1; }
+  .bentoCard2 { grid-column: 1 / 2; grid-row: 2; }
+  .bentoCard3 { grid-column: 2 / 3; grid-row: 2; }
+  .bentoCard4 { grid-column: 1 / 2; grid-row: 3; }
+  .bentoCard5 { grid-column: 2 / 3; grid-row: 3; }
 }
 
 @media (max-width: 900px) {
@@ -803,6 +913,21 @@
 .cataract .copy h2 {
   max-width: 490px;
   font-size: clamp(46px, 3.4vw, 58px);
+}
+
+@media (min-width: 901px) {
+  .cataract .desktopBr {
+    display: none;
+  }
+
+  .cataract .spacePrefix {
+    display: inline;
+  }
+
+  .cataract .copy h2 {
+    max-width: 760px;
+    white-space: nowrap;
+  }
 }
 
 .cataractMainImage {
@@ -1196,6 +1321,334 @@
 
   .cataractAgeBadge b {
     font-size: 20px;
+  }
+}
+
+/* Glaucoma warning signs section */
+.glaucoma {
+  position: relative;
+  overflow: hidden;
+  padding: 100px 0 100px;
+  background-color: #ffffff;
+  background-image: var(--section-bg, url("/assets/cataract/considersurgerybg.jpeg"));
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center center;
+}
+
+.glaucomaShell {
+  width: min(1240px, calc(100% - 44px));
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 580px 520px;
+  gap: 50px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.glaucomaCopy {
+  width: 100%;
+}
+
+.glaucomaCopy h2 {
+  margin: 18px 0 16px;
+  color: #10141d;
+  font-size: 46px;
+  line-height: 1.08;
+  letter-spacing: -.02em;
+}
+
+.glaucomaCopy h2 span {
+  color: var(--cyan);
+  white-space: nowrap;
+}
+
+.glaucomaCopy p {
+  margin: 0 0 24px;
+  color: #111827;
+  font-size: 14.5px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+.glaucomaChecks {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 0 0 28px;
+  padding: 0;
+  width: 100%;
+}
+
+.glaucomaChecks li {
+  min-height: 52px;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 14px 22px;
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.85);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  box-shadow: none;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 500;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.glaucomaCheckIcon {
+  flex: 0 0 18px;
+  width: 18px;
+  height: 18px;
+  stroke: #10b981;
+}
+
+.glaucomaChecks li span {
+  flex: 1;
+  color: #334155;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.glaucomaNote {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 12px 20px;
+  border: 1px solid #ffe8d6;
+  border-radius: 16px;
+  background: #fff8f0;
+  color: #64748b;
+  font-size: 13.5px;
+  line-height: 1.55;
+}
+
+.glaucomaNote b {
+  color: #1e293b;
+  font-weight: 700;
+}
+
+.glaucomaVisual {
+  position: relative;
+  width: 520px;
+  min-height: 520px;
+}
+
+.glaucomaVisual img {
+  display: block;
+  position: absolute;
+  object-fit: cover;
+  box-shadow: none;
+}
+
+.glaucomaSideVision {
+  left: 0;
+  top: 0;
+  width: 318px;
+  height: 165px;
+  border-radius: 18px;
+}
+
+.glaucomaHeadache {
+  right: -130px;
+  top: 0;
+  width: 315px;
+  height: 165px;
+  border-radius: 18px;
+  object-position: center;
+  filter: none;
+}
+
+.glaucomaLowVision {
+  right: -20px;
+  top: 180px;
+  width: 400px;
+  height: 165px;
+  border-radius: 18px;
+}
+
+.glaucomaHalos {
+  left: 0;
+  bottom: 0px;
+  width: 360px;
+  height: 155px;
+  border-radius: 18px;
+}
+
+.glaucomaAgeBadge,
+.glaucomaHaloBadge {
+  position: absolute;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 14px;
+  background: #ffffff;
+  box-shadow: 0 16px 32px rgba(31, 59, 105, .14);
+  text-align: center;
+  padding: 10px 18px;
+}
+
+.glaucomaAgeBadge {
+  left: 10px;
+  width: 195px;
+  top: 195px;
+  min-height: 80px;
+}
+
+.glaucomaHaloBadge {
+  right: 10px;
+  bottom: 30px;
+  width: 185px;
+  min-height: 75px;
+}
+
+.glaucomaAgeBadge strong,
+.glaucomaHaloBadge strong {
+  display: block;
+  color: var(--cyan);
+  font-size: 23px;
+  font-weight: 700;
+  line-height: 1;
+}
+
+.glaucomaAgeBadge span,
+.glaucomaHaloBadge span {
+  display: block;
+  margin-top: 4px;
+  color: #7a8494;
+  font-size: 11px;
+  line-height: 1.2;
+}
+
+@media (max-width: 1200px) {
+  .glaucomaShell {
+    grid-template-columns: 460px 540px;
+    gap: 40px;
+  }
+
+  .glaucomaVisual {
+    width: 540px;
+    min-height: 520px;
+  }
+
+  .glaucomaSideVision {
+    width: 290px;
+    height: 138px;
+  }
+
+  .glaucomaHeadache {
+    width: 230px;
+    height: 138px;
+  }
+
+  .glaucomaLowVision {
+    right: 0;
+    top: 156px;
+    width: 370px;
+    height: 166px;
+  }
+
+  .glaucomaHalos {
+    width: 310px;
+    height: 150px;
+  }
+
+  .glaucomaAgeBadge {
+    width: 200px;
+  }
+
+  .glaucomaHaloBadge {
+    width: 190px;
+  }
+}
+
+@media (max-width: 992px) {
+  .glaucoma {
+    padding: 86px 0 84px;
+  }
+
+  .glaucomaShell {
+    width: min(760px, calc(100% - 40px));
+    grid-template-columns: 1fr;
+    gap: 48px;
+  }
+
+  .glaucomaCopy h2 {
+    font-size: clamp(40px, 6vw, 52px);
+  }
+
+  .glaucomaNote {
+    max-width: 640px;
+  }
+
+  .glaucomaVisual {
+    width: min(100%, 640px);
+    margin-inline: auto;
+  }
+}
+
+@media (max-width: 640px) {
+  .glaucoma {
+    padding: 72px 0 78px;
+  }
+
+  .glaucomaShell {
+    width: min(100% - 30px, 520px);
+    gap: 34px;
+  }
+
+  .glaucomaCopy h2 {
+    font-size: clamp(34px, 10vw, 44px);
+  }
+
+  .glaucomaChecks {
+    gap: 11px;
+  }
+
+  .glaucomaChecks li {
+    min-height: 42px;
+    padding: 11px 13px;
+    font-size: 13px;
+  }
+
+  .glaucomaVisual {
+    min-height: 0;
+    display: grid;
+    gap: 14px;
+  }
+
+  .glaucomaVisual img,
+  .glaucomaAgeBadge,
+  .glaucomaHaloBadge {
+    position: static;
+    width: 100%;
+  }
+
+  .glaucomaVisual img {
+    height: 180px;
+    border-radius: 16px;
+  }
+
+  .glaucomaAgeBadge,
+  .glaucomaHaloBadge {
+    min-height: 82px;
+  }
+}
+
+@media (max-width: 390px) {
+  .glaucomaShell {
+    width: min(100% - 22px, 360px);
+  }
+
+  .glaucomaCopy h2 {
+    font-size: 32px;
+  }
+
+  .glaucomaVisual img {
+    height: 154px;
   }
 }
 

@@ -7,6 +7,7 @@ import { usePathname } from "next/navigation";
 
 export function MobileNavDrawer() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isTreatmentsOpen, setIsTreatmentsOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
   const pathname = usePathname();
 
@@ -18,6 +19,12 @@ export function MobileNavDrawer() {
   useEffect(() => {
     setIsOpen(false);
   }, [pathname]);
+
+  useEffect(() => {
+    if (isOpen) {
+      setIsTreatmentsOpen(pathname.startsWith("/services"));
+    }
+  }, [isOpen, pathname]);
 
   // Lock body scroll when drawer is open
   useEffect(() => {
@@ -31,12 +38,21 @@ export function MobileNavDrawer() {
     };
   }, [isOpen]);
 
-  const menuItems = [
-    { label: "Home", href: "/" },
-    { label: "About", href: "/about" },
+  const treatmentItems = [
+    { label: "All Treatments", href: "/services" },
     { label: "LASIK", href: "/services/lasik" },
     { label: "Cataract", href: "/services/cataract" },
     { label: "Retina", href: "/services/retina" },
+    { label: "Glaucoma", href: "/services/glaucoma" },
+    { label: "Squint", href: "/services/squint" },
+    { label: "Keratoconus", href: "/services/keratoconus" },
+  ];
+
+  const menuItems = [
+    { label: "Home", href: "/" },
+    { label: "About", href: "/about" },
+    { label: "Doctors", href: "/doctors" },
+    { label: "Blog", href: "/blogs" },
     { label: "Contact", href: "/contact" },
   ];
 
@@ -74,7 +90,51 @@ export function MobileNavDrawer() {
 
           {/* Menu Items List */}
           <nav className="mobile-drawer-nav">
-            {menuItems.map((item) => {
+            {menuItems.slice(0, 3).map((item) => {
+              const isActive = pathname === item.href;
+              return (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className={`mobile-drawer-link ${isActive ? "active" : ""}`}
+                  onClick={() => setIsOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              );
+            })}
+            <div className={`mobile-drawer-group ${isTreatmentsOpen ? "open" : ""}`}>
+              <button
+                type="button"
+                className={`mobile-drawer-link mobile-drawer-dropdown-trigger ${pathname.startsWith("/services") ? "active" : ""}`}
+                onClick={() => setIsTreatmentsOpen((current) => !current)}
+                aria-expanded={isTreatmentsOpen}
+                aria-controls="mobile-treatment-links"
+              >
+                <span>Treatments</span>
+                <svg className="mobile-drawer-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </button>
+              {isTreatmentsOpen ? (
+                <div className="mobile-drawer-submenu" id="mobile-treatment-links">
+                  {treatmentItems.map((item) => {
+                    const isActive = pathname === item.href;
+                    return (
+                      <Link
+                        key={item.href}
+                        href={item.href}
+                        className={`mobile-drawer-sublink ${isActive ? "active" : ""}`}
+                        onClick={() => setIsOpen(false)}
+                      >
+                        {item.label}
+                      </Link>
+                    );
+                  })}
+                </div>
+              ) : null}
+            </div>
+            {menuItems.slice(3).map((item) => {
               const isActive = pathname === item.href;
               return (
                 <Link

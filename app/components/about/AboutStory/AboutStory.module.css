@@ -1,0 +1,114 @@
+.storySection {
+  padding: 64px 0 72px;
+}
+
+.storySection :global(.story-layout) {
+  display: grid;
+  grid-template-columns: 360px minmax(0, 1fr);
+  gap: 54px;
+  align-items: center;
+  width: min(900px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.storySection :global(.story-image) {
+  position: relative;
+}
+
+.storySection :global(.story-image) img {
+  width: 100%;
+  aspect-ratio: 1.1;
+  object-fit: cover;
+  border-radius: 18px;
+  box-shadow: 0 15px 28px rgba(26, 55, 92, 0.14);
+}
+
+.storySection :global(.story-image) > b {
+  position: absolute;
+  right: -16px;
+  bottom: -14px;
+  width: 160px;
+  min-height: 76px;
+  padding: 13px 16px;
+  display: grid;
+  grid-template-columns: 34px 1fr;
+  grid-template-rows: 34px 18px;
+  align-items: center;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #21cce0, #18afd3);
+  box-shadow: 0 14px 24px rgba(24, 181, 215, 0.28);
+  color: #fff;
+}
+
+.storySection :global(.story-image) > b i {
+  grid-row: 1 / span 2;
+  font-style: normal;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 1;
+}
+
+.storySection :global(.story-image) > b strong {
+  font-size: 25px;
+  line-height: 1;
+}
+
+.storySection :global(.story-image) > b strong span {
+  font-size: inherit !important;
+  color: inherit !important;
+  display: inline !important;
+}
+
+.storySection :global(.story-image) > b small {
+  font-size: 9px;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.storySection h2 {
+  margin: 0 0 16px;
+  font-size: var(--font-h2);
+  line-height: 1.02;
+  letter-spacing: -0.045em;
+}
+
+.storySection h2 span {
+  color: #1fc6df;
+}
+
+.storySection p {
+  margin-bottom: 10px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: #475569;
+}
+
+.storySection blockquote {
+  margin-top: 24px;
+  padding: 8px 0 8px 16px;
+  border-left: 3px solid #1fc6df;
+  font-size: 14px;
+  line-height: 1.45;
+  color: #1e293b;
+  font-style: italic;
+}
+
+.storySection blockquote small {
+  display: block;
+  margin-top: 7px;
+  font-size: 11px;
+  font-style: normal;
+  color: #64748b;
+}
+
+@media (max-width: 900px) {
+  .storySection :global(.story-layout) {
+    grid-template-columns: 1fr;
+    gap: 32px;
+    width: min(100% - 40px, 600px);
+  }
+  .storySection :global(.story-image) > b {
+    right: 12px;
+    bottom: -12px;
+  }
+}

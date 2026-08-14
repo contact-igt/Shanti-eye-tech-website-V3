@@ -436,9 +436,15 @@ export function FaqAccordion({ questions }: { questions: [string, string][] }) {
         <details
           open={activeIndex === index}
           key={question}
-          onToggle={(event) => setActiveIndex(event.currentTarget.open ? index : -1)}
         >
-          <summary>{question}<b>{activeIndex === index ? "-" : "+"}</b></summary>
+          <summary
+            onClick={(event) => {
+              event.preventDefault();
+              setActiveIndex((current) => (current === index ? -1 : index));
+            }}
+          >
+            {question}<b>{activeIndex === index ? "-" : "+"}</b>
+          </summary>
           <p>{answer}</p>
         </details>
       ))}

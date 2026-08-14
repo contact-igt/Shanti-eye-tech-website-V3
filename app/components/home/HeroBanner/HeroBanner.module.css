@@ -1,0 +1,449 @@
+.homeHero {
+  position: relative !important;
+  min-height: 690px !important;
+  background-image: url("/assets/home/home_hero_b.jpeg") !important;
+  background-position: left center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  overflow: hidden !important;
+}
+
+.homeHero :global(.hero-layout) {
+  position: relative !important;
+  display: flex !important;
+  align-items: stretch !important;
+  justify-content: space-between !important;
+  min-height: 690px !important;
+}
+
+.homeHero :global(.hero-copy) {
+  position: relative !important;
+  z-index: 2 !important;
+  flex: 1 1 50% !important;
+  max-width: 580px !important;
+  padding-top: 110px !important;
+  padding-bottom: 24px !important;
+  align-self: center !important;
+}
+
+.homeHero :global(.hero-copy) :global(.eyebrow) {
+  margin-bottom: 10px !important;
+}
+
+.homeHero :global(.hero-copy) h1 {
+  font-size: var(--font-h1) !important;
+  font-weight: 800 !important;
+  line-height: 1.05 !important;
+  color: #0f172a !important;
+  margin-bottom: 16px !important;
+}
+
+.homeHero :global(.hero-copy) h1 span {
+  color: #1fc6df !important;
+  font-weight: 800 !important;
+  white-space: nowrap !important;
+}
+
+.homeHero :global(.hero-copy) p {
+  font-size: 16px !important;
+  line-height: 1.55 !important;
+  color: #475569 !important;
+  max-width: 480px !important;
+  font-weight: 500 !important;
+}
+
+.homeHero :global(.hero-buttons) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  margin: 20px 0 22px !important;
+}
+
+.homeHero :global(.hero-image) {
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  display: flex !important;
+  align-items: flex-end !important;
+  justify-content: flex-end !important;
+  z-index: 1 !important;
+  pointer-events: none !important;
+}
+
+.homeHero :global(.hero-doctor-bg) {
+  position: absolute !important;
+  right: 0 !important;
+  bottom: 0 !important;
+  width: 50% !important;
+  height: 60% !important;
+  object-position: top !important;
+  object-fit: cover !important;
+  z-index: 1 !important;
+}
+
+.homeHero :global(.hero-doctor-img) {
+  position: absolute !important;
+  bottom: 0 !important;
+  right: 0 !important;
+  z-index: 2 !important;
+  height: auto !important;
+  max-height: 100% !important;
+  width: auto !important;
+  max-width: 800px !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
+  display: block !important;
+  bottom: -120px !important;
+  max-height: 100% !important;
+  width: 51% !important;
+  object-fit: cover !important;
+}
+
+.homeHero :global(.hero-metrics) {
+  display: flex !important;
+  align-items: center !important;
+  gap: 32px !important;
+  margin-top: 20px !important;
+  flex-wrap: wrap !important;
+}
+
+.homeHero :global(.hero-metrics) > div {
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+.homeHero :global(.metric-icon) {
+  width: 38px !important;
+  height: 38px !important;
+  display: grid !important;
+  flex: 0 0 auto !important;
+  place-items: center !important;
+  border: 1px solid rgba(220, 229, 242, 1) !important;
+  border-radius: 50% !important;
+  color: #22c44a !important;
+  background: transparent !important;
+}
+
+.homeHero :global(.metric-icon) svg {
+  width: 20px !important;
+  height: 20px !important;
+}
+
+.homeHero :global(.metric-copy) {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 1px !important;
+}
+
+.homeHero :global(.hero-metrics) b {
+  font-size: 24px !important;
+  font-weight: 700 !important;
+  color: #101114 !important;
+  line-height: 32px !important;
+}
+
+.homeHero :global(.hero-metrics) :global(.metric-copy) span {
+  color: #475569 !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  line-height: 1.25 !important;
+  white-space: nowrap !important;
+}
+
+.homeHero :global(.hero-metrics) :global(.metric-copy) span:nth-child(1) {
+  font-size: 24px !important;
+  font-weight: bold !important;
+  color: rgba(16, 17, 20, 1) !important;
+}
+
+/* Responsive Overrides for HeroBanner */
+@media (max-width: 1600px) {
+  .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 680px !important;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    bottom: -68px !important;
+    width: 52% !important;
+  }
+}
+
+@media (max-width: 1500px) {
+  .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 680px !important;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    bottom: -68px !important;
+    width: 54% !important;
+  }
+}
+
+@media (max-width: 1400px) {
+  .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 680px !important;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    bottom: -68px !important;
+    width: 55% !important;
+  }
+}
+
+@media (max-width: 1200px) {
+  .homeHero :global(.hero-copy) {
+    padding-top: 135px !important;
+    padding-bottom: 40px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: clamp(2.4rem, 3.8vw, 3.1rem) !important;
+  }
+  .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 620px !important;
+  }
+}
+
+@media (max-width: 1100px) {
+  .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 600px !important;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    bottom: 0px !important;
+    width: 50% !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .homeHero {
+    min-height: auto !important;
+    max-height: none !important;
+  }
+  .homeHero :global(.hero-layout) {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    min-height: auto !important;
+  }
+  .homeHero :global(.hero-copy) {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-top: 170px !important;
+    padding-bottom: 24px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: clamp(2.1rem, 4vw, 2.6rem) !important;
+    line-height: 1.08 !important;
+  }
+  .homeHero :global(.hero-metrics) {
+    display: flex !important;
+    gap: 24px !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+  }
+  .homeHero :global(.hero-image) {
+    position: relative !important;
+    right: 0 !important;
+    bottom: 0 !important;
+    width: 100% !important;
+    height: 420px !important;
+    display: flex !important;
+    align-items: flex-end !important;
+    justify-content: flex-end !important;
+    margin-top: 20px !important;
+  }
+  .homeHero :global(.hero-doctor-bg) {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    max-height: 420px !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+    max-height: 470px !important;
+    width: 80% !important;
+    object-position: right top !important;
+    min-height: 430px;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 0 !important;
+    height: auto !important;
+    max-height: 450px !important;
+    width: 60% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+  }
+}
+
+@media (max-width: 768px) {
+  .homeHero :global(.hero-copy) {
+    padding-top: 170px !important;
+    padding-bottom: 20px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: clamp(1.85rem, 4.5vw, 2.3rem) !important;
+  }
+  .homeHero :global(.hero-metrics) {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 18px !important;
+  }
+  .homeHero :global(.hero-image) {
+    height: 360px !important;
+  }
+  .homeHero :global(.hero-doctor-bg) {
+    max-height: 360px !important;
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+    max-height: 340px !important;
+    width: 80% !important;
+    object-position: right top !important;
+    min-height: 340px;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 0 !important;
+    height: auto !important;
+    max-height: 450px !important;
+    width: 68% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .homeHero :global(.hero-copy) {
+    padding-top: 155px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: 40px !important;
+  }
+  .homeHero :global(.hero-buttons) {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 10px !important;
+  }
+  .homeHero :global(.hero-buttons) :global(.button) {
+    width: 100% !important;
+    justify-content: center !important;
+  }
+  .homeHero :global(.hero-metrics) {
+    grid-template-columns: 1fr !important;
+    gap: 14px !important;
+  }
+  .homeHero :global(.hero-metrics) > div {
+    flex-direction: column !important;
+    justify-content: center !important;
+    text-align: center !important;
+    gap: 8px !important;
+  }
+  .homeHero :global(.hero-image) {
+    height: 320px !important;
+  }
+  .homeHero :global(.hero-doctor-bg),
+  .homeHero :global(.hero-doctor-img) {
+    max-height: 320px !important;
+  }
+  .homeHero :global(.hero-doctor-bg) {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+    max-height: 340px !important;
+    width: 90% !important;
+    object-position: right top !important;
+    min-height: 340px;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 0 !important;
+    height: auto !important;
+    max-height: 450px !important;
+    width: 78% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+  }
+}
+
+@media (max-width: 430px) {
+  .homeHero :global(.hero-copy) {
+    padding-top: 145px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: 38px !important;
+    line-height: 1.1 !important;
+  }
+  .homeHero :global(.hero-copy) p {
+    font-size: 14px !important;
+  }
+  .homeHero :global(.hero-image) {
+    height: 320px !important;
+  }
+  .homeHero :global(.hero-doctor-bg),
+  .homeHero :global(.hero-doctor-img) {
+    max-height: 320px !important;
+  }
+  .homeHero :global(.hero-doctor-bg) {
+    position: absolute !important;
+    bottom: 0 !important;
+    right: 0 !important;
+    height: 100% !important;
+    width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+    max-height: 340px !important;
+    width: 100% !important;
+    object-position: right top !important;
+    min-height: 340px;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    position: absolute !important;
+    bottom: -20px !important;
+    right: 0 !important;
+    height: auto !important;
+    max-height: 450px !important;
+    width: 85% !important;
+    max-width: 100% !important;
+    object-fit: cover !important;
+    object-position: right bottom !important;
+  }
+}
+
+@media (max-width: 390px) {
+  .homeHero :global(.hero-copy) {
+    padding-top: 140px !important;
+  }
+  .homeHero :global(.hero-copy) h1 {
+    font-size: 35px !important;
+  }
+  .homeHero :global(.hero-image) {
+    height: 330px !important;
+  }
+  .homeHero :global(.hero-doctor-bg),
+  .homeHero :global(.hero-doctor-img) {
+    max-height: 330px !important;
+  }
+  .homeHero :global(.hero-doctor-img) {
+    width: 100% !important;
+  }
+}

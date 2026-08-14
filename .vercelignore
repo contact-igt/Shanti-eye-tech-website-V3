@@ -1,0 +1,9 @@
+.next
+.vinext
+node_modules
+.git
+.cache
+.vercel
+dist
+coverage
+*.log

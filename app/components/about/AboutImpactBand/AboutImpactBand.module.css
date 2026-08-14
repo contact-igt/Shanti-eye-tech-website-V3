@@ -1,0 +1,88 @@
+.impactBand {
+  position: relative;
+  overflow: hidden;
+  min-height: 378px;
+  padding: 58px 0 64px;
+  background: linear-gradient(115deg, #2f74f5 0%, #238fe8 48%, #19c3d4 100%);
+  text-align: center;
+}
+
+.impactBand :global(.shell) {
+  width: min(1120px, calc(100% - 64px));
+  margin: 0 auto;
+}
+
+.impactBand h2 {
+  margin: 0;
+  color: #fff;
+  font-size: clamp(2.8rem, 4.2vw, 3.75rem);
+  font-weight: 700;
+  letter-spacing: -0.045em;
+  line-height: 1.08;
+}
+
+.impactBand p {
+  margin: 14px 0 0;
+  color: rgba(255, 255, 255, 0.88);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.impactBand :global(.shell) > div {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 32px;
+  margin-top: 62px;
+}
+
+.impactBand b {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #fff;
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.04em;
+}
+
+.impactBand b span {
+  font-size: inherit !important;
+  color: inherit !important;
+  display: inline !important;
+}
+
+.impactBand b::after {
+  content: "";
+  width: 74px;
+  height: 4px;
+  margin-top: 22px;
+  border-radius: 99px;
+  background: #fff;
+}
+
+.impactBand small {
+  margin-top: 12px;
+  color: #fff;
+  font-size: 18px;
+  font-weight: 500;
+  letter-spacing: -0.01em;
+  line-height: 1.3;
+}
+
+@media (max-width: 900px) {
+  .impactBand :global(.shell) > div {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px;
+  }
+}
+
+@media (max-width: 540px) {
+  .impactBand :global(.shell) > div {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+  .impactBand b {
+    font-size: 52px;
+  }
+}

@@ -1,5 +1,5 @@
 .section {
-  min-height: 600px;
+  min-height: 640px;
   position: relative;
   overflow: hidden;
   background-size: cover;
@@ -14,7 +14,7 @@
 
 .shell {
   width: min(1180px, calc(100% - 64px));
-  min-height: 520px;
+  min-height: 560px;
   margin: 0 auto;
   position: relative;
   z-index: 1;
@@ -28,7 +28,7 @@
 }
 
 .copy h1 {
-  margin: 20px 0 24px;
+  margin: 0 0 24px;
   color: #0f1117;
   font-size: clamp(2.6rem, 4vw, 4.2rem);
   line-height: 1.1;
@@ -215,6 +215,11 @@
   background-size: cover;
 }
 
+.glaucoma {
+  background-position: right center;
+  background-size: cover;
+}
+
 
 /* Desktop hero image without overlay */
 @media (min-width: 769px) {
@@ -237,27 +242,27 @@
 /* Match service heroes to the homepage hero alignment and rhythm. */
 @media (min-width: 901px) {
   .section {
-    min-height: 680px;
+    min-height: 730px;
     background-position: 100% right;
   }
 
   .shell {
     width: min(1324px, calc(100% - 64px));
-    min-height: 630px;
+    min-height: 680px;
     align-items: flex-start;
     padding: 60px 0 48px;
   }
 
   .copy {
-    margin-top: 90px;
+    margin-top: 135px;
     width: min(620px, 50%);
   }
 
   .copy h1 {
-    max-width: 620px;
+    max-width: 600px;
     margin: 0 0 28px;
-    font-size: var(--font-h1);
-    line-height: 1.05;
+    font-size: clamp(2.4rem, 3.2vw, 3.6rem);
+    line-height: 1.08;
     letter-spacing: -.03em;
   }
 
@@ -295,17 +300,17 @@
 
 @media (max-width: 1200px) and (min-width: 901px) {
   .section {
-    min-height: 600px;
+    min-height: 640px;
   }
 
   .shell {
     width: min(1040px, calc(100% - 52px));
-    min-height: 600px;
+    min-height: 640px;
     padding-top: 52px;
   }
 
   .copy h1 {
-    font-size: clamp(2.4rem, 3.8vw, 3.1rem);
+    font-size: clamp(2.1rem, 2.9vw, 2.8rem);
   }
 
   .copy p {
@@ -325,7 +330,7 @@
 @media (max-width: 900px) {
   .shell {
     width: min(720px, calc(100% - 40px));
-    min-height: 560px;
+    min-height: 610px;
     align-items: flex-start;
     padding: 50px 0 36px;
   }
@@ -353,7 +358,7 @@
 @media (max-width: 640px) {
   .shell {
     width: min(100% - 30px, 520px);
-    min-height: 520px;
+    min-height: 560px;
     padding: 44px 0 32px;
   }
 
@@ -380,9 +385,9 @@
 }
 /* Shared service hero mobile alignment. */
 @media (max-width: 640px) {
-  .section { min-height: 520px; background-position: 68% center; }
+  .section { min-height: 570px; background-position: 68% center; }
   .overlay { background: linear-gradient(90deg, rgba(255,255,255,.98) 0%, rgba(255,255,255,.91) 50%, rgba(255,255,255,.22) 100%); }
-  .shell { display: block; min-height: 520px; width: min(100% - 30px, 520px); padding: 44px 0 32px; }
+  .shell { display: block; min-height: 570px; width: min(100% - 30px, 520px); padding: 54px 0 42px; }
   .copy { width: 100%; max-width: 365px; }
   .copy h1 { margin: 18px 0; font-size: clamp(2.7rem, 12.5vw, 3.6rem); line-height: .98; }
   .copy p { font-size: 15px; line-height: 1.52; }

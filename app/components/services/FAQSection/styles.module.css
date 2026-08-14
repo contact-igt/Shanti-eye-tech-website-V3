@@ -13,6 +13,9 @@
 }
 
 .card {
+  position: sticky;
+  top: clamp(108px, calc(50vh - 170px), 180px);
+  align-self: start;
   max-width: 342px;
   min-height: 292px;
   padding: 34px 30px 32px;
@@ -145,6 +148,7 @@
   }
 
   .card {
+    position: static;
     order: 3;
     width: 100%;
     max-width: none;
@@ -166,16 +170,17 @@
 }
 
 .header h2 {
-  margin: 24px 0 0;
+  margin: 18px 0 0;
   color: #10141d;
-  font-size: clamp(46px, 4.3vw, 64px);
-  line-height: 1.05;
-  letter-spacing: 0;
+  font-size: clamp(36px, 3.6vw, 48px);
+  line-height: 1.1;
+  letter-spacing: -.01em;
   white-space: nowrap;
 }
 
 .header h2 span {
   color: var(--cyan);
+  display: inline-block;
 }
 
 @media (max-width: 992px) {
@@ -200,4 +205,4 @@
 
 /* Shared FAQ mobile flow. */
 @media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); grid-template-columns: 1fr; gap: 38px; } .card, .faqBox { max-width: none; width: 100%; } }
-@media (max-width: 640px) { .section { padding: 36px 0 42px; } .shell { width: min(100% - 30px, 520px); gap: 30px; } .card { min-height: 0; padding: 28px; border-radius: 18px; } .card h3 { font-size: 24px; } .faqBox { padding: 14px 22px; border-radius: 18px; } .faqBox summary { min-height: 58px; font-size: 15px; } .faqBox details p { font-size: 14px; line-height: 1.55; } }
+@media (max-width: 640px) { .section { padding: 36px 0 42px; } .shell { width: min(100% - 30px, 520px); gap: 30px; } .card { min-height: 0; padding: 28px; border-radius: 18px; } .card h3 { font-size: 24px; } .faqBox { padding: 14px 22px; border-radius: 18px; } .faqBox summary { min-height: 72px; padding: 16px 0; font-size: 15px; align-items: center; } .faqBox details p { font-size: 14px; line-height: 1.55; } }

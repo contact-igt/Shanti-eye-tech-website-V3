@@ -1,0 +1,420 @@
+.hero {
+  min-height: 700px;
+  padding-top: 126px;
+  overflow: hidden;
+  background: #f8fbff;
+}
+
+.layout {
+  position: relative;
+  display: grid;
+  width: min(1610px, calc(100% - 96px));
+  grid-template-columns: minmax(0, 48%) minmax(0, 52%);
+  align-items: stretch;
+  min-height: 574px;
+}
+
+.copy {
+  position: relative;
+  z-index: 4;
+  align-self: center;
+  min-width: 0;
+  max-width: 610px;
+  padding: 24px 30px 96px 0;
+}
+
+.copy :global(.eyebrow) {
+  margin-bottom: 18px;
+}
+
+.copy h1 {
+  margin: 0 0 22px;
+  color: #0f172a;
+  font-family: var(--font-sans);
+  font-size: clamp(52px, 4.1vw, 64px);
+  font-weight: 800;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+}
+
+.titleLine,
+.accentLine {
+  display: block;
+  white-space: nowrap;
+}
+
+.titleLine {
+  color: #0f172a;
+}
+
+.accentLine {
+  color: #1fc6df;
+  background: linear-gradient(90deg, #1fc6df 0%, #0872d9 92%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.copy > p {
+  max-width: 610px;
+  margin: 0;
+  color: #475569;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.65;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 30px;
+}
+
+.actions :global(.button) {
+  display: inline-flex;
+  gap: 8px;
+  min-height: 56px;
+  padding: 0 26px;
+  font-size: 15px;
+  white-space: nowrap;
+}
+
+.primaryButton {
+  min-width: 222px;
+}
+
+.secondaryButton {
+  min-width: 194px;
+}
+
+.visual {
+  position: relative;
+  z-index: 1;
+  min-width: 0;
+  height: 574px;
+  margin-right: calc((100vw - min(1610px, calc(100vw - 100px))) / -0.5);
+  overflow: visible;
+}
+
+.visualBackground,
+.visualDoctor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.visualBackground {
+  z-index: 0;
+  top: -126px;
+  bottom: auto;
+  height: calc(100% + 126px);
+  object-fit: cover;
+  object-position: left center;
+}
+
+.visualDoctor {
+  z-index: 1;
+  object-fit: contain;
+  object-position: right bottom;
+  transform: scale(1.2);
+  transform-origin: right bottom;
+}
+
+.statistics {
+  position: absolute;
+  right: 0;
+  bottom: 24px;
+  z-index: 5;
+  display: grid;
+  width: 62%;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.statistic {
+  display: flex;
+  min-width: 0;
+  min-height: 148px;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 24px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 8px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 16px 38px rgba(37, 75, 126, 0.13);
+  backdrop-filter: blur(20px) saturate(1.08);
+  -webkit-backdrop-filter: blur(20px) saturate(1.08);
+}
+
+.statisticIcon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border-radius: 50%;
+  color: #13bd3a;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: inset 0 0 0 1px rgba(18, 187, 217, 0.16);
+}
+
+.statisticCopy {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.statisticCopy b {
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.25;
+}
+
+.statisticCopy b.compactValue {
+  font-size: 12px;
+}
+
+.statisticCopy > span {
+  color: #475569;
+  font-size: 11px;
+  font-weight: 600;
+  line-height: 1.3;
+}
+
+@media (max-width: 1200px) {
+  .hero {
+    min-height: 660px;
+  }
+
+  .layout {
+    width: min(1120px, calc(100% - 56px));
+    min-height: 534px;
+  }
+
+  .copy {
+    padding-right: 22px;
+  }
+
+  .copy h1 {
+    font-size: clamp(48px, 4.2vw, 58px);
+  }
+
+  .visual {
+    height: 534px;
+    margin-right: calc((100vw - min(1120px, calc(100vw - 56px))) / -2);
+  }
+
+  .statistics {
+    width: 54%;
+    gap: 10px;
+  }
+
+  .statistic {
+    min-height: 132px;
+    padding: 20px 12px;
+  }
+}
+
+@media (max-width: 992px) {
+  .hero {
+    min-height: 0;
+    padding-top: 126px;
+  }
+
+  .layout {
+    display: flex;
+    width: 100%;
+    min-height: 0;
+    flex-direction: column;
+  }
+
+  .copy {
+    width: min(760px, calc(100% - 48px));
+    margin: 0 auto 0 24px;
+    padding: 54px 0 40px;
+    text-align: left;
+  }
+
+  .copy h1 {
+    font-size: clamp(42px, 6.2vw, 54px);
+    line-height: 1.02;
+  }
+
+  .visual {
+    width: 100%;
+    height: clamp(400px, 52vw, 520px);
+    margin: 0;
+  }
+
+  .visualBackground {
+    top: 0;
+    bottom: 0;
+    height: 100%;
+    object-position: center;
+  }
+
+  .visualDoctor {
+    object-position: center bottom;
+    transform: scale(1.12);
+    transform-origin: center bottom;
+  }
+
+  .statistics {
+    position: relative;
+    right: auto;
+    bottom: auto;
+    order: 3;
+    width: min(760px, calc(100% - 48px));
+    margin: -42px auto 0 24px;
+    padding-bottom: 48px;
+  }
+
+  .statistic {
+    min-height: 126px;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero {
+    padding-top: 116px;
+  }
+
+  .copy {
+    width: min(100% - 40px, 680px);
+    padding-top: 46px;
+  }
+
+  .copy h1 {
+    font-size: clamp(38px, 7.8vw, 48px);
+    line-height: 1.04;
+  }
+
+  .copy > p {
+    font-size: 15px;
+  }
+
+  .statistics {
+    width: min(100% - 40px, 680px);
+  }
+
+  .statisticCopy b {
+    font-size: 15px;
+  }
+
+  .visual {
+    height: 410px;
+  }
+}
+
+@media (max-width: 576px) {
+  .hero {
+    padding-top: 108px;
+  }
+
+  .copy {
+    width: min(100% - 32px, 520px);
+    padding: 40px 0 34px;
+  }
+
+  .copy h1 {
+    font-size: 40px;
+  }
+
+  .titleLine,
+  .accentLine {
+    white-space: normal;
+  }
+
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 10px;
+  }
+
+  .actions :global(.button) {
+    width: 100%;
+  }
+
+  .visual {
+    height: 330px;
+  }
+
+  .visualBackground {
+    object-position: 58% center;
+  }
+
+  .statistics {
+    width: min(100% - 32px, 520px);
+    grid-template-columns: 1fr;
+    gap: 12px;
+    margin-top: -24px;
+    padding-bottom: 40px;
+  }
+
+  .statistic {
+    min-height: 90px;
+    flex-direction: row;
+    justify-content: flex-start;
+    padding: 16px 20px;
+    text-align: left;
+  }
+
+  .statisticCopy {
+    align-items: flex-start;
+  }
+
+  .statisticCopy b,
+  .statisticCopy b.compactValue {
+    font-size: 15px;
+  }
+}
+
+@media (max-width: 430px) {
+  .copy {
+    width: calc(100% - 28px);
+  }
+
+  .copy h1 {
+    font-size: 31px;
+  }
+
+  .copy > p {
+    font-size: 14.5px;
+  }
+
+  .visual {
+    height: 300px;
+  }
+
+  .statistics {
+    width: calc(100% - 28px);
+  }
+}
+
+@media (max-width: 390px) {
+  .copy h1 {
+    font-size: 29px;
+  }
+
+  .actions :global(.button) {
+    min-height: 52px;
+    padding-inline: 18px;
+    font-size: 14px;
+  }
+
+  .visual {
+    height: 278px;
+  }
+
+  .statistic {
+    padding-inline: 16px;
+  }
+}

@@ -1,0 +1,1 @@
+export { TreatmentsOverviewHero } from "./TreatmentsOverviewHero";
