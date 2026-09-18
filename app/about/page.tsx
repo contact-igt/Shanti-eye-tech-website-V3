@@ -1,6 +1,5 @@
 import { AboutHero } from "../components/about/AboutHero";
 import { AboutStory } from "../components/about/AboutStory";
-import { AboutMilestones } from "../components/about/AboutMilestones";
 import { AboutPhilosophy } from "../components/about/AboutPhilosophy";
 import { AboutLeadership } from "../components/about/AboutLeadership";
 import { AboutCapabilities } from "../components/about/AboutCapabilities";
@@ -13,10 +12,9 @@ export default function AboutPage() {
   return (
     <>
       <Header active="about" />
-      <main>
+      <main className="about-page">
         <AboutHero />
         <AboutStory />
-        <AboutMilestones />
         <AboutPhilosophy />
         <AboutLeadership />
         <AboutCapabilities />

@@ -13,7 +13,11 @@ export function ComparisonSection({ content, kind }: { content: ComparisonConten
       <div className={styles.shell}>
         <SectionHeading title={content.title} accent={content.accent} body={content.body} />
         <div className={styles.tableWrap}>
-          <div className={styles.table} role="table">
+          <div
+            className={styles.table}
+            role="table"
+            style={{ "--cols": content.columns.length } as React.CSSProperties}
+          >
             <div className={`${styles.row} ${styles.head}`} role="row">
               <div role="columnheader">Feature</div>
               {content.columns.map((column) => (
@@ -54,7 +58,7 @@ export function ComparisonSection({ content, kind }: { content: ComparisonConten
             <span>{content.noteText}</span>
           </div>
         </div>
-        <Link className={styles.cta} href="/contact">
+        <Link className={styles.cta} href="/contact#contact-form">
           <span>{content.cta}</span>
           <img src="/assets/white_arrow.png" alt="" aria-hidden="true" />
         </Link>

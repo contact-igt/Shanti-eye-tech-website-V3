@@ -3,8 +3,19 @@ import { SectionHeading } from "../common/SectionHeading/SectionHeading";
 import type { ServiceKind, TreatmentOptionsContent } from "@/app/services/types";
 import styles from "./styles.module.css";
 
-function cardIcon(index: number) {
+function cardIcon(index: number, kind: ServiceKind) {
   const common = { fill: "none", stroke: "#ffffff", strokeWidth: 2.2, strokeLinecap: "round" as const, strokeLinejoin: "round" as const };
+
+  if (kind === "cataract" && index === 3) {
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true" {...common}>
+        <circle cx="12" cy="12" r="7" />
+        <path d="M12 2v3M12 19v3M2 12h3M19 12h3" />
+        <path d="m8.5 15.5 7-7" />
+      </svg>
+    );
+  }
+
   switch (index) {
     case 0:
       return <svg viewBox="0 0 24 24" aria-hidden="true" {...common}><circle cx="6" cy="6" r="3"/><circle cx="6" cy="18" r="3"/><line x1="20" y1="4" x2="8.12" y2="15.88"/><line x1="14.47" y1="14.48" x2="20" y2="20"/><line x1="8.12" y1="8.12" x2="12" y2="12"/></svg>;
@@ -48,7 +59,7 @@ export function TreatmentOptions({ content, kind }: { content: TreatmentOptionsC
               </div>
               <div className={styles.body}>
                 <div className={styles.topRow}>
-                  <div className={styles.iconBadge}>{cardIcon(idx)}</div>
+                  <div className={styles.iconBadge}>{cardIcon(idx, kind)}</div>
                   {option.tag ? <span className={styles.tagPill}>{option.tag}</span> : null}
                 </div>
                 <h3>{option.title}</h3>
@@ -56,7 +67,7 @@ export function TreatmentOptions({ content, kind }: { content: TreatmentOptionsC
                 {option.bullets ? (
                   <ul>{option.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
                 ) : null}
-                <Link href="/contact" className={styles.ctaLink}>
+                <Link href="/contact#contact-form" className={styles.ctaLink}>
                   Book Consultation <img src="/assets/arrow_green.png" alt="" className={styles.ctaArrow} />
                 </Link>
               </div>

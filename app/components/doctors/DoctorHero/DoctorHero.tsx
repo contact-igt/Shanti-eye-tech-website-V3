@@ -24,7 +24,9 @@ const statistics = [
 
 export function DoctorHero() {
   return (
-    <section className={styles.hero} aria-labelledby="doctor-hero-title">
+    <section className={styles.hero} id="doctor-banner" aria-labelledby="doctor-hero-title">
+      <img className={styles.heroBgImage} src="/assets/doctors/doctor-hero-bg.png" alt="" aria-hidden="true" />
+      <div className={styles.heroOverlay} />
       <div className={`shell ${styles.layout}`}>
         <div className={styles.copy}>
           <Eyebrow>MEET YOUR EYE SURGEON</Eyebrow>
@@ -38,10 +40,10 @@ export function DoctorHero() {
           </p>
 
           <div className={styles.actions}>
-            <Link className={`button button-primary ${styles.primaryButton}`} href="/contact">
+            <Link className={`button button-primary ${styles.primaryButton}`} href="/contact#contact-form">
               Book an Appointment <ArrowRight size={18} aria-hidden="true" />
             </Link>
-            <Link className={`button button-outline ${styles.secondaryButton}`} href="/about#leadership">
+            <Link className={`button button-outline ${styles.secondaryButton}`} href="#doctor-profile">
               Know Your Doctor <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
@@ -49,7 +51,6 @@ export function DoctorHero() {
         </div>
 
         <div className={styles.visual}>
-          <img className={styles.visualBackground} src="/assets/doctors/doctor-hero-bg.png" alt="" aria-hidden="true" />
           <img className={styles.visualDoctor} src="/assets/doctors/doctor-hero-foreground.png" alt="Dr. Amit N. Solanki in the eye clinic" />
         </div>
 

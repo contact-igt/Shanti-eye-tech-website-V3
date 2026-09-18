@@ -1,5 +1,6 @@
 import { SectionHeading } from "@/app/site-components";
 import styles from "./AboutFacilities.module.css";
+import { FacilitySlider } from "./FacilitySlider";
 
 const facilities = [
   {
@@ -28,17 +29,7 @@ export function AboutFacilities() {
           title="World-Class Infrastructure"
           accent="For Your Comfort"
         />
-        <div className="facility-grid">
-          {facilities.map((item) => (
-            <article key={item.title}>
-              <img src={item.image} alt={item.title} />
-              <div>
-                <h3>{item.title}</h3>
-                <p>{item.text}</p>
-              </div>
-            </article>
-          ))}
-        </div>
+        <FacilitySlider items={facilities} />
       </div>
     </section>
   );

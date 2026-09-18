@@ -16,9 +16,16 @@
   display: block;
 }
 
+@media (max-width: 900px) {
+  .desktopBr {
+    display: none;
+  }
+}
+
 .spacePrefix {
   display: none;
 }
+
 
 .copy h2 {
   margin: 18px 0 18px;
@@ -801,8 +808,10 @@
 
   .retinaCopy h3 {
     margin-bottom: 18px;
-    font-size: 23px;
+    font-size: clamp(18px, 4.5vw, 22px);
+    white-space: nowrap;
   }
+
 
   .retinaChecks {
     gap: 12px;
@@ -875,7 +884,8 @@
   }
 
   .retinaCopy h3 {
-    font-size: 21px;
+    font-size: clamp(14px, 4.1vw, 16.5px);
+    white-space: nowrap;
   }
 
   .warningGrid {
@@ -917,16 +927,16 @@
 
 @media (min-width: 901px) {
   .cataract .desktopBr {
-    display: none;
+    display: block;
   }
 
   .cataract .spacePrefix {
-    display: inline;
+    display: none;
   }
 
   .cataract .copy h2 {
-    max-width: 760px;
-    white-space: nowrap;
+    max-width: 500px;
+    white-space: normal;
   }
 }
 
@@ -1057,7 +1067,7 @@
     right: 260px;
     top: 18px;
     width: 88px;
-    height: 66px;
+    height: 85px;
   }
 
   .cataractEyeTwo {
@@ -1413,7 +1423,9 @@
 }
 
 .glaucomaNote {
+  grid-column: 1 / -1;
   width: 100%;
+  margin-top: -22px;
   box-sizing: border-box;
   padding: 12px 20px;
   border: 1px solid #ffe8d6;
@@ -1618,6 +1630,10 @@
     min-height: 0;
     display: grid;
     gap: 14px;
+  }
+
+  .glaucomaNote {
+    margin-top: -10px;
   }
 
   .glaucomaVisual img,

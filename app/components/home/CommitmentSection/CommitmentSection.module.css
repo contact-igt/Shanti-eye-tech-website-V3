@@ -115,8 +115,13 @@
     border-radius: 18px;
   }
   .commitmentSection :global(.feature-card) :global(.icon-box) {
-    width: 52px;
-    height: 52px;
+    width: 46px;
+    height: 46px;
+    border-radius: 12px;
+  }
+  .commitmentSection :global(.feature-card) :global(.icon-box) svg {
+    width: 26px;
+    height: 26px;
   }
   .commitmentSection :global(.feature-card) h3 {
     font-size: 20px;

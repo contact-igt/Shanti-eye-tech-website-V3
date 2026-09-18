@@ -33,9 +33,6 @@ export function DoctorSection() {
   return (
     <section className={`section doctor-section ${styles.doctorSection}`} id="doctor">
       <div className="shell doctor-layout">
-        <span className="doctor-number" aria-hidden="true">
-          01
-        </span>
         <div className="doctor-photo">
           <span>
             <span className="green-dot"></span>Available Today
@@ -48,12 +45,11 @@ export function DoctorSection() {
           <h2>Dr. Amit N Solanki</h2>
           <h4>Chief Ophthalmologist &amp; Medical Director</h4>
           <p>
-            With over 25 years of experience in advanced cataract and refractive surgery, Dr. Solanki is recognized for his expertise in premium lens implants and complex anterior segment procedures.
+            With over 20 years of experience since 2003 in cataract, glaucoma, and refractive surgery, Dr. Solanki is recognized internationally for his expertise in advanced phaco cataract surgery and glaucoma management.
           </p>
           <ul>
-            <li>MBBS, MS Ophthalmology</li>
-            <li>FRCS (Glasgow), Fellowship in Phaco &amp; Refractive Surgery</li>
-            <li>Former Consultant - All India Institute of Medical Sciences</li>
+            <li>Cataract, Glaucoma and Refractive Surgeon</li>
+            <li>Former Senior Resident - Aravind Eye Hospital, Tamil Nadu</li>
           </ul>
           <div className="doctor-stats">
             <div>
@@ -65,13 +61,13 @@ export function DoctorSection() {
             </div>
             <div>
               <DoctorStatIcon type="cap" />
-              <b>FRCS</b>
-              <span>Fellowship Royal College</span>
+              <b>FAECS</b>
+              <span>Professional Fellowship</span>
             </div>
             <div>
               <DoctorStatIcon type="people" />
               <b>
-                <CountUp value={25} suffix="K+" />
+                <CountUp value={49} suffix="K+" />
               </b>
               <span>Surgeries Performed</span>
             </div>
@@ -79,7 +75,7 @@ export function DoctorSection() {
           <div className="hero-buttons">
             <Link
               className="button green-button"
-              href="/contact"
+              href="/contact#contact-form"
               style={{ display: "flex", alignItems: "center", gap: "6px" }}
             >
               <svg className="doctor-action-icon" viewBox="0 0 24 24" aria-hidden="true">
@@ -88,7 +84,7 @@ export function DoctorSection() {
               </svg>
               Book Consultation <ArrowRight size={18} />
             </Link>
-            <Link className="button button-outline" href="/about#leadership">
+            <Link className="button button-outline" href="/doctors#doctor-banner">
               View Full Profile
             </Link>
           </div>

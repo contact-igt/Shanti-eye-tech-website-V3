@@ -1,0 +1,66 @@
+.sidebar {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+/* ─── Table of Contents ─── */
+.tocCard {
+  padding: 22px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--pale);
+  position: sticky;
+  top: 100px;
+}
+
+.tocTitle {
+  margin: 0 0 14px;
+  color: var(--ink);
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.tocList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.tocSub {
+  padding-left: 14px;
+}
+
+.tocLink {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 8px;
+  color: var(--muted);
+  font-size: 13.5px;
+  font-weight: 500;
+  text-decoration: none;
+  line-height: 1.4;
+  transition: color 0.15s, background 0.15s;
+}
+
+.tocLink:hover {
+  color: var(--ink);
+  background: rgba(31, 198, 223, 0.08);
+}
+
+.tocLinkActive {
+  display: block;
+  padding: 5px 8px;
+  border-radius: 8px;
+  color: var(--blue, #2a89ef);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-decoration: none;
+  line-height: 1.4;
+  background: rgba(42, 137, 239, 0.1);
+}

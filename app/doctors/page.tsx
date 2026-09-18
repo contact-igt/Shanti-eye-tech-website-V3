@@ -1,5 +1,6 @@
 import { DoctorHero } from "../components/doctors/DoctorHero";
 import { DoctorProfileSections } from "../components/doctors/DoctorProfileSections";
+import { AboutMilestones } from "../components/about/AboutMilestones";
 import { AppointmentSection, Footer, Header } from "../site-components";
 
 export default function DoctorsPage() {
@@ -9,8 +10,9 @@ export default function DoctorsPage() {
       <main>
         <DoctorHero />
         <DoctorProfileSections />
+        <AboutMilestones />
         <div className="home-page">
-          <AppointmentSection />
+          <AppointmentSection withForm={false} kind="doctor" />
         </div>
       </main>
       <Footer home />

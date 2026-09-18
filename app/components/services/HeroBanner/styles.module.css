@@ -296,6 +296,19 @@
     font-size: 13px;
     line-height: 1.35;
   }
+
+  .retina {
+    min-height: 640px;
+  }
+
+  .retina .shell {
+    min-height: 640px;
+    padding-bottom: 24px;
+  }
+
+  .retina .actions {
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 1200px) and (min-width: 901px) {

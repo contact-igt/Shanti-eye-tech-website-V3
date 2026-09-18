@@ -19,17 +19,17 @@ export function AboutStory() {
         <div>
           <Eyebrow>WHO WE ARE</Eyebrow>
           <h2>
-            A Vision for<br />
-            <span>Exceptional Eye Care</span>
+            Where Peace Meets<br />
+            <span>World-Class Eye Care</span>
           </h2>
           <p>
-            Founded in 1998, Shanti EyeTech was born from a simple yet powerful mission: to make world-class ophthalmology accessible to everyone. What began as a small clinic has evolved into one of the region’s most trusted eye care centers.
+            At Shanti EyeTech, we believe good eye care is not only about advanced treatment—it is also about making every patient feel comfortable, understood, and cared for. “Shanti” represents peace, while “EyeTech” reflects our commitment to modern eye care. Together, they define the experience we want every patient to have.
           </p>
           <p>
-            Our founder envisioned a facility where cutting-edge technology meets compassionate care. Today, that vision lives on through our team of 15+ specialist ophthalmologists and 50+ dedicated support staff.
+            Our doctors and clinical team take the time to listen, explain things clearly, and guide each patient through the right treatment with confidence. With modern technology, experienced professionals, and a patient-first approach, we aim to make quality eye care simple, reassuring, and accessible.
           </p>
           <p>
-            We’ve successfully performed over 2,000 procedures, from routine eye exams to complex surgical interventions. Each patient receives personalized treatment plans tailored to their unique needs and lifestyle.
+            For us, restoring vision is more than a medical outcome. It is about helping people return to everyday life with greater comfort, confidence, and peace of mind.
           </p>
           <blockquote>
             “Our commitment is not just to restore vision, but to enhance the quality of life for every patient who walks through our doors.”

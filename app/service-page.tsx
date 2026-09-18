@@ -272,7 +272,7 @@ const whyIcon = (path: ReactNode) => (
 );
 
 const whyItems = [
-  { icon: "01", title: "Expert Surgeons", text: "25+ years of specialized cataract surgery experience" },
+  { icon: "01", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
   { icon: "02", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
   { icon: "03", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
   { icon: "04", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
@@ -285,7 +285,7 @@ const whyItems = [
 const lasikWhyItems = [
   { icon: whyIcon(<><path d="M8 21l4-2 4 2v-7H8v7z" /><path d="M7 10a5 5 0 1 1 10 0 5 5 0 0 1-10 0z" /><path d="M12 7v3l2 1" /></>), title: "Award-Winning Excellence", text: "Recognized nationally for refractive surgery outcomes" },
   { icon: whyIcon(<path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z" />), title: "Blade-Free Technology", text: "Advanced femtosecond laser for precision and safety" },
-  { icon: whyIcon(<><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="10" cy="7" r="4" /><path d="M20 21v-2a4 4 0 0 0-3-3.87" /><path d="M17 3.13a4 4 0 0 1 0 7.75" /></>), title: "Experienced Specialists", text: "Over 25 years of LASIK surgical expertise" },
+  { icon: whyIcon(<><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="10" cy="7" r="4" /><path d="M20 21v-2a4 4 0 0 0-3-3.87" /><path d="M17 3.13a4 4 0 0 1 0 7.75" /></>), title: "Experienced Specialists", text: "Over 20 years of LASIK surgical expertise" },
   { icon: whyIcon(<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />), title: "Personalized Treatment", text: "Custom wavefront-guided procedures for your eyes" },
   { icon: whyIcon(<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>), title: "Quick Recovery", text: "Most patients resume normal activities within 24 hours" },
   { icon: whyIcon(<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />), title: "Comprehensive Care", text: "Lifetime post-operative support and monitoring" },
@@ -308,7 +308,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
               <h1>{config.title}<br /><span>{config.accent}</span></h1>
               <p>{config.heroText}</p>
               <div className="hero-buttons">
-                <Link className="button button-primary" href="/contact">
+                <Link className="button button-primary" href="/contact#contact-form">
                   <svg className="button-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.3" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
                   {isRetina ? "Book Consultation" : "Start a Consultation"}
                 </Link>
@@ -477,7 +477,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     {option.bullets ? (
                       <ul>{option.bullets.map((bullet) => <li key={bullet}>{bullet}</li>)}</ul>
                     ) : (
-                      config.kind !== "lasik" && <Link href="/contact">Book Consultation →</Link>
+                      config.kind !== "lasik" && <Link href="/contact#contact-form">Book Consultation →</Link>
                     )}
                   </div>
                 </article>
@@ -529,7 +529,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     <span>The &quot;best&quot; lens is the one that matches your eyes, your prescription, and how you live your life. We do a detailed evaluation before recommending anything - and we will always explain why.</span>
                   </div>
                 </div>
-                <Link className="button button-primary center-button" href="/contact">Get a Personalised Lens Recommendation &rarr;</Link>
+                <Link className="button button-primary center-button" href="/contact#contact-form">Get a Personalised Lens Recommendation &rarr;</Link>
               </div>
             </section>
           ) : (
@@ -577,7 +577,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     <span>The best procedure is not the most popular one. The best procedure is the one that is safest for your eyes, your cornea, your power, and your lifestyle. That is why we do a detailed evaluation before recommending anything.</span>
                   </div>
                 </div>
-                <Link className="button button-primary center-button lasik-recommendation-button" href="/contact"><span>Get My Personalised Vision Correction Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
+                <Link className="button button-primary center-button lasik-recommendation-button" href="/contact#contact-form"><span>Get My Personalised Vision Correction Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
               </div>
             </section>
           )

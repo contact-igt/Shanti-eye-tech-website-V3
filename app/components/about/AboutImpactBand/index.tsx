@@ -9,16 +9,12 @@ export function AboutImpactBand() {
         <p>Two decades of excellence in eye care</p>
         <div>
           <b>
-            <CountUp value={25} suffix="+" />
+            <CountUp value={20} suffix="+" />
             <small>Years of Service</small>
           </b>
           <b>
             <CountUp value={49999} suffix="+" />
             <small>Successful Procedures</small>
-          </b>
-          <b>
-            <CountUp value={15} suffix="+" />
-            <small>Expert Ophthalmologists</small>
           </b>
           <b>
             <CountUp value={97} suffix="%" />

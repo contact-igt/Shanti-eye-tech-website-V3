@@ -3,6 +3,8 @@ import { headers } from "next/headers";
 import { QuickActionButtons } from "./site-components";
 import { GSAPProvider } from "./components/GSAPProvider";
 import "./globals.css";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -20,24 +22,28 @@ export async function generateMetadata(): Promise<Metadata> {
     description: "World-class ophthalmology care with advanced technology and compassionate specialists in Indore.",
     icons: { icon: "/assets/logo.png", shortcut: "/assets/logo.png" },
     openGraph: {
-      title: "Shanti EyeTech | Your Vision, Our Precision",
+      title: "Shanti EyeTech | GENTLE CARE FOR YOUR PRECIOUS EYES",
       description: "Advanced eye care in Indore with compassionate specialists and modern technology.",
       type: "website",
       url: origin,
-      images: [{ url: `${origin}/og.png`, width: 1200, height: 630, alt: "Shanti EyeTech - Your Vision, Our Precision" }],
+      // WhatsApp's link-preview crawler doesn't reliably render .webp
+      // og:images — it silently falls back to a small default thumbnail
+      // instead of the large image card. A JPEG copy of the same photo
+      // fixes that (Facebook/Twitter/LinkedIn handle both fine either way).
+      images: [{ url: "/assets/og-image.jpg", width: 1800, height: 1200, alt: "Dr. Amit N. Solanki at Shanti EyeTech" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Shanti EyeTech | Your Vision, Our Precision",
+      title: "Shanti EyeTech | GENTLE CARE FOR YOUR PRECIOUS EYES",
       description: "Advanced eye care in Indore.",
-      images: [`${origin}/og.png`],
+      images: [{ url: "/assets/og-image.jpg", alt: "Dr. Amit N. Solanki at Shanti EyeTech" }],
     },
   };
 }
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="en">
+    <html lang="en" data-scroll-behavior="smooth">
       <body>
         <GSAPProvider>
           {children}

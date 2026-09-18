@@ -142,7 +142,7 @@
 }
 
 .doctorSection :global(.doctor-stats) b {
-  font-size: 25px;
+  font-size: 28px;
   color: #0f172a;
   font-weight: 800;
   line-height: 1;
@@ -151,7 +151,7 @@
 .doctorSection :global(.doctor-stats) b span {
   display: inline !important;
   color: #0f172a !important;
-  font-size: 25px !important;
+  font-size: 28px !important;
   font-weight: 800 !important;
   line-height: 1 !important;
 }
@@ -243,8 +243,8 @@
     gap: 34px;
   }
   .doctorSection :global(.doctor-photo) {
-    width: min(100%, 390px);
-    margin: 0 auto;
+    width: 100%;
+    margin: 0;
   }
   .doctorSection :global(.doctor-photo) img {
     height: 410px;

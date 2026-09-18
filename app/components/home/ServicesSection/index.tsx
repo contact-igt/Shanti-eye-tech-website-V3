@@ -13,13 +13,13 @@ const services = [
   [
     "02",
     "Retina Care",
-    "Comprehensive medical and surgical retina services including laser treatments and injections.",
+    "Comprehensive medical and retina services including laser treatments and injections",
     "/services/retina",
   ],
   [
     "03",
-    "LASIK Surgery",
-    "LASIK, SMILE, and PRK procedures for freedom from glasses and contact lenses.",
+    "Freedom From Glasses",
+    "Touchless LASIK, ICL and PRELEX vision correction procedures for freedom from glasses and contact lenses.",
     "/services/lasik",
   ],
   [
@@ -28,11 +28,18 @@ const services = [
     "Advanced diagnosis and treatment to preserve your vision through medical and surgical interventions.",
     "/services/glaucoma",
   ],
+  // Squint Treatment temporarily unlisted — replaced by Pediatric Eye Care
+  // [
+  //   "05",
+  //   "Squint Treatment",
+  //   "Expert diagnosis and surgical correction of squint (strabismus) for aligned vision and improved eye coordination.",
+  //   "/services/squint",
+  // ],
   [
     "05",
-    "Squint Treatment",
-    "Expert diagnosis and surgical correction of squint (strabismus) for aligned vision and improved eye coordination.",
-    "/services/squint",
+    "Pediatric Eye Care",
+    "Comprehensive eye exams, vision therapy and myopia management for infants, children and teenagers.",
+    "/services/pediatric-eye-care",
   ],
   [
     "06",
@@ -121,7 +128,12 @@ export function ServicesSection() {
         </div>
         <div className="service-grid">
           {services.map(([number, title, text, href], index) => (
-            <Link className="service-card" href={href} key={title}>
+            <Link
+              className="service-card"
+              href={`${href}#service-banner`}
+              key={title}
+              scroll
+            >
               <span className="service-number">{number}</span>
               <span
                 className={`service-icon service-icon-${index + 1}`}

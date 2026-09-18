@@ -51,15 +51,15 @@ export function AboutLeadership() {
           </div>
           <div className="leadership-copy">
             <h2>Dr. Amit N Solanki</h2>
-            <h4>MBBS, MS, FRCS (Glasgow)</h4>
+            <h4>MBBS, DOMS, DNB, FAECS</h4>
             <p>
-              With over 25 years of dedicated service in ophthalmology, Dr. Amit N Solanki is a pioneer in advanced cataract and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanti EyeTech’s success.
+              With over 20 years of dedicated service in ophthalmology since 2003, Dr. Amit N Solanki is a pioneer in advanced cataract, glaucoma, and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanti EyeTech’s success.
             </p>
             <p>
-              After completing his fellowship at the prestigious All India Institute of Medical Sciences and advanced training at Royal College of Surgeons, Glasgow, Dr. Solanki returned to establish a center that would bring world-class eye care to the community.
+              After completing his MBBS and DOMS at B.J. Medical College, Ahmedabad, Dr. Solanki served for two years as a Senior Resident at Aravind Eye Hospital, Tamil Nadu, where he earned his DNB, before pursuing specialized training in Glaucoma &amp; Advanced Phaco Cataract Surgery at Aravind Eye Hospital, Coimbatore.
             </p>
             <p>
-              His expertise in premium IOL implants and complex anterior segment procedures has helped restore vision for thousands of patients. Beyond clinical practice, Dr. Solanki is actively involved in training young ophthalmologists and conducting research in phacoemulsification techniques.
+              This hands-on training honed his skills in advanced phaco cataract surgery as well as glaucoma diagnostics and management. Beyond clinical practice, Dr. Solanki has trained foreign doctors in Hanoi, Vietnam through the Alina Vision International Foundation, and is a sought-after speaker who has delivered numerous scientific talks as guest faculty at national and international conferences.
             </p>
             <div className="leadership-stats">
               <article>
@@ -87,7 +87,7 @@ export function AboutLeadership() {
                   <LeadershipIcon type="users" />
                 </span>
                 <b>
-                  <CountUp value={25} suffix="K+" />
+                  <CountUp value={49} suffix="K+" />
                 </b>
                 <strong>Surgeries</strong>
                 <small>Performed</small>
@@ -97,7 +97,7 @@ export function AboutLeadership() {
                   <LeadershipIcon type="calendar" />
                 </span>
                 <b>
-                  <CountUp value={25} suffix="+" /> Years
+                  <CountUp value={20} suffix="+" /> Years
                 </b>
                 <strong>Experience</strong>
               </article>

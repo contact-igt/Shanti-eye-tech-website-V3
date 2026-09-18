@@ -33,14 +33,14 @@ export function CommitmentSection() {
             },
             {
               icon: "✦",
-              title: "Innovation & Research",
-              text: "We stay at the forefront of ophthalmology through continuous training, research participation, and adoption of cutting-edge technologies.",
+              title: "Caring with a Spiritual Touch",
+              text: "Healing with Positive Energy guides how we care for every patient, with compassion, reassurance, and a positive outlook throughout their treatment.",
             },
           ]}
         />
         <Link
           className="button button-primary center-button"
-          href="/contact"
+          href="/contact#contact-form"
           style={{
             display: "flex",
             alignItems: "center",

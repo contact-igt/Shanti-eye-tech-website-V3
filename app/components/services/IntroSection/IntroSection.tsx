@@ -21,8 +21,13 @@ export function IntroSection({ content, kind }: { content: IntroContent; kind: S
             {content.title} <span>{content.accent}</span>
           </h2>
           {content.paragraphs.map((paragraph, index) => (
-            <p className={isRetina && index === 0 ? styles.infoParagraph : undefined} key={paragraph}>{paragraph}</p>
+            <p
+              className={isRetina && index === 0 ? styles.infoParagraph : undefined}
+              key={paragraph}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
+
           {content.callout ? (
             <div className={`${styles.callout} ${isRetina ? styles.retinaCallout : ""} ${isGlaucoma ? styles.glaucomaCallout : ""}`}>
               {isGlaucoma ? (

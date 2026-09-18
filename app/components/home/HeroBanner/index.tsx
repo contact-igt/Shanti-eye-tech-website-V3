@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Award, Users, Clock } from "lucide-react";
+import { ArrowRight, Award, Users, Phone, Star } from "lucide-react";
 import { CountUp } from "@/app/client";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./HeroBanner.module.css";
@@ -11,9 +11,9 @@ export function HeroBanner() {
         <div className="hero-copy">
           <Eyebrow>ADVANCED EYE CARE</Eyebrow>
           <h1>
-            Your Vision,
+            GENTLE CARE FOR{" "}
             <br />
-            <span>Our Precision</span>
+            <span>YOUR PRECIOUS EYES</span>
           </h1>
           <p>
             Experience world-class ophthalmology care with cutting-edge technology and compassionate specialists dedicated to preserving and enhancing your vision.
@@ -21,7 +21,7 @@ export function HeroBanner() {
           <div className="hero-buttons">
             <Link
               className="button button-primary"
-              href="/contact"
+              href="/contact#contact-form"
               style={{ display: "flex", alignItems: "center", gap: "6px" }}
             >
               Book Consultation <ArrowRight size={18} />
@@ -31,7 +31,7 @@ export function HeroBanner() {
               href="tel:+919179191939"
               style={{ display: "flex", alignItems: "center", gap: "6px" }}
             >
-              Call Now <ArrowRight size={18} />
+              Call Now <Phone size={18} aria-hidden="true" />
             </a>
           </div>
           <div className="hero-metrics" aria-label="Shanti EyeTech highlights">
@@ -41,7 +41,7 @@ export function HeroBanner() {
               </span>
               <span className="metric-copy">
                 <b>
-                  <CountUp value={25} suffix="+" />
+                  <CountUp value={20} suffix="+" />
                 </b>
                 <span>Years Excellence</span>
               </span>
@@ -59,13 +59,13 @@ export function HeroBanner() {
             </div>
             <div>
               <span className="metric-icon" aria-hidden="true">
-                <Clock size={20} strokeWidth={2} color="#22c44a" />
+                <Star size={20} strokeWidth={2} color="#22c44a" />
               </span>
               <span className="metric-copy">
                 <b>
-                  <CountUp value={24} suffix="/7" />
+                  <CountUp value={97} suffix="%" />
                 </b>
-                <span>Emergency Care</span>
+                <span>Patient Satisfaction</span>
               </span>
             </div>
           </div>

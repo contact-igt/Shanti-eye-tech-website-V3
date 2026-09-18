@@ -5,14 +5,8 @@
 
 .page {
   max-width: 100%;
-  overflow-x: clip;
 }
 
-@supports not (overflow: clip) {
-  .page {
-    overflow-x: hidden;
-  }
-}
 
 /* Consistent section-title scale for all service pages. */
 @media (min-width: 901px) {

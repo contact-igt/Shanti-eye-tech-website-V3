@@ -1,4 +1,17 @@
-import type { ServicePageContent } from "./types";
+import type { ServicePageContent, TestimonialItem } from "./types";
+
+// Real patient reviews (Google) not specific to one procedure — reused
+// across the retina, glaucoma, squint, and keratoconus pages, which don't
+// have enough procedure-specific reviews of their own yet.
+const commonTestimonials: TestimonialItem[] = [
+  { quote: "Our family recently had the opportunity to take laser and cataract surgery services at Shanti Eye Tech Hospital, and it was truly an amazing experience from start to finish. Dr. Amit Solanki and his dedicated staff went above and beyond in taking care of us. It's rare to find a place where advanced medical care meets such heartfelt compassion.", name: "Madan Agrawal", meta: "Patient Review" },
+  { quote: "Dr. Solanki explained everything clearly, which gave us a lot of confidence and comfort. The surgery was successful, and the post-operative care was also very attentive. His professionalism, calm nature, and expertise truly stand out.", name: "Naman Agrawal", meta: "Patient Review" },
+  { quote: "I had a very good experience at Shanti Eye Tech Clinic. Dr. Amit Solanki is extremely knowledgeable, patient, and attentive. He listened carefully to my concerns and explained the condition and treatment clearly, which made me feel very comfortable and confident.", name: "Sandeep Debnath", meta: "Patient Review" },
+  { quote: "Dr amit solanki is master in his field. He properly replied to our queries and doubts before surgery. His cooperative and friendly nature makes us more comfortable. His team is also polite and friendly.", name: "Manish V Jain", meta: "Patient Review" },
+  { quote: "Very well trained facilities and top surgeon to have surgery, and staff nature is very cooperative and well behaved. We are fully satisfied with our cataract surgery.", name: "Renuka Agrawal", meta: "Patient Review" },
+  { quote: "Had a great experience. Sir explained everything in detail and has a very polite nature.", name: "Anjali Singh", meta: "Patient Review" },
+  { quote: "Great experience and wonderful environment. Must visit for an eye checkup.", name: "Devendr Ghosar", meta: "Patient Review" },
+];
 
 const cataractComparison = {
   title: "Choose the",
@@ -30,13 +43,14 @@ const cataractComparison = {
 const classicComparison = {
   title: "Choose the Vision Correction Option",
   accent: "That Fits Your Eyes",
-  body: "There is no single best procedure for everyone. The right option depends on your eye power, corneal thickness, dry eye status, lifestyle, and long-term safety. Shanti EyeTech helps you understand your options clearly before you decide.",
-  features: ["Procedure View", "Best For", "How It Works", "Recovery", "Glasses Dependency", "Dry Eye Consideration", "Suitable for Everyone?", "Doctor Advice Needed?"],
+  body: "There is no single best procedure for everyone. The right option depends on your eye power, corneal thickness, age, and lifestyle. Shanti EyeTech helps you understand your options clearly before you decide.",
+  features: ["Procedure View", "Best For", "How It Works", "Recovery", "Glasses Dependency", "Ideal Candidate", "Suitable for Everyone?", "Doctor Advice Needed?"],
   columns: [
-    { key: "lasik", title: "LASIK", subtitle: "Most Popular", image: "/assets/lasik1.png", values: ["Common spectacle removal cases", "Laser reshapes cornea after creating a flap", "Usually quick", "Reduced significantly", "Needs evaluation", "No", "Yes"] },
-    { key: "smile", title: "SMILE", subtitle: "Flapless Laser", image: "/assets/smile1.png", values: ["Suitable candidates wanting flapless laser option", "Laser removes a small lenticule through tiny incision", "Usually quick", "Reduced significantly", "Often considered in selected cases", "No", "Yes"] },
-    { key: "prk", title: "PRK", subtitle: "Surface Laser", image: "/assets/prk1.png", values: ["Thin cornea / selected cases", "Surface laser treatment without flap", "Slower than LASIK/SMILE", "Reduced significantly", "Depends on eye condition", "No", "Yes"] },
-    { key: "icl", title: "ICL", subtitle: "Implantable Lens", image: "/assets/icl1.png", highlighted: true, values: ["High power or unsuitable cornea cases", "Implantable lens placed inside eye", "Usually quick", "Reduced significantly", "Depends on eye condition", "No", "Yes"] },
+    { key: "touchless-lasik", title: "Touchless LASIK", subtitle: "Laser Vision Correction", image: "/assets/lasik1.png", values: ["Common spectacle removal cases", "Bladeless, flapless, touchless laser reshapes the cornea", "Usually quick", "Reduced significantly", "Stable prescription, healthy cornea", "No", "Yes"] },
+    { key: "smile", title: "SMILE", subtitle: "Flapless Laser", image: "/assets/smile1.png", values: ["Suitable candidates wanting a flapless laser option", "Laser removes a small lenticule through a tiny incision", "Usually quick", "Reduced significantly", "Often considered in selected cases", "No", "Yes"] },
+    { key: "prk", title: "PRK", subtitle: "Surface Laser", image: "/assets/prk1.png", values: ["Thin cornea / selected cases", "Surface laser treatment without a corneal flap", "Slower than LASIK/SMILE", "Reduced significantly", "Depends on eye condition", "No", "Yes"] },
+    { key: "icl", title: "ICL", subtitle: "Implantable Collamer Lens", image: "/assets/icl1.png", values: ["Moderate to severe refractive errors", "Biocompatible lens placed behind the iris", "Usually quick", "Reduced significantly", "Thin corneas unsuitable for LASIK", "No", "Yes"] },
+    { key: "prelex", title: "PRELEX", subtitle: "Presbyopic Lens Exchange", image: "/assets/lasik/prelex_procedure2.png", highlighted: true, values: ["Presbyopia, typically over 40", "Natural lens replaced with an artificial IOL", "Similar to cataract surgery recovery", "Reduced significantly", "Patients over 40 with refractive errors", "No", "Yes"] },
   ],
   noteTitle: "A note from the Eye Surgeon:",
   noteText: "The best procedure is not the most popular one. The best procedure is the one that is safest for your eyes, your cornea, your power, and your lifestyle. That is why we do a detailed evaluation before recommending anything.",
@@ -47,45 +61,45 @@ const classicContent: ServicePageContent = {
   kind: "classic",
   navService: "lasik",
   hero: {
-    eyebrow: "BLADE-FREE LASIK",
+    eyebrow: "VISION CORRECTION",
     title: "Freedom From Glasses",
     accent: "Starts Here",
-    text: "Experience the clarity of life without glasses or contact lenses. Our advanced blade-free LASIK technology delivers precise, predictable results with quick recovery.",
+    text: "Achieve clear vision without glasses or contact lenses. Choose from Touchless LASIK, ICL and PRELEX — advanced vision correction procedures matched to your eyes and lifestyle.",
     image: "/assets/lasik/lasik-banner.png",
     metrics: [
-      { value: "49K+", label: "LASIK Procedures" },
-      { value: "98%", label: "Success Rate" },
-      { value: "24hrs", label: "Quick Recovery" },
+      { value: "20+", label: "Years Experience" },
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "97%", label: "Success Rate" },
     ],
   },
   whyChoose: {
     eyebrow: "WHY CHOOSE US",
     title: "Why Patients Choose",
-    accent: "Shanti EyeTech for LASIK",
+    accent: "Shanti EyeTech for Freedom From Glasses",
     body: "Combining advanced technology with personalized care for optimal vision correction results",
     items: [
       { icon: "award", title: "Award-Winning Excellence", text: "Recognized nationally for refractive surgery outcomes" },
-      { icon: "zap", title: "Blade-Free Technology", text: "Advanced femtosecond laser for precision and safety" },
-      { icon: "users", title: "Experienced Specialists", text: "Over 25 years of LASIK surgical expertise" },
-      { icon: "heart", title: "Personalized Treatment", text: "Custom wavefront-guided procedures for your eyes" },
+      { icon: "zap", title: "Three Advanced Options", text: "Touchless LASIK, ICL and PRELEX under one roof" },
+      { icon: "users", title: "Experienced Specialists", text: "Over 20 years of refractive surgical expertise" },
+      { icon: "heart", title: "Personalized Treatment", text: "The right procedure recommended for your eyes, not the most popular one" },
       { icon: "clock", title: "Quick Recovery", text: "Most patients resume normal activities within 24 hours" },
       { icon: "shield", title: "Comprehensive Care", text: "Lifetime post-operative support and monitoring" },
-      { icon: "eye", title: "All-Laser LASIK", text: "No blades involved in any part of the procedure" },
-      { icon: "star", title: "Trusted by Thousands", text: "49,999+ successful LASIK procedures performed" },
+      { icon: "eye", title: "Bladeless & Touchless", text: "Advanced laser and lens-based procedures with no blades involved" },
+      { icon: "star", title: "Trusted by Thousands", text: "49,999+ successful vision correction procedures performed" },
     ],
   },
   intro: {
-    eyebrow: "THE PROCEDURE",
+    eyebrow: "THE PROCEDURES",
     title: "What is",
-    accent: "LASIK?",
+    accent: "Freedom From Glasses?",
     backgroundImage: "/assets/lasik/lasikbg.jpeg",
     paragraphs: [
-      "LASIK (Laser-Assisted In Situ Keratomileusis) is the most advanced and popular laser vision correction procedure available today. It permanently reshapes the cornea to correct refractive errors and reduce dependence on glasses or contact lenses.",
-      "Using state-of-the-art femtosecond laser technology, the procedure creates a thin corneal flap, then precisely reshapes the underlying corneal tissue with an excimer laser to correct your vision. The entire process takes just 15-20 minutes for both eyes.",
+      "Imagine a life free from the hassle of glasses. With advanced vision correction procedures, you can achieve clear vision and enjoy your favourite activities <strong>without the need for corrective eyewear</strong>.",
+      "Freedom From Glasses covers three advanced procedures — <strong>Touchless LASIK</strong> (laser vision correction), <strong>ICL</strong> (Implantable Collamer Lens), and <strong>PRELEX</strong> (Presbyopic Lens Exchange) — so your treatment can be matched precisely to your eyes, age and lifestyle.",
     ],
     callout: {
-      title: "Quick & Comfortable",
-      text: "The procedure is virtually painless with numbing eye drops, and most patients experience improved vision within 24 hours.",
+      title: "Which Option is Right for You?",
+      text: "Your specialist recommends the safest, most effective procedure only after a detailed evaluation of your cornea, prescription and lifestyle.",
     },
     lasikImages: {
       patient: "/assets/lasik/lasik-procedure.webp",
@@ -95,77 +109,78 @@ const classicContent: ServicePageContent = {
   },
   eligibility: {
     eyebrow: "ELIGIBILITY",
-    title: "Is LASIK",
+    title: "Is Freedom From Glasses",
     accent: "Right for You?",
-    body: "You may be a good candidate for LASIK if you meet the following criteria:",
+    body: "You may be a good candidate for one of these three procedures if you meet the following criteria:",
     backgroundImage: "/assets/lasik/lasikrightbg.jpeg",
-    checks: ["At least 18 years of age", "Have stable vision prescription", "Have healthy eyes free from disease", "Tired of wearing glasses or contact lenses", "Have myopia (nearsightedness)", "Have hyperopia (farsightedness)", "Have astigmatism"],
-    note: "A comprehensive eye examination by our specialists is required to determine your final suitability for LASIK surgery.",
+    checks: ["At least 18 years of age, for laser vision correction", "Have a stable vision prescription", "Have healthy eyes free from disease", "Tired of wearing glasses or contact lenses", "Moderate to severe refractive errors, or thin corneas unsuitable for LASIK — candidate for ICL", "Over 40 and experiencing presbyopia — candidate for PRELEX"],
+    note: "A comprehensive eye examination by our specialists determines which of these three procedures suits you best.",
     image: "/assets/lasik/lasik_right.jpeg",
   },
   treatmentOptions: {
-    eyebrow: "TREATABLE CONDITIONS",
-    title: "Conditions LASIK",
-    accent: "Can Correct",
-    body: "Our advanced LASIK technology effectively treats the most common refractive errors",
+    eyebrow: "TREATMENT OPTIONS",
+    title: "Our Vision Correction",
+    accent: "Procedures",
+    body: "Three advanced procedures — matched to your eyes, prescription and lifestyle.",
     options: [
-      { image: "/assets/lasik/myopia.jpeg", title: "Myopia", tag: "NEARSIGHTEDNESS", text: "Difficulty seeing distant objects clearly. LASIK flattens the cornea to correct focus." },
-      { image: "/assets/lasik/hyperopia1.jpeg", title: "Hyperopia", tag: "FARSIGHTEDNESS", text: "Difficulty seeing nearby objects. LASIK steepens the cornea for better near vision." },
-      { image: "/assets/lasik/astigmatism1.jpeg", title: "Astigmatism", tag: "BLURRED VISION", text: "Irregular cornea shape causing blurred vision. LASIK smooths the cornea for clear focus." },
+      { image: "/assets/lasik/touchless_lasik.png", title: "Touchless LASIK", tag: "LASER VISION CORRECTION", text: "The most advanced and safest laser vision correction technique — bladeless, flapless, painless and touchless. Reshapes the cornea to correct nearsightedness, farsightedness and astigmatism." },
+      { image: "/assets/lasik/ICL.png", title: "ICL (Implantable Collamer Lens)", tag: "IMPLANTABLE LENS", text: "A thin, flexible lens made from biocompatible Collamer material, positioned behind the iris and in front of the natural lens — ideal for moderate to severe refractive errors or thin corneas unsuitable for LASIK." },
+      { image: "/assets/lasik/PRELEX.png", title: "PRELEX (Presbyopic Lens Exchange)", tag: "LENS EXCHANGE", text: "A permanent, comprehensive vision correction solution similar to cataract surgery — the natural lens is replaced with an artificial IOL customized for clear vision at multiple distances." },
     ],
   },
   comparison: classicComparison,
   benefits: {
     eyebrow: "ADVANTAGES",
     title: "Benefits of",
-    accent: "LASIK Surgery",
+    accent: "Freedom From Glasses",
     items: [
       { image: "/assets/lasik/quick_recovery.jpeg", title: "Quick Recovery Time", description: "Most patients return to normal activities within 24 hours with minimal discomfort." },
-      { image: "/assets/lasik/long_lasting.jpeg", title: "Long-Lasting Results", description: "LASIK provides permanent vision correction that can last a lifetime." },
+      { image: "/assets/lasik/long_lasting.jpeg", title: "Long-Lasting, Stable Results", description: "Each procedure offers long-lasting vision correction with stable outcomes over time." },
       { image: "/assets/lasik/vision_journey.jpeg", title: "Improved Quality of Life", description: "Freedom from glasses and contacts opens up new lifestyle possibilities." },
-      { image: "/assets/lasik/improve_quality.jpeg", title: "Cost-Effective Solution", description: "Save money long-term by eliminating glasses, contacts, and solutions." },
-      { image: "/assets/lasik/lasik-eye.webp", title: "Enhanced Sports Performance", description: "Participate in activities without worrying about glasses or contacts." },
+      { image: "/assets/lasik/improve_quality.jpeg", title: "High-Quality Vision", description: "Sharp, clear vision — often with better contrast and night vision, depending on the procedure." },
+      { image: "/assets/lasik/lasik-eye.webp", title: "Customized to Your Eyes", description: "Each procedure and lens can be tailored to correct a wide range of prescriptions." },
     ],
   },
   testimonials: {
     eyebrow: "PATIENT STORIES",
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
-    body: "Real stories from real patients who transformed their vision with LASIK",
+    body: "Real stories from real patients who found freedom from glasses at Shanti EyeTech",
     items: [
-      { quote: "Best decision I ever made! I can finally wake up and see clearly without reaching for glasses. The procedure was quick and painless, and Dr. Kumar made me feel completely comfortable throughout.", name: "Priya Sharma", meta: "LASIK Surgery - 29 years" },
-      { quote: "I was nervous about the surgery, but the team at Shanti EyeTech was amazing. Within 24 hours, my vision was crystal clear. No more contacts, no more hassle!", name: "Raj Patel", meta: "Blade-Free LASIK - 34 years" },
-      { quote: "As someone who wore glasses for 20 years, I cannot express how life-changing LASIK has been. The precision and care I received here exceeded all expectations.", name: "Anita Desai", meta: "Custom LASIK - 31 years" },
-      { quote: "The laser procedure took less than 10 minutes with zero pain. Waking up with clear 20/20 vision feels like magic every single day!", name: "Amitabh Verma", meta: "Contoura LASIK - 33 years" },
-      { quote: "Fantastic experience! The doctors were extremely reassuring and answered all my questions. I was back to work in two days.", name: "Kavita Rao", meta: "Femto LASIK - 27 years" },
-      { quote: "No more fogged glasses while cooking or working out. LASIK at Shanti EyeTech completely elevated my lifestyle and confidence.", name: "Deepak Joshi", meta: "Blade-Free LASIK - 36 years" },
+      { quote: "I got my sister's vision correction surgery (LASIK) done from Dr Amit Solanki, and it was a very smooth process overall. The doctor was very professional and explained the whole procedure and helped us make the right decision. The staff was also very friendly and supportive.", name: "Ashish Masih", meta: "Patient Review" },
+      { quote: "I got touchless LASIK done by Dr Amit Solanki, and the experience was honestly great. He was super friendly, explained everything clearly, and made the whole thing feel easy. The clinic is clean, modern, and they did a really thorough job with all the tests. Definitely recommend!", name: "Dhruv Surana Jain", meta: "Patient Review" },
+      { quote: "I got touchless robotic LASIK surgery done by Dr. Amit Solanki. He is very genuine and explains everything in detail. I had no issues post surgery. He and his staff were always available for help. I am extremely happy with the surgery.", name: "Rashi Dawar", meta: "Patient Review" },
+      { quote: "Good experience — the doctor explained everything in detail and in a very friendly way. Throughout the LASIK surgery he was very supportive and kind. It was a good experience overall.", name: "Geetika Vishwakarma", meta: "Patient Review" },
+      { quote: "Dr. Solanki is excellent at his skill and extremely kind and helpful. He walked me through every aspect of the LASIK treatment and answered every question patiently and with utmost integrity. Highly recommend!", name: "Shreya Mundra", meta: "Patient Review" },
+      { quote: "I'm extremely happy and satisfied with my LASIK surgery performed by Dr. Amit Solanki. The friendly environment and the supportive nature of Dr. Amit as well as the staff made the whole experience very pleasant.", name: "Nainika Soni", meta: "Patient Review" },
+      { quote: "Dr. Amit Solanki was a wonderful surgeon, and the staff was always helpful and kind. They ensured I had a smooth prep, surgery, and follow-up. I am so glad I chose them for my LASIK eye surgery and would highly recommend to anyone.", name: "Ishita Sheel", meta: "Patient Review" },
     ],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
-    title: "LASIK Care",
+    title: "Freedom From Glasses",
     accent: "FAQs",
     cardTitle: "Have More Questions?",
-    cardText: "Our LASIK specialists are here to answer all your questions and help you determine if LASIK is right for you.",
+    cardText: "Our specialists are here to answer all your questions and help you determine which procedure is right for you.",
     items: [
-      { question: "Is LASIK surgery painful?", answer: "No, LASIK is virtually painless. We use numbing eye drops during the procedure, so you only feel slight pressure. Most patients report minimal discomfort that resolves within hours." },
-      { question: "How long does LASIK surgery take?", answer: "The laser procedure itself takes only 10 to 15 minutes for both eyes. Plan to be at our center for about 1.5 to 2 hours total on surgery day." },
-      { question: "When will I be able to see clearly after LASIK?", answer: "Most patients notice significantly improved vision within 24 hours. Full visual stabilization typically occurs over a few weeks." },
-      { question: "Are the results of LASIK permanent?", answer: "Yes, LASIK permanently reshapes the cornea to correct your current prescription." },
-      { question: "What is the recovery time after LASIK?", answer: "Most patients return to work and normal daily activities within 24 to 48 hours after the procedure." },
+      { question: "What is the difference between Touchless LASIK, ICL and PRELEX?", answer: "Touchless LASIK reshapes the cornea with a laser and suits stable prescriptions with healthy corneas. ICL places a lens inside the eye without removing the natural lens, for moderate to severe refractive errors or thin corneas. PRELEX replaces the natural lens entirely and is aimed at patients over 40 with presbyopia. Your specialist recommends the safest fit after a detailed evaluation." },
+      { question: "Is Touchless LASIK painful?", answer: "No, Touchless LASIK is virtually painless. We use numbing eye drops during the procedure, so you only feel slight pressure. Most patients report minimal discomfort that resolves within hours." },
+      { question: "Who is a good candidate for ICL?", answer: "ICL suits patients with moderate to severe refractive errors, or those unsuitable for LASIK or PRK due to thin corneas. It can also be removed or replaced if needed." },
+      { question: "Who is PRELEX recommended for?", answer: "PRELEX is typically recommended for patients over 40 experiencing presbyopia, or those with moderate to severe refractive errors seeking a permanent vision correction solution for both near and distance vision." },
+      { question: "What is the recovery time for these procedures?", answer: "Most patients notice significantly improved vision within 24 to 48 hours and return to normal daily activities in that time, though full visual stabilization can take a few weeks depending on the procedure." },
     ],
   },
   appointment: {
     eyebrow: "TAKE THE FIRST STEP",
     title: "Start Your",
     accent: "Vision Journey",
-    text: "Transform your life with LASIK surgery. Our expert team is ready to guide you through every step of your journey to clear, glasses-free vision.",
+    text: "Transform your life with Touchless LASIK, ICL or PRELEX. Our expert team is ready to guide you through every step of your journey to clear, glasses-free vision.",
     image: "/assets/lasik/vision_journey.jpeg",
-    serviceLabel: "LASIK",
+    serviceLabel: "vision correction",
     badgeTitle: "20/20",
     badgeSubtitle: "Clear Vision Awaits",
     checkTitle: "Free Pre-Operative Assessment",
-    checkSubtitle: "Comprehensive evaluation to determine your LASIK candidacy",
+    checkSubtitle: "Comprehensive evaluation to determine which procedure suits you best",
   },
 };
 
@@ -179,8 +194,8 @@ const cataractContent: ServicePageContent = {
     text: "Modern cataract surgery safely restores your vision, helping you regain independence and enjoy life's precious moments with clarity and confidence.",
     image: "/assets/cataract/cataract-banner.png",
     metrics: [
-      { value: "49K+", label: "Cataract Surgeries" },
-      { value: "98%", label: "Success Rate" },
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "97%", label: "Success Rate" },
       { value: "Same Day", label: "Procedure" },
     ],
   },
@@ -190,7 +205,7 @@ const cataractContent: ServicePageContent = {
     accent: "Shanti EyeTech for Cataract Care",
     body: "Trusted expertise and compassionate care for safe, effective cataract treatment",
     items: [
-      { icon: "award", title: "Expert Surgeons", text: "25+ years of specialized cataract surgery experience" },
+      { icon: "award", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
       { icon: "zap", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
       { icon: "users", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
       { icon: "heart", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
@@ -206,8 +221,8 @@ const cataractContent: ServicePageContent = {
     accent: "Cataract?",
     backgroundImage: "/assets/cataract/whatisbg.jpeg",
     paragraphs: [
-      "A cataract is a clouding of the eye's natural lens, which lies behind the iris and pupil. This lens works like a camera lens, focusing light onto the retina to produce clear images.",
-      "As we age, proteins in the lens can clump together, causing the lens to become cloudy. This cloudiness prevents light from passing through clearly, resulting in blurred or dim vision, difficulty with glare, and reduced color perception.",
+      "A cataract is a <strong>clouding of the eye's natural lens</strong>, which lies behind the iris and pupil. This lens works like a camera lens, focusing light onto the retina to produce clear images.",
+      "As we age, <strong>proteins in the lens can clump together</strong>, causing the lens to become cloudy. This cloudiness prevents light from passing through clearly, resulting in <strong>blurred or dim vision, difficulty with glare, and reduced color perception</strong>.",
     ],
     image: "/assets/cataract/whatiscataract.jpeg",
     callout: {
@@ -254,12 +269,13 @@ const cataractContent: ServicePageContent = {
     accent: "Hear From Others Like You",
     body: "Real experiences from patients who restored their vision with cataract surgery",
     items: [
-      { quote: "After years of struggling with cloudy vision, I can finally see my grandchildren clearly. The surgery was painless and recovery was quick. Dr. Kumar and the team made me feel comfortable every step of the way.", name: "Ramesh Kumar", meta: "Cataract Surgery - 68 years" },
-      { quote: "I was nervous about surgery, but the results exceeded my expectations. Colors are vibrant again, and I can read without strain. I wish I had done this sooner!", name: "Lakshmi Devi", meta: "Premium IOL Surgery - 72 years" },
-      { quote: "Both my eyes were treated with such precision and care. The difference is life-changing. I can drive confidently again and enjoy my hobbies. Highly recommended!", name: "Suresh Patel", meta: "Bilateral Cataract Surgery - 65 years" },
-      { quote: "The advanced lens option restored my distance and reading vision seamlessly. I haven't worn glasses in months. Truly outstanding care by Shanti EyeTech!", name: "Sunita Agarwal", meta: "Multifocal IOL Surgery - 61 years" },
-      { quote: "From pre-op consultation to post-op checkups, the staff were incredibly kind and professional. The procedure was smooth and completely pain-free.", name: "Vikram Malhotra", meta: "Laser Cataract Surgery - 70 years" },
-      { quote: "I had cataracts in both eyes and was hesitant to undergo surgery. Dr. Solanki & team made the entire experience easy and comforting. My vision is 20/20 now!", name: "Meena Sharma", meta: "Cataract Surgery - 66 years" },
+      { quote: "My mother recently underwent cataract surgery at this hospital, and we had a wonderful experience. The surgery was successful, and her vision has improved significantly. The doctors, nurses, and entire staff were caring, professional, and explained everything clearly throughout the process. We are very happy with the results and sincerely thank the entire team.", name: "Vaibhav Bairagi", meta: "Patient Review" },
+      { quote: "We had a great experience with Dr. Amit Solanki for cataract surgery. We came here for our parents' cataract surgery. He is a fantastic eye doctor and very humble. The surgery was handled with professionalism, and the hospital staff is equally supportive, polite, and cooperative.", name: "Sapna Sankhala", meta: "Patient Review" },
+      { quote: "Wife's cataract surgery was a success! Thanks to Dr. Amit and his staff for the amazing care. If anyone is thinking of it, go for it — best decision ever.", name: "Ramesh Oza", meta: "Patient Review" },
+      { quote: "I had my cataract surgery here. It was a great experience. Dr. explained everything clearly, and the service was very neat and clean. Staff was also very helpful and humble. Would definitely recommend.", name: "Rajesh Chouhan", meta: "Patient Review" },
+      { quote: "Dr. Amit Solanki ji did the cataract operation for my mother so quickly and excellently, without any pain. I highly recommend any type of eye patients to Shanti EyeTech, Palasia, Indore.", name: "Hemant Saini", meta: "Patient Review" },
+      { quote: "My experience is very good, huge gratitude to Dr Amit sir and his staff, very happy with my cataract surgery.", name: "Girish Shrivastava", meta: "Patient Review" },
+      { quote: "I had a great experience with Dr Amit Solanki and Shanti EyeTech staff during my cataract surgery. Thank you Shanti EyeTech for wonderful care.", name: "Radha Sawner", meta: "Patient Review" },
     ],
   },
   faq: {
@@ -270,7 +286,7 @@ const cataractContent: ServicePageContent = {
     cardText: "Our cataract specialists are here to answer your questions and guide you through your treatment options.",
     items: [
       { question: "How do I know if I have cataracts?", answer: "Common signs include cloudy or blurry vision, difficulty seeing at night, sensitivity to light, seeing halos around lights, fading colors, and frequent changes in glasses prescription. A comprehensive eye examination can confirm cataracts." },
-      { question: "Is cataract surgery safe?", answer: "Cataract surgery is one of the safest and most frequently performed surgical procedures in the world, with success rates over 98%." },
+      { question: "Is cataract surgery safe?", answer: "Cataract surgery is one of the safest and most frequently performed surgical procedures in the world, with success rates over 97%." },
       { question: "How long does cataract surgery take?", answer: "The procedure itself typically takes only 15 to 20 minutes per eye. You will spend about 2 hours at the center total for prep and recovery." },
       { question: "Will I need glasses after cataract surgery?", answer: "It depends on the type of intraocular lens (IOL) you choose. Premium multifocal or trifocal lenses can reduce or eliminate your need for glasses." },
       { question: "What is the recovery time?", answer: "Most patients experience clearer vision within 24 to 48 hours and resume normal daily activities within a few days." },
@@ -296,8 +312,8 @@ const retinaContent: ServicePageContent = {
     text: "Your retina is essential for the vision you rely on every day. Early detection and expert care can help protect it from serious, vision-threatening conditions.",
     image: "/assets/retina/retina-banner.png",
     metrics: [
-      { value: "25+ yrs", label: "Retina Expertise" },
-      { value: "98%", label: "Success Rate" },
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "97%", label: "Success Rate" },
       { value: "Essential", label: "Early Detection" },
     ],
   },
@@ -308,7 +324,7 @@ const retinaContent: ServicePageContent = {
     body: "Specialized expertise in early detection and long-term retinal management",
     items: [
       { icon: "01", title: "Doctor-led eye care", text: "Every consultation handled by an experienced ophthalmologist" },
-      { icon: "02", title: "Advanced technology", text: "Modern diagnostic and surgical equipment" },
+      { icon: "02", title: "Advanced technology", text: "Precision-driven diagnostic and therapeutic excellence" },
       { icon: "03", title: "Patient-friendly environment", text: "A calm, peaceful, reassuring space" },
       { icon: "04", title: "Personalised Attention", text: "Treatment plans tailored to your needs" },
       { icon: "05", title: "Affordable solutions", text: "Quality care at accessible prices" },
@@ -323,8 +339,8 @@ const retinaContent: ServicePageContent = {
     accent: "Retina?",
     backgroundImage: "/assets/retina/retinabg.jpeg",
     paragraphs: [
-      "The retina is the light-sensitive layer at the back of the eye that captures images and sends signals to the brain.",
-      "Damage to the retina can lead to partial or total vision loss if not detected and treated early.",
+      "The retina is the <strong>light-sensitive tissue layer</strong> at the back of the eye that captures images and sends visual signals to the brain via the <strong>optic nerve</strong>.",
+      "Because retinal cells cannot regenerate, <strong>early detection and prompt specialized treatment</strong> of retinal conditions are crucial to preserving your sight.",
     ],
     image: "/assets/retina/retina-exam.webp",
     retinaImages: {
@@ -357,7 +373,7 @@ const retinaContent: ServicePageContent = {
     accent: "Treatment Options",
     body: "Advanced, precise care for better outcomes.",
     options: [
-      { image: "/assets/retina/retina_surgery.jpeg", title: "Retina Surgery", tag: "ADVANCED CARE", text: "Advanced surgical solutions for complex retinal conditions." },
+      { image: "/assets/retina/retina_surgery.jpeg", title: "Retina Surgery", tag: "ADVANCED CARE", text: "Advanced therapeutic solutions for complex retinal conditions" },
       { image: "/assets/retina/laser_therapy.jpeg", title: "Laser Therapy", tag: "TARGETED TREATMENT", text: "Targeted laser treatment to seal leaking retinal tears, reduce swelling, and protect vision." },
       { image: "/assets/retina/medical_management.jpeg", title: "Medical Management", tag: "PERSONALISED PLAN", text: "Medications and injections to manage retinal conditions and reduce swelling." },
     ],
@@ -378,14 +394,7 @@ const retinaContent: ServicePageContent = {
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
     body: "Real experiences from patients who protected their sight with retina care",
-    items: [
-      { quote: "After battling with vision loss for years, I finally found a solution. My eye health has improved significantly, and I'm able to see clearly again. Thank you, Shanti EyeTech!", name: "Girish Gole", meta: "Retina Evaluation - 61 years" },
-      { quote: "Early retina care helped protect my sight. The doctors were calm, precise, and explained every scan and treatment option clearly.", name: "Jyoti Carson", meta: "Retina Care - 58 years" },
-      { quote: "My diabetes had started affecting my eyes. Regular retina treatment helped me stay independent and confident with my vision.", name: "Suresh Sharma", meta: "Diabetic Retina Care - 64 years" },
-      { quote: "State-of-the-art retina imaging equipment and deeply knowledgeable specialists. They saved my vision from retinal detachment.", name: "Sanjay Gupta", meta: "Retinal Laser Therapy - 55 years" },
-      { quote: "Outstanding diagnostic accuracy and compassionate treatment. I am deeply thankful to Dr. Solanki and the entire retina team.", name: "Radhika Kulkarni", meta: "Macular Care - 69 years" },
-      { quote: "Very thorough examination and gentle procedure. My vision has remained stable and clear thanks to timely intervention.", name: "Harish Chandra", meta: "Anti-VEGF Treatment - 73 years" },
-    ],
+    items: commonTestimonials,
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -421,9 +430,9 @@ const glaucomaContent: ServicePageContent = {
     text: "Glaucoma can gradually damage the optic nerve, often without noticeable symptoms in its early stages. Timely screening, regular monitoring and appropriate treatment can help protect your remaining vision.",
     image: "/assets/glaucoma/glaucoma-banner.png",
     metrics: [
-      { value: "Silent", label: "Early Stages" },
+      { value: "49K+", label: "Successful Procedures" },
       { value: "40+", label: "Routine Screening Age" },
-      { value: "24/7", label: "Emergency Eye Care" },
+      { value: "97%", label: "Patient Satisfaction" },
     ],
   },
   whyChoose: {
@@ -446,9 +455,9 @@ const glaucomaContent: ServicePageContent = {
     accent: "Glaucoma?",
     backgroundImage: "/assets/whatisbg.png",
     paragraphs: [
-      "Glaucoma is a group of eye conditions that damage the optic nerve, which carries visual information from the eye to the brain.",
-      "In many cases, glaucoma is associated with increased pressure inside the eye, although it can also occur when eye pressure is within the normal range.",
-      "The condition can gradually affect peripheral vision and, if left untreated, may lead to irreversible vision loss. Because early glaucoma may produce few or no noticeable symptoms, routine eye examinations are important for people at increased risk.",
+      "Glaucoma is a group of eye conditions that damage the <strong>optic nerve</strong>, which carries vital visual information from the eye to the brain.",
+      "In many cases, glaucoma is associated with <strong>increased intraocular pressure (IOP)</strong>, although it can also occur when eye pressure is within the normal range.",
+      "Often called the <strong>'silent thief of sight,'</strong> early glaucoma produces few or no noticeable symptoms. <strong>Routine comprehensive eye examinations</strong> are essential to protect against irreversible vision loss.",
     ],
     image: "/assets/glaucoma/whatisglaucoma.png",
     callout: {
@@ -504,14 +513,7 @@ const glaucomaContent: ServicePageContent = {
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
     body: "Real experiences from patients who chose regular glaucoma monitoring and care",
-    items: [
-      { quote: "My glaucoma was found during a routine checkup. The doctor explained everything clearly, and regular follow-ups have helped me stay confident.", name: "Mahesh Verma", meta: "Glaucoma Screening - 57 years" },
-      { quote: "I had no symptoms, but my family history made me worried. Shanti EyeTech helped me understand my risk and start timely treatment.", name: "Rekha Jain", meta: "Glaucoma Care - 62 years" },
-      { quote: "The team tracks my eye pressure carefully at every visit. I feel reassured because the plan is clear and practical.", name: "Sanjay Mehta", meta: "Pressure Monitoring - 65 years" },
-      { quote: "I used to miss my drops often. The counselling helped me understand why consistency matters for protecting my vision.", name: "Nirmala Rao", meta: "Medical Management - 69 years" },
-      { quote: "The consultation was calm and detailed. Every test result was explained in simple language.", name: "Arun Sharma", meta: "Optic Nerve Evaluation - 54 years" },
-      { quote: "Regular glaucoma reviews have helped me continue driving and reading comfortably.", name: "Kusum Patel", meta: "Long-term Follow-up - 71 years" },
-    ],
+    items: commonTestimonials,
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -553,9 +555,9 @@ const squintContent: ServicePageContent = {
     text: "Squint, or strabismus, occurs when both eyes do not remain properly aligned and look in the same direction. Early evaluation can help identify the cause and determine the appropriate treatment, particularly in children.",
     image: "/assets/squint/squint-banner.png",
     metrics: [
-      { value: "Early", label: "Detection Key" },
-      { value: "25+ yrs", label: "Specialized Care" },
-      { value: "24/7", label: "Emergency Support" },
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "20+ yrs", label: "Specialized Care" },
+      { value: "97%", label: "Patient Satisfaction" },
     ],
   },
   whyChoose: {
@@ -578,9 +580,9 @@ const squintContent: ServicePageContent = {
     accent: "Squint?",
     backgroundImage: "/assets/retina/retinabg.jpeg",
     paragraphs: [
-      "Squint, medically known as strabismus, is a condition in which the two eyes are not properly aligned and may point in different directions.",
-      "One eye may look straight while the other turns inward, outward, upward or downward. The deviation may be present all the time or appear only occasionally.",
-      "Squint can occur in both children and adults. In children, timely assessment is particularly important because persistent misalignment can interfere with normal visual development and may be associated with amblyopia, commonly called lazy eye.",
+      "Squint, medically known as <strong>strabismus</strong>, is a condition in which the two eyes are <strong>not properly aligned</strong> and may point in different directions.",
+      "One eye may look straight while the other turns inward, outward, upward or downward. The deviation may be present constantly or appear intermittently.",
+      "In children, timely assessment is vital because persistent misalignment can interfere with normal visual development and lead to <strong>amblyopia (lazy eye)</strong> and loss of <strong>binocular depth perception</strong>.",
     ],
     image: "/assets/squint/whatissquint1.png",
     retinaImages: {
@@ -646,14 +648,7 @@ const squintContent: ServicePageContent = {
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
     body: "Real experiences from patients and parents who chose squint evaluation and care",
-    items: [
-      { quote: "We noticed our child's eye turning occasionally. The doctor made the exam so comfortable, and early treatment helped tremendously.", name: "Pooja Sharma", meta: "Pediatric Squint Care - 6 years" },
-      { quote: "I was hesitant about adult squint correction, but the evaluation gave me full confidence. The alignment results exceeded my expectations.", name: "Vikas Verma", meta: "Adult Alignment Care - 32 years" },
-      { quote: "Proper prescription glasses and visual therapy helped align my daughter's eyes without needing surgery.", name: "Sunita Agarwal", meta: "Vision Correction - 9 years" },
-      { quote: "Thorough testing and clear explanation of our options. The team tracked vision improvement at every follow-up.", name: "Ramesh Joshi", meta: "Amblyopia Management - 7 years" },
-      { quote: "Gentle, expert care for children. The entire staff ensured my son felt safe and happy during every visit.", name: "Meena Patel", meta: "Squint Evaluation - 5 years" },
-      { quote: "Timely diagnosis helped address lazy eye early. We are so grateful to the specialists at Shanti EyeTech.", name: "Anand Gupta", meta: "Binocular Vision Care - 11 years" },
-    ],
+    items: commonTestimonials,
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -684,6 +679,146 @@ const squintContent: ServicePageContent = {
   },
 };
 
+// Content sourced from the sibling marketing site
+// (shanti-eye-tech-website-frontend/src/pages/treatments/pediatric-eye-care.jsx
+// + constant/treatmentContent.js#pediatricEyeCare), rebuilt onto website-v3's
+// section components. `kind` is deliberately "squint" (not a new "pediatric"
+// kind) so this page picks up the exact same section styling/layout branch
+// as the Squint Treatment page (retina-style intro, full warning-signs
+// eligibility layout, etc.) — the ask was "same UI section as squint" for
+// this page, and reusing the kind avoids duplicating ~9 components' worth of
+// per-kind CSS for a visually-identical layout.
+const pediatricContent: ServicePageContent = {
+  kind: "squint",
+  navService: "squint",
+  hero: {
+    eyebrow: "PEDIATRIC EYE CARE",
+    title: "Protect Their Future.",
+    accent: "Every Little Moment Matters.",
+    text: "Early eye care can shape a lifetime of clear vision and confidence. Expert, child-friendly care for your child's sight tomorrow.",
+    image: "/assets/pediatric/banner-new.png",
+    metrics: [
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "20+ yrs", label: "Trusted Care" },
+      { value: "97%", label: "Patient Satisfaction" },
+    ],
+  },
+  whyChoose: {
+    eyebrow: "WHY CHOOSE US",
+    title: "Why Choose Shanti EyeTech",
+    accent: "for Pediatric Eye Care?",
+    body: "Gentle, specialized eye care for infants, children and teenagers.",
+    items: [
+      { icon: "01", title: "Child-Friendly Eye Exams", text: "Comfortable, comprehensive evaluations designed to put young patients at ease." },
+      { icon: "02", title: "Early Detection Focus", text: "Timely eye examinations to catch vision problems before they affect learning and development." },
+      { icon: "03", title: "Vision Therapy", text: "Customized therapy programs to improve eye coordination and visual skills." },
+      { icon: "04", title: "Myopia Management", text: "Advanced solutions to help slow the progression of nearsightedness in children." },
+      { icon: "05", title: "Experienced Specialists", text: "20+ years of ophthalmology experience caring for growing eyes." },
+      { icon: "06", title: "Ongoing Follow-Up Care", text: "Regular monitoring to track your child's vision development over time." },
+    ],
+  },
+  intro: {
+    eyebrow: "ESSENTIAL KNOWLEDGE",
+    title: "What is",
+    accent: "Pediatric Eye Care?",
+    backgroundImage: "/assets/retina/retinabg.jpeg",
+    paragraphs: [
+      "Pediatric eye care focuses on the <strong>eye health and vision development</strong> of infants, children, and teenagers. Early eye examinations help detect and treat vision problems that can affect learning, development, and quality of life.",
+      "<strong>Good vision in childhood</strong> lays the foundation for a bright and successful future. Early detection and treatment make all the difference.",
+    ],
+    image: "/assets/pediatric/whatis1.png",
+    retinaImages: {
+      top: "/assets/pediatric/whatis1.png",
+      bottom: "/assets/pediatric/whatis2.png",
+    },
+    callout: {
+      title: "Pediatric Eye Care",
+      text: "focuses on healthy vision and happy childhood, from comprehensive exams to myopia management.",
+    },
+  },
+  eligibility: {
+    eyebrow: "WARNING SIGNS",
+    title: "When Should You",
+    accent: "Consider an Eye Checkup?",
+    body: "Watch Out for These Signs",
+    backgroundImage: "/assets/retina/retina_optionsbg.jpeg",
+    checks: [
+      "Squinting or tilting the head",
+      "Sitting too close to screens or TV",
+      "Frequent rubbing of the eyes",
+      "Complaints of headache or eye strain",
+      "Difficulty reading or concentrating",
+    ],
+    note: "If you notice any of these signs, schedule a comprehensive eye examination for your child promptly.",
+    image: "/assets/pediatric/pediatric.png",
+    warningImages: [
+      { image: "/assets/pediatric/signs_1.png", label: "Covering One Eye" },
+      { image: "/assets/pediatric/signs_2.png", label: "Sitting Close to Screens" },
+      { image: "/assets/pediatric/signs_3.png", label: "Rubbing Eyes" },
+      { image: "/assets/pediatric/signs_4.png", label: "Reading Difficulty" },
+    ],
+  },
+  treatmentOptions: {
+    eyebrow: "TREATMENT OPTIONS",
+    title: "Our Pediatric Eye Care &",
+    accent: "Treatment Options",
+    body: "Specialized care for healthy vision and happy childhood.",
+    options: [
+      { image: "/assets/pediatric/options1.png", title: "Comprehensive Eye Exams", tag: "EARLY DETECTION", text: "Thorough eye evaluations to detect vision issues early." },
+      { image: "/assets/pediatric/options2.png", title: "Vision Therapy", tag: "PREVENTIVE MEASURE", text: "Customized therapy to improve eye coordination and visual skills." },
+      { image: "/assets/pediatric/options3.png", title: "Myopia Management", tag: "ANTI-PROGRESSION", text: "Advanced solutions to slow the progression of nearsightedness." },
+    ],
+  },
+  benefits: {
+    eyebrow: "KEY BENEFITS",
+    title: "Benefits of Early",
+    accent: "Pediatric Eye Care",
+    body: "Support healthy vision and a happy childhood.",
+    items: [
+      { image: "/assets/pediatric/benefits1.png", title: "Long-term Healthy Vision" },
+      { image: "/assets/pediatric/benefits2.png", title: "Better Learning & Development" },
+      { image: "/assets/pediatric/benefits3.png", title: "Higher Confidence & Happiness" },
+    ],
+  },
+  testimonials: {
+    eyebrow: "PATIENT STORIES",
+    title: "You're Not Alone,",
+    accent: "Hear From Others Like You",
+    body: "Real experiences from parents who chose pediatric eye care for their children",
+    items: commonTestimonials,
+  },
+  faq: {
+    eyebrow: "COMMON QUESTIONS",
+    title: "Pediatric Eye Care",
+    accent: "FAQs",
+    cardTitle: "Have Questions About Your Child's Eyes?",
+    cardText: "Our pediatric eye care team is here to answer your questions and help you understand evaluation and treatment options.",
+    items: [
+      { question: "When should my child have their first eye exam?", answer: "Children should have their eyes checked early, especially if parents notice squinting, frequent eye rubbing, sitting too close to screens, or difficulty reading. Our team can recommend the right schedule based on your child's age and symptoms." },
+      { question: "What signs suggest my child has a vision problem?", answer: "Common signs include squinting, closing one eye, frequent headaches, eye strain, rubbing the eyes, losing place while reading, or difficulty concentrating at school." },
+      { question: "Can screen time affect children's eyes?", answer: "Long screen time can contribute to eye strain, dryness, and focusing fatigue. Regular breaks, proper lighting, outdoor time, and routine eye checks help protect children's vision." },
+      { question: "What is myopia management?", answer: "Myopia management uses specialized care plans to slow the progression of nearsightedness in children and reduce long-term risks linked with high myopia." },
+      { question: "Is pediatric eye testing painful?", answer: "No, pediatric eye testing is generally comfortable and child friendly. Most tests are non-invasive and designed to help children feel relaxed during the visit." },
+    ],
+  },
+  appointment: {
+    eyebrow: "TAKE THE FIRST STEP",
+    title: "Take the First Step Towards",
+    accent: "Healthy Little Eyes",
+    text: "Early eye care can shape a lifetime of clear vision and confidence. Schedule a comprehensive pediatric eye examination for your child today.",
+    // The child is positioned right-of-center in this source photo — the
+    // default centered crop in this smaller image box was mostly showing
+    // background/teddy bear with the child cut off at the edge.
+    image: "/assets/pediatric/hero_banner.png",
+    imagePosition: "80% center",
+    serviceLabel: "pediatric eye care",
+    badgeTitle: "Early",
+    badgeSubtitle: "Care Matters",
+    checkTitle: "Book a Pediatric Eye Checkup",
+    checkSubtitle: "Comprehensive evaluation for your child's vision and eye health",
+  },
+};
+
 const keratoconusContent: ServicePageContent = {
   kind: "keratoconus",
   navService: "keratoconus",
@@ -694,9 +829,9 @@ const keratoconusContent: ServicePageContent = {
     text: "Keratoconus causes the cornea to gradually thin and change shape, leading to distorted or blurred vision. Early evaluation and appropriate management can help monitor its progression and protect visual quality.",
     image: "/assets/keratoconus/keratoconus-banner.png",
     metrics: [
-      { value: "Early", label: "Detection Key" },
-      { value: "25+ yrs", label: "Specialized Care" },
-      { value: "24/7", label: "Emergency Support" },
+      { value: "49K+", label: "Successful Procedures" },
+      { value: "20+ yrs", label: "Specialized Care" },
+      { value: "97%", label: "Patient Satisfaction" },
     ],
   },
   whyChoose: {
@@ -719,9 +854,9 @@ const keratoconusContent: ServicePageContent = {
     accent: "Keratoconus?",
     backgroundImage: "/assets/retina/retinabg.jpeg",
     paragraphs: [
-      "Keratoconus is a condition in which the normally rounded cornea becomes thinner and gradually develops a cone-like shape.",
-      "The cornea is the transparent front surface of the eye and plays an important role in focusing light. When its shape becomes irregular, light may no longer focus properly on the retina, resulting in blurred or distorted vision.",
-      "Keratoconus often begins during the teenage years or early adulthood and may progress differently from person to person. Regular monitoring is important to identify changes over time.",
+      "Keratoconus is a progressive condition in which the normally round cornea becomes thinner and <strong>gradually bulges into an irregular cone-like shape</strong>.",
+      "The cornea is the transparent front surface of the eye and plays an important role in focusing light. When its shape becomes irregular, light fails to focus sharply on the retina, resulting in <strong>distorted and blurred vision</strong>.",
+      "The condition often begins during teenage or early adult years. With advanced treatments like <strong>Corneal Cross-Linking (CXL)</strong> and <strong>specialized lenses</strong>, progression can be halted and clear vision restored.",
     ],
     image: "/assets/keratoconus/whatiskeratoconus1.png",
     retinaImages: {
@@ -788,14 +923,7 @@ const keratoconusContent: ServicePageContent = {
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
     body: "Real experiences from patients who underwent corneal evaluation and keratoconus management",
-    items: [
-      { quote: "My spectacle prescription kept changing every few months. The corneal topography showed early keratoconus, and CXL stabilized my vision.", name: "Rahul Soni", meta: "Corneal Cross-Linking - 24 years" },
-      { quote: "Specialty contact lenses completely restored my vision clarity. The corneal care team guided me every step of the way.", name: "Priya Nair", meta: "Visual Rehabilitation - 29 years" },
-      { quote: "Early detection made all the difference. Regular corneal mapping keeps track of my eyes with total accuracy.", name: "Siddharth Mehta", meta: "Corneal Monitoring - 21 years" },
-      { quote: "I was worried about night driving glare. The custom lens fitting made my visual quality clear and comfortable again.", name: "Anish Kapoor", meta: "Keratoconus Care - 31 years" },
-      { quote: "Professional, thorough, and highly knowledgeable specialists in corneal health.", name: "Kavita Reddy", meta: "Astigmatism & Corneal Care - 27 years" },
-      { quote: "Gave me complete clarity on why my vision was distorted and how to halt progression effectively.", name: "Deepak Sharma", meta: "Progression Control - 26 years" },
-    ],
+    items: commonTestimonials,
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -835,9 +963,8 @@ export const servicePages = {
   glaucoma: glaucomaContent,
   squint: squintContent,
   keratoconus: keratoconusContent,
+  pediatric: pediatricContent,
 };
-
-
 
 
 

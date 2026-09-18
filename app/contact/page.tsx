@@ -1,6 +1,5 @@
 import {
   ContactDetails,
-  ContactFAQSection,
   ContactFormSection,
   ContactHero,
 } from "../components/contact";
@@ -14,7 +13,6 @@ export default function ContactPage() {
         <ContactHero />
         <ContactDetails />
         <ContactFormSection />
-        <ContactFAQSection />
       </main>
       <Footer home />
     </>

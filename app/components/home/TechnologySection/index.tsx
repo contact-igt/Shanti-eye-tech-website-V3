@@ -1,28 +1,8 @@
-import { FeatureGrid, SectionHeading } from "@/app/site-components";
+import { SectionHeading } from "@/app/site-components";
 import styles from "./TechnologySection.module.css";
+import { TechnologySlider } from "./TechnologySlider";
 
-const technology = [
-  {
-    icon: "♙",
-    title: "Zeiss Ophthalmic Systems",
-    text: "Premium German-engineered surgical microscopes for precision in every procedure.",
-  },
-  {
-    icon: "⌗",
-    title: "OCT Imaging",
-    text: "Advanced Optical Coherence Tomography for detailed retinal and anterior segment analysis.",
-  },
-  {
-    icon: "◎",
-    title: "Femto Laser Technology",
-    text: "Blade-free cataract and LASIK surgeries with unmatched accuracy and safety.",
-  },
-  {
-    icon: "⌏",
-    title: "Digital Diagnostics",
-    text: "Comprehensive automated perimetry, topography, and biometry systems.",
-  },
-];
+import { technology } from "./content";
 
 export function TechnologySection() {
   return (
@@ -34,13 +14,9 @@ export function TechnologySection() {
           accent="For Optimal Outcomes"
           body="We invest in the latest diagnostic and surgical technology to ensure the highest standards of precision and patient safety."
         />
-        <FeatureGrid items={technology} columns={2} showNumbers />
-        <img
-          className="wide-equipment"
-          src="/assets/home/outcome.jpeg"
-          alt="Advanced technology outcomes"
-        />
+        <TechnologySlider items={technology} />
       </div>
     </section>
   );
 }
+

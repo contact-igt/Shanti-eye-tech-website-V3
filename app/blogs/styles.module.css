@@ -4,8 +4,8 @@
 
 .hero {
   position: relative;
-  min-height: 600px;
-  padding: 152px 0 96px;
+  min-height: 500px;
+  padding: 128px 0 76px;
   overflow: hidden;
   background: #fff url("/assets/blogs/blogs_banner.png") right center / cover no-repeat;
 }

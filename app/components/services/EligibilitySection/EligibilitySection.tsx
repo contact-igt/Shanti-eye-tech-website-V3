@@ -28,7 +28,7 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
           </div>
           <div className={styles.keratoconusBody}>
             <div className={styles.retinaCopy}>
-              <h3>Watch Out for These<br /><span>Warning Signs</span></h3>
+              <h3>Watch Out for These <br className={styles.desktopBr} /><span>Warning Signs</span></h3>
               <ul className={styles.retinaChecks}>
                 {warningChecks.map((item) => (
                   <li key={item}>
@@ -76,7 +76,7 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
           </div>
           <div className={styles.retinaBody}>
             <div className={styles.retinaCopy}>
-              <h3>Watch Out for These<br /><span>Warning Signs</span></h3>
+              <h3>Watch Out for These <br className={styles.desktopBr} /><span>Warning Signs</span></h3>
               <ul className={styles.retinaChecks}>
                 {warningChecks.map((item) => (
                   <li key={item}>
@@ -139,7 +139,6 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
                 </li>
               ))}
             </ul>
-            <div className={styles.glaucomaNote}><b>Note:</b> {content.note}</div>
           </div>
 
           <div className={styles.glaucomaVisual} aria-label="Glaucoma warning signs visual examples">
@@ -156,6 +155,7 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
               <span>Around Lights</span>
             </div>
           </div>
+          <div className={styles.glaucomaNote}><b>Note:</b> {content.note}</div>
         </div>
       </section>
     );

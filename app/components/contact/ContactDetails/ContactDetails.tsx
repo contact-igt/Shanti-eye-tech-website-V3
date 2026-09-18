@@ -97,7 +97,7 @@ const cardData = [
         Indore, MP 452001
       </>
     ),
-    linkHref: "https://maps.google.com/?q=Shekhar+Central+Palasia+Indore",
+    linkHref: "https://www.google.com/maps/place/Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Best+Eye+Hospital+in+Indore/@22.7229045,75.8843484,655m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fd5037568439:0xb4160c93774cf232!8m2!3d22.7228996!4d75.8869233!16s%2Fg%2F11fn98lrpr?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
     linkLabel: (
       <>
         <LocationIcon size={14} /> Get Directions
@@ -141,7 +141,7 @@ const cardData = [
     title: "Working Hours",
     body: (
       <>
-        Monday – Friday: 8:00 AM – 8:00 PM
+        Monday – Saturday: 10:00 AM – 7:00 PM
         <br />
         <br />
         Sunday: Closed
@@ -156,9 +156,6 @@ const cardData = [
 export function ContactDetails() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Default active card is index 1 ("Call Us Anytime") unless hovering another card
-  const activeIndex = hoveredIndex !== null ? hoveredIndex : 1;
-
   return (
     <section className={styles.section}>
       <div className={styles.shell}>
@@ -170,7 +167,7 @@ export function ContactDetails() {
         />
         <div className={styles.grid} onMouseLeave={() => setHoveredIndex(null)}>
           {cardData.map((card, index) => {
-            const isFeatured = index === activeIndex;
+            const isFeatured = index === hoveredIndex;
 
             return (
               <article

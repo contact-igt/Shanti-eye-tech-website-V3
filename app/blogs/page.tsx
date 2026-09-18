@@ -4,6 +4,7 @@ import { BlogPagination } from "../components/blogs/BlogPagination/BlogPaginatio
 import { SectionHeading } from "../components/services/common/SectionHeading/SectionHeading";
 import { AppointmentSection, Footer, Header } from "../site-components";
 import { listPublishedBlogs, type BlogListResult } from "@/lib/blogApi";
+import { BlogSearchForm } from "./BlogSearchForm";
 import styles from "./styles.module.css";
 
 export const metadata: Metadata = {
@@ -52,13 +53,7 @@ export default async function BlogsPage({
 
         <section className={`section ${styles.listSection}`}>
           <div className="shell">
-            <form className={styles.searchForm} action="/blogs">
-              <label className={styles.searchLabel} htmlFor="blog-search">Search articles</label>
-              <div className={styles.searchRow}>
-                <input id="blog-search" name="search" type="search" defaultValue={search} placeholder="Search eye-care topics" />
-                <button type="submit">Search</button>
-              </div>
-            </form>
+            <BlogSearchForm initialSearch={search} />
             {error ? (
               <p className={styles.state}>{error}</p>
             ) : !result || result.items.length === 0 ? (

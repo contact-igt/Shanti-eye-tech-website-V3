@@ -14,13 +14,14 @@ export function ContactHero() {
         </div>
       </div>
       <div className={styles.doctorWrap}>
-        <img className={styles.clinicImage} src="/assets/home/contact-clinic.jpeg" alt="" />
+        <img className={styles.clinicImage} src="/assets/contact-clinic.png" alt="" />
         <img
           className={styles.doctorImage}
-          src="/assets/home/contact-doctor.jpeg"
+          src="/assets/contact-doctor.png"
           alt="Shanti EyeTech doctor beside eye examination equipment"
         />
       </div>
+
     </section>
   );
 }

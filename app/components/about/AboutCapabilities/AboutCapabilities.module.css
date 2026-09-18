@@ -61,6 +61,19 @@
   line-height: 1.55;
 }
 
+.equipmentSlider { margin-inline: -12px; padding-bottom: 36px; }
+.equipmentSlide { padding: 0 12px; }
+.equipmentSlider :global(.slick-track) { display: flex; }
+.equipmentSlider :global(.slick-slide) { height: auto; }
+.equipmentSlider :global(.slick-slide) > div,
+.equipmentSlide,
+.equipmentSlide :global(.feature-card) { height: 100%; }
+.equipmentSlider :global(.slick-dots) { bottom: -30px; }
+.equipmentSlider :global(.slick-dots li) { width: 18px; height: 20px; margin: 0; }
+.equipmentSlider :global(.slick-dots li button) { width: 18px; height: 20px; padding: 0; }
+.equipmentSlider :global(.slick-dots li button:before) { content: ""; top: 6px; left: 5px; width: 8px; height: 8px; border-radius: 50%; background: #c8d5e4; opacity: 1; }
+.equipmentSlider :global(.slick-dots li.slick-active button:before) { background: #1fc6df; }
+
 @media (max-width: 992px) {
   .capabilitiesSection :global(.feature-grid.cols-4) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
