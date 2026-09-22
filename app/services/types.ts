@@ -18,6 +18,8 @@ export type HeroContent = {
    * very wide/short crop where "right" cuts off the subject). */
   backgroundPosition?: string;
   metrics: HeroMetric[];
+  /** Visible clinical-review attribution, e.g. "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS." */
+  reviewedBy?: string;
 };
 
 export type WhyChooseItem = {

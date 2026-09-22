@@ -62,7 +62,7 @@ export function AboutMilestones() {
           eyebrow="OUR JOURNEY"
           title="Milestones of"
           accent="Excellence & Growth"
-          body="From a small clinic to a leading eye care center—our journey has been marked by continuous innovation and unwavering commitment to patient care."
+          body="A career marked by clinical training, academic contribution and continued learning."
         />
         <div className="timeline">
           {milestones.map((item, index) => (

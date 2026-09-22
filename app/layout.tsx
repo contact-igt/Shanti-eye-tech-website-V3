@@ -16,13 +16,13 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     metadataBase: new URL(origin),
     title: {
-      default: "Shanti EyeTech | Advanced Eye Care",
-      template: "%s | Shanti EyeTech",
+      default: "Shanti Eye Tech | Advanced Eye Care",
+      template: "%s | Shanti Eye Tech",
     },
-    description: "World-class ophthalmology care with advanced technology and compassionate specialists in Indore.",
+    description: "Advanced ophthalmology care with cutting-edge technology and compassionate specialists in Indore.",
     icons: { icon: "/assets/logo.png", shortcut: "/assets/logo.png" },
     openGraph: {
-      title: "Shanti EyeTech | GENTLE CARE FOR YOUR PRECIOUS EYES",
+      title: "Shanti Eye Tech | GENTLE CARE FOR YOUR PRECIOUS EYES",
       description: "Advanced eye care in Indore with compassionate specialists and modern technology.",
       type: "website",
       url: origin,
@@ -30,13 +30,13 @@ export async function generateMetadata(): Promise<Metadata> {
       // og:images — it silently falls back to a small default thumbnail
       // instead of the large image card. A JPEG copy of the same photo
       // fixes that (Facebook/Twitter/LinkedIn handle both fine either way).
-      images: [{ url: "/assets/og-image.jpg", width: 1800, height: 1200, alt: "Dr. Amit N. Solanki at Shanti EyeTech" }],
+      images: [{ url: "/assets/og-image.jpg", width: 1800, height: 1200, alt: "Dr. Amit N. Solanki at Shanti Eye Tech" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "Shanti EyeTech | GENTLE CARE FOR YOUR PRECIOUS EYES",
+      title: "Shanti Eye Tech | GENTLE CARE FOR YOUR PRECIOUS EYES",
       description: "Advanced eye care in Indore.",
-      images: [{ url: "/assets/og-image.jpg", alt: "Dr. Amit N. Solanki at Shanti EyeTech" }],
+      images: [{ url: "/assets/og-image.jpg", alt: "Dr. Amit N. Solanki at Shanti Eye Tech" }],
     },
   };
 }

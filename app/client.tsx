@@ -258,6 +258,7 @@ export function AppointmentForm() {
           placeholder="Any specific concerns or preferred time?"
         />
       </label>
+      <p className="form-note">Please avoid sharing detailed or sensitive medical information here — our team will discuss your condition directly when confirming your appointment.</p>
       <button className="button button-primary button-wide" type="submit" disabled={loading}>
         {loading ? "Submitting..." : sent ? "Appointment Request Sent ✓" : <><span>Confirm Appointment</span><ArrowRight size={18} /></>}
       </button>
@@ -390,7 +391,7 @@ export function ContactForm() {
 
         <label className="form-full-col">
           <span className="label-text">
-            Selected Treatment <span className="required-star">*</span>
+            Treatment You Are Interested In <span className="required-star">*</span>
           </span>
           <select
             name="treatment"
@@ -424,11 +425,13 @@ export function ContactForm() {
         />
         {touched.message && errors.message && <span className="field-error-text">{errors.message}</span>}
       </label>
+      <p className="form-note">Please avoid sharing detailed or sensitive medical information here — our team will discuss your condition directly when confirming your appointment.</p>
 
       <button className="button button-primary contact-send-btn" type="submit" disabled={loading}>
         <img src="/assets/contact_send.png" alt="" aria-hidden="true" style={{ width: 16, height: 16 }} />
         {loading ? "Sending Message..." : sent ? "Message Sent ✓" : "Send Message"}
       </button>
+      <p className="form-note">Submitting this form is an appointment request. Our team will confirm availability separately.</p>
       {errors.form && <p className="field-error-text" style={{ marginTop: 8 }}>{errors.form}</p>}
       {sent && <p className="form-success">Thank you. We’ll be in touch shortly.</p>}
     </form>

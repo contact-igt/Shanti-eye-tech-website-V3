@@ -4,7 +4,7 @@ import { FacilitySlider } from "./FacilitySlider";
 
 const facilities = [
   {
-    image: "/assets/about/modern.jpeg",
+    image: "/assets/about/examination.jpg",
     title: "Modern Examination Rooms",
     text: "Comfortable, well-equipped consultation spaces",
   },
@@ -26,7 +26,7 @@ export function AboutFacilities() {
       <div className="shell">
         <SectionHeading
           eyebrow="OUR FACILITIES"
-          title="World-Class Infrastructure"
+          title="Advanced Infrastructure"
           accent="For Your Comfort"
         />
         <FacilitySlider items={facilities} />

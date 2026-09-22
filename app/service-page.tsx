@@ -155,7 +155,7 @@ const cataractTestimonials = [
     meta: "Bilateral Cataract Surgery - 65 years",
   },
   {
-    quote: "The advanced lens option restored my distance and reading vision seamlessly. I haven't worn glasses in months. Truly outstanding care by Shanti EyeTech!",
+    quote: "The advanced lens option restored my distance and reading vision seamlessly. I haven't worn glasses in months. Truly outstanding care by Shanti Eye Tech!",
     name: "Sunita Agarwal",
     meta: "Multifocal IOL Surgery - 61 years",
   },
@@ -215,7 +215,7 @@ const serviceTestimonials: Record<ServiceConfig["kind"], { quote: string; name: 
       meta: "Femto LASIK - 27 years",
     },
     {
-      quote: "No more fogged glasses while cooking or working out. LASIK at Shanti EyeTech completely elevated my lifestyle.",
+      quote: "No more fogged glasses while cooking or working out. LASIK at Shanti Eye Tech completely elevated my lifestyle.",
       name: "Deepak Joshi",
       meta: "Blade-Free LASIK - 36 years",
     },
@@ -535,7 +535,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
           ) : (
             <section className="section comparison-section cataract-comparison-section lasik-comparison-section">
               <div className="shell">
-                <SectionHeading title="Choose the Vision Correction Option" accent="That Fits Your Eyes" body="There is no single best procedure for everyone. The right option depends on your eye power, corneal thickness, dry eye status, lifestyle, and long-term safety. Shanti EyeTech helps you understand your options clearly before you decide." />
+                <SectionHeading title="Choose the Vision Correction Option" accent="That Fits Your Eyes" body="There is no single best procedure for everyone. The right option depends on your eye power, corneal thickness, dry eye status, lifestyle, and long-term safety. Shanti Eye Tech helps you understand your options clearly before you decide." />
                 <div className="lens-comparison-wrap lasik-comparison-wrap">
                   <div className="lens-comparison-table lasik-comparison-table" role="table" aria-label="LASIK vision correction procedure comparison">
                     <div className="lens-row lens-head" role="row">

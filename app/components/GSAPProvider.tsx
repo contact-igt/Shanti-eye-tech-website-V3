@@ -129,6 +129,8 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
           "section:first-of-type [class*='hero']:not(section) img, section:first-of-type [class*='Hero']:not(section) img, section:first-of-type img[class*='Bg'], section:first-of-type img[class*='background']"
         );
         heroMedia.forEach((img) => {
+          // Fixed banner photos must stay aligned with their gradient overlays.
+          if (img.hasAttribute("data-gsap-done")) return;
           // Don't fight an image that already has its own intentional CSS
           // transform (rotation/scale baked into its layout).
           if (getComputedStyle(img).transform !== "none") return;
@@ -207,6 +209,7 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
           ".wide-equipment, [class*='wide-equipment'], .doctor-photo img, .story-image img, [class*='mapCard'], .leadership-photo-wrap img, [class*='slide'] img, [class*='imageWrap'] img, [class*='imageStack'] img, [class*='isual'] img, [class*='portrait'] img, [class*='Portrait'] img, [class*='doctorWrap'] img"
         );
         images.forEach((img) => {
+          if (img.hasAttribute("data-gsap-done")) return;
           // Skip images that already carry their own deliberate CSS
           // transform (rotated/scaled portraits) — animating scale here
           // would silently strip that authored transform.

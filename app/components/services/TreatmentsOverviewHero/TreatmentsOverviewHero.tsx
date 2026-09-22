@@ -26,7 +26,7 @@ export function TreatmentsOverviewHero() {
           </h1>
 
           <p>
-            Explore Shanti EyeTech&apos;s range of eye-care services, from vision correction and cataract treatment to glaucoma, retina and pediatric eye care. Choose a service below to learn more.
+            Explore Shanti Eye Tech&apos;s range of eye-care services, from vision correction and cataract treatment to glaucoma, retina and pediatric eye care. Choose a service below to learn more.
           </p>
 
           <div className={styles.actions}>

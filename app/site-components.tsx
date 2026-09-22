@@ -13,8 +13,8 @@ export function Header({ active = "" }: { active?: string }) {
   return (
     <header className={`site-header ${active === "home" ? "home-header" : ""} ${isServicesPage ? "site-header-services" : "site-header-transparent"}`}>
       <div className="shell nav-wrap">
-        <Link className="brand" href="/" aria-label="Shanti EyeTech home">
-          <img src="/assets/logo.png" alt="Shanti EyeTech" />
+        <Link className="brand" href="/" aria-label="Shanti Eye Tech home">
+          <img src="/assets/logo.png" alt="Shanti Eye Tech" />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link className={active === "home" ? "active" : ""} href="/">Home</Link>
@@ -46,7 +46,7 @@ export function Header({ active = "" }: { active?: string }) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            <span>Emergency</span>
+            <span>Call Us</span>
           </a>
           <Link className="button button-primary nav-book" href="/contact#contact-form">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
@@ -287,13 +287,13 @@ export function FAQ({
     ["What eye conditions do you treat?", "We provide comprehensive care for all eye conditions including cataracts, glaucoma, diabetic retinopathy, macular degeneration, corneal diseases, refractive errors, and pediatric eye problems. Our specialists are equipped to handle both routine and complex cases."],
     ["Is LASIK surgery safe and permanent?", "LASIK is a well-established procedure. Your specialist will determine whether it is suitable for your eyes after a detailed assessment."],
     ["How long does cataract surgery take?", "Most cataract procedures are completed quickly, followed by a carefully planned recovery and review schedule."],
-    ["Do you accept insurance?", "Our team can help you understand available insurance and payment options before treatment."],
+    ["Do you accept insurance?", "Insurance and cashless options depend on your insurer and treatment. Please contact our team to confirm eligibility."],
     ["When should children have their first eye exam?", "A child should have an eye evaluation when recommended by their paediatrician or if you notice a vision concern."],
   ] : [
     [`What should I expect during my first ${service} visit?`, "Your specialist will review your history, assess your vision and eye health, explain the findings, and recommend a personalised treatment plan."],
     [`Is ${service} treatment safe?`, "Treatment is recommended only after a detailed evaluation. Our specialists use modern technology and established clinical safety protocols."],
     ["How long does the consultation take?", "Most consultations take 30-45 minutes. Some advanced diagnostic tests may require a little longer."],
-    ["Do you accept insurance?", "Our team can help you understand available insurance and payment options before treatment."],
+    ["Do you accept insurance?", "Insurance and cashless options depend on your insurer and treatment. Please contact our team to confirm eligibility."],
     ["How soon can I book an appointment?", "Same-day consultations may be available. Call us or use the appointment form and our team will confirm the earliest suitable time."],
   ];
   return (
@@ -368,8 +368,8 @@ export function AppointmentSection({
             </Link>
           ) : withForm ? (
             <ul className="appointment-points">
-              <li><span><AppointmentIcon type="clock" /></span><b>Quick Appointments</b><small>Same-day consultations available</small></li>
-              <li><span><AppointmentIcon type="people" /></span><b>Expert Specialists</b><small>20+ years of ophthalmology experience</small></li>
+              <li><span><AppointmentIcon type="clock" /></span><b>Quick Appointments</b><small>Appointments are subject to availability.</small></li>
+              <li><span><AppointmentIcon type="people" /></span><b>Expert Specialists</b><small>Experienced ophthalmology care.</small></li>
             </ul>
           ) : isModernService ? (
             <>
@@ -419,8 +419,8 @@ export function Footer({ home = false }: { home?: boolean }) {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/assets/logo.png" alt="Shanti EyeTech" />
-            <p>Providing world-class ophthalmology care with cutting-edge technology and compassionate specialists for over 20 years.</p>
+            <img src="/assets/logo.png" alt="Shanti Eye Tech" />
+            <p>Providing advanced ophthalmology care with cutting-edge technology and compassionate specialists for over 20 years.</p>
           </div>
           <div className="footer-quick-links"><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
           <div className="footer-services"><h4>Services</h4><Link href="/services/cataract#service-banner">Cataract Surgery</Link><Link href="/services/lasik#service-banner">Freedom From Glasses</Link><Link href="/services/retina#service-banner">Retina Care</Link><Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>{/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}<Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link><Link href="/services/keratoconus#service-banner">Keratoconus Care</Link></div>
@@ -433,14 +433,14 @@ export function Footer({ home = false }: { home?: boolean }) {
           </div>
         </div>
         <div className="footer-contact">
-          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>Shekhar Central, M1&amp;M2, Palasia Square,<br />Manorama Ganj, Indore, MP 452001</span></div></div>
+          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>Shekhar Central, M1 &amp; M2, Palasia Square,<br />Manorama Ganj, Indore, Madhya Pradesh 452001</span></div></div>
           <div className="footer-phone"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 3.5 8.8 3l1.7 4.2-2.1 1.7c1.2 2.5 3.2 4.5 5.7 5.7l1.7-2.1 4.2 1.7-.5 3.3c-.2 1.2-1.2 2-2.4 1.8C9.9 18.4 5.6 14.1 4.7 6.9c-.2-1.2.6-2.2 1.8-2.4Z" /></svg></span><div><b>Call Us</b><span>+91 91791 91939</span></div></div>
           <div className="footer-email"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg></span><div><b>Email Us</b><span>info@shantieyetech.com</span></div></div>
           <div className="footer-hours"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></svg></span><div><b>Working Hours</b><span>Mon - Sat: 10:00 AM - 7:00 PM<br />Sunday: Closed</span></div></div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Shanti EyeTech. All rights reserved.</span>
-          <div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-conditions">Terms &amp; Conditions</Link><a href="#">Cookie Policy</a></div>
+          <span>© 2026 Shanti Eye Tech. All rights reserved.</span>
+          <div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-conditions">Terms &amp; Conditions</Link><Link href="/cookie-policy">Cookie Policy</Link></div>
         </div>
       </div>
     </footer>

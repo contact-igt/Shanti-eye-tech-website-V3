@@ -47,6 +47,15 @@
   line-height: 1.58;
 }
 
+.reviewedBy {
+  max-width: 560px;
+  margin: 10px 0 0;
+  color: #7c879b;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;

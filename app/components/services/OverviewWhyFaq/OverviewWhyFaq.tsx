@@ -7,7 +7,7 @@ import styles from "./styles.module.css";
 const benefits = [
   {
     title: "Clinical Excellence",
-    description: "Specialists across every major eye-care discipline, backed by decades of combined experience.",
+    description: "Experienced ophthalmology care supported by trained clinical staff and advanced diagnostics.",
     icon: BadgeCheck,
   },
   {
@@ -25,7 +25,7 @@ const benefits = [
 const faqs = [
   {
     question: "How long does a comprehensive consultation take?",
-    answer: "Most consultations take 30 to 60 minutes, depending on the diagnostic tests recommended by your ophthalmologist.",
+    answer: "Consultation time varies depending on the examination and tests recommended.",
   },
   {
     question: "Do I need a referral to book an appointment?",
@@ -53,7 +53,7 @@ export function OverviewWhyFaq() {
       <div className={styles.shell}>
         <div className={styles.whyColumn}>
           <header className={styles.intro}>
-            <h2 id="why-shanti-title">Why Shanti EyeTech?</h2>
+            <h2 id="why-shanti-title">Why Shanti Eye Tech?</h2>
             <p>
               We combine technical precision with clinical empathy, helping every patient feel informed, comfortable, and cared for throughout treatment.
             </p>

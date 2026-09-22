@@ -1319,6 +1319,14 @@ p {
   font-weight: 700;
 }
 
+.form-note {
+  margin: 10px 0 0;
+  color: #67758c;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
 .appointment-image {
   position: relative;
   min-height: 340px;
@@ -3151,6 +3159,14 @@ blockquote small {
   color: #0a9e2f !important;
   font-size: 12px;
   font-weight: 700;
+}
+
+.form-note {
+  margin: 10px 0 0;
+  color: #67758c;
+  font-size: 12.5px;
+  font-weight: 500;
+  line-height: 1.5;
 }
 
 .appointment-image {
@@ -9530,12 +9546,12 @@ option.option-placeholder {
 @media (min-width: 901px) {
   .about-hero + .story-section .story-layout {
     width: min(1180px, calc(100% - 80px));
-    grid-template-columns: 434px minmax(0, 1fr);
-    gap: 64px;
+    grid-template-columns: minmax(0, 490px) minmax(0, 1fr);
+    gap: 56px;
   }
 
   .about-hero + .story-section .story-image img {
-    height: 500px;
+    height: 580px;
     aspect-ratio: auto;
   }
 
@@ -13102,7 +13118,7 @@ option.option-placeholder {
   }
 
   .site-header.home-header .mobile-nav > div::after {
-    content: "Emergency: +91 91791 91939";
+    content: "Call Us: +91 91791 91939";
     margin-top: auto;
     padding: 18px 14px 0;
     color: #67758c;

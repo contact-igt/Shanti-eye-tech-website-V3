@@ -16,7 +16,7 @@ export function HeroBanner() {
             <span>YOUR PRECIOUS EYES</span>
           </h1>
           <p>
-            Experience world-class ophthalmology care with cutting-edge technology and compassionate specialists dedicated to preserving and enhancing your vision.
+            Experience advanced ophthalmology care with cutting-edge technology and compassionate specialists dedicated to preserving and enhancing your vision.
           </p>
           <div className="hero-buttons">
             <Link
@@ -34,7 +34,7 @@ export function HeroBanner() {
               Call Now <Phone size={18} aria-hidden="true" />
             </a>
           </div>
-          <div className="hero-metrics" aria-label="Shanti EyeTech highlights">
+          <div className="hero-metrics" aria-label="Shanti Eye Tech highlights">
             <div>
               <span className="metric-icon" aria-hidden="true">
                 <Award size={20} strokeWidth={2} color="#22c44a" />

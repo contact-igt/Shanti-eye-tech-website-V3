@@ -11,7 +11,7 @@ export function CommitmentSection() {
           eyebrow="WHY CHOOSE US"
           title="Four Pillars of"
           accent="Our Commitment"
-          body="What sets Shanti EyeTech apart is our unwavering dedication to combining clinical excellence with genuine care for every patient who walks through our doors."
+          body="What sets Shanti Eye Tech apart is our unwavering dedication to combining clinical excellence with genuine care for every patient who walks through our doors."
         />
         <FeatureGrid
           columns={2}

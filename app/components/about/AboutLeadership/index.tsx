@@ -43,7 +43,7 @@ export function AboutLeadership() {
   return (
     <section className={`section leadership-section ${styles.leadershipSection}`} id="leadership">
       <div className="shell">
-        <SectionHeading eyebrow="LEADERSHIP" title="The Visionary Behind" accent="Shanti EyeTech" />
+        <SectionHeading eyebrow="LEADERSHIP" title="The Visionary Behind" accent="Shanti Eye Tech" />
         <div className="leadership-layout">
           <div className="leadership-photo-wrap">
             <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
@@ -53,10 +53,10 @@ export function AboutLeadership() {
             <h2>Dr. Amit N Solanki</h2>
             <h4>MBBS, DOMS, DNB, FAECS</h4>
             <p>
-              With over 20 years of dedicated service in ophthalmology since 2003, Dr. Amit N Solanki is a pioneer in advanced cataract, glaucoma, and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanti EyeTech’s success.
+              With over 20 years of dedicated service in ophthalmology since 2003, Dr. Amit N Solanki is a pioneer in advanced cataract, glaucoma, and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanti Eye Tech’s success.
             </p>
             <p>
-              After completing his MBBS and DOMS at B.J. Medical College, Ahmedabad, Dr. Solanki served for two years as a Senior Resident at Aravind Eye Hospital, Tamil Nadu, where he earned his DNB, before pursuing specialized training in Glaucoma &amp; Advanced Phaco Cataract Surgery at Aravind Eye Hospital, Coimbatore.
+              Dr. Solanki completed MBBS at B.J. Medical College, Ahmedabad; DOMS at M. &amp; J. Western Regional Institute of Ophthalmology; DNB Ophthalmology at Aravind Eye Hospital; and advanced phacoemulsification and glaucoma training at Aravind Eye Care Hospital, Coimbatore.
             </p>
             <p>
               This hands-on training honed his skills in advanced phaco cataract surgery as well as glaucoma diagnostics and management. Beyond clinical practice, Dr. Solanki has trained foreign doctors in Hanoi, Vietnam through the Alina Vision International Foundation, and is a sought-after speaker who has delivered numerous scientific talks as guest faculty at national and international conferences.

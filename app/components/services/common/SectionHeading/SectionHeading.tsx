@@ -7,15 +7,16 @@ type Props = {
   accent: string;
   body?: string;
   align?: "center" | "left";
+  as?: "h1" | "h2";
 };
 
-export function SectionHeading({ eyebrow, title, accent, body, align = "center" }: Props) {
+export function SectionHeading({ eyebrow, title, accent, body, align = "center", as: HeadingTag = "h2" }: Props) {
   return (
     <div className={`${styles.heading} ${align === "left" ? styles.left : styles.center}`}>
       {eyebrow ? <Eyebrow>{eyebrow}</Eyebrow> : null}
-      <h2>
+      <HeadingTag>
         {title} <span>{accent}</span>
-      </h2>
+      </HeadingTag>
       {body ? <p>{body}</p> : null}
     </div>
   );

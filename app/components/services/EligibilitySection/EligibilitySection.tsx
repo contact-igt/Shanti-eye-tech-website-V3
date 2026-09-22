@@ -147,8 +147,8 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
             <img className={styles.glaucomaLowVision} src="/assets/glaucoma/consider4.png" alt="Halos around lights visual symptoms" />
             <img className={styles.glaucomaHalos} src="/assets/glaucoma/consider3.png" alt="Peripheral vision loss assessment" />
             <div className={styles.glaucomaAgeBadge}>
-              <strong>40+</strong>
-              <span>Recommended Screening Age</span>
+              <strong>Risk-Based</strong>
+              <span>Screening Guidance</span>
             </div>
             <div className={styles.glaucomaHaloBadge}>
               <strong>HALOS</strong>
@@ -185,13 +185,13 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
               <img className={`${styles.eyeOne} ${styles.cataractEyeOne}`} src="/assets/cataract/consider_surgery1.jpeg" alt="Cloudy cataract eye" />
               <img className={`${styles.eyeThree} ${styles.cataractEyeThree}`} src="/assets/cataract/consider_surgery3.jpeg" alt="Cataract eye close-up" />
               <img className={`${styles.eyeTwo} ${styles.cataractEyeTwo}`} src="/assets/cataract/consider_surgery2.jpeg" alt="Eye after evaluation" />
-              <span className={styles.cataractAgeBadge}><small>Common Age</small><b>60+</b><em>Years Old</em></span>
+              <span className={styles.cataractAgeBadge}><small>More Common</small><b>With Age</b><em>Can occur earlier too</em></span>
             </>
           ) : kind === "classic" ? (
             <>
               <img className={`${styles.mainImage} ${styles.classicMainImage}`} src="/assets/lasik/lasik_right.jpeg" alt="LASIK candidate vision check" />
               <img className={styles.floatImage} src="/assets/lasik/lasikright2.jpeg" alt="LASIK eye examination consultation" />
-              <span className={styles.ageBadge}><b>18-45</b><small>Ideal Age Range</small></span>
+              <span className={styles.ageBadge}><b>Varies</b><small>By Procedure</small></span>
             </>
           ) : (
             <img className={styles.mainImage} src={content.image} alt="" />

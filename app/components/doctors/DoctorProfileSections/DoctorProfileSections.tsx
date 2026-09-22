@@ -24,7 +24,7 @@ const trustPoints = [
   { icon: Hospital, title: "Clinical Training", copy: "Further ophthalmic training and Senior Residency at Aravind Eye Hospital, Tamil Nadu." },
   { icon: GraduationCap, title: "Academic Exposure", copy: "Invited as international guest faculty at major ophthalmology congresses." },
   { icon: BookOpen, title: "Scientific Contributions", copy: "Guest faculty and presenter at national and international ophthalmology conferences." },
-  { icon: Trophy, title: "Award-Winning Work", copy: "Recognized for contributions in glaucoma, cataract surgery and ophthalmic research." },
+  { icon: Trophy, title: "Recognised Academic and Clinical Contributions", copy: "Recognized for contributions in glaucoma, cataract surgery and ophthalmic research." },
 ];
 
 const specialisations = [
@@ -137,13 +137,13 @@ export function DoctorProfileSections() {
       <section className={`${styles.section} ${styles.aboutSection}`} id="doctor-profile" aria-labelledby="meet-doctor-title">
         <div className={`shell ${styles.aboutGrid}`}>
           <div className={styles.portrait}>
-            <img src="/assets/doctor-profile.webp" alt="Dr. Amit N. Solanki at Shanti EyeTech" />
+            <img src="/assets/meet_doctor.jpg" alt="Dr. Amit N. Solanki at Shanti Eye Tech" />
           </div>
           <div className={styles.aboutCopy}>
             <Eyebrow>ABOUT THE DOCTOR</Eyebrow>
             <h2 id="meet-doctor-title">Meet <strong>Dr. Amit N. Solanki</strong></h2>
             <p>
-              Dr. Amit N. Solanki is the Director of Shanti EyeTech and a Cataract, Glaucoma &amp; Refractive Surgeon with more than 20 years of experience in ophthalmology.
+              Dr. Amit N. Solanki is the Director of Shanti Eye Tech and a Cataract, Glaucoma &amp; Refractive Surgeon, practising ophthalmology since 2003.
             </p>
             <p>
               His clinical journey includes advanced training at leading ophthalmic institutions, with specialised expertise in phaco cataract surgery, glaucoma diagnosis and management, and LASIK refractive surgery.
@@ -176,7 +176,7 @@ export function DoctorProfileSections() {
             </ul>
           </div>
           <div className={styles.specialisationVisual}>
-            <img src="/assets/home/eye-surgery.webp" alt="Advanced ophthalmic surgical procedure" />
+            <img src="/assets/specialization_doctor.jpg" alt="Dr. Amit N. Solanki providing specialised eye care" />
             <div className={styles.excellenceBadge}>
               <BadgeCheck aria-hidden="true" />
               <span><b>20+ Years</b>Clinical Experience</span>

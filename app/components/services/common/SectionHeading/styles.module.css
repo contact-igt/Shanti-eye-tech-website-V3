@@ -16,6 +16,7 @@
   text-align: left;
 }
 
+.heading h1,
 .heading h2 {
   margin: 16px 0 14px;
   color: #10141d;
@@ -25,6 +26,7 @@
   white-space: normal;
 }
 
+.heading h1 span,
 .heading h2 span {
   color: var(--cyan);
 }
@@ -46,7 +48,8 @@
     margin-bottom: 36px;
   }
 
-  .heading h2 {
+  .heading h1,
+.heading h2 {
     font-size: clamp(2rem, 3.5vw, 2.6rem);
     line-height: 1.12;
   }
@@ -65,7 +68,8 @@
     margin-bottom: 28px;
   }
 
-  .heading h2 {
+  .heading h1,
+.heading h2 {
     font-size: clamp(1.8rem, 4.5vw, 2.2rem);
     line-height: 1.18;
   }
@@ -76,7 +80,8 @@
     margin-bottom: 24px;
   }
 
-  .heading h2 {
+  .heading h1,
+.heading h2 {
     font-size: clamp(1.65rem, 6vw, 2.1rem);
     line-height: 1.18;
   }
@@ -87,5 +92,7 @@
 }
 
 /* Service section-heading responsive type scale. */
-@media (max-width: 900px) { .heading { width: min(720px, 100%); margin-bottom: 36px; } .heading h2 { font-size: clamp(2rem, 3.5vw, 2.6rem); line-height: 1.12; } .heading p { font-size: 15.5px; } }
-@media (max-width: 640px) { .heading { margin-bottom: 28px; } .heading h2 { font-size: clamp(1.65rem, 6vw, 2.1rem); line-height: 1.18; } .heading p { font-size: 14.5px; line-height: 1.52; } }
+@media (max-width: 900px) { .heading { width: min(720px, 100%); margin-bottom: 36px; } .heading h1,
+.heading h2 { font-size: clamp(2rem, 3.5vw, 2.6rem); line-height: 1.12; } .heading p { font-size: 15.5px; } }
+@media (max-width: 640px) { .heading { margin-bottom: 28px; } .heading h1,
+.heading h2 { font-size: clamp(1.65rem, 6vw, 2.1rem); line-height: 1.18; } .heading p { font-size: 14.5px; line-height: 1.52; } }

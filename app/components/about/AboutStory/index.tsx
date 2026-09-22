@@ -7,7 +7,7 @@ export function AboutStory() {
     <section className={`section story-section ${styles.storySection}`}>
       <div className="shell story-layout">
         <div className="story-image">
-          <img src="/assets/about/modern.jpeg" alt="Modern examination room" />
+          <img src="/assets/about/about.jpg" alt="Shanti Eye Tech clinic" />
           <b>
             <i aria-hidden="true">♡</i>
             <strong>
@@ -20,10 +20,10 @@ export function AboutStory() {
           <Eyebrow>WHO WE ARE</Eyebrow>
           <h2>
             Where Peace Meets<br />
-            <span>World-Class Eye Care</span>
+            <span>Advanced Eye Care</span>
           </h2>
           <p>
-            At Shanti EyeTech, we believe good eye care is not only about advanced treatment—it is also about making every patient feel comfortable, understood, and cared for. “Shanti” represents peace, while “EyeTech” reflects our commitment to modern eye care. Together, they define the experience we want every patient to have.
+            At Shanti Eye Tech, we believe good eye care is not only about advanced treatment—it is also about making every patient feel comfortable, understood, and cared for. “Shanti” represents peace, while “EyeTech” reflects our commitment to modern eye care. Together, they define the experience we want every patient to have.
           </p>
           <p>
             Our doctors and clinical team take the time to listen, explain things clearly, and guide each patient through the right treatment with confidence. With modern technology, experienced professionals, and a patient-first approach, we aim to make quality eye care simple, reassuring, and accessible.

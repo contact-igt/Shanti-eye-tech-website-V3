@@ -16,7 +16,7 @@ export function AboutHero() {
             <span>Visionary Care</span>
           </h1>
           <p>
-            For over two decades, Shanti EyeTech has been at the forefront of ophthalmology in India, combining clinical excellence with compassionate care to restore and preserve the gift of sight.
+            For over two decades, Shanti Eye Tech has provided eye care in Indore, combining clinical expertise, advanced technology and compassionate support.
           </p>
           <div className="hero-buttons">
             <Link
@@ -39,7 +39,7 @@ export function AboutHero() {
           <img
             className="main-photo"
             src="/assets/clinic-lounge.webp"
-            alt="Shanti EyeTech clinic lounge"
+            alt="Shanti Eye Tech clinic lounge"
           />
           <img
             className="side-photo"

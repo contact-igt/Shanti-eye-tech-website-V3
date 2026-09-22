@@ -4,8 +4,8 @@ import { Eyebrow } from "../common/Eyebrow/Eyebrow";
 import styles from "./styles.module.css";
 
 export function AppointmentCTA({ content, kind }: { content: AppointmentContent; kind: ServiceKind }) {
-  const badgeTitle = content.badgeTitle ?? (kind === "classic" ? "20/20" : "Clear Vision");
-  const badgeSubtitle = content.badgeSubtitle ?? (kind === "classic" ? "Clear Vision Awaits" : "A Brighter Tomorrow");
+  const badgeTitle = content.badgeTitle ?? "Clear Vision";
+  const badgeSubtitle = content.badgeSubtitle ?? "A Brighter Tomorrow";
   const checkTitle = content.checkTitle ?? "Comprehensive Evaluation";
   const checkSubtitle = content.checkSubtitle ?? `Complete assessment to determine the best ${content.serviceLabel} option for you`;
 

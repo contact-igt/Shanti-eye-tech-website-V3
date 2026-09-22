@@ -7,25 +7,25 @@ const services = [
   [
     "01",
     "Advanced Cataract Surgery",
-    "State-of-the-art phacoemulsification with premium IOL options for crystal-clear vision restoration.",
+    "Evaluation and treatment for cataracts that can cause cloudy vision, glare and progressive reduction in visual clarity.",
     "/services/cataract",
   ],
   [
     "02",
     "Retina Care",
-    "Comprehensive medical and retina services including laser treatments and injections",
+    "Evaluation and management of retinal conditions, with treatment recommendations based on clinical findings.",
     "/services/retina",
   ],
   [
     "03",
     "Freedom From Glasses",
-    "Touchless LASIK, ICL and PRELEX vision correction procedures for freedom from glasses and contact lenses.",
+    "Vision-correction options designed to reduce dependence on spectacles or contact lenses for suitable patients. Suitability and visual outcomes depend on a detailed eye examination.",
     "/services/lasik",
   ],
   [
     "04",
     "Glaucoma Management",
-    "Advanced diagnosis and treatment to preserve your vision through medical and surgical interventions.",
+    "Evaluation, monitoring and treatment guidance for glaucoma, a group of conditions that can damage the optic nerve.",
     "/services/glaucoma",
   ],
   // Squint Treatment temporarily unlisted — replaced by Pediatric Eye Care
@@ -38,13 +38,13 @@ const services = [
   [
     "05",
     "Pediatric Eye Care",
-    "Comprehensive eye exams, vision therapy and myopia management for infants, children and teenagers.",
+    "Eye examinations and care focused on healthy vision and proper eye development in children.",
     "/services/pediatric-eye-care",
   ],
   [
     "06",
     "Keratoconus Care",
-    "Advanced corneal cross-linking and lens solutions to manage and halt keratoconus progression effectively.",
+    "Evaluation and management of keratoconus, a progressive condition in which the cornea becomes thinner and develops a cone-like shape. Treatment depends on corneal findings and whether progression is present.",
     "/services/keratoconus",
   ],
 ];

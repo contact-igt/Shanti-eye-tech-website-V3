@@ -37,7 +37,7 @@ export function DoctorSection() {
           <span>
             <span className="green-dot"></span>Available Today
           </span>
-          <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
+          <img src="/assets/meet_doctor.jpg" alt="Dr. Amit N Solanki beside eye examination equipment" />
           <small>Medical Director of Shanti Eye Care</small>
         </div>
         <div className="doctor-copy">
@@ -45,7 +45,7 @@ export function DoctorSection() {
           <h2>Dr. Amit N Solanki</h2>
           <h4>Chief Ophthalmologist &amp; Medical Director</h4>
           <p>
-            With over 20 years of experience since 2003 in cataract, glaucoma, and refractive surgery, Dr. Solanki is recognized internationally for his expertise in advanced phaco cataract surgery and glaucoma management.
+            Dedicated to ophthalmology since 2003 in cataract, glaucoma, and refractive surgery, Dr. Solanki is recognized internationally for his expertise in advanced phaco cataract surgery and glaucoma management.
           </p>
           <ul>
             <li>Cataract, Glaucoma and Refractive Surgeon</li>

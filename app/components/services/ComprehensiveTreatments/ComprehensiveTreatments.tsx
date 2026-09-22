@@ -13,7 +13,7 @@ export type TreatmentItem = {
 const treatments: TreatmentItem[] = [
   {
     title: "Freedom From Glasses",
-    desc: "Touchless LASIK, ICL and PRELEX — advanced vision-correction options to reduce or eliminate dependence on glasses and contact lenses.",
+    desc: "Touchless LASIK, ICL and PRELEX — advanced vision-correction options to reduce or eliminate dependence on glasses and contact lenses. Suitability and visual outcomes depend on a detailed eye examination.",
     image: "/assets/treatment-overview/freedom-glasses.png",
     href: "/services/lasik#service-banner",
   },
@@ -31,13 +31,13 @@ const treatments: TreatmentItem[] = [
   },
   {
     title: "Keratoconus Care",
-    desc: "Evaluation and management of keratoconus, a progressive condition in which the cornea becomes thinner and develops a cone-like shape.",
+    desc: "Evaluation and management of keratoconus, a progressive condition in which the cornea becomes thinner and develops a cone-like shape. Treatment depends on corneal findings and whether progression is present.",
     image: "/assets/treatment-overview/keratoconus.png",
     href: "/services/keratoconus#service-banner",
   },
   {
     title: "Retina Care",
-    desc: "Retinal evaluation and guidance for conditions affecting the retina and the vision it helps produce.",
+    desc: "Evaluation and management of retinal conditions, with treatment recommendations based on clinical findings.",
     image: "/assets/treatment-overview/retina.png",
     href: "/services/retina#service-banner",
   },
@@ -50,7 +50,7 @@ const treatments: TreatmentItem[] = [
   // },
   {
     title: "Pediatric Eye Care",
-    desc: "Comprehensive eye exams, vision therapy and myopia management for infants, children and teenagers.",
+    desc: "Comprehensive eye examinations and guidance for children and teenagers.",
     image: "/assets/pediatric/options1.png",
     href: "/services/pediatric-eye-care#service-banner",
   },

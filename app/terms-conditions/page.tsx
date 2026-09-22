@@ -3,13 +3,18 @@ import { LegalContent, LegalHero, type LegalSection } from "../components/legal"
 import { Footer, Header } from "../site-components";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions",
+  title: {
+    absolute: "Terms & Conditions | Shanti Eye Tech",
+  },
   description:
-    "Read the Terms & Conditions governing your access to and use of the Shanti EyeTech website.",
+    "Read the terms governing use of the Shanti Eye Tech website, including medical-information, appointment and website-use terms.",
+  alternates: {
+    canonical: "https://www.shantieyetech.com/terms-conditions",
+  },
 };
 
 const intro = [
-  "Welcome to the website of Shanti EyeTech. These Terms & Conditions govern your access to and use of this website, including its content, appointment-request features, contact forms, and other services made available through the website.",
+  "Welcome to the website of Shanti Eye Tech. These Terms & Conditions govern your access to and use of this website, including its content, appointment-request features, contact forms, and other services made available through the website.",
   "By accessing or using this website, you agree to these Terms & Conditions. If you do not agree with these terms, please discontinue use of the website.",
 ];
 
@@ -21,7 +26,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "The Shanti EyeTech website provides general information about the hospital/clinic, doctors, eye conditions, treatments, services, facilities, and ways to contact or request an appointment with us.",
+        text: "The Shanti Eye Tech website provides general information about the hospital/clinic, doctors, eye conditions, treatments, services, facilities, and ways to contact or request an appointment with us.",
       },
       {
         type: "p",
@@ -67,7 +72,7 @@ const sections: LegalSection[] = [
       { type: "p", text: "The website may allow users to submit appointment or consultation requests." },
       {
         type: "p",
-        text: "Submitting a request through the website does not necessarily constitute a confirmed appointment. An appointment may be considered confirmed only after confirmation from Shanti EyeTech or its authorised team.",
+        text: "Submitting a request through the website does not necessarily constitute a confirmed appointment. An appointment may be considered confirmed only after confirmation from Shanti Eye Tech or its authorised team. Availability is confirmed separately by the hospital team.",
       },
       {
         type: "p",
@@ -75,7 +80,7 @@ const sections: LegalSection[] = [
       },
       {
         type: "p",
-        text: "Shanti EyeTech may need to reschedule or cancel an appointment when reasonably necessary.",
+        text: "Shanti Eye Tech may need to reschedule or cancel an appointment when reasonably necessary.",
       },
     ],
   },
@@ -94,7 +99,7 @@ const sections: LegalSection[] = [
       },
       {
         type: "p",
-        text: "Please seek appropriate medical attention without waiting for a response through the website.",
+        text: "For sudden loss of vision, severe eye pain, chemical injury, flashes/floaters with a curtain or shadow, seek urgent medical attention immediately. Please seek appropriate medical attention without waiting for a response through the website.",
       },
     ],
   },
@@ -134,7 +139,7 @@ const sections: LegalSection[] = [
     number: "7",
     title: "Accuracy of Website Information",
     blocks: [
-      { type: "p", text: "Shanti EyeTech aims to maintain accurate and useful information on this website." },
+      { type: "p", text: "Shanti Eye Tech aims to maintain accurate and useful information on this website." },
       {
         type: "p",
         text: "However, medical knowledge, technology, treatment approaches, doctor availability, operating hours, pricing, services, and other information may change over time.",
@@ -142,7 +147,7 @@ const sections: LegalSection[] = [
       { type: "p", text: "We may update, modify, correct, or remove website content without prior notice." },
       {
         type: "p",
-        text: "For information directly affecting your treatment or appointment, please confirm the details with Shanti EyeTech.",
+        text: "For information directly affecting your treatment or appointment, please confirm the details with Shanti Eye Tech.",
       },
     ],
   },
@@ -153,7 +158,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Unless otherwise stated, the website's original text, branding, graphics, design elements, logos, photographs, videos, and other original materials are owned by or appropriately licensed to Shanti EyeTech.",
+        text: "Unless otherwise stated, the website's original text, branding, graphics, design elements, logos, photographs, videos, and other original materials are owned by or appropriately licensed to Shanti Eye Tech.",
       },
       {
         type: "p",
@@ -197,7 +202,7 @@ const sections: LegalSection[] = [
       },
       {
         type: "p",
-        text: "Shanti EyeTech does not control the content, availability, security, or privacy practices of independent third-party services.",
+        text: "Shanti Eye Tech does not control the content, availability, security, or privacy practices of independent third-party services.",
       },
       { type: "p", text: "Accessing third-party services is subject to their respective terms and policies." },
     ],
@@ -209,7 +214,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Personal information submitted through this website is handled in accordance with the Shanti EyeTech Privacy Policy and applicable requirements.",
+        text: "Personal information submitted through this website is handled in accordance with the Shanti Eye Tech Privacy Policy and applicable requirements.",
       },
       {
         type: "p",
@@ -224,7 +229,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "To the extent permitted by applicable law, Shanti EyeTech is not responsible for losses arising solely from reliance on general informational website content instead of obtaining appropriate professional medical advice.",
+        text: "To the extent permitted by applicable law, Shanti Eye Tech is not responsible for losses arising solely from reliance on general informational website content instead of obtaining appropriate professional medical advice.",
       },
       {
         type: "p",
@@ -267,8 +272,8 @@ const sections: LegalSection[] = [
       { type: "p", text: "For questions regarding these Terms & Conditions, please contact:" },
     ],
     contact: {
-      name: "Shanti EyeTech",
-      address: "Indore, Madhya Pradesh, India",
+      name: "Shanti Eye Tech",
+      address: "Shekhar Central, M1 & M2, Palasia Square, Manorama Ganj, Indore, Madhya Pradesh 452001",
       email: "info@shantieyetech.com",
     },
   },
@@ -282,7 +287,7 @@ export default function TermsConditionsPage() {
         <LegalHero
           eyebrow="LEGAL & COMPLIANCE"
           title="Terms & Conditions"
-          description="The terms that govern your access to and use of the Shanti EyeTech website, its content, and its appointment features."
+          description="The terms that govern your access to and use of the Shanti Eye Tech website, its content, and its appointment features."
           lastUpdated="August 2026"
         />
         <LegalContent intro={intro} sections={sections} />
