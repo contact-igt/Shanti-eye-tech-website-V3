@@ -104,28 +104,6 @@ export function ServicesSection() {
             align="left"
           />
         </div>
-        <div className="service-side-images" aria-hidden="true">
-          <img
-            className="service-side-image service-image-1"
-            src="/assets/service1.png"
-            alt=""
-          />
-          <img
-            className="service-side-image service-image-2"
-            src="/assets/service2.png"
-            alt=""
-          />
-          <img
-            className="service-side-image service-image-3"
-            src="/assets/service3.png"
-            alt=""
-          />
-          <img
-            className="service-side-image service-image-4"
-            src="/assets/service4.png"
-            alt=""
-          />
-        </div>
         <div className="service-grid">
           {services.map(([number, title, text, href], index) => (
             <Link

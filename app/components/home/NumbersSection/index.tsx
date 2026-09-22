@@ -50,10 +50,10 @@ export function NumbersSection() {
           </article>
           <article>
             <span className="number-watermark" aria-hidden="true">
-              49999
+              50K+
             </span>
             <b>
-              <CountUp value={49999} suffix="+" />
+              <CountUp value={50} suffix="K+" />
             </b>
             <span>Successful Procedures Completed</span>
           </article>
