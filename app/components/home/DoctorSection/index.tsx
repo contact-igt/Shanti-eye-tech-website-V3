@@ -37,13 +37,8 @@ export function DoctorSection() {
           <span>
             <span className="green-dot"></span>Available Today
           </span>
-<<<<<<< Updated upstream
           <img src="/assets/meet_doctor.jpg" alt="Dr. Amit N Solanki beside eye examination equipment" />
-          <small>Medical Director of Shanti Eye Care</small>
-=======
-          <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
           <small>Director — Shanti EyeTech Eye Care &amp; Laser Hospital</small>
->>>>>>> Stashed changes
         </div>
         <div className="doctor-copy">
           <Eyebrow>DIRECTOR</Eyebrow>

@@ -419,13 +419,8 @@ export function Footer({ home = false }: { home?: boolean }) {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-<<<<<<< Updated upstream
-            <img src="/assets/logo.png" alt="Shanti Eye Tech" />
-            <p>Providing advanced ophthalmology care with cutting-edge technology and compassionate specialists for over 20 years.</p>
-=======
             <img src="/assets/logo.png" alt="Shanti EyeTech" />
             <p>Providing personalized eye care with advanced technology and a patient-focused approach in Indore.</p>
->>>>>>> Stashed changes
           </div>
           <div className="footer-quick-links"><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
           <div className="footer-services"><h4>Services</h4><Link href="/services/cataract#service-banner">Cataract Surgery</Link><Link href="/services/lasik#service-banner">Freedom From Glasses</Link><Link href="/services/retina#service-banner">Retina Care</Link><Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>{/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}<Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link><Link href="/services/keratoconus#service-banner">Keratoconus Care</Link></div>

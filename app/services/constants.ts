@@ -217,21 +217,12 @@ const cataractContent: ServicePageContent = {
     accent: "Shanti Eye Tech for Cataract Care",
     body: "Trusted expertise and compassionate care for safe, effective cataract treatment",
     items: [
-<<<<<<< Updated upstream
-      { icon: "award", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
-      { icon: "zap", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
-      { icon: "users", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
-      { icon: "heart", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
-      { icon: "clock", title: "Quick Recovery", text: "Recovery varies. Your ophthalmologist will advise when you can safely resume specific activities." },
-      { icon: "shield", title: "Comprehensive Support", text: "Lifetime post-operative care and monitoring" },
-=======
       { icon: "award", title: "Expert Surgeons", text: "20+ years of ophthalmology experience, with specialized training in advanced phaco cataract surgery." },
       { icon: "zap", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
       { icon: "users", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
       { icon: "heart", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
-      { icon: "clock", title: "Quick Recovery", text: "Most patients resume activities within days" },
+      { icon: "clock", title: "Quick Recovery", text: "Recovery varies. Your ophthalmologist will advise when you can safely resume specific activities." },
       { icon: "shield", title: "Comprehensive Support", text: "Planned post-operative follow-up and monitoring as advised by your ophthalmologist." },
->>>>>>> Stashed changes
       { icon: "eye", title: "Premium IOL Options", text: "Multiple lens choices for optimal vision correction" },
       { icon: "star", title: "Proven Results", text: "49,999+ successful cataract procedures" },
     ],
@@ -307,19 +298,11 @@ const cataractContent: ServicePageContent = {
     cardTitle: "Have Questions About Cataracts?",
     cardText: "Our cataract specialists are here to answer your questions and guide you through your treatment options.",
     items: [
-<<<<<<< Updated upstream
       { question: "How do I know if I have cataracts?", answer: "Common signs include cloudy or blurry vision, difficulty seeing at night, sensitivity to light, seeing halos around lights, fading colors, and frequent changes in glasses prescription. A comprehensive eye examination can confirm cataracts and determine suitability for treatment." },
       { question: "Is cataract surgery safe?", answer: "Cataract surgery is one of the safest and most frequently performed surgical procedures in the world. As with any surgery, individual risks and expected outcomes should be discussed with your ophthalmologist after an eye examination." },
-      { question: "How long does cataract surgery take?", answer: "The procedure itself typically takes around 15 to 20 minutes per eye, though timing can vary by case. You will spend about 2 hours at the center total for prep and recovery." },
+      { question: "How long does cataract surgery take?", answer: "Total time at the centre varies depending on preparation, the individual case and post-operative observation." },
       { question: "Will I need glasses after cataract surgery?", answer: "This depends on the type of intraocular lens (IOL) you choose, and is determined after an eye examination. Premium multifocal or trifocal lenses may reduce dependence on glasses for some patients." },
       { question: "What is the recovery time?", answer: "Recovery varies by patient. Many people notice clearer vision within a day or two, but your ophthalmologist will advise when you can safely resume specific activities." },
-=======
-      { question: "How do I know if I have cataracts?", answer: "Common signs include cloudy or blurry vision, difficulty seeing at night, sensitivity to light, seeing halos around lights, fading colors, and frequent changes in glasses prescription. A comprehensive eye examination can confirm cataracts." },
-      { question: "Is cataract surgery safe?", answer: "Cataract surgery is one of the safest and most frequently performed surgical procedures in the world, with success rates over 98%." },
-      { question: "How long does cataract surgery take?", answer: "Total time at the centre varies depending on preparation, the individual case and post-operative observation." },
-      { question: "Will I need glasses after cataract surgery?", answer: "It depends on the type of intraocular lens (IOL) you choose. Premium multifocal or trifocal lenses can reduce or eliminate your need for glasses." },
-      { question: "What is the recovery time?", answer: "Most patients experience clearer vision within 24 to 48 hours and resume normal daily activities within a few days." },
->>>>>>> Stashed changes
     ],
   },
   appointment: {

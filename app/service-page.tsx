@@ -272,11 +272,7 @@ const whyIcon = (path: ReactNode) => (
 );
 
 const whyItems = [
-<<<<<<< Updated upstream
-  { icon: "01", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
-=======
   { icon: "01", title: "Expert Surgeons", text: "20+ years of ophthalmology experience, with specialized training in advanced phaco cataract surgery." },
->>>>>>> Stashed changes
   { icon: "02", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
   { icon: "03", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
   { icon: "04", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
