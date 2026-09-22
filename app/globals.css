@@ -11260,13 +11260,11 @@ option.option-placeholder {
 
 .home-page .service-card:nth-child(1),
 .home-page .service-card:nth-child(2),
-.home-page .service-card:nth-child(3) {
-  grid-column: span 2;
-}
-
+.home-page .service-card:nth-child(3),
 .home-page .service-card:nth-child(4),
-.home-page .service-card:nth-child(5) {
-  grid-column: span 3;
+.home-page .service-card:nth-child(5),
+.home-page .service-card:nth-child(6) {
+  grid-column: span 2;
 }
 
 .home-page .service-card h3 {
