@@ -60,7 +60,7 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
     const riskCheck = kind === "squint" ? null : content.checks[4];
 
     const defaultWarningImages = [
-      { image: "/assets/retina/low-light.webp", label: "Blurred Vision" },
+      { image: "/assets/retina/blurred-vision.jpg", label: "Blurred Vision" },
       { image: "/assets/retina/dark_spot.jpeg", label: "Dark Spots" },
       { image: "/assets/retina/low_vision.jpeg", label: "Low Light" },
       { image: "/assets/retina/side_vision.jpeg", label: "Side Vision" },

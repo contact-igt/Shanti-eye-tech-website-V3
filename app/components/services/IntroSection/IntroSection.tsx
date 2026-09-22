@@ -68,8 +68,8 @@ export function IntroSection({ content, kind }: { content: IntroContent; kind: S
             </div>
             <img className={styles.glaucomaInset} src="/assets/eye-check.webp" alt="Close-up eye examination during glaucoma evaluation" />
             <div className={styles.glaucomaPanel}>
-              <span>Silent Disease</span>
-              <strong>No Pain</strong>
+              <span>Open-Angle Glaucoma</span>
+              <strong>Often Has No Early Symptoms</strong>
             </div>
           </div>
         ) : (

@@ -88,12 +88,12 @@ const classicContent: ServicePageContent = {
     accent: "Shanti Eye Tech for Freedom From Glasses",
     body: "Combining advanced technology with personalized care for optimal vision correction results",
     items: [
-      { icon: "award", title: "Award-Winning Excellence", text: "Recognized nationally for refractive surgery outcomes" },
+      { icon: "award", title: "Award-Winning Excellence", text: "Multiple awards and professional recognitions in ophthalmology." },
       { icon: "zap", title: "Multiple Advanced Options", text: "Touchless LASIK, SMILE, PRK, ICL and PRELEX under one roof" },
-      { icon: "users", title: "Experienced Specialists", text: "Over 20 years of refractive surgical expertise" },
+      { icon: "users", title: "Experienced Specialists", text: "Over 20 years of ophthalmology experience, with specialised LASIK/refractive surgical training." },
       { icon: "heart", title: "Personalized Treatment", text: "The right procedure recommended for your eyes, not the most popular one" },
       { icon: "clock", title: "Recovery Varies", text: "Recovery time differs by procedure and individual healing. Your surgeon will provide personalised activity guidance." },
-      { icon: "shield", title: "Comprehensive Care", text: "Lifetime post-operative support and monitoring" },
+      { icon: "shield", title: "Comprehensive Care", text: "Post-operative follow-up and monitoring as advised by your surgeon." },
       { icon: "eye", title: "Procedure-Specific Techniques", text: "The techniques and recovery considerations differ between laser, implantable-lens and lens-exchange procedures." },
       { icon: "star", title: "Trusted by Thousands", text: "49,999+ successful vision correction procedures performed" },
     ],
@@ -133,7 +133,7 @@ const classicContent: ServicePageContent = {
     accent: "Procedures",
     body: "Advanced procedures, matched to your eyes, prescription and lifestyle. The appropriate option depends on your prescription, corneal measurements, age, eye health and visual needs.",
     options: [
-      { image: "/assets/lasik/touchless_lasik.png", title: "Touchless LASIK", tag: "LASER VISION CORRECTION", text: "A bladeless, touchless laser vision-correction technique in which a laser creates a thin corneal flap before reshaping the cornea to help correct nearsightedness, farsightedness and astigmatism. Your surgeon will discuss benefits, limitations and possible risks after assessment." },
+      { image: "/assets/lasik/touchless_lasik.png", title: "Touchless LASIK", tag: "LASER VISION CORRECTION", text: "A bladeless, flapless, touchless laser vision-correction option for suitable patients. Suitability is determined after detailed corneal evaluation." },
       { image: "/assets/lasik/smile-procedure.png", title: "SMILE", tag: "FLAPLESS LASER", text: "A minimally invasive, flapless laser procedure that removes a small lenticule of corneal tissue through a tiny incision. May be considered for suitable candidates after assessment." },
       { image: "/assets/lasik/prk-procedure.png", title: "PRK", tag: "SURFACE LASER", text: "A flapless surface laser treatment that reshapes the outer corneal surface directly. May be considered for select cases, including some thinner corneas, after assessment; recovery typically takes longer than LASIK or SMILE." },
       { image: "/assets/lasik/ICL.png", title: "ICL (Implantable Collamer Lens)", tag: "IMPLANTABLE LENS", text: "A thin, flexible lens made from biocompatible Collamer material, positioned behind the iris and in front of the natural lens. May be considered for suitable patients, including some with higher prescriptions or corneal characteristics that make laser correction less suitable." },
@@ -335,10 +335,10 @@ const retinaContent: ServicePageContent = {
     eyebrow: "WHY CHOOSE US",
     title: "Why Patients Choose",
     accent: "Shanti Eye Tech",
-    body: "Specialized expertise in early detection and long-term retinal management",
+    body: "Focused retinal evaluation, early detection and guidance for appropriate next steps",
     items: [
       { icon: "01", title: "Doctor-led eye care", text: "Every consultation handled by an experienced ophthalmologist" },
-      { icon: "02", title: "Advanced technology", text: "Precision-driven diagnostic and therapeutic excellence" },
+      { icon: "02", title: "Advanced technology", text: "Diagnostic evaluation to support retinal assessment and clinical decision-making" },
       { icon: "03", title: "Patient-friendly environment", text: "A calm, peaceful, reassuring space" },
       { icon: "04", title: "Personalised Attention", text: "Treatment plans tailored to your needs" },
       { icon: "05", title: "Affordable solutions", text: "Quality care at accessible prices" },
@@ -363,7 +363,7 @@ const retinaContent: ServicePageContent = {
     },
     callout: {
       title: "What Retina Care Involves",
-      text: "Retina care focuses on diagnosing and treating diseases that affect the retina, macula, and blood vessels at the back of the eye.",
+      text: "At Shanti EyeTech, retina care includes dilated retinal examination to detect and diagnose retinal diseases and guide patients regarding further diagnostic procedures and treatment options.",
     },
   },
   eligibility: {
@@ -375,21 +375,22 @@ const retinaContent: ServicePageContent = {
     note: "Sudden flashes of light, a sudden increase in floaters, or a curtain/shadow over vision require urgent eye assessment. If you experience any of these symptoms or have risk factors, schedule a comprehensive retinal examination promptly.",
     image: "/assets/retina/retina-exam.webp",
     warningImages: [
-      { image: "/assets/retina/low-light.webp", label: "Blurred Vision" },
+      { image: "/assets/retina/blurred-vision.jpg", label: "Blurred Vision" },
       { image: "/assets/retina/dark_spot.jpeg", label: "Dark Spots" },
       { image: "/assets/retina/low_vision.jpeg", label: "Low Light" },
       { image: "/assets/retina/side_vision.jpeg", label: "Side Vision" },
     ],
   },
   treatmentOptions: {
-    eyebrow: "TREATMENT OPTIONS",
-    title: "Our Retina Care &",
-    accent: "Treatment Options",
-    body: "Treatment options may include monitoring, medicines, injections, laser treatment or surgery, depending on the diagnosis and available clinical services.",
+    eyebrow: "RETINA EVALUATION & GUIDANCE",
+    title: "Our Retina",
+    accent: "Evaluation & Guidance",
+    body: "We provide dilated retinal examination to detect and diagnose retinal diseases and guide patients regarding further diagnostic procedures and treatment options.",
     options: [
-      { image: "/assets/retina/retina_surgery.jpeg", title: "Retina Surgery", tag: "ADVANCED CARE", text: "Surgical treatment may be considered for certain complex retinal conditions, depending on diagnosis and available clinical services." },
-      { image: "/assets/retina/laser_therapy.jpeg", title: "Laser Therapy", tag: "TARGETED TREATMENT", text: "Laser treatment may be used for certain retinal tears or, in selected retinal conditions, to treat leaking blood vessels." },
-      { image: "/assets/retina/medical_management.jpeg", title: "Medical Management", tag: "PERSONALISED PLAN", text: "Treatment options may include monitoring, medicines or injections to help manage retinal conditions, depending on the diagnosis and available clinical services." },
+      { image: "/assets/retina/retina-exam.webp", title: "Dilated Retinal Examination", tag: "EXAMINATION", text: "A detailed dilated examination to assess the retina and identify signs of retinal disease." },
+      { image: "/assets/retina/dark_spot.jpeg", title: "Detection & Diagnosis", tag: "DIAGNOSIS", text: "Evaluation for conditions such as diabetic retinopathy, age-related macular degeneration, retinal tears and retinal detachment." },
+      { image: "/assets/retina/blurred-vision.jpg", title: "Further Diagnostic Guidance", tag: "GUIDANCE", text: "Additional investigations may be advised depending on the examination findings." },
+      { image: "/assets/retina/side_vision.jpeg", title: "Treatment Guidance / Referral", tag: "NEXT STEPS", text: "Based on the diagnosis, patients are guided regarding appropriate monitoring, treatment options or further specialist care where required." },
     ],
   },
   benefits: {
@@ -407,7 +408,7 @@ const retinaContent: ServicePageContent = {
     eyebrow: "PATIENT STORIES",
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
-    body: "Real experiences from patients who protected their sight with retina care",
+    body: "What Our Patients Say About Shanti EyeTech",
     items: commonTestimonials,
   },
   faq: {
@@ -420,7 +421,7 @@ const retinaContent: ServicePageContent = {
       { question: "What symptoms need urgent retina evaluation?", answer: "Sudden flashes of light, a sudden increase in floaters, or a curtain/shadow over your vision need prompt eye assessment. Contact our team promptly if you notice any of these symptoms." },
       { question: "How does diabetes affect the retina?", answer: "Diabetes can damage the blood vessels in the retina, a condition known as diabetic retinopathy. Regular retinal examinations help detect changes early, when treatment may be most effective." },
       { question: "What happens during a retinal examination?", answer: "A retinal examination typically includes dilating the pupils and imaging or scanning the back of the eye to assess the retina, macula and blood vessels. Your ophthalmologist will explain the findings and any recommended next steps." },
-      { question: "When may laser or injections be recommended?", answer: "Laser treatment or injections may be considered for certain retinal conditions, depending on the diagnosis. Your ophthalmologist will discuss whether these or other treatment options are appropriate after a comprehensive evaluation." },
+      { question: "What happens if a retinal condition is detected?", answer: "After examination, your ophthalmologist may advise further diagnostic tests, monitoring, or appropriate treatment options depending on the condition. Where required, you may be guided for further specialist treatment." },
       { question: "Can retinal conditions affect both eyes?", answer: "Some retinal conditions, such as diabetic retinopathy, can affect both eyes, sometimes to different degrees. Regular examination of both eyes is generally recommended." },
     ],
   },
@@ -518,7 +519,7 @@ const glaucomaContent: ServicePageContent = {
     body: "Timely glaucoma care helps protect remaining vision through careful pressure control and ongoing monitoring.",
     items: [
       { image: "/assets/glaucoma/protect_remaining.png", title: "Protect Remaining Vision", description: "Aim to protect remaining vision through pressure control and ongoing monitoring." },
-      { image: "/assets/glaucoma/control_eye.png", title: "Control Eye Pressure", description: "Treatment aims to maintain eye pressure at a level considered appropriate for the individual patient." },
+      { image: "/assets/glaucoma/human-tonometry.jpg", title: "Control Eye Pressure", description: "Treatment aims to maintain eye pressure at a level considered appropriate for the individual patient." },
       { image: "/assets/glaucoma/monitor_optic.png", title: "Monitor Optic Nerve Health", description: "Regular examinations allow changes in the optic nerve to be identified and tracked over time." },
       { image: "/assets/glaucoma/preserve_peripheral.png", title: "Preserve Peripheral Vision", description: "Controlling glaucoma progression can help protect functional side vision for as long as possible." },
       { image: "/assets/glaucoma/long_term.png", title: "Plan Long-Term Eye Care", description: "Because glaucoma usually requires ongoing monitoring, regular follow-up helps treatment evolve with the condition." },
@@ -528,7 +529,7 @@ const glaucomaContent: ServicePageContent = {
     eyebrow: "PATIENT STORIES",
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
-    body: "Real experiences from patients who chose regular glaucoma monitoring and care",
+    body: "What Our Patients Say About Shanti EyeTech",
     items: generalCareTestimonials,
   },
   faq: {
@@ -729,9 +730,9 @@ const pediatricContent: ServicePageContent = {
     items: [
       { icon: "01", title: "Child-Friendly Eye Exams", text: "Comfortable, comprehensive evaluations designed to put young patients at ease." },
       { icon: "02", title: "Early Detection Focus", text: "Timely eye examinations to catch vision problems before they affect learning and development." },
-      { icon: "03", title: "Vision Therapy", text: "Vision therapy may be recommended for selected conditions after specialist evaluation." },
+      { icon: "03", title: "Orthoptic Exercises", text: "May be advised for selected binocular vision disorders to improve eye coordination." },
       { icon: "04", title: "Myopia Management", text: "Myopia-management options may be considered for suitable children to help manage progression." },
-      { icon: "05", title: "Experienced Specialists", text: "20+ years of ophthalmology experience caring for growing eyes." },
+      { icon: "05", title: "Experienced Specialists", text: "Experienced ophthalmology care for children's eye health and vision development." },
       { icon: "06", title: "Ongoing Follow-Up Care", text: "Regular monitoring to track your child's vision development over time." },
     ],
   },
@@ -771,8 +772,8 @@ const pediatricContent: ServicePageContent = {
     image: "/assets/pediatric/pediatric.png",
     warningImages: [
       { image: "/assets/pediatric/signs_1.png", label: "Covering One Eye" },
-      { image: "/assets/pediatric/signs_2.png", label: "Sitting Close to Screens" },
-      { image: "/assets/pediatric/signs_3.png", label: "Rubbing Eyes" },
+      { image: "/assets/pediatric/signs_3.png", label: "Sitting Close to Screens" },
+      { image: "/assets/pediatric/signs_2.png", label: "Rubbing Eyes" },
       { image: "/assets/pediatric/signs_4.png", label: "Reading Difficulty" },
     ],
   },
@@ -783,7 +784,7 @@ const pediatricContent: ServicePageContent = {
     body: "Specialized care for healthy vision and happy childhood. Recommendations depend on your child's age, prescription and eye findings.",
     options: [
       { image: "/assets/pediatric/options1.png", title: "Comprehensive Eye Exams", tag: "EARLY DETECTION", text: "Thorough eye evaluations to detect vision issues early." },
-      { image: "/assets/pediatric/options2.png", title: "Vision Therapy", tag: "PREVENTIVE MEASURE", text: "Vision therapy may be recommended for selected conditions after specialist evaluation." },
+      { image: "/assets/pediatric/options2.png", title: "Orthoptic Exercises", tag: "EYE COORDINATION", text: "May be advised for selected binocular vision disorders to improve eye coordination." },
       { image: "/assets/pediatric/options3.png", title: "Myopia Management", tag: "ASSESSMENT-LED", text: "Myopia-management options may be considered for suitable children to help manage progression, depending on age, prescription and eye findings." },
     ],
   },
@@ -802,7 +803,7 @@ const pediatricContent: ServicePageContent = {
     eyebrow: "PATIENT STORIES",
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
-    body: "Real experiences from parents who chose pediatric eye care for their children",
+    body: "What Our Patients Say About Shanti EyeTech",
     items: generalCareTestimonials,
   },
   faq: {
@@ -875,7 +876,7 @@ const keratoconusContent: ServicePageContent = {
     paragraphs: [
       "Keratoconus is a progressive condition in which the normally round cornea becomes thinner and <strong>gradually bulges into an irregular cone-like shape</strong>.",
       "The cornea is the transparent front surface of the eye and plays an important role in focusing light. When its shape becomes irregular, light fails to focus sharply on the retina, resulting in <strong>distorted and blurred vision</strong>.",
-      "The condition often begins during teenage or early adult years. With advanced treatments like <strong>Corneal Cross-Linking (CXL)</strong> and <strong>specialized lenses</strong>, progression can be halted and clear vision restored.",
+      "The condition often begins during teenage or early adult years. Corneal cross-linking may help slow or halt progression in suitable cases, while spectacles or specialised contact lenses may help improve visual clarity.",
     ],
     image: "/assets/keratoconus/whatiskeratoconus1.png",
     retinaImages: {
@@ -921,7 +922,7 @@ const keratoconusContent: ServicePageContent = {
     options: [
       { image: "/assets/keratoconus/glasses.png", title: "Glasses & Contact Lenses", tag: "VISION CORRECTION", text: "In earlier stages, spectacles or specialised contact lenses may help improve visual clarity by correcting the refractive error caused by the irregular cornea." },
       { image: "/assets/keratoconus/corneal-cross.png", title: "Corneal Cross-Linking (CXL)", tag: "PROGRESSION CONTROL", text: "Cross-linking is used in appropriate cases of progressive keratoconus to strengthen the corneal tissue and help reduce further progression." },
-      { image: "/assets/keratoconus/advanced-corneal.png", title: "Advanced Corneal Management", tag: "ADVANCED CARE", text: "For patients with more advanced keratoconus, additional treatment or visual-rehabilitation options may be considered after detailed evaluation." },
+      { image: "/assets/keratoconus/advanced-corneal.png", title: "Intacs Inserts", tag: "SELECTED CASES", text: "Thin, semi-circular implants placed within the cornea to help flatten its shape and improve vision in selected cases." },
     ],
   },
   benefits: {
@@ -941,7 +942,7 @@ const keratoconusContent: ServicePageContent = {
     eyebrow: "PATIENT STORIES",
     title: "You're Not Alone,",
     accent: "Hear From Others Like You",
-    body: "Real experiences from patients who underwent corneal evaluation and keratoconus management",
+    body: "What Our Patients Say About Shanti EyeTech",
     items: commonTestimonials,
   },
   faq: {
@@ -949,7 +950,7 @@ const keratoconusContent: ServicePageContent = {
     title: "Keratoconus Care",
     accent: "FAQs",
     cardTitle: "Have Questions About Keratoconus?",
-    cardText: "Our corneal care team can help you understand keratoconus evaluation, progression monitoring, and treatment options.",
+    cardText: "Our eye-care team can help you understand keratoconus evaluation, monitoring and treatment options.",
     items: [
       { question: "What causes keratoconus?", answer: "The exact cause is not always known. Genetic and environmental factors may contribute, and keratoconus can sometimes run in families." },
       { question: "Does keratoconus always get worse?", answer: "Not necessarily. Progression varies between individuals. This is why periodic corneal evaluation and comparison of measurements are important." },

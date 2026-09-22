@@ -1,6 +1,56 @@
+import type { Metadata } from "next";
 import { ServicePage } from "@/app/components/services/ServicePage/ServicePage";
 import { servicePages } from "../constants";
 
+export const metadata: Metadata = {
+  title: {
+    absolute: "Keratoconus Care & Corneal Evaluation in Indore | Shanti Eye Tech",
+  },
+  description:
+    "Learn about keratoconus evaluation, corneal cross-linking (CXL) guidance and specialised contact lens options at Shanti Eye Tech in Indore.",
+  alternates: {
+    canonical: "https://www.shantieyetech.com/services/keratoconus",
+  },
+};
+
+const content = servicePages.keratoconus;
+
+const medicalProcedureJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "MedicalProcedure",
+  name: "Keratoconus Evaluation & Corneal Care",
+  description: content.hero.text,
+  procedureType: "https://schema.org/NonSurgicalProcedure",
+  relevantSpecialty: "Ophthalmic",
+  performer: {
+    "@type": "Physician",
+    name: "Dr. Amit N Solanki",
+    medicalSpecialty: ["Corneal Care", "Keratoconus", "Refractive Surgery"],
+    hasCredential: ["MBBS", "DOMS", "DNB Ophthalmology", "FAECS"],
+  },
+  location: {
+    "@type": "MedicalClinic",
+    name: "Shanti Eye Tech",
+    address: {
+      "@type": "PostalAddress",
+      streetAddress: "Shekhar Central, M1 & M2, Palasia Square, Manorama Ganj",
+      addressLocality: "Indore",
+      addressRegion: "MP",
+      postalCode: "452001",
+      addressCountry: "IN",
+    },
+  },
+};
+
 export default function KeratoconusPage() {
-  return <ServicePage content={servicePages.keratoconus} />;
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(medicalProcedureJsonLd) }}
+      />
+      <ServicePage content={content} />
+    </>
+  );
 }
+

@@ -69,9 +69,10 @@ const expertise = [
 
 const education = [
   ["MBBS", "B.J. Medical College, New Civil Hospital, Ahmedabad"],
-  ["DOMS – Diploma in Ophthalmology", "M. & J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
-  ["DNB Ophthalmology", "Aravind Eye Hospital & Postgraduate Institute of Ophthalmology, Tamil Nadu"],
-  ["Phacoemulsification & Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
+  ["DOMS – Diploma in Ophthalmology", "M. &amp; J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
+  ["DNB Ophthalmology", "Aravind Eye Hospital &amp; Postgraduate Institute of Ophthalmology, Tamil Nadu"],
+  ["FAECS", ""],
+  ["Phacoemulsification &amp; Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
   ["LASIK Surgical Training", "Vadodara, Gujarat"],
 ];
 
@@ -231,9 +232,9 @@ export function DoctorProfileSections() {
               </tbody>
             </table>
           </div>
-          <blockquote className={styles.philosophy}>
-            &ldquo;A note on clinical philosophy: Every eye and every patient&rsquo;s needs are different. Care begins with a detailed evaluation, followed by treatment recommendations based on the patient&rsquo;s individual eye condition and visual requirements.&rdquo;
-          </blockquote>
+          <p className={styles.philosophy}>
+            Treatment recommendations are based on the patient&rsquo;s individual eye condition and visual requirements.
+          </p>
         </div>
       </section>
 

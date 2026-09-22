@@ -238,6 +238,7 @@ export function FeatureGrid({
 }
 
 import { TestimonialCarousel, type TestimonialItem } from "./testimonials-carousel";
+import { GoogleReviewBadge } from "./components/common/GoogleReviewBadge/GoogleReviewBadge";
 
 export async function Testimonials({
   accent = "blue",
@@ -258,16 +259,14 @@ export async function Testimonials({
   ];
   const googleReviews = await getGoogleReviews();
   const quotes = googleReviews?.length ? googleReviews : fallbackQuotes;
-  const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/maps?cid=12976573203815920178";
+  const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/search?q=Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Indore#lrd=0x3962fd5037568439:0xb4160c93774cf232,3";
 
   return (
     <section className="section testimonials soft-section">
       <div className="shell">
         <SectionHeading eyebrow="PATIENT STORIES" title={title} accent={subtitle} />
+        <GoogleReviewBadge reviewUrl={reviewUrl} />
         <TestimonialCarousel items={quotes} />
-        <a className="button button-outline center-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
-          Review us on Google <ArrowRight size={18} aria-hidden="true" />
-        </a>
       </div>
     </section>
   );
