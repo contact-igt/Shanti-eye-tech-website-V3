@@ -238,6 +238,7 @@ export function FeatureGrid({
 }
 
 import { TestimonialCarousel, type TestimonialItem } from "./testimonials-carousel";
+import { GoogleReviewBadge } from "./components/common/GoogleReviewBadge/GoogleReviewBadge";
 
 export async function Testimonials({
   accent = "blue",
@@ -258,16 +259,14 @@ export async function Testimonials({
   ];
   const googleReviews = await getGoogleReviews();
   const quotes = googleReviews?.length ? googleReviews : fallbackQuotes;
-  const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/maps?cid=12976573203815920178";
+  const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/search?q=Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Indore#lrd=0x3962fd5037568439:0xb4160c93774cf232,3";
 
   return (
     <section className="section testimonials soft-section">
       <div className="shell">
         <SectionHeading eyebrow="PATIENT STORIES" title={title} accent={subtitle} />
+        <GoogleReviewBadge reviewUrl={reviewUrl} />
         <TestimonialCarousel items={quotes} />
-        <a className="button button-outline center-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
-          Review us on Google <ArrowRight size={18} aria-hidden="true" />
-        </a>
       </div>
     </section>
   );
@@ -284,7 +283,7 @@ export function FAQ({
 }) {
   const isHomeFaq = title === "Questions?" && accent === "We Have Answers" && service === "eye care";
   const questions: [string, string][] = isHomeFaq ? [
-    ["What eye conditions do you treat?", "We provide comprehensive care for all eye conditions including cataracts, glaucoma, diabetic retinopathy, macular degeneration, corneal diseases, refractive errors, and pediatric eye problems. Our specialists are equipped to handle both routine and complex cases."],
+    ["What eye conditions do you treat?", "Shanti EyeTech provides care across cataract, glaucoma, refractive/vision-correction concerns, keratoconus and pediatric eye conditions. We also provide dilated retinal examination to detect and diagnose retinal diseases and guide patients regarding further diagnostic procedures and treatment options."],
     ["Is LASIK surgery safe and permanent?", "LASIK is a well-established procedure. Your specialist will determine whether it is suitable for your eyes after a detailed assessment."],
     ["How long does cataract surgery take?", "Most cataract procedures are completed quickly, followed by a carefully planned recovery and review schedule."],
     ["Do you accept insurance?", "Insurance and cashless options depend on your insurer and treatment. Please contact our team to confirm eligibility."],
@@ -419,8 +418,8 @@ export function Footer({ home = false }: { home?: boolean }) {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/assets/logo.png" alt="Shanti Eye Tech" />
-            <p>Providing advanced ophthalmology care with cutting-edge technology and compassionate specialists for over 20 years.</p>
+            <img src="/assets/logo.png" alt="Shanti EyeTech" />
+            <p>Providing personalized eye care with advanced technology and a patient-focused approach in Indore.</p>
           </div>
           <div className="footer-quick-links"><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
           <div className="footer-services"><h4>Services</h4><Link href="/services/cataract#service-banner">Cataract Surgery</Link><Link href="/services/lasik#service-banner">Freedom From Glasses</Link><Link href="/services/retina#service-banner">Retina Care</Link><Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>{/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}<Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link><Link href="/services/keratoconus#service-banner">Keratoconus Care</Link></div>

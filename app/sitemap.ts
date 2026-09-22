@@ -15,6 +15,7 @@ const staticRoutes = [
   "/services/lasik",
   "/services/keratoconus",
   "/services/pediatric-eye-care",
+  "/services/squint",
   "/blogs",
   "/privacy-policy",
   "/terms-conditions",

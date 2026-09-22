@@ -37,7 +37,7 @@ const treatments: TreatmentItem[] = [
   },
   {
     title: "Retina Care",
-    desc: "Evaluation and management of retinal conditions, with treatment recommendations based on clinical findings.",
+    desc: "Dilated retinal examination to detect and diagnose retinal diseases, with guidance regarding further diagnostic procedures and treatment options.",
     image: "/assets/treatment-overview/retina.png",
     href: "/services/retina#service-banner",
   },

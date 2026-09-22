@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import Link from "next/link";
 import { CataractBenefitsCarousel } from "./cataract-benefits-carousel";
 import { TestimonialCarousel } from "./testimonials-carousel";
+import { GoogleReviewBadge } from "./components/common/GoogleReviewBadge/GoogleReviewBadge";
 import {
   AppointmentSection,
   Eyebrow,
@@ -263,7 +264,7 @@ const serviceBenefitEyebrows: Record<ServiceConfig["kind"], string> = {
 const serviceStoryBodies: Record<ServiceConfig["kind"], string> = {
   cataract: "Real experiences from patients who restored their vision with cataract surgery",
   lasik: "Real experiences from patients who found clearer vision with LASIK surgery",
-  retina: "Real experiences from patients who protected their sight with retina care",
+  retina: "What Our Patients Say About Shanti EyeTech",
 };
 const whyIcon = (path: ReactNode) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
@@ -272,23 +273,23 @@ const whyIcon = (path: ReactNode) => (
 );
 
 const whyItems = [
-  { icon: "01", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
+  { icon: "01", title: "Expert Surgeons", text: "20+ years of ophthalmology experience, with specialized training in advanced phaco cataract surgery." },
   { icon: "02", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
   { icon: "03", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
   { icon: "04", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
   { icon: "05", title: "Quick Recovery", text: "Most patients resume activities within days" },
-  { icon: "06", title: "Comprehensive Support", text: "Lifetime post-operative care and monitoring" },
+  { icon: "06", title: "Comprehensive Support", text: "Planned post-operative follow-up and monitoring as advised by your ophthalmologist." },
   { icon: "07", title: "Premium IOL Options", text: "Multiple lens choices for optimal vision correction" },
   { icon: "08", title: "Proven Results", text: "15,000+ successful cataract procedures" },
 ];
 
 const lasikWhyItems = [
-  { icon: whyIcon(<><path d="M8 21l4-2 4 2v-7H8v7z" /><path d="M7 10a5 5 0 1 1 10 0 5 5 0 0 1-10 0z" /><path d="M12 7v3l2 1" /></>), title: "Award-Winning Excellence", text: "Recognized nationally for refractive surgery outcomes" },
+  { icon: whyIcon(<><path d="M8 21l4-2 4 2v-7H8v7z" /><path d="M7 10a5 5 0 1 1 10 0 5 5 0 0 1-10 0z" /><path d="M12 7v3l2 1" /></>), title: "Award-Winning Excellence", text: "Multiple awards and professional recognitions in ophthalmology." },
   { icon: whyIcon(<path d="M13 2L4 14h7l-1 8 10-13h-7l1-7z" />), title: "Blade-Free Technology", text: "Advanced femtosecond laser for precision and safety" },
   { icon: whyIcon(<><path d="M16 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" /><circle cx="10" cy="7" r="4" /><path d="M20 21v-2a4 4 0 0 0-3-3.87" /><path d="M17 3.13a4 4 0 0 1 0 7.75" /></>), title: "Experienced Specialists", text: "Over 20 years of LASIK surgical expertise" },
   { icon: whyIcon(<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.6l-1-1a5.5 5.5 0 0 0-7.8 7.8l1 1L12 21l7.8-7.6 1-1a5.5 5.5 0 0 0 0-7.8z" />), title: "Personalized Treatment", text: "Custom wavefront-guided procedures for your eyes" },
   { icon: whyIcon(<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>), title: "Quick Recovery", text: "Most patients resume normal activities within 24 hours" },
-  { icon: whyIcon(<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />), title: "Comprehensive Care", text: "Lifetime post-operative support and monitoring" },
+  { icon: whyIcon(<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />), title: "Comprehensive Care", text: "Post-operative follow-up and monitoring as advised by your surgeon." },
   { icon: whyIcon(<><path d="M1.5 12s3.8-6 10.5-6 10.5 6 10.5 6-3.8 6-10.5 6S1.5 12 1.5 12z" /><circle cx="12" cy="12" r="3" /></>), title: "All-Laser LASIK", text: "No blades involved in any part of the procedure" },
   { icon: whyIcon(<path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2z" />), title: "Trusted by Thousands", text: "25,000+ successful LASIK procedures performed" },
 ];
@@ -490,7 +491,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
           config.kind === "cataract" ? (
             <section className="section comparison-section cataract-comparison-section">
               <div className="shell">
-                <SectionHeading title="Choose the" accent="Vision You Want" body="The lens you choose shapes the rest of your life. Want to put your glasses away for good? There's a lens for that. Happy using readers? That works too. Here's the honest, side-by-side comparison - no pressure, no up-sell." />
+                <SectionHeading title="Choose the" accent="Vision You Want" body="Looking to reduce your dependence on glasses? Different IOL options may support different visual needs." />
                 <div className="lens-comparison-wrap">
                   <div className="lens-comparison-table" role="table" aria-label="Cataract lens comparison">
                     <div className="lens-row lens-head" role="row">
@@ -591,6 +592,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
         <section className="section cataract-testimonials-section service-testimonials-section">
           <div className="shell">
             <SectionHeading eyebrow="PATIENT STORIES" title="You're Not Alone," accent="Hear From Others Like You" body={serviceStoryBodies[config.kind]} />
+            <GoogleReviewBadge />
             <TestimonialCarousel items={serviceTestimonials[config.kind]} />
           </div>
         </section>

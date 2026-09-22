@@ -38,12 +38,12 @@ export function DoctorSection() {
             <span className="green-dot"></span>Available Today
           </span>
           <img src="/assets/meet_doctor.jpg" alt="Dr. Amit N Solanki beside eye examination equipment" />
-          <small>Medical Director of Shanti Eye Care</small>
+          <small>Director — Shanti EyeTech Eye Care &amp; Laser Hospital</small>
         </div>
         <div className="doctor-copy">
           <Eyebrow>DIRECTOR</Eyebrow>
           <h2>Dr. Amit N Solanki</h2>
-          <h4>Chief Ophthalmologist &amp; Medical Director</h4>
+          <h4>Director — Shanti EyeTech Eye Care &amp; Laser Hospital<br /><span style={{fontWeight: 400, fontSize: "0.9em"}}>Cataract, Glaucoma &amp; Refractive-LASIK-LASER Surgeon</span></h4>
           <p>
             Dedicated to ophthalmology since 2003 in cataract, glaucoma, and refractive surgery, Dr. Solanki is recognized internationally for his expertise in advanced phaco cataract surgery and glaucoma management.
           </p>
