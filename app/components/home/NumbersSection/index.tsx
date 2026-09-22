@@ -41,10 +41,10 @@ export function NumbersSection() {
         <div className="numbers-grid">
           <article>
             <span className="number-watermark" aria-hidden="true">
-              25
+              20
             </span>
             <b>
-              <CountUp value={25} suffix="+" />
+              <CountUp value={20} suffix="+" />
             </b>
             <span>Years of Excellence in Eye Care</span>
           </article>
@@ -66,7 +66,7 @@ export function NumbersSection() {
             </b>
             <span>Patient Satisfaction Rate</span>
           </article>
-          <article>
+          {/* <article>
             <span className="number-watermark" aria-hidden="true">
               15
             </span>
@@ -74,7 +74,7 @@ export function NumbersSection() {
               <CountUp value={15} suffix="+" />
             </b>
             <span>Expert Ophthalmologists</span>
-          </article>
+          </article> */}
         </div>
       </div>
     </section>

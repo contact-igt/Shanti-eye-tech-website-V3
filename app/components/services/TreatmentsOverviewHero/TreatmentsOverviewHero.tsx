@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { Award, Clock, Users } from "lucide-react";
+import { Award, Users } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { CountUp } from "@/app/client";
 import styles from "./styles.module.css";
@@ -7,7 +7,6 @@ import styles from "./styles.module.css";
 const metrics = [
   { value: 25, suffix: "+", label: "Years Excellence", icon: Award },
   { value: 50, suffix: "K+", label: "Happy Patients", icon: Users },
-  { value: 24, suffix: "/7", label: "Emergency Care", icon: Clock },
 ];
 
 export function TreatmentsOverviewHero() {
@@ -22,13 +21,12 @@ export function TreatmentsOverviewHero() {
           </span>
 
           <h1>
-            <span className={styles.titleLine}>Complete Eye Care,</span>
-            <span className={styles.accentLine}>Made Easy to</span>
-            <span className={styles.accentLine}>Explore</span>
+            <span className={styles.titleLine}>Complete Eye Care,</span>{" "}
+            <span className={styles.accentLine}>Made Easy to Explore</span>
           </h1>
 
           <p>
-            Explore Shanti EyeTech&apos;s range of eye-care services, from vision correction and cataract treatment to glaucoma, retina and pediatric eye care. Choose a service below to learn more.
+            Explore Shanti Eye Tech&apos;s range of eye-care services, from vision correction and cataract treatment to glaucoma, retina and pediatric eye care. Choose a service below to learn more.
           </p>
 
           <div className={styles.actions}>

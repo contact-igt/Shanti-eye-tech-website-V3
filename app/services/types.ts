@@ -13,7 +13,13 @@ export type HeroContent = {
   accent: string;
   text: string;
   image: string;
+  /** Overrides the section's default `background-position: center right` —
+   * needed when the image's aspect ratio doesn't suit that framing (e.g. a
+   * very wide/short crop where "right" cuts off the subject). */
+  backgroundPosition?: string;
   metrics: HeroMetric[];
+  /** Visible clinical-review attribution, e.g. "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS." */
+  reviewedBy?: string;
 };
 
 export type WhyChooseItem = {
@@ -149,6 +155,9 @@ export type AppointmentContent = {
   accent: string;
   text: string;
   image: string;
+  /** Overrides the image's default `object-position: center` — needed when
+   * the subject sits off-center in the source photo. */
+  imagePosition?: string;
   serviceLabel: string;
   badgeTitle?: string;
   badgeSubtitle?: string;

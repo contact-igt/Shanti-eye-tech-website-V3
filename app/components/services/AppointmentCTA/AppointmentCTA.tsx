@@ -4,8 +4,8 @@ import { Eyebrow } from "../common/Eyebrow/Eyebrow";
 import styles from "./styles.module.css";
 
 export function AppointmentCTA({ content, kind }: { content: AppointmentContent; kind: ServiceKind }) {
-  const badgeTitle = content.badgeTitle ?? (kind === "classic" ? "20/20" : "Clear Vision");
-  const badgeSubtitle = content.badgeSubtitle ?? (kind === "classic" ? "Clear Vision Awaits" : "A Brighter Tomorrow");
+  const badgeTitle = content.badgeTitle ?? "Clear Vision";
+  const badgeSubtitle = content.badgeSubtitle ?? "A Brighter Tomorrow";
   const checkTitle = content.checkTitle ?? "Comprehensive Evaluation";
   const checkSubtitle = content.checkSubtitle ?? `Complete assessment to determine the best ${content.serviceLabel} option for you`;
 
@@ -17,16 +17,34 @@ export function AppointmentCTA({ content, kind }: { content: AppointmentContent;
           <h2>{content.title}<br /><span>{content.accent}</span></h2>
           <p>{content.text}</p>
           <div className={styles.actions}>
-            <Link className={styles.lightButton} href="/contact"><img className={styles.buttonIcon} src="/assets/calendar.png" alt="" aria-hidden="true" />Book Consultation <img className={styles.arrowIcon} src="/assets/blue_arrow.png" alt="" aria-hidden="true" /></Link>
-            <a className={styles.ghostButton} href="tel:+919179191939"><img className={styles.buttonIcon} src="/assets/call.png" alt="" aria-hidden="true" />Call: +91 91791 91939</a>
+            <Link className={styles.lightButton} href="/contact#contact-form">
+              <img className={styles.buttonIcon} src="/assets/calendar.png" alt="" aria-hidden="true" />
+              Book Consultation
+              <img className={styles.arrowIcon} src="/assets/blue_arrow.png" alt="" aria-hidden="true" />
+            </Link>
+            <a className={styles.ghostButton} href="tel:+919179191939">
+              <img className={styles.buttonIcon} src="/assets/call.png" alt="" aria-hidden="true" />
+              Call: +91 91791 91939
+            </a>
           </div>
           <div className={styles.check}>
-            <span>✓</span>
-            <div><strong>{checkTitle}</strong><small>{checkSubtitle}</small></div>
+            <span>
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+            </span>
+            <div>
+              <strong>{checkTitle}</strong>
+              <small>{checkSubtitle}</small>
+            </div>
           </div>
         </div>
         <div className={styles.image}>
-          <img src={content.image} alt="Modern ophthalmology examination room" />
+          <img
+            src={content.image}
+            alt="Modern ophthalmology examination room"
+            style={content.imagePosition ? { objectPosition: content.imagePosition } : undefined}
+          />
           <div className={styles.imageOverlay} aria-hidden="true" />
           <div className={styles.imageBadge}>
             <h4>{badgeTitle}</h4>
@@ -37,4 +55,3 @@ export function AppointmentCTA({ content, kind }: { content: AppointmentContent;
     </section>
   );
 }
-

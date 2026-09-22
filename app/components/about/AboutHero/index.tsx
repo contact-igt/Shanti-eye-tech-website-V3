@@ -3,6 +3,7 @@ import { Calendar, Phone } from "lucide-react";
 import { CountUp } from "@/app/client";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./AboutHero.module.css";
+import { AboutVideoButton } from "./AboutVideoButton";
 
 export function AboutHero() {
   return (
@@ -11,17 +12,16 @@ export function AboutHero() {
         <div>
           <Eyebrow>OUR STORY</Eyebrow>
           <h1>
-            Building a<br />
-            Legacy of<br />
+            Building a Legacy of<br />
             <span>Visionary Care</span>
           </h1>
           <p>
-            For over two decades, Shanti EyeTech has been at the forefront of ophthalmology in India, combining clinical excellence with compassionate care to restore and preserve the gift of sight.
+            For over two decades, Shanti Eye Tech has provided eye care in Indore, combining clinical expertise, advanced technology and compassionate support.
           </p>
           <div className="hero-buttons">
             <Link
               className="button button-primary"
-              href="/contact"
+              href="/contact#contact-form"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}
             >
               <Calendar size={18} /> Book Consultation
@@ -39,17 +39,18 @@ export function AboutHero() {
           <img
             className="main-photo"
             src="/assets/clinic-lounge.webp"
-            alt="Shanti EyeTech clinic lounge"
+            alt="Shanti Eye Tech clinic lounge"
           />
           <img
             className="side-photo"
             src="/assets/clinic-reception.webp"
             alt="Clinic reception"
           />
+          <AboutVideoButton />
           <div className="photo-stats">
             <div>
               <b>
-                <CountUp value={25} suffix="+" />
+                <CountUp value={20} suffix="+" />
               </b>
               <span>Years</span>
             </div>
@@ -61,9 +62,9 @@ export function AboutHero() {
             </div>
             <div>
               <b>
-                <CountUp value={15} suffix="+" />
+                <CountUp value={97} suffix="%" />
               </b>
-              <span>Specialists</span>
+              <span>Satisfaction</span>
             </div>
           </div>
         </div>

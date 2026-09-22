@@ -23,11 +23,16 @@
   background: #f5f8fe;
 }
 
-.aboutSection,
+.aboutSection {
+  background: #ffffff;
+  scroll-margin-top: 100px;
+}
+
 .expertiseSection,
 .contributionSection {
   background: #ffffff;
 }
+
 
 .sectionHeading {
   margin: 0 auto 42px;
@@ -51,11 +56,25 @@
   letter-spacing: 0;
 }
 
+.sectionHeading h2 span,
+.aboutCopy h2 span,
+.specialisationGrid h2 span {
+  color: inherit;
+}
+
 .sectionHeading h2 strong,
 .aboutCopy h2 strong,
 .specialisationGrid h2 strong {
   color: #1fc6df;
   font-weight: inherit;
+}
+
+.sectionSupport {
+  max-width: 640px;
+  margin: 16px auto 0;
+  color: #475569;
+  font-size: 15px;
+  line-height: 1.6;
 }
 
 .trustGrid {
@@ -129,7 +148,9 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 37% center;
+  object-position: center bottom;
+  transform: scale(1.3);
+  transform-origin: 35% 70%;
 }
 
 .aboutCopy h2,
@@ -145,17 +166,48 @@
   line-height: 1.7;
 }
 
-.aboutCopy blockquote {
+.highlightBox {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin: 30px 0 0;
   padding: 20px 24px;
+  border: 1px solid #e2eaf5;
   border-left: 4px solid #1fc6df;
   border-radius: 8px;
-  color: #0f172a;
-  font-size: 15px;
-  font-style: italic;
-  font-weight: 600;
-  line-height: 1.6;
   background: #fbfdff;
+}
+
+.highlightIcon {
+  display: grid;
+  width: 46px;
+  height: 46px;
+  flex: 0 0 46px;
+  place-items: center;
+  border-radius: 50%;
+  color: #16b8d5;
+  background: #dff5f8;
+}
+
+.highlightIcon svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 2;
+}
+
+.highlightBox strong {
+  display: block;
+  margin-bottom: 6px;
+  color: #0f172a;
+  font-size: 16px;
+  font-weight: 800;
+}
+
+.highlightBox strong + span {
+  display: block;
+  color: #475569;
+  font-size: 14px;
+  line-height: 1.6;
 }
 
 .specialisationGrid {
@@ -163,6 +215,13 @@
   grid-template-columns: minmax(0, 1fr) minmax(440px, 1fr);
   gap: 58px;
   align-items: center;
+}
+
+.specialisationIntro {
+  margin: 0 0 20px;
+  color: #475569;
+  font-size: 16px;
+  line-height: 1.6;
 }
 
 .specialisationList {
@@ -195,14 +254,16 @@
 
 .specialisationVisual {
   position: relative;
-  height: 330px;
+  height: 510px;
 }
 
 .specialisationVisual > img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 42%;
+  object-position: center 30%;
+  transform: scale(1);
+  transform-origin: center 20%;
   border-radius: 8px;
 }
 
@@ -245,6 +306,8 @@
 }
 
 .expertiseCard {
+  display: flex;
+  flex-direction: column;
   overflow: hidden;
   border: 1px solid #dfe7f0;
   border-radius: 8px;
@@ -260,6 +323,7 @@
 
 .expertiseContent {
   display: flex;
+  flex: 1;
   min-height: 250px;
   flex-direction: column;
   align-items: flex-start;
@@ -268,7 +332,7 @@
 
 .expertiseContent > span {
   margin-bottom: 16px;
-  padding: 5px 12px;
+  padding: 4px 10px;
   border-radius: 999px;
   color: #08afcd;
   font-size: 10px;
@@ -281,8 +345,25 @@
   margin-bottom: 20px;
 }
 
+.expertiseTags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.expertiseTag {
+  padding: 4px 10px;
+  border-radius: 999px;
+  color: #08afcd;
+  font-size: 11px;
+  font-weight: 700;
+  background: #e6f7fa;
+}
+
 .expertiseCard a {
   display: grid;
+  margin-top: auto;
   width: 100%;
   min-height: 40px;
   place-items: center;
@@ -415,7 +496,7 @@
   }
 
   .specialisationVisual {
-    height: 310px;
+    height: 460px;
   }
 
   .expertiseGrid,
@@ -457,7 +538,7 @@
   }
 
   .specialisationVisual {
-    height: 360px;
+    height: 500px;
     margin-top: 8px;
   }
 
@@ -567,9 +648,8 @@
     font-size: 15px;
   }
 
-  .aboutCopy blockquote {
+  .highlightBox {
     padding: 17px 18px;
-    font-size: 14px;
   }
 
   .specialisationList li {
@@ -579,7 +659,7 @@
   }
 
   .specialisationVisual {
-    height: 300px;
+    height: 440px;
   }
 
   .expertiseCard {
@@ -614,7 +694,7 @@
   }
 
   .specialisationVisual {
-    height: 255px;
+    height: 390px;
   }
 
   .excellenceBadge {
@@ -644,7 +724,7 @@
   }
 
   .specialisationVisual {
-    height: 230px;
+    height: 360px;
   }
 
   .tableWrap tr {

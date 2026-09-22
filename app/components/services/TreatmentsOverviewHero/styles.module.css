@@ -9,14 +9,14 @@
 
 .layout {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: clamp(36px, 4vw, 64px);
+  grid-template-columns: minmax(0, 1.08fr) minmax(0, 0.92fr);
+  gap: clamp(32px, 3.5vw, 56px);
   align-items: center;
   width: min(1400px, calc(100% - 96px));
 }
 
 .copy {
-  max-width: 650px;
+  max-width: 680px;
 }
 
 /* ── Eyebrow pill ── */
@@ -48,16 +48,17 @@
 .copy h1 {
   margin: 0 0 16px;
   color: #0f172a;
-  font-size: clamp(58px, 4.2vw, 74px);
+  font-size: clamp(54px, 4vw, 70px);
   font-weight: 800;
-  line-height: 1.02;
-  letter-spacing: -0.025em;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
 }
 
 .titleLine,
 .accentLine {
   display: block;
   white-space: nowrap;
+  padding-right: 14px;
 }
 
 .titleLine {
@@ -71,7 +72,9 @@
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  padding-right: 14px;
 }
+
 
 .copy p {
   max-width: 600px;
@@ -418,7 +421,9 @@
 
   .titleLine,
   .accentLine {
+    display: inline;
     white-space: normal;
+    padding-right: 0;
   }
 
   .actions {

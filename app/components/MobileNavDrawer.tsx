@@ -39,13 +39,13 @@ export function MobileNavDrawer() {
   }, [isOpen]);
 
   const treatmentItems = [
-    { label: "All Treatments", href: "/services" },
-    { label: "LASIK", href: "/services/lasik" },
-    { label: "Cataract", href: "/services/cataract" },
-    { label: "Retina", href: "/services/retina" },
-    { label: "Glaucoma", href: "/services/glaucoma" },
-    { label: "Squint", href: "/services/squint" },
-    { label: "Keratoconus", href: "/services/keratoconus" },
+    { label: "Freedom From Glasses", href: "/services/lasik#service-banner" },
+    { label: "Cataract", href: "/services/cataract#service-banner" },
+    { label: "Retina", href: "/services/retina#service-banner" },
+    { label: "Glaucoma", href: "/services/glaucoma#service-banner" },
+    // { label: "Squint", href: "/services/squint#service-banner" }, // temporarily unlisted — replaced by Pediatric Eye Care
+    { label: "Pediatric Eye Care", href: "/services/pediatric-eye-care#service-banner" },
+    { label: "Keratoconus", href: "/services/keratoconus#service-banner" },
   ];
 
   const menuItems = [
@@ -104,18 +104,27 @@ export function MobileNavDrawer() {
               );
             })}
             <div className={`mobile-drawer-group ${isTreatmentsOpen ? "open" : ""}`}>
-              <button
-                type="button"
-                className={`mobile-drawer-link mobile-drawer-dropdown-trigger ${pathname.startsWith("/services") ? "active" : ""}`}
-                onClick={() => setIsTreatmentsOpen((current) => !current)}
-                aria-expanded={isTreatmentsOpen}
-                aria-controls="mobile-treatment-links"
-              >
-                <span>Treatments</span>
-                <svg className="mobile-drawer-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-                  <path d="m6 9 6 6 6-6" />
-                </svg>
-              </button>
+              <div className={`mobile-drawer-link mobile-drawer-dropdown-trigger ${pathname.startsWith("/services") ? "active" : ""}`}>
+                <Link
+                  href="/services"
+                  className="mobile-drawer-treatment-link"
+                  onClick={() => setIsOpen(false)}
+                >
+                  Treatments
+                </Link>
+                <button
+                  type="button"
+                  className="mobile-drawer-treatment-toggle"
+                  onClick={() => setIsTreatmentsOpen((current) => !current)}
+                  aria-label="Toggle treatment links"
+                  aria-expanded={isTreatmentsOpen}
+                  aria-controls="mobile-treatment-links"
+                >
+                  <svg className="mobile-drawer-caret" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.4" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </button>
+              </div>
               {isTreatmentsOpen ? (
                 <div className="mobile-drawer-submenu" id="mobile-treatment-links">
                   {treatmentItems.map((item) => {

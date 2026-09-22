@@ -17,79 +17,96 @@ import { Eyebrow } from "@/app/site-components";
 import styles from "./styles.module.css";
 
 const trustPoints = [
-  { icon: Award, title: "20+ Years", copy: "Decades of clinical and surgical expertise." },
-  { icon: Eye, title: "Cataract Expertise", copy: "Specialized in advanced phacoemulsification." },
-  { icon: Stethoscope, title: "Glaucoma Care", copy: "Comprehensive diagnosis and management." },
-  { icon: Microscope, title: "LASIK Training", copy: "Certified in refractive surgery techniques." },
-  { icon: Hospital, title: "Clinical Training", copy: "Extensive background in premier institutions." },
-  { icon: GraduationCap, title: "Academic Exposure", copy: "Active participant in global ophthalmology." },
-  { icon: BookOpen, title: "Scientific Contributions", copy: "Published research and clinical studies." },
-  { icon: Trophy, title: "Award-Winning Work", copy: "Recognized for excellence in eye care." },
+  { icon: Award, title: "20+ Years", copy: "Dedicated to the field of ophthalmology since 2003." },
+  { icon: Eye, title: "Cataract Expertise", copy: "Advanced training in phacoemulsification and modern cataract surgery." },
+  { icon: Stethoscope, title: "Glaucoma Care", copy: "Specialized training in glaucoma diagnosis, management and surgical care." },
+  { icon: Microscope, title: "LASIK Training", copy: "Trained in LASIK laser surgery for refractive vision correction." },
+  { icon: Hospital, title: "Clinical Training", copy: "Further ophthalmic training and Senior Residency at Aravind Eye Hospital, Tamil Nadu." },
+  { icon: GraduationCap, title: "Academic Exposure", copy: "Invited as international guest faculty at major ophthalmology congresses." },
+  { icon: BookOpen, title: "Scientific Contributions", copy: "Guest faculty and presenter at national and international ophthalmology conferences." },
+  { icon: Trophy, title: "Recognised Academic and Clinical Contributions", copy: "Recognized for contributions in glaucoma, cataract surgery and ophthalmic research." },
 ];
 
 const specialisations = [
-  "Advanced Phacoemulsification Cataract Surgery",
-  "Comprehensive Glaucoma Management",
-  "Refractive Procedures (LASIK)",
-  "Medical Retina Evaluation",
-  "Anterior Segment Diagnostics",
+  "Cataract Surgery",
+  "Advanced Phacoemulsification",
+  "Glaucoma Diagnosis",
+  "Glaucoma Management",
+  "Refractive Surgery",
+  "LASIK Vision Correction",
+  "Comprehensive Eye Evaluation",
 ];
 
 const expertise = [
   {
     label: "SURGERY",
     title: "Cataract Surgery",
-    copy: "State-of-the-art phacoemulsification with premium intraocular lens (IOL) implantation for clear, youthful vision.",
+    copy: "Advanced cataract evaluation and surgical care with specialised training in phacoemulsification.",
+    tags: ["Phaco Surgery", "Cataract Care"],
+    buttonLabel: "Explore Cataract Care",
     image: "/assets/cataract/cataract-hero.webp",
-    href: "/services/cataract",
+    href: "/services/cataract#service-banner",
   },
   {
     label: "TREATMENT",
-    title: "Glaucoma Management",
-    copy: "Early detection, medical management, and surgical intervention to preserve optic nerve health and prevent vision loss.",
+    title: "Glaucoma Care",
+    copy: "Evaluation and management of glaucoma with specialised training in glaucoma diagnostics and treatment.",
+    tags: ["Diagnosis", "Management"],
+    buttonLabel: "Explore Glaucoma Care",
     image: "/assets/retina/retina-exam.webp",
-    href: "/services/glaucoma",
+    href: "/services/glaucoma#service-banner",
   },
   {
     label: "REFRACTIVE",
-    title: "LASIK & Refractive",
-    copy: "Advanced laser procedures to correct myopia, hyperopia, and astigmatism, reducing dependency on glasses.",
+    title: "Refractive & LASIK Surgery",
+    copy: "Refractive vision correction backed by dedicated LASIK surgical training.",
+    tags: ["LASIK", "Vision Correction"],
+    buttonLabel: "Explore LASIK",
     image: "/assets/lasik/lasik-procedure.webp",
-    href: "/services/lasik",
+    href: "/services/lasik#service-banner",
   },
 ];
 
 const education = [
-  ["MBBS", "Medical College, Baroda", "Foundation of medical training."],
-  ["DOMS", "M & J Institute of Ophthalmology, Ahmedabad", "Diploma in Ophthalmic Medicine & Surgery."],
-  ["DNB", "Sankara Nethralaya, Chennai", "Diplomate of National Board."],
-  ["Phaco Training", "L.V. Prasad Eye Institute, Hyderabad", "Advanced cataract surgery techniques."],
-  ["LASIK Certification", "New Delhi", "Specialized refractive surgery training."],
+  ["MBBS", "B.J. Medical College, New Civil Hospital, Ahmedabad"],
+  ["DOMS – Diploma in Ophthalmology", "M. & J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
+  ["DNB Ophthalmology", "Aravind Eye Hospital & Postgraduate Institute of Ophthalmology, Tamil Nadu"],
+  ["Phacoemulsification & Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
+  ["LASIK Surgical Training", "Vadodara, Gujarat"],
 ];
 
 const contributions = [
   {
     icon: Presentation,
-    title: "Guest Faculty",
-    copy: "Regular speaker at national ophthalmology conferences, sharing insights on advanced surgical techniques.",
+    title: "International Guest Faculty",
+    copy: "Invited as International Guest Faculty at the World Glaucoma Congress in Kuala Lumpur, Malaysia, and the Asia-Australia Congress in Thailand.",
   },
   {
     icon: GraduationCap,
-    title: "Training in Vietnam",
-    copy: "Participated in international surgical training programs, elevating global standards of eye care.",
+    title: "Training & Knowledge Sharing",
+    copy: "Associated with Alina Vision International Foundation and involved in training foreign doctors in Hanoi, Vietnam.",
   },
   {
     icon: FlaskConical,
     title: "Scientific Faculty",
-    copy: "Active contributor to academic journals and scientific committees driving ophthalmic research.",
+    copy: "Delivered scientific talks and presentations as guest faculty at national and international ophthalmology conferences.",
   },
 ];
 
-function SectionHeading({ eyebrow, children }: { eyebrow: string; children: React.ReactNode }) {
+function SectionHeading({
+  eyebrow,
+  support,
+  children,
+}: {
+  eyebrow: string;
+  support?: string;
+  children: React.ReactNode;
+}) {
   return (
     <header className={styles.sectionHeading}>
       <Eyebrow>{eyebrow}</Eyebrow>
       <h2>{children}</h2>
+      {support ? <p className={styles.sectionSupport}>{support}</p> : null}
     </header>
   );
 }
@@ -99,7 +116,10 @@ export function DoctorProfileSections() {
     <>
       <section className={`${styles.section} ${styles.trustSection}`} aria-labelledby="doctor-trust-title">
         <div className="shell">
-          <SectionHeading eyebrow="WHY CONSULT DR. AMIT SOLANKI">
+          <SectionHeading
+            eyebrow="WHY CONSULT DR. AMIT SOLANKI"
+            support="Decades of clinical experience, advanced surgical training and a patient-focused approach to eye care."
+          >
             <span id="doctor-trust-title">Why Patients Trust </span><strong>Dr. Amit N. Solanki</strong>
           </SectionHeading>
           <div className={styles.trustGrid}>
@@ -117,17 +137,26 @@ export function DoctorProfileSections() {
       <section className={`${styles.section} ${styles.aboutSection}`} id="doctor-profile" aria-labelledby="meet-doctor-title">
         <div className={`shell ${styles.aboutGrid}`}>
           <div className={styles.portrait}>
-            <img src="/assets/doctor-profile.webp" alt="Dr. Amit N. Solanki at Shanti EyeTech" />
+            <img src="/assets/meet_doctor.jpg" alt="Dr. Amit N. Solanki at Shanti Eye Tech" />
           </div>
           <div className={styles.aboutCopy}>
             <Eyebrow>ABOUT THE DOCTOR</Eyebrow>
             <h2 id="meet-doctor-title">Meet <strong>Dr. Amit N. Solanki</strong></h2>
             <p>
-              Dr. Amit N. Solanki is a highly respected ophthalmologist with over two decades of dedicated service in the field of eye care. His commitment to clinical excellence and patient well-being has made him a trusted name in advanced surgical treatments.
+              Dr. Amit N. Solanki is the Director of Shanti Eye Tech and a Cataract, Glaucoma &amp; Refractive Surgeon, practising ophthalmology since 2003.
             </p>
-            <blockquote>
-              &ldquo;My mission is to deliver world-class eye care with a compassionate approach, ensuring every patient receives the best possible visual outcome.&rdquo;
-            </blockquote>
+            <p>
+              His clinical journey includes advanced training at leading ophthalmic institutions, with specialised expertise in phaco cataract surgery, glaucoma diagnosis and management, and LASIK refractive surgery.
+            </p>
+            <div className={styles.highlightBox}>
+              <span className={styles.highlightIcon}>
+                <Award aria-hidden="true" />
+              </span>
+              <div>
+                <strong>20+ Years of Ophthalmology Experience</strong>
+                <span>Combining clinical experience with advanced surgical training and personalised patient care.</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -137,6 +166,9 @@ export function DoctorProfileSections() {
           <div>
             <Eyebrow>CLINICAL EXPERTISE</Eyebrow>
             <h2 id="specialisation-title">Areas of <strong>Specialisation</strong></h2>
+            <p className={styles.specialisationIntro}>
+              Dr. Amit Solanki&rsquo;s training and clinical experience include:
+            </p>
             <ul className={styles.specialisationList}>
               {specialisations.map((item) => (
                 <li key={item}><span><Check size={16} strokeWidth={2.5} aria-hidden="true" /></span>{item}</li>
@@ -144,10 +176,10 @@ export function DoctorProfileSections() {
             </ul>
           </div>
           <div className={styles.specialisationVisual}>
-            <img src="/assets/home/eye-surgery.webp" alt="Advanced ophthalmic surgical procedure" />
+            <img src="/assets/specialization_doctor.jpg" alt="Dr. Amit N. Solanki providing specialised eye care" />
             <div className={styles.excellenceBadge}>
               <BadgeCheck aria-hidden="true" />
-              <span><b>20+ Years</b>Surgical Excellence</span>
+              <span><b>20+ Years</b>Clinical Experience</span>
             </div>
           </div>
         </div>
@@ -166,7 +198,12 @@ export function DoctorProfileSections() {
                   <span>{item.label}</span>
                   <h3>{item.title}</h3>
                   <p>{item.copy}</p>
-                  <Link href={item.href}>Learn More</Link>
+                  <div className={styles.expertiseTags}>
+                    {item.tags.map((tag) => (
+                      <span key={tag} className={styles.expertiseTag}>{tag}</span>
+                    ))}
+                  </div>
+                  <Link href={item.href}>{item.buttonLabel}</Link>
                 </div>
               </article>
             ))}
@@ -182,21 +219,20 @@ export function DoctorProfileSections() {
           <div className={styles.tableWrap}>
             <table>
               <thead>
-                <tr><th>Qualification / Training</th><th>Institution</th><th>Details</th></tr>
+                <tr><th>Qualification / Training</th><th>Institution / Location</th></tr>
               </thead>
               <tbody>
-                {education.map(([qualification, institution, details]) => (
+                {education.map(([qualification, institution]) => (
                   <tr key={qualification}>
                     <th scope="row">{qualification}</th>
-                    <td data-label="Institution">{institution}</td>
-                    <td data-label="Details">{details}</td>
+                    <td data-label="Institution / Location">{institution}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
           <blockquote className={styles.philosophy}>
-            &ldquo;A note on clinical philosophy: True mastery in surgery comes not just from knowing the technique, but from a lifelong dedication to refining it for the benefit of the patient.&rdquo;
+            &ldquo;A note on clinical philosophy: Every eye and every patient&rsquo;s needs are different. Care begins with a detailed evaluation, followed by treatment recommendations based on the patient&rsquo;s individual eye condition and visual requirements.&rdquo;
           </blockquote>
         </div>
       </section>

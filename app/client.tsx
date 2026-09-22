@@ -9,6 +9,16 @@ import {
   submitContactLeadToGoogleSheets,
 } from "@/lib/formService";
 
+const serviceOptions = [
+  { value: "Cataract", label: "Cataract Surgery" },
+  { value: "Lasik", label: "Freedom From Glasses" },
+  { value: "Retina", label: "Retina Care" },
+  { value: "Glaucoma", label: "Glaucoma Treatment" },
+  // { value: "Squint", label: "Squint Treatment" }, // temporarily unlisted — replaced by Pediatric Eye Care
+  { value: "Pediatric", label: "Pediatric Eye Care" },
+  { value: "Keratoconus", label: "Keratoconus Care" },
+] as const;
+
 // Validation Helper Functions
 function getErrorMessage(error: unknown): string {
   return error instanceof Error ? error.message : "Form submission failed.";
@@ -217,7 +227,7 @@ export function AppointmentForm() {
           onChange={(e) => handleChange("phone", e.target.value)}
           onBlur={() => handleBlur("phone")}
           className={touched.phone && errors.phone ? "input-error" : ""}
-          placeholder="+91 98765 43210"
+          placeholder="+91 90000 XXXXX"
         />
         {touched.phone && errors.phone && <span className="field-error-text">{errors.phone}</span>}
       </label>
@@ -231,11 +241,11 @@ export function AppointmentForm() {
           className={`${touched.service && errors.service ? "input-error" : ""} ${!formData.service ? "select-placeholder" : "select-selected"}`}
         >
           <option value="" disabled className="option-placeholder">Select a service</option>
-          <option value="Cataract" className="option-item">Cataract</option>
-          <option value="Lasik" className="option-item">Lasik</option>
-          <option value="Pediatric" className="option-item">Pediatric</option>
-          <option value="Glaucoma" className="option-item">Glaucoma</option>
-          <option value="Retina" className="option-item">Retina</option>
+          {serviceOptions.map((service) => (
+            <option value={service.value} className="option-item" key={service.value}>
+              {service.label}
+            </option>
+          ))}
         </select>
         {touched.service && errors.service && <span className="field-error-text">{errors.service}</span>}
       </label>
@@ -248,6 +258,7 @@ export function AppointmentForm() {
           placeholder="Any specific concerns or preferred time?"
         />
       </label>
+      <p className="form-note">Please avoid sharing detailed or sensitive medical information here — our team will discuss your condition directly when confirming your appointment.</p>
       <button className="button button-primary button-wide" type="submit" disabled={loading}>
         {loading ? "Submitting..." : sent ? "Appointment Request Sent ✓" : <><span>Confirm Appointment</span><ArrowRight size={18} /></>}
       </button>
@@ -380,7 +391,7 @@ export function ContactForm() {
 
         <label className="form-full-col">
           <span className="label-text">
-            Selected Treatment <span className="required-star">*</span>
+            Treatment You Are Interested In <span className="required-star">*</span>
           </span>
           <select
             name="treatment"
@@ -390,11 +401,11 @@ export function ContactForm() {
             className={`${touched.treatment && errors.treatment ? "input-error" : ""} ${!formData.treatment ? "select-placeholder" : "select-selected"}`}
           >
             <option value="" disabled className="option-placeholder">Select treatment option</option>
-            <option value="Cataract" className="option-item">Cataract</option>
-            <option value="Lasik" className="option-item">Lasik</option>
-            <option value="Pediatric" className="option-item">Pediatric</option>
-            <option value="Glaucoma" className="option-item">Glaucoma</option>
-            <option value="Retina" className="option-item">Retina</option>
+            {serviceOptions.map((service) => (
+              <option value={service.value} className="option-item" key={service.value}>
+                {service.label}
+              </option>
+            ))}
           </select>
           {touched.treatment && errors.treatment && <span className="field-error-text">{errors.treatment}</span>}
         </label>
@@ -414,11 +425,13 @@ export function ContactForm() {
         />
         {touched.message && errors.message && <span className="field-error-text">{errors.message}</span>}
       </label>
+      <p className="form-note">Please avoid sharing detailed or sensitive medical information here — our team will discuss your condition directly when confirming your appointment.</p>
 
       <button className="button button-primary contact-send-btn" type="submit" disabled={loading}>
         <img src="/assets/contact_send.png" alt="" aria-hidden="true" style={{ width: 16, height: 16 }} />
         {loading ? "Sending Message..." : sent ? "Message Sent ✓" : "Send Message"}
       </button>
+      <p className="form-note">Submitting this form is an appointment request. Our team will confirm availability separately.</p>
       {errors.form && <p className="field-error-text" style={{ marginTop: 8 }}>{errors.form}</p>}
       {sent && <p className="form-success">Thank you. We’ll be in touch shortly.</p>}
     </form>

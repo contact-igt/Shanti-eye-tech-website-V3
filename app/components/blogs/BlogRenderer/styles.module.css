@@ -1,0 +1,37 @@
+/* ── Template 2: Two-column layout ── */
+.sidebarLayout {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 48px;
+  align-items: start;
+}
+
+.mainColumn {
+  min-width: 0;
+}
+
+.sidebarColumn {
+  min-width: 0;
+}
+
+@media (max-width: 1024px) {
+  .sidebarLayout {
+    grid-template-columns: 1fr 260px;
+    gap: 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .sidebarLayout {
+    grid-template-columns: 1fr;
+  }
+
+  /* On mobile, sidebar appears after article */
+  .sidebarColumn {
+    order: 2;
+  }
+
+  .mainColumn {
+    order: 1;
+  }
+}

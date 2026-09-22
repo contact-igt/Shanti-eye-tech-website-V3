@@ -24,7 +24,11 @@ const statistics = [
 
 export function DoctorHero() {
   return (
-    <section className={styles.hero} aria-labelledby="doctor-hero-title">
+    <section className={styles.hero} id="doctor-banner" aria-labelledby="doctor-hero-title">
+      <div className={styles.bannerMedia} data-gsap-done="1">
+        <img className={styles.heroBgImage} src="/assets/doctor_banner.jpg" alt="" aria-hidden="true" data-gsap-done="1" />
+        <div className={styles.heroOverlay} data-gsap-done="1" />
+      </div>
       <div className={`shell ${styles.layout}`}>
         <div className={styles.copy}>
           <Eyebrow>MEET YOUR EYE SURGEON</Eyebrow>
@@ -34,14 +38,14 @@ export function DoctorHero() {
             <span className={styles.accentLine}>Eye Care.</span>
           </h1>
           <p>
-            Meet Dr. Amit N. Solanki, Director of Shanti EyeTech and an experienced Cataract, Glaucoma &amp; Refractive Surgeon dedicated to ophthalmology since 2003.
+            Meet Dr. Amit N. Solanki, Director of Shanti Eye Tech and an experienced Cataract, Glaucoma &amp; Refractive Surgeon dedicated to ophthalmology since 2003.
           </p>
 
           <div className={styles.actions}>
-            <Link className={`button button-primary ${styles.primaryButton}`} href="/contact">
+            <Link className={`button button-primary ${styles.primaryButton}`} href="/contact#contact-form">
               Book an Appointment <ArrowRight size={18} aria-hidden="true" />
             </Link>
-            <Link className={`button button-outline ${styles.secondaryButton}`} href="/about#leadership">
+            <Link className={`button button-outline ${styles.secondaryButton}`} href="#doctor-profile">
               Know Your Doctor <ArrowRight size={18} aria-hidden="true" />
             </Link>
           </div>
@@ -49,8 +53,7 @@ export function DoctorHero() {
         </div>
 
         <div className={styles.visual}>
-          <img className={styles.visualBackground} src="/assets/doctors/doctor-hero-bg.png" alt="" aria-hidden="true" />
-          <img className={styles.visualDoctor} src="/assets/doctors/doctor-hero-foreground.png" alt="Dr. Amit N. Solanki in the eye clinic" />
+          <img className={styles.visualDoctor} src="/assets/doctor_banner.jpg" alt="Dr. Amit N. Solanki in the eye clinic" data-gsap-done="1" />
         </div>
 
         <div className={styles.statistics} aria-label="Dr. Amit N. Solanki credentials">

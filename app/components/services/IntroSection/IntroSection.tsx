@@ -21,8 +21,13 @@ export function IntroSection({ content, kind }: { content: IntroContent; kind: S
             {content.title} <span>{content.accent}</span>
           </h2>
           {content.paragraphs.map((paragraph, index) => (
-            <p className={isRetina && index === 0 ? styles.infoParagraph : undefined} key={paragraph}>{paragraph}</p>
+            <p
+              className={isRetina && index === 0 ? styles.infoParagraph : undefined}
+              key={paragraph}
+              dangerouslySetInnerHTML={{ __html: paragraph }}
+            />
           ))}
+
           {content.callout ? (
             <div className={`${styles.callout} ${isRetina ? styles.retinaCallout : ""} ${isGlaucoma ? styles.glaucomaCallout : ""}`}>
               {isGlaucoma ? (
@@ -46,7 +51,7 @@ export function IntroSection({ content, kind }: { content: IntroContent; kind: S
             <img className={styles.patient} src={content.lasikImages.patient} alt="Patient undergoing LASIK laser eye procedure" />
             <img className={styles.room} src={content.lasikImages.room} alt="Modern LASIK procedure room" />
             <img className={styles.eye} src={content.lasikImages.eye} alt="Close-up LASIK precision laser procedure" />
-            <div className={styles.badge}><b>15-20 min</b><small>Procedure Time</small></div>
+            <div className={styles.badge}><b>Varies</b><small>By Procedure</small></div>
           </div>
         ) : isRetina && content.retinaImages ? (
           <div className={styles.retinaVisual}>
@@ -69,7 +74,7 @@ export function IntroSection({ content, kind }: { content: IntroContent; kind: S
           </div>
         ) : (
           <div className={styles.imageStack}>
-            {isCataract ? <div className={styles.ageTag}><small>Age-Related</small><b>50+</b></div> : null}
+            {isCataract ? <div className={styles.ageTag}><small>More Common</small><b>With Age</b></div> : null}
             <img src={content.image} alt={`${content.title} ${content.accent}`} />
           </div>
         )}

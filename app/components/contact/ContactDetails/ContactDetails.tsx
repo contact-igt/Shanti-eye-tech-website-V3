@@ -94,10 +94,10 @@ const cardData = [
         <br />
         Palasia Square, Manorama Ganj,
         <br />
-        Indore, MP 452001
+        Indore, Madhya Pradesh 452001
       </>
     ),
-    linkHref: "https://maps.google.com/?q=Shekhar+Central+Palasia+Indore",
+    linkHref: "https://www.google.com/maps/place/Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Best+Eye+Hospital+in+Indore/@22.7229045,75.8843484,655m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fd5037568439:0xb4160c93774cf232!8m2!3d22.7228996!4d75.8869233!16s%2Fg%2F11fn98lrpr?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
     linkLabel: (
       <>
         <LocationIcon size={14} /> Get Directions
@@ -108,10 +108,10 @@ const cardData = [
   {
     id: "call",
     icon: <PhoneIcon size={22} />,
-    title: "Call Us Anytime",
+    title: "Call Us",
     body: (
       <>
-        9179191939 , 07314291939
+        +91 91791 91939 · +91 731 429 1939
       </>
     ),
     linkHref: "tel:+919179191939",
@@ -141,7 +141,7 @@ const cardData = [
     title: "Working Hours",
     body: (
       <>
-        Monday – Friday: 8:00 AM – 8:00 PM
+        Monday – Saturday: 10:00 AM – 7:00 PM
         <br />
         <br />
         Sunday: Closed
@@ -156,21 +156,18 @@ const cardData = [
 export function ContactDetails() {
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
-  // Default active card is index 1 ("Call Us Anytime") unless hovering another card
-  const activeIndex = hoveredIndex !== null ? hoveredIndex : 1;
-
   return (
     <section className={styles.section}>
       <div className={styles.shell}>
         <SectionHeading
           eyebrow="CONTACT"
-          title="Let’s Connect for your"
-          accent="Personalised eye care"
-          body="Have questions or need assistance? Our friendly eyecare team is here to help. Contact us by phone, email, or visit our medical center - we're always ready to assist you."
+          title="Let’s connect for"
+          accent="personalised eye care."
+          body="Have questions or need assistance? Our friendly eye-care team is here to help. Contact us by phone, email, or visit our clinic - we're always ready to assist you."
         />
         <div className={styles.grid} onMouseLeave={() => setHoveredIndex(null)}>
           {cardData.map((card, index) => {
-            const isFeatured = index === activeIndex;
+            const isFeatured = index === hoveredIndex;
 
             return (
               <article

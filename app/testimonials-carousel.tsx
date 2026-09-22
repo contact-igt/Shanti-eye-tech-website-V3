@@ -6,6 +6,7 @@ export type TestimonialItem = {
   quote: string;
   name: string;
   meta: string;
+  rating?: number;
 };
 
 export function TestimonialCarousel({ items }: { items: TestimonialItem[] }) {
@@ -81,12 +82,18 @@ export function TestimonialCarousel({ items }: { items: TestimonialItem[] }) {
       onTouchStart={handleTouchStart}
       onTouchEnd={handleTouchEnd}
     >
-      <div className={`testimonial-grid-wrapper visible-${visibleCount}`}>
+      <div
+        className={`testimonial-grid-wrapper visible-${visibleCount}`}
+        // Re-keying on currentIndex remounts these nodes each rotation, so
+        // the CSS entrance animation (fade + slide, staggered per card)
+        // replays instead of the content just swapping in place.
+        key={currentIndex}
+      >
         {visibleItems.map((item, idx) => (
           <article className="cataract-testimonial-card testimonial-slide-card" key={`${item.name}-${idx}`}>
             <span className="testimonial-pin" aria-hidden="true"></span>
-            <div className="testimonial-stars" aria-label="Five star rating">
-              {Array.from({ length: 5 }).map((_, index) => (
+            <div className="testimonial-stars" aria-label={`${item.rating ?? 5} star rating`}>
+              {Array.from({ length: item.rating ?? 5 }).map((_, index) => (
                 <img src="/assets/testimonial_star.png" alt="" key={index} />
               ))}
             </div>

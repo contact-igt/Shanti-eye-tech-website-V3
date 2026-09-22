@@ -19,6 +19,11 @@
   line-height: 1.08;
 }
 
+.servicesSection :global(.services-header) :global(.section-heading) h2 span {
+  display: block;
+  white-space: nowrap;
+}
+
 .servicesSection :global(.services-header) :global(.section-heading) p {
   max-width: 520px;
   font-size: 16px;
@@ -63,6 +68,16 @@
   box-shadow: 0 14px 36px rgba(35, 66, 108, 0.12);
 }
 
+.servicesSection :global(.service-card):hover :global(.service-learn-more) {
+  color: #fff !important;
+  opacity: 1 !important;
+}
+
+.servicesSection :global(.service-card):focus-visible {
+  outline: 3px solid rgba(8, 185, 218, 0.38);
+  outline-offset: 4px;
+}
+
 .servicesSection :global(.service-card):nth-child(1),
 .servicesSection :global(.service-card):nth-child(2),
 .servicesSection :global(.service-card):nth-child(3),
@@ -90,7 +105,8 @@
 .servicesSection :global(.service-learn-more) {
   font-size: 15px;
   font-weight: 700;
-  color: #08b9da;
+  color: var(--cyan);
+  opacity: 1;
   margin-top: auto;
 }
 

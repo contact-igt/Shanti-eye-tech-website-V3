@@ -7,37 +7,44 @@ const services = [
   [
     "01",
     "Advanced Cataract Surgery",
-    "State-of-the-art phacoemulsification with premium IOL options for crystal-clear vision restoration.",
+    "Evaluation and treatment for cataracts that can cause cloudy vision, glare and progressive reduction in visual clarity.",
     "/services/cataract",
   ],
   [
     "02",
     "Retina Care",
-    "Comprehensive medical and surgical retina services including laser treatments and injections.",
+    "Evaluation and management of retinal conditions, with treatment recommendations based on clinical findings.",
     "/services/retina",
   ],
   [
     "03",
-    "LASIK Surgery",
-    "LASIK, SMILE, and PRK procedures for freedom from glasses and contact lenses.",
+    "Freedom From Glasses",
+    "Vision-correction options designed to reduce dependence on spectacles or contact lenses for suitable patients. Suitability and visual outcomes depend on a detailed eye examination.",
     "/services/lasik",
   ],
   [
     "04",
     "Glaucoma Management",
-    "Advanced diagnosis and treatment to preserve your vision through medical and surgical interventions.",
+    "Evaluation, monitoring and treatment guidance for glaucoma, a group of conditions that can damage the optic nerve.",
     "/services/glaucoma",
   ],
+  // Squint Treatment temporarily unlisted — replaced by Pediatric Eye Care
+  // [
+  //   "05",
+  //   "Squint Treatment",
+  //   "Expert diagnosis and surgical correction of squint (strabismus) for aligned vision and improved eye coordination.",
+  //   "/services/squint",
+  // ],
   [
     "05",
-    "Squint Treatment",
-    "Expert diagnosis and surgical correction of squint (strabismus) for aligned vision and improved eye coordination.",
-    "/services/squint",
+    "Pediatric Eye Care",
+    "Eye examinations and care focused on healthy vision and proper eye development in children.",
+    "/services/pediatric-eye-care",
   ],
   [
     "06",
     "Keratoconus Care",
-    "Advanced corneal cross-linking and lens solutions to manage and halt keratoconus progression effectively.",
+    "Evaluation and management of keratoconus, a progressive condition in which the cornea becomes thinner and develops a cone-like shape. Treatment depends on corneal findings and whether progression is present.",
     "/services/keratoconus",
   ],
 ];
@@ -121,7 +128,12 @@ export function ServicesSection() {
         </div>
         <div className="service-grid">
           {services.map(([number, title, text, href], index) => (
-            <Link className="service-card" href={href} key={title}>
+            <Link
+              className="service-card"
+              href={`${href}#service-banner`}
+              key={title}
+              scroll
+            >
               <span className="service-number">{number}</span>
               <span
                 className={`service-icon service-icon-${index + 1}`}

@@ -4,12 +4,8 @@ import { BlogPagination } from "../components/blogs/BlogPagination/BlogPaginatio
 import { SectionHeading } from "../components/services/common/SectionHeading/SectionHeading";
 import { AppointmentSection, Footer, Header } from "../site-components";
 import { listPublishedBlogs, type BlogListResult } from "@/lib/blogApi";
+import { BlogSearchForm } from "./BlogSearchForm";
 import styles from "./styles.module.css";
-
-export const metadata: Metadata = {
-  title: "Blog",
-  description: "Eye-care guidance, treatment insights and patient resources from the Shanti Eye Tech clinical team.",
-};
 
 const PAGE_SIZE = 9;
 
@@ -22,6 +18,24 @@ async function loadBlogs(page: number, search?: string): Promise<{ result: BlogL
   }
 }
 
+export async function generateMetadata(): Promise<Metadata> {
+  const { result, error } = await loadBlogs(1);
+  const articlesAvailable = !error && !!result && result.pagination.total_items > 0;
+
+  return {
+    title: {
+      absolute: "Eye Care Blog | Shanti Eye Tech, Indore",
+    },
+    description: "Eye-care guidance, treatment explainers and vision-health updates from Shanti Eye Tech in Indore.",
+    alternates: {
+      canonical: "https://www.shantieyetech.com/blogs",
+    },
+    // The feed has no live articles yet (or the article service is unreachable) —
+    // keep this page out of search results until it has something to show.
+    robots: articlesAvailable ? undefined : { index: false, follow: true },
+  };
+}
+
 export default async function BlogsPage({
   searchParams,
 }: {
@@ -32,6 +46,11 @@ export default async function BlogsPage({
   const search = typeof params.search === "string" ? params.search.trim() : "";
   const { result, error } = await loadBlogs(requestedPage, search || undefined);
 
+  // "Articles available" must reflect the whole feed, not just this search —
+  // a query with zero matches shouldn't hide search or show the "coming soon" copy.
+  const overall = search ? await loadBlogs(1) : { result, error };
+  const articlesAvailable = !overall.error && !!overall.result && overall.result.pagination.total_items > 0;
+
   return (
     <>
       <Header active="blogs" />
@@ -40,10 +59,15 @@ export default async function BlogsPage({
           <div className={`shell ${styles.heroShell}`}>
             <div className={styles.heroCopy}>
               <SectionHeading
+                as="h1"
                 eyebrow="OUR BLOG"
                 title="Insights for Healthier"
                 accent="Vision"
-                body="Practical eye-care guidance, treatment explainers and clinic updates from the Shanti Eye Tech specialist team."
+                body={
+                  articlesAvailable
+                    ? "Practical eye-care guidance, treatment explainers and clinic updates from the Shanti Eye Tech specialist team."
+                    : "Eye-care articles from Shanti Eye Tech are coming soon."
+                }
                 align="left"
               />
             </div>
@@ -52,13 +76,7 @@ export default async function BlogsPage({
 
         <section className={`section ${styles.listSection}`}>
           <div className="shell">
-            <form className={styles.searchForm} action="/blogs">
-              <label className={styles.searchLabel} htmlFor="blog-search">Search articles</label>
-              <div className={styles.searchRow}>
-                <input id="blog-search" name="search" type="search" defaultValue={search} placeholder="Search eye-care topics" />
-                <button type="submit">Search</button>
-              </div>
-            </form>
+            {articlesAvailable ? <BlogSearchForm initialSearch={search} /> : null}
             {error ? (
               <p className={styles.state}>{error}</p>
             ) : !result || result.items.length === 0 ? (

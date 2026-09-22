@@ -11,7 +11,7 @@ export function CommitmentSection() {
           eyebrow="WHY CHOOSE US"
           title="Four Pillars of"
           accent="Our Commitment"
-          body="What sets Shanti EyeTech apart is our unwavering dedication to combining clinical excellence with genuine care for every patient who walks through our doors."
+          body="What sets Shanti Eye Tech apart is our unwavering dedication to combining clinical excellence with genuine care for every patient who walks through our doors."
         />
         <FeatureGrid
           columns={2}
@@ -33,14 +33,14 @@ export function CommitmentSection() {
             },
             {
               icon: "✦",
-              title: "Innovation & Research",
-              text: "We stay at the forefront of ophthalmology through continuous training, research participation, and adoption of cutting-edge technologies.",
+              title: "Caring with a Spiritual Touch",
+              text: "Healing with Positive Energy guides how we care for every patient, with compassion, reassurance, and a positive outlook throughout their treatment.",
             },
           ]}
         />
         <Link
           className="button button-primary center-button"
-          href="/contact"
+          href="/contact#contact-form"
           style={{
             display: "flex",
             alignItems: "center",

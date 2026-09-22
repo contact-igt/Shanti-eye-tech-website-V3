@@ -51,6 +51,15 @@
   gap: 24px;
 }
 
+/* Show grid desktop only, slider mobile only */
+.desktopGrid {
+  display: grid;
+}
+
+.mobileSlider {
+  display: none;
+}
+
 .card {
   position: relative;
   min-width: 0;
@@ -120,21 +129,6 @@
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-}
-
-.icon {
-  position: absolute;
-  top: 24px;
-  left: 24px;
-  display: grid;
-  width: 48px;
-  height: 48px;
-  place-items: center;
-  border: 1px solid rgba(255, 255, 255, 0.48);
-  border-radius: 50%;
-  color: #fff;
-  background: rgba(65, 92, 130, 0.72);
-  backdrop-filter: blur(8px);
 }
 
 .content h3 {
@@ -216,9 +210,13 @@
     font-size: 15.5px;
   }
 
-  .grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 20px;
+  /* Switch grid -> slider */
+  .desktopGrid {
+    display: none;
+  }
+
+  .mobileSlider {
+    display: block;
   }
 
   .card {
@@ -259,7 +257,7 @@
 
 @media (max-width: 576px) {
   .section {
-    padding: 64px 0 70px;
+    padding: 64px 0 28px;
   }
 
   .shell {
@@ -320,12 +318,6 @@
     padding: 20px;
   }
 
-  .icon {
-    top: 20px;
-    left: 20px;
-    width: 44px;
-    height: 44px;
-  }
 }
 
 @media (max-width: 390px) {

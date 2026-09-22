@@ -4,16 +4,17 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AppointmentForm, FaqAccordion } from "./client";
 import { MobileNavDrawer } from "./components/MobileNavDrawer";
+import { getGoogleReviews } from "@/lib/googleReviews";
 
 export function Header({ active = "" }: { active?: string }) {
   const isServicesPage = active === "services";
   // const isDoctorsPage = active === "doctors";
 
   return (
-    <header className={`site-header ${isServicesPage ? "site-header-services" : "site-header-transparent"}`}>
+    <header className={`site-header ${active === "home" ? "home-header" : ""} ${isServicesPage ? "site-header-services" : "site-header-transparent"}`}>
       <div className="shell nav-wrap">
-        <Link className="brand" href="/" aria-label="Shanti EyeTech home">
-          <img src="/assets/logo.png" alt="Shanti EyeTech" />
+        <Link className="brand" href="/" aria-label="Shanti Eye Tech home">
+          <img src="/assets/logo.png" alt="Shanti Eye Tech" />
         </Link>
         <nav className="desktop-nav" aria-label="Primary navigation">
           <Link className={active === "home" ? "active" : ""} href="/">Home</Link>
@@ -26,13 +27,14 @@ export function Header({ active = "" }: { active?: string }) {
               </svg>
             </Link>
             <div className="nav-menu">
-              <Link href="/services">Treatments Overview</Link>
-              <Link href="/services/cataract">Cataract Surgery</Link>
-              <Link href="/services/lasik">LASIK Surgery</Link>
-              <Link href="/services/retina">Retina Care</Link>
-              <Link href="/services/glaucoma">Glaucoma Treatment</Link>
-              <Link href="/services/squint">Squint Treatment</Link>
-              <Link href="/services/keratoconus">Keratoconus Care</Link>
+              <Link href="/services/cataract#service-banner">Cataract Surgery</Link>
+              <Link href="/services/lasik#service-banner">Freedom From Glasses</Link>
+              <Link href="/services/retina#service-banner">Retina Care</Link>
+              <Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>
+              {/* Squint Treatment temporarily unlisted — replaced by Pediatric Eye Care below */}
+              {/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}
+              <Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link>
+              <Link href="/services/keratoconus#service-banner">Keratoconus Care</Link>
             </div>
           </div>
           <Link className={active === "doctors" ? "active" : ""} href="/doctors">Doctors</Link>
@@ -44,9 +46,9 @@ export function Header({ active = "" }: { active?: string }) {
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" />
             </svg>
-            <span>Emergency</span>
+            <span>Call Us</span>
           </a>
-          <Link className="button button-primary nav-book" href="/contact">
+          <Link className="button button-primary nav-book" href="/contact#contact-form">
             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round">
               <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
               <line x1="16" y1="2" x2="16" y2="6" />
@@ -88,7 +90,7 @@ export function QuickActionButtons() {
     {
       key: "book",
       label: "Book",
-      href: "/contact",
+      href: "/contact#contact-form",
       className: "book",
       icon: (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -100,7 +102,7 @@ export function QuickActionButtons() {
     {
       key: "address",
       label: "Address",
-      href: "/contact#location",
+      href: "https://www.google.com/maps/place/Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Best+Eye+Hospital+in+Indore/@22.7229045,75.8843484,655m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fd5037568439:0xb4160c93774cf232!8m2!3d22.7228996!4d75.8869233!16s%2Fg%2F11fn98lrpr?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
       className: "address",
       icon: (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -178,6 +180,8 @@ function CommitmentIcon({ title }: { title: string }) {
     <path d="M20.8 8.2c0 5-8.8 10.8-8.8 10.8S3.2 13.2 3.2 8.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.8 1.2Z" />
   ) : title === "Proven Excellence" ? (
     <><path d="M12 3 19 6v5c0 4.5-3 7.9-7 9.5-4-1.6-7-5-7-9.5V6l7-3Z" /><path d="m9 12 2 2 4-4" /></>
+  ) : title === "Caring with a Spiritual Touch" ? (
+    <><path d="M20.8 8.2c0 5-8.8 10.8-8.8 10.8S3.2 13.2 3.2 8.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.8 1.2Z" /><path d="m12 6 .7 1.8 1.8.7-1.8.7L12 11l-.7-1.8-1.8-.7 1.8-.7L12 6Z" /></>
   ) : (
     <><path d="m13 2-8 11h6l-1 9 8-12h-6l1-8Z" /><path d="M18 4h3M19.5 2.5v3" /></>
   );
@@ -224,7 +228,7 @@ export function FeatureGrid({
       {items.map((item, index) => (
         <article className={`feature-card ${gradientFirst && index === 0 ? "gradient-card" : ""}`} key={item.title}>
           {showNumbers && <span className="feature-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>}
-          <span className="icon-box">{showNumbers ? <TechnologyIcon title={item.title} /> : ["Patient-Centered Care", "Expert Team", "Proven Track Record", "Continuous Innovation"].includes(item.title) ? <WhyChooseIcon title={item.title} /> : ["Advanced Equipment", "Precision Diagnostics", "Safety Standards", "Rapid Recovery"].includes(item.title) ? <CapabilityIcon title={item.title} /> : ["Precision Diagnostics", "Proven Excellence", "Innovation & Research"].includes(item.title) ? <CommitmentIcon title={item.title} /> : item.icon}</span>
+          <span className="icon-box">{showNumbers ? <TechnologyIcon title={item.title} /> : ["Patient-Centered Care", "Expert Team", "Proven Track Record", "Continuous Innovation"].includes(item.title) ? <WhyChooseIcon title={item.title} /> : ["Advanced Equipment", "Precision Diagnostics", "Safety Standards", "Rapid Recovery"].includes(item.title) ? <CapabilityIcon title={item.title} /> : ["Precision Diagnostics", "Proven Excellence", "Caring with a Spiritual Touch"].includes(item.title) ? <CommitmentIcon title={item.title} /> : item.icon}</span>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </article>
@@ -235,7 +239,7 @@ export function FeatureGrid({
 
 import { TestimonialCarousel, type TestimonialItem } from "./testimonials-carousel";
 
-export function Testimonials({
+export async function Testimonials({
   accent = "blue",
   title = "You’re Not Alone,",
   subtitle = "Hear From Others Like You",
@@ -244,17 +248,26 @@ export function Testimonials({
   title?: string;
   subtitle?: string;
 }) {
-  const quotes: TestimonialItem[] = [
-    { quote: "Best decision I ever made! I can finally wake up and see clearly without reaching for glasses. The procedure was quick and painless, and Dr. Kumar made me feel completely comfortable throughout.", name: "Priya Sharma", meta: "LASIK Surgery" },
-    { quote: "I was nervous about the surgery, but the team at Shanti EyeTech was amazing. Within 24 hours, my vision was crystal clear. No more contacts, no more hassle!", name: "Raj Patel", meta: "Blade-Free LASIK" },
-    { quote: "As someone who wore glasses for 20 years, I cannot express how life-changing LASIK has been. The precision and care I received here exceeded all expectations.", name: "Anita Desai", meta: "Custom LASIK" },
+  const fallbackQuotes: TestimonialItem[] = [
+    { quote: "Our family recently had the opportunity to take laser and cataract surgery services at Shanti Eye Tech Hospital, and it was truly an amazing experience from start to finish. Dr. Amit Solanki and his dedicated staff went above and beyond in taking care of us.", name: "Madan Agrawal", meta: "Patient Review" },
+    { quote: "My mother recently underwent cataract surgery at this hospital, and we had a wonderful experience. The doctors, nurses, and entire staff were caring, professional, and explained everything clearly throughout the process.", name: "Vaibhav Bairagi", meta: "Patient Review" },
+    { quote: "I got touchless robotic LASIK surgery done by Dr. Amit Solanki. He is very genuine and explains everything in detail. I am extremely happy with the surgery.", name: "Rashi Dawar", meta: "Patient Review" },
+    { quote: "Very well trained facilities and top surgeon to have surgery, and staff nature is very cooperative and well behaved. We are fully satisfied with our cataract surgery.", name: "Renuka Agrawal", meta: "Patient Review" },
+    { quote: "Dr. Amit Solanki was a wonderful surgeon, and the staff was always helpful and kind. They ensured I had a smooth prep, surgery, and follow-up.", name: "Ishita Sheel", meta: "Patient Review" },
+    { quote: "I had a very good experience at Shanti Eye Tech Clinic. Dr. Amit Solanki is extremely knowledgeable, patient, and attentive. The staff is also very polite, cooperative, and professional.", name: "Sandeep Debnath", meta: "Patient Review" },
   ];
+  const googleReviews = await getGoogleReviews();
+  const quotes = googleReviews?.length ? googleReviews : fallbackQuotes;
+  const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/maps?cid=12976573203815920178";
 
   return (
     <section className="section testimonials soft-section">
       <div className="shell">
         <SectionHeading eyebrow="PATIENT STORIES" title={title} accent={subtitle} />
         <TestimonialCarousel items={quotes} />
+        <a className="button button-outline center-button" href={reviewUrl} target="_blank" rel="noopener noreferrer">
+          Review us on Google <ArrowRight size={18} aria-hidden="true" />
+        </a>
       </div>
     </section>
   );
@@ -274,13 +287,13 @@ export function FAQ({
     ["What eye conditions do you treat?", "We provide comprehensive care for all eye conditions including cataracts, glaucoma, diabetic retinopathy, macular degeneration, corneal diseases, refractive errors, and pediatric eye problems. Our specialists are equipped to handle both routine and complex cases."],
     ["Is LASIK surgery safe and permanent?", "LASIK is a well-established procedure. Your specialist will determine whether it is suitable for your eyes after a detailed assessment."],
     ["How long does cataract surgery take?", "Most cataract procedures are completed quickly, followed by a carefully planned recovery and review schedule."],
-    ["Do you accept insurance?", "Our team can help you understand available insurance and payment options before treatment."],
+    ["Do you accept insurance?", "Insurance and cashless options depend on your insurer and treatment. Please contact our team to confirm eligibility."],
     ["When should children have their first eye exam?", "A child should have an eye evaluation when recommended by their paediatrician or if you notice a vision concern."],
   ] : [
     [`What should I expect during my first ${service} visit?`, "Your specialist will review your history, assess your vision and eye health, explain the findings, and recommend a personalised treatment plan."],
     [`Is ${service} treatment safe?`, "Treatment is recommended only after a detailed evaluation. Our specialists use modern technology and established clinical safety protocols."],
     ["How long does the consultation take?", "Most consultations take 30-45 minutes. Some advanced diagnostic tests may require a little longer."],
-    ["Do you accept insurance?", "Our team can help you understand available insurance and payment options before treatment."],
+    ["Do you accept insurance?", "Insurance and cashless options depend on your insurer and treatment. Please contact our team to confirm eligibility."],
     ["How soon can I book an appointment?", "Same-day consultations may be available. Call us or use the appointment form and our team will confirm the earliest suitable time."],
   ];
   return (
@@ -290,7 +303,7 @@ export function FAQ({
           <Eyebrow>{isHomeFaq ? "FAQS" : "COMMON QUESTIONS"}</Eyebrow>
           <h2>{title}<br /><span>{accent}</span></h2>
           <p>Find answers to common questions about our services, procedures, and patient care.</p>
-          <Link href="/contact" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>Still have questions? Contact us <ArrowRight size={16} /></Link>
+          <Link href="/contact#contact-form" style={{ display: "inline-flex", alignItems: "center", gap: "6px" }}>Still have questions? Contact us <ArrowRight size={16} /></Link>
         </div>
         <div className="faq-list">
           <FaqAccordion questions={questions} />
@@ -314,7 +327,8 @@ export function AppointmentSection({
   image?: string;
   kind?: string;
 }) {
-  const isModernService = ["cataract", "lasik", "retina", "glaucoma"].includes(kind);
+  const isDoctor = kind === "doctor";
+  const isModernService = ["cataract", "lasik", "retina", "glaucoma", "doctor"].includes(kind);
   const isOverview = kind === "overview";
   const serviceLabel = kind === "lasik" ? "LASIK" : kind === "retina" ? "retina care" : kind === "glaucoma" ? "glaucoma care" : "cataract treatment";
   const journeyCopy = kind === "lasik"
@@ -323,7 +337,9 @@ export function AppointmentSection({
       ? "Protect your sight with timely retina evaluation and expert care. Our specialists are ready to guide you through every step."
       : kind === "glaucoma"
         ? "Protect your sight with timely glaucoma screening and long-term monitoring. Our specialists are ready to guide you through every step."
-        : "Restore your clear vision and rediscover life's precious moments. Our experienced team is ready to guide you through safe, effective cataract treatment.";
+        : isDoctor
+          ? "Get a comprehensive eye evaluation and personalised treatment guidance from an experienced Cataract, Glaucoma & Refractive Surgeon."
+          : "Restore your clear vision and rediscover life's precious moments. Our experienced team is ready to guide you through safe, effective cataract treatment.";
 
   return (
     <section className={`appointment-section ${withForm && !isModernService && !isOverview ? "appointment-home-style" : ""} ${isModernService ? "cataract-journey-section" : ""}`} id="appointment">
@@ -335,7 +351,9 @@ export function AppointmentSection({
               ? "Not Sure Which Service You Need?"
               : withForm
                 ? <>{"Ready to See"}<br />{"the World Clearly?"}</>
-                : <>{"Start Your"}<br />{"Vision Journey"}</>}
+                : isDoctor
+                  ? <>{"Consult Dr. Amit N. Solanki"}<br />{"For Your Eye Care"}</>
+                  : <>{"Start Your"}<br />{"Vision Journey"}</>}
           </h2>
           <p>{isOverview
             ? "Start with a comprehensive eye examination and let the clinical team guide you toward the appropriate care."
@@ -343,23 +361,22 @@ export function AppointmentSection({
               ? journeyCopy
               : "Schedule your consultation today and take the first step towards better vision. Our expert team is ready to provide personalised care."}</p>
           {isOverview ? (
-            <Link className="button light-button" href="/contact"
+            <Link className="button light-button" href="/contact#contact-form"
               style={{ display: "inline-flex", alignItems: "center", gap: "8px" }}>
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
               Book an Appointment
             </Link>
           ) : withForm ? (
             <ul className="appointment-points">
-              <li><span><AppointmentIcon type="clock" /></span><b>Quick Appointments</b><small>Same-day consultations available</small></li>
-              <li><span><AppointmentIcon type="people" /></span><b>Expert Specialists</b><small>15+ experienced ophthalmologists</small></li>
-              <li><span><AppointmentIcon type="phone" /></span><b>24/7 Support</b><small>Emergency eye care anytime</small></li>
+              <li><span><AppointmentIcon type="clock" /></span><b>Quick Appointments</b><small>Appointments are subject to availability.</small></li>
+              <li><span><AppointmentIcon type="people" /></span><b>Expert Specialists</b><small>Experienced ophthalmology care.</small></li>
             </ul>
           ) : isModernService ? (
             <>
               <div className="cataract-journey-actions">
-                <Link className="button light-button cataract-journey-btn-primary" href="/contact">
+                <Link className="button light-button cataract-journey-btn-primary" href="/contact#contact-form">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><rect x="3" y="4" width="18" height="18" rx="2" ry="2" /><line x1="16" y1="2" x2="16" y2="6" /><line x1="8" y1="2" x2="8" y2="6" /><line x1="3" y1="10" x2="21" y2="10" /></svg>
-                  Book Consultation <img className="btn-arrow" src="/assets/blue_arrow.png" alt="" aria-hidden="true" />
+                  {isDoctor ? "Book Appointment" : "Book Consultation"} <img className="btn-arrow" src="/assets/blue_arrow.png" alt="" aria-hidden="true" />
                 </Link>
                 <a className="button ghost-light cataract-journey-btn-outline" href="tel:+919179191939">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z" /></svg>
@@ -369,14 +386,14 @@ export function AppointmentSection({
               <div className="cataract-journey-check">
                 <span className="check-badge">✓</span>
                 <div>
-                  <strong>Comprehensive Evaluation</strong>
-                  <small>Complete assessment to determine the best {serviceLabel} option for you</small>
+                  <strong>{isDoctor ? "20+ Years of Experience" : "Comprehensive Evaluation"}</strong>
+                  <small>{isDoctor ? "Dedicated to ophthalmology since 2003." : `Complete assessment to determine the best ${serviceLabel} option for you`}</small>
                 </div>
               </div>
             </>
           ) : (
             <>
-              <Link className="button light-button button-wide" href="/contact">▣ Book Consultation →</Link>
+              <Link className="button light-button button-wide" href="/contact#contact-form">▣ Book Consultation →</Link>
               <a className="button ghost-light button-wide" href="tel:+919179191939">☎ Call: +91 91791 91939</a>
               <p className="small-check">✓ Comprehensive Evaluation</p>
             </>
@@ -402,12 +419,13 @@ export function Footer({ home = false }: { home?: boolean }) {
       <div className="shell">
         <div className="footer-top">
           <div className="footer-brand">
-            <img src="/assets/logo.png" alt="Shanti EyeTech" />
-            <p>Providing world-class ophthalmology care with cutting-edge technology and compassionate specialists for over 25 years.</p>
+            <img src="/assets/logo.png" alt="Shanti Eye Tech" />
+            <p>Providing advanced ophthalmology care with cutting-edge technology and compassionate specialists for over 20 years.</p>
           </div>
-          <div><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
-          <div><h4>Services</h4><Link href="/services/cataract">Cataract Surgery</Link><Link href="/services/lasik">LASIK Surgery</Link><Link href="/services/retina">Retina Care</Link><Link href="/services/glaucoma">Glaucoma Treatment</Link><Link href="/services/squint">Squint Treatment</Link><Link href="/services/keratoconus">Keratoconus Care</Link></div>
-          <div><h4>Resources</h4><Link href="/contact">Patient Guide</Link><Link href="/contact">Insurance Info</Link><Link href="/contact#faq">FAQs</Link><Link href="/#testimonials">Testimonials</Link><Link href="/contact">Contact Us</Link></div>
+          <div className="footer-quick-links"><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
+          <div className="footer-services"><h4>Services</h4><Link href="/services/cataract#service-banner">Cataract Surgery</Link><Link href="/services/lasik#service-banner">Freedom From Glasses</Link><Link href="/services/retina#service-banner">Retina Care</Link><Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>{/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}<Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link><Link href="/services/keratoconus#service-banner">Keratoconus Care</Link></div>
+          <div className="footer-resources"><h4>Resources</h4><Link href="/contact#contact-form">Patient Guide</Link><Link href="/contact#contact-form">Insurance Info</Link><Link href="/contact#faq">FAQs</Link><Link href="/#testimonials">Testimonials</Link><Link href="/contact#contact-form">Contact Us</Link></div>
+
           <div className="socials">
             <a href="https://www.facebook.com/shantieyetech" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z" /></svg></a>
             <a href="https://www.instagram.com/shantieyetech/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5" /><circle cx="12" cy="12" r="4" /><circle cx="17.5" cy="6.7" r="1" /></svg></a>
@@ -415,14 +433,14 @@ export function Footer({ home = false }: { home?: boolean }) {
           </div>
         </div>
         <div className="footer-contact">
-          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>Shekhar Central, M1&amp;M2, Palasia Square,<br />Manorama Ganj, Indore, MP 452001</span></div></div>
-          <div className="footer-phone"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 3.5 8.8 3l1.7 4.2-2.1 1.7c1.2 2.5 3.2 4.5 5.7 5.7l1.7-2.1 4.2 1.7-.5 3.3c-.2 1.2-1.2 2-2.4 1.8C9.9 18.4 5.6 14.1 4.7 6.9c-.2-1.2.6-2.2 1.8-2.4Z" /></svg></span><div><b>Call Us</b><span>+91 91791 91939<br />24/7 Emergency</span></div></div>
+          <div className="footer-location"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 21s7-5.1 7-11a7 7 0 1 0-14 0c0 5.9 7 11 7 11Z" /><circle cx="12" cy="10" r="2.3" /></svg></span><div><b>Visit Us</b><span>Shekhar Central, M1 &amp; M2, Palasia Square,<br />Manorama Ganj, Indore, Madhya Pradesh 452001</span></div></div>
+          <div className="footer-phone"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5.5 3.5 8.8 3l1.7 4.2-2.1 1.7c1.2 2.5 3.2 4.5 5.7 5.7l1.7-2.1 4.2 1.7-.5 3.3c-.2 1.2-1.2 2-2.4 1.8C9.9 18.4 5.6 14.1 4.7 6.9c-.2-1.2.6-2.2 1.8-2.4Z" /></svg></span><div><b>Call Us</b><span>+91 91791 91939</span></div></div>
           <div className="footer-email"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2" /><path d="m4 7 8 6 8-6" /></svg></span><div><b>Email Us</b><span>info@shantieyetech.com</span></div></div>
-          <div className="footer-hours"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></svg></span><div><b>Working Hours</b><span>Mon - Sat: 9:00 AM - 7:00 PM<br />Sunday: 10:00 AM - 4:00 PM</span></div></div>
+          <div className="footer-hours"><span className="footer-contact-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5" /><path d="M12 7v5l3 2" /></svg></span><div><b>Working Hours</b><span>Mon - Sat: 10:00 AM - 7:00 PM<br />Sunday: Closed</span></div></div>
         </div>
         <div className="footer-bottom">
-          <span>© 2026 Shanti EyeTech. All rights reserved.</span>
-          <div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-conditions">Terms &amp; Conditions</Link><a href="#">Cookie Policy</a></div>
+          <span>© 2026 Shanti Eye Tech. All rights reserved.</span>
+          <div><Link href="/privacy-policy">Privacy Policy</Link><Link href="/terms-conditions">Terms &amp; Conditions</Link><Link href="/cookie-policy">Cookie Policy</Link></div>
         </div>
       </div>
     </footer>

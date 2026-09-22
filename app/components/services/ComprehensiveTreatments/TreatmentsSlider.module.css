@@ -1,0 +1,124 @@
+/* TreatmentsSlider.module.css */
+
+.sliderWrap {
+  position: relative;
+  padding-bottom: 36px;
+}
+
+.slide {
+  padding: 0 8px;
+}
+
+.fallbackTrack {
+  display: flex;
+  gap: 16px;
+  overflow: hidden;
+}
+
+.fallbackSlide {
+  flex: 0 0 calc(66.6667% - 8px);
+  min-width: 0;
+}
+
+.slide > a,
+.slide :global(a.card) {
+  width: 100% !important;
+  height: 360px;
+  display: block;
+}
+
+.slickArrow {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  transform: translateY(-50%);
+  border: 1.5px solid rgba(15, 23, 42, 0.14);
+  border-radius: 50%;
+  background: #fff;
+  color: #1e293b;
+  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.1);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+}
+
+.slickArrow:hover {
+  background: #1fc6df;
+  color: #fff;
+  border-color: #1fc6df;
+  box-shadow: 0 6px 16px rgba(31, 198, 223, 0.35);
+}
+
+.slickPrev {
+  left: -22px;
+}
+
+.slickNext {
+  right: -22px;
+}
+
+.dots {
+  bottom: -20px !important;
+  height: 20px;
+  margin: 0 !important;
+}
+
+.dots :global(li) {
+  width: 12px !important;
+  height: 12px !important;
+  margin: 0 3px !important;
+}
+
+.dots :global(li button) {
+  width: 12px !important;
+  height: 12px !important;
+  padding: 0 !important;
+}
+
+.dots :global(li button::before) {
+  width: 12px !important;
+  height: 12px !important;
+  line-height: 12px !important;
+  font-size: 9px !important;
+  color: #cbd5e1 !important;
+  opacity: 1 !important;
+}
+
+.dots :global(li.slick-active button::before) {
+  color: #1fc6df !important;
+}
+
+.sliderWrap :global(.slick-track) {
+  display: flex !important;
+}
+
+.sliderWrap :global(.slick-slide) {
+  height: auto;
+}
+
+.sliderWrap :global(.slick-slide) > div {
+  height: 100%;
+}
+
+
+.sliderWrap :global(.slick-list) {
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+@media (max-width: 575px) {
+  .sliderWrap {
+    padding-bottom: 24px;
+  }
+
+  .slide {
+    padding-inline: 0;
+  }
+
+  .fallbackSlide {
+    flex-basis: 100%;
+  }
+}

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { headers } from "next/headers";
 import { notFound } from "next/navigation";
-import { BlogArticleBody } from "../../components/blogs/BlogArticleBody/BlogArticleBody";
+import { BlogRenderer } from "../../components/blogs/BlogRenderer/BlogRenderer";
 import { BlogHero } from "../../components/blogs/BlogHero/BlogHero";
 import { AppointmentSection, Footer, Header } from "../../site-components";
 import { BlogApiError, getBlogBySlug, resolveBlogImageUrl, type PublicBlogSummary } from "@/lib/blogApi";
@@ -92,8 +92,8 @@ export default async function BlogDetailPage({ params }: { params: Promise<{ slu
       <main className={styles.page}>
         <BlogHero blog={blog} />
         <section className={`section ${styles.bodySection}`}>
-          <div className="shell">
-            <BlogArticleBody version={version} title={blog.title} url={url} slug={blog.slug} />
+          <div className={`shell ${styles.bodyShell}`}>
+            <BlogRenderer version={version} title={blog.title} url={url} slug={blog.slug} />
           </div>
         </section>
         <div className="home-page">

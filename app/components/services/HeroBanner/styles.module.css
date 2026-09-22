@@ -47,6 +47,15 @@
   line-height: 1.58;
 }
 
+.reviewedBy {
+  max-width: 560px;
+  margin: 10px 0 0;
+  color: #7c879b;
+  font-size: 13px;
+  font-style: italic;
+  line-height: 1.5;
+}
+
 .actions {
   display: flex;
   flex-wrap: wrap;
@@ -295,6 +304,19 @@
   .metrics span {
     font-size: 13px;
     line-height: 1.35;
+  }
+
+  .retina {
+    min-height: 640px;
+  }
+
+  .retina .shell {
+    min-height: 640px;
+    padding-bottom: 24px;
+  }
+
+  .retina .actions {
+    margin-bottom: 0;
   }
 }
 

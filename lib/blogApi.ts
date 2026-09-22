@@ -47,6 +47,73 @@ export interface BlogTableBlock {
   rows?: string[][];
 }
 
+export interface BlogImageComparisonItem {
+  media_id?: string | null;
+  title?: string;
+  description?: string;
+  url?: string | null;
+  original_url?: string | null;
+  media?: BlogMediaAsset | null;
+}
+
+export interface BlogImageComparisonBlock {
+  enabled?: boolean;
+  heading?: string;
+  items?: BlogImageComparisonItem[];
+}
+
+export interface BlogNumberedListItem {
+  title?: string;
+  description?: string;
+}
+
+export interface BlogNumberedListBlock {
+  enabled?: boolean;
+  heading?: string;
+  items?: BlogNumberedListItem[];
+}
+
+export interface BlogExpertQuoteBlock {
+  enabled?: boolean;
+  quote?: string;
+  name?: string;
+  role?: string;
+  url?: string | null;
+  original_url?: string | null;
+  profile_url?: string | null;
+  media?: BlogMediaAsset | null;
+}
+
+export interface BlogDoctorProfileBlock {
+  enabled?: boolean;
+  name?: string;
+  role?: string;
+  credentials?: string;
+  bio?: string;
+  url?: string | null;
+  original_url?: string | null;
+  profile_url?: string | null;
+  media?: BlogMediaAsset | null;
+}
+
+export interface BlogAppointmentCtaBlock {
+  enabled?: boolean;
+  heading?: string;
+  description?: string;
+  book_appointment?: { enabled?: boolean; label?: string; url?: string };
+  call_now?: { enabled?: boolean; label?: string; phone?: string; url?: string };
+}
+
+export interface BlogSpacerBlock {
+  enabled?: boolean;
+  height?: number | string;
+}
+
+export interface BlogDividerBlock {
+  enabled?: boolean;
+  style?: string;
+}
+
 export interface BlogBlocksDocument {
   blocks?: {
     hero?: BlogHeroBlock;
@@ -63,12 +130,19 @@ export interface BlogBlocksDocument {
     feedback?: BlogFeedbackBlock;
     newsletter?: BlogNewsletterBlock;
     table?: BlogTableBlock;
+    image_comparison?: BlogImageComparisonBlock;
+    numbered_list?: BlogNumberedListBlock;
+    expert_quote?: BlogExpertQuoteBlock;
+    doctor_profile?: BlogDoctorProfileBlock;
+    appointment_cta?: BlogAppointmentCtaBlock;
+    spacer?: BlogSpacerBlock;
+    divider?: BlogDividerBlock;
     disclaimer?: { enabled?: boolean; text?: string };
     share?: { enabled?: boolean };
     [key: string]: unknown;
   };
   sidebar?: {
-    appointment_cta?: unknown;
+    appointment_cta?: BlogAppointmentCtaBlock;
     newsletter?: BlogNewsletterBlock;
     [key: string]: unknown;
   };

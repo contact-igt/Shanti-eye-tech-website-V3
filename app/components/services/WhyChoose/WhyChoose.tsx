@@ -55,8 +55,9 @@ export function WhyChoose({ content, kind }: { content: WhyChooseContent; kind: 
         <SectionHeading eyebrow={content.eyebrow} title={content.title} accent={content.accent} body={content.body} />
         <div className={styles.grid}>
           {content.items.map((item, idx) => (
-            <article className={styles.card} key={item.title}>
-              {renderIcon(item.icon)}
+            <article className={styles.card} data-scroll-active-card key={item.title}>
+              <span className={styles.cardNumber} aria-hidden="true">{String(idx + 1).padStart(2, "0")}</span>
+              <div className={styles.iconGroup}>{renderIcon(item.icon)}</div>
               <h3>{item.title}</h3>
               <p>{item.text}</p>
             </article>

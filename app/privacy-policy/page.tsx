@@ -3,13 +3,18 @@ import { LegalContent, LegalHero, type LegalSection } from "../components/legal"
 import { Footer, Header } from "../site-components";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy",
+  title: {
+    absolute: "Privacy Policy | Shanti Eye Tech",
+  },
   description:
-    "Learn how Shanti EyeTech collects, uses, and protects the personal information you share with us online.",
+    "Learn how Shanti Eye Tech collects, uses, protects and manages personal information submitted through its website.",
+  alternates: {
+    canonical: "https://www.shantieyetech.com/privacy-policy",
+  },
 };
 
 const intro = [
-  "At Shanti EyeTech, we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how information may be collected, used, stored, and protected when you visit our website, submit an enquiry, request an appointment, or communicate with us through the contact options available on the website.",
+  "At Shanti Eye Tech, we respect your privacy and are committed to protecting the personal information you share with us. This Privacy Policy explains how information may be collected, used, stored, and protected when you visit our website, submit an enquiry, request an appointment, or communicate with us through the contact options available on the website.",
   "By using this website, you acknowledge the practices described in this Privacy Policy.",
 ];
 
@@ -36,7 +41,7 @@ const sections: LegalSection[] = [
       },
       {
         type: "p",
-        text: "We may also automatically collect limited technical information such as browser type, device type, IP address, pages visited, referring source, and general website usage information through cookies, analytics tools, and similar technologies.",
+        text: "When you submit an enquiry or appointment form, we use a third-party service to determine the general IP address associated with your submission, for security and fraud-prevention purposes. Our website does not currently use analytics or advertising cookies — see the Cookies and Analytics section below for details.",
       },
       {
         type: "p",
@@ -88,11 +93,11 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "When you submit an appointment request or contact form, the information provided may be used by Shanti EyeTech and authorised personnel to contact you and assist with your enquiry.",
+        text: "When you submit an appointment request or contact form, the information provided may be used by Shanti Eye Tech and authorised personnel to contact you and assist with your enquiry.",
       },
       {
         type: "p",
-        text: "Submitting an online appointment request does not necessarily mean that an appointment has been confirmed. Confirmation may be provided separately by the hospital or clinic team.",
+        text: "Submitting an online appointment request does not necessarily mean that an appointment has been confirmed. Confirmation may be provided separately by the hospital or clinic team. We will use your details to respond to your request and confirm availability separately.",
       },
     ],
   },
@@ -103,15 +108,15 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Our website may use cookies and similar technologies to support website functionality and understand how visitors interact with the site.",
+        text: "Our website does not currently use analytics, advertising, or tracking cookies. We do not use tools such as Google Analytics, Google Tag Manager, Meta/Facebook Pixel, or similar services.",
       },
       {
         type: "p",
-        text: "These technologies may collect information such as pages visited, time spent on the website, device or browser information, and traffic sources.",
+        text: "The Google Map embedded on our Contact page is provided directly by Google. Viewing it may cause Google to set its own cookies and collect information according to Google's own privacy policy; we do not control these third-party cookies. You can avoid this by not loading the embedded map and instead using the address details provided on the Contact page directly.",
       },
       {
         type: "p",
-        text: "Where third-party analytics or advertising services are used, those providers may process information according to their respective privacy practices and applicable law.",
+        text: "If we introduce analytics, advertising, or additional cookies in the future, this section will be updated to name the specific tools used, their purposes, retention periods, and how you can manage your preferences.",
       },
     ],
   },
@@ -124,15 +129,17 @@ const sections: LegalSection[] = [
       {
         type: "ul",
         items: [
-          "Authorised Shanti EyeTech personnel",
-          "Website hosting and technology providers",
-          "Appointment, communication, analytics, or other service providers supporting website operations",
+          "Authorised Shanti Eye Tech personnel",
+          "Our website hosting and technology infrastructure providers",
+          "The backend system used to record and manage appointment and enquiry submissions",
+          "Google Sheets, used internally to log form submissions",
+          "Google Maps, to display our clinic location on the Contact page",
           "Government, regulatory, judicial, or law-enforcement authorities when required by applicable law",
         ],
       },
       {
         type: "p",
-        text: "Service providers are expected to process information only for the purposes for which it is provided and subject to appropriate safeguards.",
+        text: "We take reasonable steps to work only with service providers who process information for the purposes described in this policy.",
       },
     ],
   },
@@ -158,11 +165,11 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Personal information may be retained for as long as reasonably necessary to respond to enquiries, provide requested services, maintain appropriate records, resolve disputes, meet operational requirements, or comply with applicable legal obligations.",
+        text: "Personal information submitted through website enquiry or appointment forms is generally retained only for as long as needed to respond to your request, provide the service requested, maintain appropriate records for continuity of care, resolve disputes, or comply with applicable legal, regulatory, or accounting obligations.",
       },
       {
         type: "p",
-        text: "Information that is no longer required may be deleted, anonymised, or otherwise handled in accordance with applicable requirements.",
+        text: "We have not yet finalised specific retention periods for each category of website data. Information that is no longer required is deleted, anonymised, or otherwise handled in accordance with applicable requirements, and this section will be updated once specific retention periods are set.",
       },
     ],
   },
@@ -177,6 +184,10 @@ const sections: LegalSection[] = [
       },
       {
         type: "p",
+        text: "To make such a request, email info@shantieyetech.com with your name, contact details, and a description of your request. We will aim to acknowledge your request promptly and respond after taking reasonable steps to verify your identity, in accordance with applicable law.",
+      },
+      {
+        type: "p",
         text: "Certain information may need to be retained where required for legitimate healthcare, legal, regulatory, or record-keeping purposes.",
       },
     ],
@@ -188,7 +199,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Our website may contain links to third-party websites or services. Shanti EyeTech is not responsible for the privacy practices, security, or content of external websites.",
+        text: "Our website may contain links to third-party websites or services. Shanti Eye Tech is not responsible for the privacy practices, security, or content of external websites.",
       },
       {
         type: "p",
@@ -203,7 +214,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Information concerning children should be submitted by, or with the involvement of, a parent or legal guardian where appropriate.",
+        text: "A parent or legal guardian should submit information for a child. We may request information needed to verify that authority where required.",
       },
       {
         type: "p",
@@ -218,7 +229,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Information available on the Shanti EyeTech website is provided for general educational and informational purposes only.",
+        text: "Information available on the Shanti Eye Tech website is provided for general educational and informational purposes only.",
       },
       {
         type: "p",
@@ -237,7 +248,7 @@ const sections: LegalSection[] = [
     blocks: [
       {
         type: "p",
-        text: "Shanti EyeTech may update this Privacy Policy periodically to reflect changes in website functionality, operational practices, legal requirements, or the services we use.",
+        text: "Shanti Eye Tech may update this Privacy Policy periodically to reflect changes in website functionality, operational practices, legal requirements, or the services we use.",
       },
       {
         type: "p",
@@ -256,8 +267,8 @@ const sections: LegalSection[] = [
       },
     ],
     contact: {
-      name: "Shanti EyeTech",
-      address: "Indore, Madhya Pradesh, India",
+      name: "Shanti Eye Tech",
+      address: "Shekhar Central, M1 & M2, Palasia Square, Manorama Ganj, Indore, Madhya Pradesh 452001",
       email: "info@shantieyetech.com",
     },
   },
@@ -271,7 +282,7 @@ export default function PrivacyPolicyPage() {
         <LegalHero
           eyebrow="LEGAL & PRIVACY"
           title="Privacy Policy"
-          description="How Shanti EyeTech collects, uses, and protects the information you share with us when you visit our website or reach out for care."
+          description="How Shanti Eye Tech collects, uses, and protects the information you share with us when you visit our website or reach out for care."
           lastUpdated="August 2026"
         />
         <LegalContent intro={intro} sections={sections} />

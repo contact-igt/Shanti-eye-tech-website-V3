@@ -22,7 +22,7 @@ export function TrustStrip() {
             <span>
               <Award size={20} />
             </span>{" "}
-            25+ Years Excellence
+            20+ Years Excellence
           </li>
           <li>
             <span>
@@ -60,7 +60,7 @@ export function TrustStrip() {
             <span>
               <Award size={20} />
             </span>{" "}
-            25+ Years Excellence
+            20+ Years Excellence
           </li>
           <li>
             <span>

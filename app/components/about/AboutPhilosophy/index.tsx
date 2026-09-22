@@ -21,7 +21,7 @@ export function AboutPhilosophy() {
             </span>
             <h3>Our Mission</h3>
             <p>
-              To provide accessible, world-class ophthalmology care that transforms lives through clinical excellence, compassionate service, and continuous innovation.
+              To offer accessible, state-of-the-art, and tailored eye care solutions under one roof at an affordable cost, ensuring that every needy patient regains sight and hope.
             </p>
           </article>
           <article className="philosophy-card philosophy-vision">
@@ -33,7 +33,7 @@ export function AboutPhilosophy() {
             </span>
             <h3>Our Vision</h3>
             <p>
-              To be the most trusted name in eye care, setting standards for quality, innovation, and patient satisfaction across the region.
+              To become a center of excellence in delivering comprehensive eye care services aimed at restoring sight and fostering hope.
             </p>
           </article>
           <article className="philosophy-card philosophy-values">
