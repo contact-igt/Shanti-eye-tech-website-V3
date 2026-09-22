@@ -10079,6 +10079,7 @@ option.option-placeholder {
 
 .home-page .numbers-grid article {
   isolation: isolate;
+  overflow: hidden;
 }
 
 .home-page .numbers-grid article > .number-watermark {
@@ -11090,7 +11091,7 @@ option.option-placeholder {
 }
 
 .home-page .numbers-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 24px;
   align-items: stretch;
 }
