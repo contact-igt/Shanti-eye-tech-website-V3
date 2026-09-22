@@ -272,12 +272,16 @@ const whyIcon = (path: ReactNode) => (
 );
 
 const whyItems = [
+<<<<<<< Updated upstream
   { icon: "01", title: "Expert Surgeons", text: "20+ years of specialized cataract surgery experience" },
+=======
+  { icon: "01", title: "Expert Surgeons", text: "20+ years of ophthalmology experience, with specialized training in advanced phaco cataract surgery." },
+>>>>>>> Stashed changes
   { icon: "02", title: "Advanced Technology", text: "State-of-the-art equipment for precision and safety" },
   { icon: "03", title: "Personalized Care", text: "Customized treatment plans for your unique needs" },
   { icon: "04", title: "Compassionate Team", text: "Dedicated support throughout your journey" },
   { icon: "05", title: "Quick Recovery", text: "Most patients resume activities within days" },
-  { icon: "06", title: "Comprehensive Support", text: "Lifetime post-operative care and monitoring" },
+  { icon: "06", title: "Comprehensive Support", text: "Planned post-operative follow-up and monitoring as advised by your ophthalmologist." },
   { icon: "07", title: "Premium IOL Options", text: "Multiple lens choices for optimal vision correction" },
   { icon: "08", title: "Proven Results", text: "15,000+ successful cataract procedures" },
 ];
@@ -490,7 +494,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
           config.kind === "cataract" ? (
             <section className="section comparison-section cataract-comparison-section">
               <div className="shell">
-                <SectionHeading title="Choose the" accent="Vision You Want" body="The lens you choose shapes the rest of your life. Want to put your glasses away for good? There's a lens for that. Happy using readers? That works too. Here's the honest, side-by-side comparison - no pressure, no up-sell." />
+                <SectionHeading title="Choose the" accent="Vision You Want" body="Looking to reduce your dependence on glasses? Different IOL options may support different visual needs." />
                 <div className="lens-comparison-wrap">
                   <div className="lens-comparison-table" role="table" aria-label="Cataract lens comparison">
                     <div className="lens-row lens-head" role="row">

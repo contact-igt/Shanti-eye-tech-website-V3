@@ -16,7 +16,11 @@ export function AboutHero() {
             <span>Visionary Care</span>
           </h1>
           <p>
+<<<<<<< Updated upstream
             For over two decades, Shanti Eye Tech has provided eye care in Indore, combining clinical expertise, advanced technology and compassionate support.
+=======
+            Shanti EyeTech provides personalized eye care in Indore, combining clinical expertise, advanced technology and compassionate support.
+>>>>>>> Stashed changes
           </p>
           <div className="hero-buttons">
             <Link

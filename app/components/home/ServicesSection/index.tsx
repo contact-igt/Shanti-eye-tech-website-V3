@@ -13,7 +13,11 @@ const services = [
   [
     "02",
     "Retina Care",
+<<<<<<< Updated upstream
     "Evaluation and management of retinal conditions, with treatment recommendations based on clinical findings.",
+=======
+    "Dilated retinal examination to detect and diagnose retinal diseases, with guidance for further diagnostic procedures and treatment options.",
+>>>>>>> Stashed changes
     "/services/retina",
   ],
   [

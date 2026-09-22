@@ -31,10 +31,9 @@ export function AboutStory() {
           <p>
             For us, restoring vision is more than a medical outcome. It is about helping people return to everyday life with greater comfort, confidence, and peace of mind.
           </p>
-          <blockquote>
-            “Our commitment is not just to restore vision, but to enhance the quality of life for every patient who walks through our doors.”
-            <small>— Dr. Amit N Solanki, Founder &amp; Medical Director</small>
-          </blockquote>
+          <p>
+            Shanti EyeTech focuses on personalized eye care aimed at improving vision, comfort and quality of life.
+          </p>
         </div>
       </div>
     </section>

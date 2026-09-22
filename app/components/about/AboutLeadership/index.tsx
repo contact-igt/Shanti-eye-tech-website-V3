@@ -47,13 +47,17 @@ export function AboutLeadership() {
         <div className="leadership-layout">
           <div className="leadership-photo-wrap">
             <img src="/assets/home/doctor-profile.webp" alt="Dr. Amit N Solanki" />
-            <span>Founder &amp; Medical Director</span>
+            <span>Director — Dr. Amit N. Solanki</span>
           </div>
           <div className="leadership-copy">
             <h2>Dr. Amit N Solanki</h2>
             <h4>MBBS, DOMS, DNB, FAECS</h4>
             <p>
+<<<<<<< Updated upstream
               With over 20 years of dedicated service in ophthalmology since 2003, Dr. Amit N Solanki is a pioneer in advanced cataract, glaucoma, and refractive surgery. His commitment to combining clinical excellence with compassionate care has been the cornerstone of Shanti Eye Tech’s success.
+=======
+              Dr. Amit N. Solanki is a Cataract, Glaucoma &amp; Refractive-LASIK-LASER surgeon with more than 20 years of experience in ophthalmology.
+>>>>>>> Stashed changes
             </p>
             <p>
               Dr. Solanki completed MBBS at B.J. Medical College, Ahmedabad; DOMS at M. &amp; J. Western Regional Institute of Ophthalmology; DNB Ophthalmology at Aravind Eye Hospital; and advanced phacoemulsification and glaucoma training at Aravind Eye Care Hospital, Coimbatore.
