@@ -10080,6 +10080,15 @@ option.option-placeholder {
 .home-page .numbers-grid article {
   isolation: isolate;
   overflow: hidden;
+  transition: transform 0.35s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.35s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, box-shadow;
+  cursor: pointer;
+}
+
+.home-page .numbers-grid article:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 36px rgba(35, 66, 108, 0.12);
+  border-color: rgba(22, 193, 225, 0.4);
 }
 
 .home-page .numbers-grid article > .number-watermark {
@@ -10095,6 +10104,11 @@ option.option-placeholder {
   letter-spacing: -0.075em !important;
   white-space: nowrap;
   pointer-events: none;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.home-page .numbers-grid article:hover > .number-watermark {
+  transform: scale(1.06) translateY(-2px);
 }
 
 .home-page .numbers-grid article > b,
