@@ -41,6 +41,7 @@ export function TechnologySlider({ items }: { items: { title: string; text: stri
         <Slider
           slidesToShow={slidesToShow}
           slidesToScroll={1}
+          initialSlide={0}
           infinite
           autoplay
           autoplaySpeed={3500}
