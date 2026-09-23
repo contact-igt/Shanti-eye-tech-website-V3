@@ -66,42 +66,42 @@
   top: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 100% !important;
+  width: 55% !important;
   height: 100% !important;
   display: flex !important;
   align-items: flex-end !important;
   justify-content: flex-end !important;
   z-index: 1 !important;
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 .homeHero :global(.hero-doctor-bg) {
   position: absolute !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 50% !important;
-  height: 60% !important;
-  object-position: top !important;
-  object-fit: cover !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
   z-index: 1 !important;
 }
 
 .homeHero :global(.hero-doctor-img) {
   position: absolute !important;
-  bottom: 0 !important;
   right: 0 !important;
-  z-index: 2 !important;
-  height: auto !important;
+  bottom: 0 !important;
+  height: 100% !important;
   max-height: 100% !important;
   width: auto !important;
-  max-width: 800px !important;
+  max-width: 100% !important;
   object-fit: contain !important;
   object-position: right bottom !important;
+  z-index: 2 !important;
   display: block !important;
-  bottom: -120px !important;
-  max-height: 100% !important;
-  width: 51% !important;
-  object-fit: cover !important;
+  transform: none !important;
 }
 
 .homeHero :global(.hero-metrics) {
@@ -168,10 +168,6 @@
   .homeHero :global(.hero-layout) {
     min-height: 680px !important;
   }
-  .homeHero :global(.hero-doctor-img) {
-    bottom: -68px !important;
-    width: 52% !important;
-  }
 }
 
 @media (max-width: 1500px) {
@@ -179,20 +175,12 @@
   .homeHero :global(.hero-layout) {
     min-height: 680px !important;
   }
-  .homeHero :global(.hero-doctor-img) {
-    bottom: -68px !important;
-    width: 54% !important;
-  }
 }
 
 @media (max-width: 1400px) {
   .homeHero,
   .homeHero :global(.hero-layout) {
     min-height: 680px !important;
-  }
-  .homeHero :global(.hero-doctor-img) {
-    bottom: -68px !important;
-    width: 55% !important;
   }
 }
 
@@ -214,10 +202,6 @@
   .homeHero,
   .homeHero :global(.hero-layout) {
     min-height: 600px !important;
-  }
-  .homeHero :global(.hero-doctor-img) {
-    bottom: 0px !important;
-    width: 50% !important;
   }
 }
 
@@ -252,7 +236,7 @@
     right: 0 !important;
     bottom: 0 !important;
     width: 100% !important;
-    height: 470px !important;
+    height: 420px !important;
     display: flex !important;
     align-items: flex-end !important;
     justify-content: flex-end !important;
@@ -262,27 +246,24 @@
     position: absolute !important;
     bottom: 0 !important;
     right: 0 !important;
-    /* height: 100% !important; */
+    height: 100% !important;
     max-height: 420px !important;
-    width: 100% !important;
-    object-fit: cover !important;
+    width: auto !important;
+    object-fit: contain !important;
     object-position: right bottom !important;
-    max-height: 470px !important;
-    width: 80% !important;
-    object-position: right top !important;
-    min-height: 430px;
+    z-index: 1 !important;
   }
   .homeHero :global(.hero-doctor-img) {
     position: absolute !important;
-    bottom: -4px !important;
+    bottom: 0 !important;
     right: 0 !important;
-    transform: rotatez(1deg);
-    height: auto !important;
-    max-height: 490px !important;
-    width: 60% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
+    height: 100% !important;
+    max-height: 420px !important;
+    width: auto !important;
+    object-fit: contain !important;
     object-position: right bottom !important;
+    z-index: 2 !important;
+    transform: none !important;
   }
 }
 
