@@ -13821,7 +13821,7 @@ option.option-placeholder {
 .home-page .hero-copy h1 span {
   color: #1fc6df !important;
   font-weight: 800 !important;
-  white-space: nowrap !important;
+  white-space: normal !important;
 }
 
 .home-page .hero-copy p {
