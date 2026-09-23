@@ -1020,6 +1020,10 @@
   line-height: 1;
 }
 
+.cataractAgeBadge em {
+  margin-top: 6px;
+}
+
 .cataractNote {
   border-color: #ffd7a8;
   background: #fff8ef;

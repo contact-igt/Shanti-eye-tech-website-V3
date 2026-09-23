@@ -1,12 +1,12 @@
-import Link from "next/link";
-import { Award, Users } from "lucide-react";
+import { Award, Star, Users } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { CountUp } from "@/app/client";
 import styles from "./styles.module.css";
 
 const metrics = [
-  { value: 25, suffix: "+", label: "Years Excellence", icon: Award },
+  { value: 20, suffix: "+", label: "Years Excellence", icon: Award },
   { value: 50, suffix: "K+", label: "Happy Patients", icon: Users },
+  { value: 97, suffix: "%", label: "Patient Satisfaction", icon: Star },
 ];
 
 export function TreatmentsOverviewHero() {
