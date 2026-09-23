@@ -26,6 +26,13 @@
   align-self: center !important;
 }
 
+@media (min-width: 1201px) {
+  .homeHero :global(.hero-copy),
+  .homeHero :global(.hero-copy) h1 {
+    max-width: 700px !important;
+  }
+}
+
 .homeHero :global(.hero-copy) :global(.eyebrow) {
   margin-bottom: 10px !important;
 }
