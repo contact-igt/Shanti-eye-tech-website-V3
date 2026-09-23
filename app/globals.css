@@ -13844,42 +13844,42 @@ option.option-placeholder {
   top: 0 !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 100% !important;
+  width: 55% !important;
   height: 100% !important;
   display: flex !important;
   align-items: flex-end !important;
   justify-content: flex-end !important;
   z-index: 1 !important;
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 .home-page .hero-doctor-bg {
   position: absolute !important;
   right: 0 !important;
   bottom: 0 !important;
-  width: 50% !important;
-  height: 60% !important;
-  object-position: top !important;
-  object-fit: cover !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  width: auto !important;
+  max-width: 100% !important;
+  object-fit: contain !important;
+  object-position: right bottom !important;
   z-index: 1 !important;
 }
 
 .home-page .hero-doctor-img {
   position: absolute !important;
-  bottom: 0 !important;
   right: 0 !important;
-  z-index: 2 !important;
-  height: auto !important;
+  bottom: 0 !important;
+  height: 100% !important;
   max-height: 100% !important;
   width: auto !important;
-  max-width: 800px !important;
+  max-width: 100% !important;
   object-fit: contain !important;
   object-position: right bottom !important;
+  z-index: 2 !important;
   display: block !important;
-  bottom: -120px !important;
-  max-height: 100% !important;
-  width: 51% !important;
-  object-fit: cover !important;
+  transform: none !important;
 }
 
 .home-page .hero-metrics,
@@ -13988,11 +13988,6 @@ option.option-placeholder {
   .home-page .hero-layout {
     min-height: 680px !important;
   }
-
-  .home-page .hero-doctor-img {
-    bottom: -68px !important;
-    width: 52% !important;
-  }
 }
 
 @media (max-width: 1500px) {
@@ -14000,22 +13995,12 @@ option.option-placeholder {
   .home-page .hero-layout {
     min-height: 680px !important;
   }
-
-  .home-page .hero-doctor-img {
-    bottom: -68px !important;
-    width: 54% !important;
-  }
 }
 
 @media (max-width: 1400px) {
   .home-page .home-hero,
   .home-page .hero-layout {
     min-height: 680px !important;
-  }
-
-  .home-page .hero-doctor-img {
-    bottom: -68px !important;
-    width: 55% !important;
   }
 }
 
@@ -14040,11 +14025,6 @@ option.option-placeholder {
   .home-page .home-hero,
   .home-page .hero-layout {
     min-height: 600px !important;
-  }
-
-  .home-page .hero-doctor-img {
-    bottom: 0px !important;
-    width: 50% !important;
   }
 
   .about-hero h1 {
@@ -14114,25 +14094,23 @@ option.option-placeholder {
     right: 0 !important;
     height: 100% !important;
     max-height: 420px !important;
-    width: 100% !important;
-    object-fit: cover !important;
+    width: auto !important;
+    object-fit: contain !important;
     object-position: right bottom !important;
-    max-height: 470px !important;
-    width: 80% !important;
-    object-position: right top !important;
-    min-height: 430px;
+    z-index: 1 !important;
   }
 
   .home-page .hero-doctor-img {
     position: absolute !important;
-    bottom: -20px !important;
+    bottom: 0 !important;
     right: 0 !important;
-    height: auto !important;
-    max-height: 450px !important;
-    width: 60% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
+    height: 100% !important;
+    max-height: 420px !important;
+    width: auto !important;
+    object-fit: contain !important;
     object-position: right bottom !important;
+    z-index: 2 !important;
+    transform: none !important;
   }
 }
 
@@ -14157,38 +14135,9 @@ option.option-placeholder {
     height: 360px !important;
   }
 
-  .home-page .hero-doctor-bg {
+  .home-page .hero-doctor-bg,
+  .home-page .hero-doctor-img {
     max-height: 360px !important;
-  }
-
-  .home-page .hero-doctor-img {
-    max-height: 340px !important;
-  }
-
-  .home-page .hero-doctor-bg {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
-    max-height: 340px !important;
-    width: 80% !important;
-    object-position: right top !important;
-    min-height: 340px;
-  }
-
-  .home-page .hero-doctor-img {
-    position: absolute !important;
-    bottom: -20px !important;
-    right: 0 !important;
-    height: auto !important;
-    max-height: 450px !important;
-    width: 68% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
   }
 }
 
@@ -14237,32 +14186,6 @@ option.option-placeholder {
   .home-page .hero-doctor-img {
     max-height: 320px !important;
   }
-
-  .home-page .hero-doctor-bg {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
-    max-height: 340px !important;
-    width: 90% !important;
-    object-position: right top !important;
-    min-height: 340px;
-  }
-
-  .home-page .hero-doctor-img {
-    position: absolute !important;
-    bottom: -20px !important;
-    right: 0 !important;
-    height: auto !important;
-    max-height: 450px !important;
-    width: 78% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
-  }
 }
 
 /* 430px & 390px Mobile Small Breakpoints */
@@ -14288,32 +14211,6 @@ option.option-placeholder {
   .home-page .hero-doctor-img {
     max-height: 320px !important;
   }
-
-  .home-page .hero-doctor-bg {
-    position: absolute !important;
-    bottom: 0 !important;
-    right: 0 !important;
-    height: 100% !important;
-    width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
-    max-height: 340px !important;
-    width: 100% !important;
-    object-position: right top !important;
-    min-height: 340px;
-  }
-
-  .home-page .hero-doctor-img {
-    position: absolute !important;
-    bottom: -20px !important;
-    right: 0 !important;
-    height: auto !important;
-    max-height: 450px !important;
-    width: 85% !important;
-    max-width: 100% !important;
-    object-fit: cover !important;
-    object-position: right bottom !important;
-  }
 }
 
 @media (max-width: 390px) {
@@ -14332,10 +14229,6 @@ option.option-placeholder {
   .home-page .hero-doctor-bg,
   .home-page .hero-doctor-img {
     max-height: 330px !important;
-  }
-
-  .home-page .hero-doctor-img {
-    width: 100% !important;
   }
 }
 
