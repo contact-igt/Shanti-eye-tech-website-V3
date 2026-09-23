@@ -4322,6 +4322,7 @@ option.option-placeholder {
 
 .contact-send-btn {
   display: inline-flex;
+  margin-top: 14px;
   align-items: center;
   justify-content: center;
   gap: 8px;

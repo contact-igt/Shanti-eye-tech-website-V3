@@ -56,6 +56,21 @@
 @media (min-width: 993px) {
   .aboutHero.aboutHero { min-height: auto !important; }
   .aboutHero :global(.about-hero-layout) { min-height: 0 !important; padding-top: 0 !important; padding-bottom: 0 !important; }
+
+  .aboutHero :global(.photo-stats) {
+    position: absolute !important;
+    left: 24px !important;
+    right: auto !important;
+    bottom: 24px !important;
+    display: grid !important;
+    width: 452px !important;
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    padding: 22px 20px !important;
+    border-radius: 22px !important;
+  }
+
+  .aboutHero :global(.photo-stats) b { font-size: 29px !important; }
+  .aboutHero :global(.photo-stats) span { font-size: 13px !important; }
 }
 
 .aboutHero :global(.eyebrow) {

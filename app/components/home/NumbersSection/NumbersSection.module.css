@@ -92,8 +92,16 @@
 }
 
 @media (min-width: 901px) {
+  .numbersSection :global(.numbers-grid) {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 24px !important;
+  }
+
   .numbersSection :global(.numbers-grid) article {
-    border-bottom-width: 6px;
+    min-height: 238px !important;
+    padding: 44px 38px 36px !important;
+    border-radius: 20px !important;
+    border-bottom-width: 6px !important;
   }
 
   .numbersSection :global(.numbers-grid) article:nth-child(odd) {
@@ -102,6 +110,15 @@
 
   .numbersSection :global(.numbers-grid) article:nth-child(even) {
     border-bottom-color: #16c1e1;
+  }
+
+  .numbersSection :global(.numbers-grid) b {
+    font-size: 58px !important;
+  }
+
+  .numbersSection :global(.numbers-grid) article > span:last-child {
+    font-size: 16px !important;
+    line-height: 1.5 !important;
   }
 }
 
