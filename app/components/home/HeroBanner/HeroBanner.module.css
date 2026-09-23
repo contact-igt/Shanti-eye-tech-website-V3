@@ -27,9 +27,15 @@
 }
 
 @media (min-width: 1201px) {
-  .homeHero :global(.hero-copy),
-  .homeHero :global(.hero-copy) h1 {
+  :global(.home-page) .homeHero :global(.hero-copy),
+  :global(.home-page) .homeHero :global(.hero-copy) h1 {
     max-width: 700px !important;
+  }
+
+  :global(.home-page) .homeHero :global(.hero-copy) h1 {
+    font-size: clamp(2.75rem, 3.85vw, 4.4rem) !important;
+    line-height: 1.1 !important;
+    margin-bottom: 24px !important;
   }
 }
 
