@@ -1,5 +1,3 @@
-import Link from "next/link";
-import { ArrowRight } from "lucide-react";
 import { FeatureGrid, SectionHeading } from "@/app/site-components";
 import styles from "./CommitmentSection.module.css";
 
@@ -38,18 +36,6 @@ export function CommitmentSection() {
             },
           ]}
         />
-        <Link
-          className="button button-primary center-button"
-          href="/contact#contact-form"
-          style={{
-            display: "flex",
-            alignItems: "center",
-            gap: "6px",
-            justifyContent: "center",
-          }}
-        >
-          Experience the Difference <ArrowRight size={18} />
-        </Link>
       </div>
     </section>
   );
