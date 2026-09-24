@@ -347,7 +347,7 @@ export function AppointmentSection({
           <Eyebrow>{isModernService ? "TAKE THE FIRST STEP" : "BOOK NOW"}</Eyebrow>
           <h2>
             {isOverview
-              ? "Not Sure Which Service You Need?"
+              ? <>Not Sure Which <span>Service You Need?</span></>
               : withForm
                 ? <>{"Ready to See"}<br />{"the World Clearly?"}</>
                 : isDoctor

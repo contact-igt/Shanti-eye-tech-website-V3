@@ -234,9 +234,3 @@
 /* Shared comparison section tablet/mobile flow. */
 @media (max-width: 900px) { .shell { width: min(720px, calc(100% - 40px)); } .tableWrap { margin-inline: -2px; } .note { margin-top: 30px; } }
 @media (max-width: 640px) { .section { padding: 72px 0 82px; } .shell { width: min(100% - 30px, 520px); } .tableWrap { border-radius: 14px; } .table { min-width: calc(170px + var(--cols, 4) * 160px); border-radius: 14px; } .row { grid-template-columns: 170px repeat(var(--cols, 4), 160px); } .row > div { min-height: 68px; padding: 12px; font-size: 13px; } .imageRow img { width: 84px; height: 84px; } .note { gap: 12px; padding: 18px; border-radius: 14px; } .noteTextWrap b { font-size: 15px; } .noteTextWrap span { font-size: 14px; } .cta { width: 100%; min-height: 50px; margin-top: 26px; gap: 10px; padding-inline: 18px; font-size: clamp(12px, 3.5vw, 14px); } }
-
-@media (min-width: 360px) and (max-width: 640px) {
-  .cta > span {
-    white-space: nowrap;
-  }
-}
