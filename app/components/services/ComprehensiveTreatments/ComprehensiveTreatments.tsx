@@ -61,7 +61,7 @@ export function ComprehensiveTreatments() {
     <section className={styles.section} id="treatments" aria-labelledby="comprehensive-treatments-title">
       <div className={styles.shell}>
         <header className={styles.heading}>
-          <h2 id="comprehensive-treatments-title">Comprehensive Treatments</h2>
+          <h2 id="comprehensive-treatments-title">Comprehensive <span>Treatments</span></h2>
           <p>
             We provide specialized care for a wide spectrum of ocular conditions using state-of-the-art technology and evidence-based clinical practices.
           </p>

@@ -53,7 +53,7 @@ export function OverviewWhyFaq() {
       <div className={styles.shell}>
         <div className={styles.whyColumn}>
           <header className={styles.intro}>
-            <h2 id="why-shanti-title">Why Shanti Eye Tech?</h2>
+            <h2 id="why-shanti-title">Why <span>Shanti Eye Tech?</span></h2>
             <p>
               We combine technical precision with clinical empathy, helping every patient feel informed, comfortable, and cared for throughout treatment.
             </p>

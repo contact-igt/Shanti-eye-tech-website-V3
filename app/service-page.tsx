@@ -578,7 +578,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
                     <span>The best procedure is not the most popular one. The best procedure is the one that is safest for your eyes, your cornea, your power, and your lifestyle. That is why we do a detailed evaluation before recommending anything.</span>
                   </div>
                 </div>
-                <Link className="button button-primary center-button lasik-recommendation-button" href="/contact#contact-form"><span>Get My Personalised Vision Correction Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
+                <Link className="button button-primary center-button lasik-recommendation-button" href="/contact#contact-form"><span>Get My Personalised Vision Correction <br className="lasik-recommendation-break" />Recommendation</span><img src="/assets/white_arrow.png" alt="" aria-hidden="true" /></Link>
               </div>
             </section>
           )

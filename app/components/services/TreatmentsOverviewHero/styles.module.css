@@ -67,12 +67,7 @@
 }
 
 .accentLine {
-  color: #1fc6df !important;
-  background: linear-gradient(90deg, #1fc6df 0%, #0872d9 88%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  padding-right: 14px;
+  color: var(--cyan) !important;
 }
 
 
