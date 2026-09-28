@@ -9,6 +9,7 @@ interface GoogleReviewBadgeProps {
   totalReviews?: number;
   avatarUrl?: string;
   reviewUrl?: string;
+  buttonText?: string;
 }
 
 export function GoogleReviewBadge({
@@ -18,7 +19,26 @@ export function GoogleReviewBadge({
   totalReviews = 776,
   avatarUrl = "/assets/home/doctor-profile.webp",
   reviewUrl = "https://www.google.com/search?q=Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Indore#lrd=0x3962fd5037568439:0xb4160c93774cf232,3",
+  buttonText = "Write a Google Review",
 }: GoogleReviewBadgeProps) {
+  const handleReviewClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
+    e.preventDefault();
+    const width = 640;
+    const height = 720;
+    const left = Math.max(0, window.screenX + (window.outerWidth - width) / 2);
+    const top = Math.max(0, window.screenY + (window.outerHeight - height) / 2);
+
+    const popup = window.open(
+      reviewUrl,
+      "GoogleReviewPopup",
+      `width=${width},height=${height},left=${left},top=${top},toolbar=no,menubar=no,location=yes,status=no,scrollbars=yes,resizable=yes`
+    );
+
+    // If popup was blocked by browser, open normally in new tab
+    if (!popup || popup.closed || typeof popup.closed === "undefined") {
+      window.open(reviewUrl, "_blank", "noopener,noreferrer");
+    }
+  };
   return (
     <div className={styles.googleBadgeCard}>
       <div className={styles.badgeHeader}>
@@ -67,9 +87,11 @@ export function GoogleReviewBadge({
           href={reviewUrl}
           target="_blank"
           rel="noopener noreferrer"
+          onClick={handleReviewClick}
           className={styles.reviewButton}
+          aria-label={`${buttonText} Google (opens review popup)`}
         >
-          <span>review us on</span>
+          <span>{buttonText}</span>
           <span className={styles.gLogoCircle}>
             <svg viewBox="0 0 24 24" className={styles.gLogoSvg}>
               <path

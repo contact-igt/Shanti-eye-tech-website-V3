@@ -592,7 +592,7 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
         <section className="section cataract-testimonials-section service-testimonials-section">
           <div className="shell">
             <SectionHeading eyebrow="PATIENT STORIES" title="You're Not Alone," accent="Hear From Others Like You" body={serviceStoryBodies[config.kind]} />
-            <GoogleReviewBadge />
+            <GoogleReviewBadge reviewUrl={process.env.GOOGLE_REVIEW_URL} />
             <TestimonialCarousel items={serviceTestimonials[config.kind]} />
           </div>
         </section>

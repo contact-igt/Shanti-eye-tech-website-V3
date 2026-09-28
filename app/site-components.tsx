@@ -4,7 +4,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { AppointmentForm, FaqAccordion } from "./client";
 import { MobileNavDrawer } from "./components/MobileNavDrawer";
-import { getGoogleReviews } from "@/lib/googleReviews";
+import { getGoogleBusinessData } from "@/lib/googleReviews";
 
 export function Header({ active = "" }: { active?: string }) {
   const isServicesPage = active === "services";
@@ -257,15 +257,19 @@ export async function Testimonials({
     { quote: "Dr. Amit Solanki was a wonderful surgeon, and the staff was always helpful and kind. They ensured I had a smooth prep, surgery, and follow-up.", name: "Ishita Sheel", meta: "Patient Review" },
     { quote: "I had a very good experience at Shanti Eye Tech Clinic. Dr. Amit Solanki is extremely knowledgeable, patient, and attentive. The staff is also very polite, cooperative, and professional.", name: "Sandeep Debnath", meta: "Patient Review" },
   ];
-  const googleReviews = await getGoogleReviews();
-  const quotes = googleReviews?.length ? googleReviews : fallbackQuotes;
+  const gbpData = await getGoogleBusinessData();
+  const quotes = gbpData?.reviews?.length ? gbpData.reviews : fallbackQuotes;
   const reviewUrl = process.env.GOOGLE_REVIEW_URL || "https://www.google.com/search?q=Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Indore#lrd=0x3962fd5037568439:0xb4160c93774cf232,3";
 
   return (
     <section className="section testimonials soft-section">
       <div className="shell">
         <SectionHeading eyebrow="PATIENT STORIES" title={title} accent={subtitle} />
-        <GoogleReviewBadge reviewUrl={reviewUrl} />
+        <GoogleReviewBadge
+          reviewUrl={reviewUrl}
+          rating={gbpData?.averageRating ?? 4.9}
+          totalReviews={gbpData?.totalReviewCount ?? 776}
+        />
         <TestimonialCarousel items={quotes} />
       </div>
     </section>
