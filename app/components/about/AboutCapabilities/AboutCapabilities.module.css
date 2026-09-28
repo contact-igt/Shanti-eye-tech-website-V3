@@ -63,6 +63,7 @@
 
 .equipmentSlider { margin-inline: -12px; padding-bottom: 36px; }
 .equipmentSlide { padding: 0 12px; }
+.fallback { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 24px; }
 .equipmentSlider :global(.slick-track) { display: flex; }
 .equipmentSlider :global(.slick-slide) { height: auto; }
 .equipmentSlider :global(.slick-slide) > div,
@@ -78,12 +79,14 @@
   .capabilitiesSection :global(.feature-grid.cols-4) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
+  .fallback { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 640px) {
   .capabilitiesSection :global(.feature-grid.cols-4) {
     grid-template-columns: 1fr;
   }
+  .fallback { grid-template-columns: 1fr; }
   .capabilitiesSection :global(.wide-equipment) {
     height: 240px;
   }
