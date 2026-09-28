@@ -69,10 +69,10 @@ const expertise = [
 
 const education = [
   ["MBBS", "B.J. Medical College, New Civil Hospital, Ahmedabad"],
-  ["DOMS – Diploma in Ophthalmology", "M. &amp; J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
+  ["DOMS – Diploma in Ophthalmology", "M. & J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
   ["DNB Ophthalmology", "Aravind Eye Hospital & Postgraduate Institute of Ophthalmology, Tamil Nadu"],
   ["FAECS", "Aravind eye hospital and institue of ophthalmology, Tamilnadu"],
-  ["Phacoemulsification &amp; Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
+  ["Phacoemulsification & Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
   ["LASIK Surgical Training", "Vadodara, Gujarat"],
 ];
 
