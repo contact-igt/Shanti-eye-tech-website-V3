@@ -12734,7 +12734,6 @@ option.option-placeholder {
     position: relative;
     z-index: 1;
     display: block;
-    padding-top: 12px;
     color: #159dc6;
     font-size: 17px;
     font-weight: 800;
@@ -14998,5 +14997,21 @@ option.option-placeholder {
 
 .services-overview-page .appointment-copy h2 span {
   color: #fff !important;
+}
+
+/* Doctor appointment CTA: use the complete content width on narrow screens. */
+@media (max-width: 576px) {
+  .cataract-journey-actions {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    width: 100%;
+  }
+
+  .cataract-journey-btn-primary,
+  .cataract-journey-btn-outline {
+    box-sizing: border-box;
+    justify-content: center;
+    width: 100%;
+  }
 }
 

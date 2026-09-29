@@ -184,7 +184,12 @@
   }
 
   .milestoneSection :global(.timeline) article:last-child {
-    min-height: 120px;
+    min-height: 180px;
+  }
+
+  .milestoneSection :global(.timeline) article:last-child > b,
+  .milestoneSection :global(.timeline) article:last-child > span {
+    visibility: visible !important;
   }
 
   .milestoneSection :global(.timeline) article:last-child > div {
@@ -237,7 +242,10 @@
     background: linear-gradient(#4a8bff, #d7e6ff);
   }
   .milestoneSection :global(.timeline) article {
-    display: block;
+    /* Keep the year and card in normal vertical flow. A global phone rule
+       targets `.timeline article` with a zero-width year track, which would
+       otherwise overlap the year or collapse the final card. */
+    display: block !important;
     position: relative;
     min-height: auto;
     padding: 0 0 28px 0;
@@ -250,7 +258,7 @@
     font-weight: 800;
     letter-spacing: -0.04em;
     padding: 0 0 6px 0;
-    text-align: left;
+    text-align: left !important;
     line-height: 1;
   }
   /* Dot on the left line */
@@ -270,7 +278,8 @@
     box-shadow: 0 0 0 1px #18c51d;
   }
   .milestoneSection :global(.timeline) article > div {
-    width: 100%;
+    box-sizing: border-box;
+    width: 100% !important;
     margin-left: 0;
     padding: 14px 16px;
   }
@@ -280,5 +289,10 @@
   }
   .milestoneSection :global(.timeline) article:last-child > b {
     visibility: visible;
+    color: #94c5f8 !important;
+    font-size: 22px !important;
+    font-weight: 800;
+    line-height: 1;
+    text-align: left !important;
   }
 }
