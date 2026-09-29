@@ -1,4 +1,6 @@
 import type { CSSProperties } from "react";
+import Link from "next/link";
+import { ArrowRight, BookOpen, Brain, CornerDownLeft, CornerDownRight, CornerUpLeft, CornerUpRight, Eye, FileText, ScanEye, UserRoundCheck, UsersRound } from "lucide-react";
 import { Eyebrow } from "../common/Eyebrow/Eyebrow";
 import type { EligibilityContent, ServiceKind } from "@/app/services/types";
 import styles from "./styles.module.css";
@@ -55,9 +57,54 @@ export function EligibilitySection({ content, kind }: { content: EligibilityCont
     );
   }
 
-  if (kind === "retina" || kind === "squint") {
-    const warningChecks = kind === "squint" ? content.checks : content.checks.slice(0, 4);
-    const riskCheck = kind === "squint" ? null : content.checks[4];
+  if (kind === "squint") {
+    const signs = [Eye, Eye, Brain, BookOpen, UserRoundCheck, FileText, UsersRound];
+    const stages = [
+      { number: "01", title: "Before Treatment", image: "/assets/squint/whatissquint1.png", callout: "Eyes misaligned", detail: "Difficulty focusing and depth perception", icon: Eye },
+      { number: "02", title: "Eye Alignment Assessment", image: "/assets/squint/improve_binocular.png", callout: "Precise Evaluation", detail: "Detailed tests to assess eye alignment and visual function", icon: ScanEye },
+      { number: "03", title: "Pediatric Examination", image: "/assets/squint/whatissquint2.png", callout: "Specialist Assessment", detail: "Child-friendly, comprehensive evaluation", icon: UserRoundCheck },
+      { number: "04", title: "Improved Vision After Treatment", image: "/assets/squint/visual_confidence.png", callout: "Better Alignment", detail: "Improved vision, confidence and quality of life", icon: Eye },
+    ];
+
+    return (
+      <section className={`${styles.section} ${styles.squintPathway}`} id="eligibility">
+        <div className={styles.squintPathwayShell}>
+          <div className={styles.squintCopy}>
+            <span className={styles.squintLabel}><Eye aria-hidden="true" /> Squint &amp; Amblyopia</span>
+            <h2>When Should You<br />Consider Evaluation?</h2>
+            <p>A timely evaluation can help detect squint (misalignment of the eyes) and amblyopia (lazy eye) early. You may consider consultation if you experience:</p>
+            <ul className={styles.squintChecks}>
+              {content.checks.slice(0, 7).map((item, index) => {
+                const Icon = signs[index];
+                return <li key={item}><span><Icon aria-hidden="true" /></span>{item}</li>;
+              })}
+            </ul>
+            <Link className={styles.squintCta} href="/contact#contact-form">Book an Evaluation <span><ArrowRight aria-hidden="true" /></span></Link>
+          </div>
+
+          <div className={styles.pathwayVisual} aria-label="Squint assessment and treatment pathway">
+            <CornerDownRight className={`${styles.pathArrow} ${styles.pathArrowOne}`} aria-hidden="true" />
+            <CornerDownLeft className={`${styles.pathArrow} ${styles.pathArrowTwo}`} aria-hidden="true" />
+            <CornerUpLeft className={`${styles.pathArrow} ${styles.pathArrowThree}`} aria-hidden="true" />
+            <CornerUpRight className={`${styles.pathArrow} ${styles.pathArrowFour}`} aria-hidden="true" />
+            <i className={styles.pathDots} aria-hidden="true" />
+            {stages.map(({ number, title, image, callout, detail, icon: Icon }, index) => (
+              <article className={`${styles.pathStage} ${styles[`pathStage${index + 1}`]}`} key={number}>
+                <img src={image} alt={title} />
+                <div className={styles.stageTitle}><b>{number}</b><span>{title}</span></div>
+                <div className={styles.stageCallout}><i><Icon aria-hidden="true" /></i><span><b>{callout}</b><small>{detail}</small></span></div>
+              </article>
+            ))}
+            <div className={styles.pathwayPlan}><Eye aria-hidden="true" /> <span>Personalized Treatment Plan</span></div>
+          </div>
+        </div>
+      </section>
+    );
+  }
+
+  if (kind === "retina") {
+    const warningChecks = content.checks.slice(0, 4);
+    const riskCheck = content.checks[4];
 
     const defaultWarningImages = [
       { image: "/assets/retina/blurred-vision.jpg", label: "Blurred Vision" },
