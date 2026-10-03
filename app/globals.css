@@ -15015,3 +15015,37 @@ option.option-placeholder {
   }
 }
 
+/* Desktop home hero: keep the complete trust strip in the first viewport.
+   This rule is intentionally at the end of the cascade because earlier
+   home-hero declarations set taller minimum heights with !important. */
+@media (min-width: 1201px) {
+  .home-page .home-hero,
+  .home-page .home-hero .hero-layout {
+    min-height: 600px !important;
+  }
+
+  .home-page .home-hero .hero-copy {
+    display: block !important;
+    align-self: center !important;
+    padding-top: 48px !important;
+    padding-bottom: 32px !important;
+  }
+
+  .home-page .home-hero .hero-copy h1 {
+    margin-bottom: 16px !important;
+  }
+
+  .home-page .home-hero .hero-copy .eyebrow {
+    align-self: flex-start !important;
+    width: fit-content !important;
+  }
+
+  .home-page .home-hero .hero-buttons {
+    margin: 18px 0 !important;
+  }
+
+  .home-page .home-hero .hero-metrics {
+    margin-top: 0 !important;
+  }
+}
+

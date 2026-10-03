@@ -33,7 +33,7 @@
   }
 
   :global(.home-page) .homeHero :global(.hero-copy) h1 {
-    font-size: clamp(2.75rem, 3.85vw, 4.4rem) !important;
+    font-size: clamp(2.1rem, 2.5vw, 3rem) !important;
     line-height: 1.1 !important;
     margin-bottom: 24px !important;
   }
@@ -44,7 +44,6 @@
 }
 
 .homeHero :global(.hero-copy) h1 {
-  font-size: clamp(2.75rem, 3.85vw, 4.4rem) !important;
   font-weight: 800 !important;
   line-height: 1.1 !important;
   letter-spacing: 0 !important;
@@ -91,9 +90,9 @@
 .homeHero :global(.hero-doctor-bg) {
   position: absolute !important;
   right: 0 !important;
-  bottom: 0 !important;
+  bottom: -10px !important;
   width: 50% !important;
-  height: 60% !important;
+  height: calc(60% + 1px) !important;
   object-position: top !important;
   object-fit: cover !important;
   z-index: 1 !important;
@@ -180,26 +179,54 @@
   color: rgba(16, 17, 20, 1) !important;
 }
 
-/* Responsive Overrides for HeroBanner */
-@media (max-width: 1600px) {
-  .homeHero,
-  .homeHero :global(.hero-layout) {
-    min-height: 680px !important;
+
+    :global(.home-page) .homeHero,
+  :global(.home-page) .homeHero :global(.hero-layout) {
+    min-height: 660px !important;
   }
+
   .homeHero :global(.hero-doctor-img) {
-    bottom: -68px !important;
-    width: 52% !important;
+    bottom: -45px !important;
+    width: 28% !important;
+  }
+@media (max-width: 1900px) {
+  :global(.home-page) .homeHero,
+  :global(.home-page) .homeHero :global(.hero-layout) {
+    min-height: 550px !important;
+  }
+
+  .homeHero :global(.hero-doctor-img) {
+    bottom: -45px !important;
+    width: 33% !important;
   }
 }
 
+@media (max-width: 1600px) {
+  :global(.home-page) .homeHero,
+  :global(.home-page) .homeHero :global(.hero-layout) {
+    min-height: 440px !important;
+  }
+
+  .homeHero :global(.hero-doctor-img) {
+    bottom: -45px !important;
+    width: 33% !important;
+  }
+
+  .home-page .hero-copy h1 {
+    font-size: clamp(2.8rem, 2.85vw, 3.4rem) !important;
+  }
+}
 @media (max-width: 1500px) {
   .homeHero,
   .homeHero :global(.hero-layout) {
-    min-height: 680px !important;
+    min-height: 540px !important;
   }
   .homeHero :global(.hero-doctor-img) {
     bottom: -68px !important;
-    width: 54% !important;
+    width:37% !important;
+  }
+   .home-page .hero-copy h1 {
+    font-size: clamp(2.5rem, 2.5vw, 3rem) !important;
   }
 }
 
@@ -210,21 +237,31 @@
   }
   .homeHero :global(.hero-doctor-img) {
     bottom: -68px !important;
-    width: 55% !important;
+    width: 39.5% !important;
+  }
+   .home-page .hero-copy h1 {
+    font-size: clamp(2.75rem, 2.85vw, 3.4rem) !important;
   }
 }
 
 @media (max-width: 1200px) {
   .homeHero :global(.hero-copy) {
-    padding-top: 100px !important;
+    padding-top: 40px !important;
     padding-bottom: 40px !important;
   }
   .homeHero :global(.hero-copy) h1 {
-    font-size: clamp(2.2rem, 3.5vw, 3rem) !important;
+    font-size: clamp(2rem, 3vw, 2rem) !important;
   }
   .homeHero,
   .homeHero :global(.hero-layout) {
-    min-height: 620px !important;
+    min-height: 520px !important;
+  }
+    .homeHero :global(.hero-doctor-img) {
+    bottom: -68px !important;
+    width: 46.2% !important;
+  }
+  .homeHero :global(.hero-doctor-bg){
+    width: 45% !important;
   }
 }
 
@@ -235,7 +272,7 @@
   }
   .homeHero :global(.hero-doctor-img) {
     bottom: 0 !important;
-    width: 50% !important;
+    width: 45% !important;
   }
 }
 
@@ -243,6 +280,10 @@
   .homeHero {
     min-height: auto !important;
     max-height: none !important;
+  }
+   .homeHero,
+  .homeHero :global(.hero-layout) {
+    min-height: 680px !important;
   }
   .homeHero :global(.hero-layout) {
     flex-direction: column !important;
@@ -485,3 +526,4 @@
     padding-bottom: 40px !important;
   }
 }
+

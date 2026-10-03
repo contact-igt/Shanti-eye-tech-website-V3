@@ -527,6 +527,24 @@ export function GSAPProvider({ children }: { children: React.ReactNode }) {
         // there are a handful of them (list items, cards, FAQ rows, columns).
         const allSections = document.querySelectorAll("main section");
         allSections.forEach((sec) => {
+          // The trust strip follows the hero and can already be inside the
+          // initial viewport. It must not wait for a scroll event to appear.
+          if (sec.classList.contains("trust-strip")) {
+            gsap.fromTo(
+              sec,
+              { opacity: 0, y: 12 },
+              {
+                opacity: 1,
+                y: 0,
+                duration: 0.55,
+                delay: 0.2,
+                ease: "power2.out",
+              }
+            );
+            mark(sec);
+            return;
+          }
+
           const alreadyHandled = sec.querySelector("[data-gsap-done]");
           const children = Array.from(sec.children).filter(
             (c) => !c.hasAttribute("data-gsap-done") && !c.querySelector("[data-gsap-done]")
