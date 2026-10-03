@@ -14059,10 +14059,7 @@ option.option-placeholder {
 }
 
 @media (max-width: 1100px) {
-  .home-page .home-hero,
-  .home-page .hero-layout {
-    min-height: 600px !important;
-  }
+
 
   .about-hero h1 {
     font-size: clamp(2.4rem, 3.8vw, 3.1rem) !important;
@@ -15019,10 +15016,6 @@ option.option-placeholder {
    This rule is intentionally at the end of the cascade because earlier
    home-hero declarations set taller minimum heights with !important. */
 @media (min-width: 1201px) {
-  .home-page .home-hero,
-  .home-page .home-hero .hero-layout {
-    min-height: 600px !important;
-  }
 
   .home-page .home-hero .hero-copy {
     display: block !important;
