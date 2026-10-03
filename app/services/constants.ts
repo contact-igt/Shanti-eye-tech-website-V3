@@ -921,7 +921,7 @@ const keratoconusContent: ServicePageContent = {
     options: [
       { image: "/assets/keratoconus/glasses.png", title: "Glasses & Contact Lenses", tag: "VISION CORRECTION", text: "In earlier stages, spectacles or specialised contact lenses may help improve visual clarity by correcting the refractive error caused by the irregular cornea." },
       { image: "/assets/keratoconus/corneal-cross.png", title: "Corneal Cross-Linking (CXL)", tag: "PROGRESSION CONTROL", text: "Cross-linking is used in appropriate cases of progressive keratoconus to strengthen the corneal tissue and help reduce further progression." },
-      { image: "/assets/keratoconus/advanced-corneal.png", title: "Intacs Inserts", tag: "SELECTED CASES", text: "Intacs Inserts are thin, semi-circular implants placed within the cornea to help flatten its shape and improve vision in selected cases." },
+      { image: "/assets/keratoconus/advanced-corneal.png", title: "Advanced Corneal Management", tag: "SELECTED CASES", text: "Intacs Inserts thin, semi-circular implants placed within the cornea to help flatten its shape and improve vision in selected cases." },
     ],
   },
   benefits: {
