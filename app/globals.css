@@ -4955,10 +4955,7 @@ option.option-placeholder {
     font-size: 2.2rem;
   }
 
-  .home-page .home-hero,
-  .home-page .hero-layout {
-    min-height: 640px;
-  }
+
 
   .home-page .home-hero {
     background-position: 62% center;
@@ -5068,10 +5065,6 @@ option.option-placeholder {
 }
 
 @media (max-width: 1200px) {
-  .home-page .home-hero,
-  .home-page .home-hero .hero-layout {
-    min-height: 740px;
-  }
 
   .home-page .home-hero .shell {
     width: min(1040px, calc(100% - 52px));
@@ -5104,10 +5097,6 @@ option.option-placeholder {
 }
 
 @media (max-width: 900px) {
-  .home-page .home-hero,
-  .home-page .home-hero .hero-layout {
-    min-height: 700px;
-  }
 
   .home-page .home-hero .shell {
     width: min(720px, calc(100% - 40px));
@@ -14022,10 +14011,6 @@ option.option-placeholder {
     font-size: clamp(2.4rem, 3.8vw, 3.1rem) !important;
   } */
 
-  .home-page .home-hero,
-  .home-page .hero-layout {
-    min-height: 620px !important;
-  }
 }
 
 @media (max-width: 1100px) {
