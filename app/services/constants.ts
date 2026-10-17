@@ -812,7 +812,7 @@ const pediatricContent: ServicePageContent = {
     cardTitle: "Have Questions About Your Child's Eyes?",
     cardText: "Our pediatric eye care team is here to answer your questions and help you understand evaluation and treatment options.",
     items: [
-      { question: "When should my child have their first eye exam?", answer: "Children should receive vision screening at recommended health visits. A comprehensive eye examination may be advised if screening is failed, symptoms are noticed, or there is a relevant family or medical history." },
+      { question: "When should my child have their first eye exam?", answer: "A child should have an eye evaluation when recommended by their paediatrician or if you notice a vision concern." },
       { question: "What signs suggest my child has a vision problem?", answer: "Common signs include squinting, closing one eye, frequent headaches, eye strain, rubbing the eyes, losing place while reading, or difficulty concentrating at school. A noticeable eye turn, white pupil, persistent redness or sudden vision change needs prompt professional assessment." },
       { question: "Can screen time affect children's eyes?", answer: "Sitting very close to a screen or television may be a sign that a child needs a vision check, rather than proof that screens caused the problem. Regular breaks, proper lighting, outdoor time, and routine eye checks are generally recommended." },
       { question: "What is myopia management?", answer: "Myopia management refers to options that may be considered for suitable children to help manage the progression of nearsightedness, based on individual assessment. Suitability and approach depend on the child's age, prescription and eye findings." },
