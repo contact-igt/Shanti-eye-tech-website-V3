@@ -3,12 +3,15 @@
   margin: 40px 0;
   padding: 28px 32px 28px 36px;
   border-left: 4px solid var(--cyan, #1bc8dc);
-  border-radius: 0 18px 18px 0;
+  border-radius: 18px;
   background: linear-gradient(135deg, rgba(31, 198, 223, 0.06) 0%, rgba(42, 137, 239, 0.06) 100%);
 }
 
 .quote {
   margin: 0 0 20px;
+  padding: 0;
+  border: none;
+  border-left: none;
   color: var(--ink);
   font-size: 18px;
   font-style: italic;
