@@ -17,7 +17,6 @@ import {
   Footer,
   Header,
   SectionHeading,
-  Testimonials,
 } from "./site-components";
 
 export const dynamic = "force-dynamic";
@@ -90,7 +89,6 @@ export default function Home() {
         <DoctorSection />
         <CommitmentSection />
 
-        <div id="testimonials"><Testimonials title="Transforming Lives," subtitle="One Vision at a Time" /></div>
         <FAQ />
         <AppointmentSection />
       </main>

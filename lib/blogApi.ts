@@ -362,69 +362,85 @@ export interface BlogResolvedBlock {
 
 export function extractAllBlogBlocks(version: BlogPublishedVersion): BlogResolvedBlock[] {
   const blocksJson = version.blocks_json;
-  if (!blocksJson) return [];
+  let resolvedBlocks: BlogResolvedBlock[] = [];
 
-  const rawInstances = blocksJson.custom_instances;
-  let instancesMap: Record<string, { componentKey: string; enabled?: boolean; [key: string]: unknown }> = {};
+  if (blocksJson) {
+    const rawInstances = blocksJson.custom_instances;
+    let instancesMap: Record<string, { componentKey: string; enabled?: boolean; [key: string]: unknown }> = {};
 
-  if (Array.isArray(rawInstances)) {
-    rawInstances.forEach((inst, index) => {
-      const key = (inst.id as string) || (inst.blockId as string) || `inst-${index}`;
-      instancesMap[key] = inst;
-    });
-  } else if (rawInstances && typeof rawInstances === "object") {
-    instancesMap = rawInstances as Record<string, { componentKey: string; enabled?: boolean; [key: string]: unknown }>;
-  }
+    if (Array.isArray(rawInstances)) {
+      rawInstances.forEach((inst, index) => {
+        const key = (inst.id as string) || (inst.blockId as string) || `inst-${index}`;
+        instancesMap[key] = inst;
+      });
+    } else if (rawInstances && typeof rawInstances === 'object') {
+      instancesMap = rawInstances as Record<string, { componentKey: string; enabled?: boolean; [key: string]: unknown }>;
+    }
 
-  const templateConfig = version.template_config_json;
+    const templateConfig = version.template_config_json;
 
-  if (templateConfig?.sections && Array.isArray(templateConfig.sections)) {
-    const resolvedBlocks: BlogResolvedBlock[] = [];
-    templateConfig.sections.forEach((section) => {
-      if (section.enabled === false) return;
-      (section.slots || []).forEach((slot) => {
-        (slot.components || []).forEach((comp) => {
-          if (comp.enabled === false) return;
+    if (templateConfig?.sections && Array.isArray(templateConfig.sections)) {
+      templateConfig.sections.forEach((section) => {
+        if (section.enabled === false) return;
+        (section.slots || []).forEach((slot) => {
+          (slot.components || []).forEach((comp) => {
+            if (comp.enabled === false) return;
 
-          const blockId = comp.blockId || comp.id || comp.componentKey || "";
-          const instanceData = instancesMap[blockId] || (blocksJson.blocks as Record<string, unknown>)?.[comp.componentKey || ""] || {};
+            const blockId = comp.blockId || comp.id || comp.componentKey || '';
+            const instanceData = instancesMap[blockId] || (blocksJson.blocks as Record<string, unknown>)?.[comp.componentKey || ''] || {};
 
-          resolvedBlocks.push({
-            ...(instanceData as Record<string, unknown>),
-            ...(comp.settings || {}),
-            id: blockId,
-            componentKey: comp.componentKey || (instanceData as { componentKey?: string }).componentKey || "",
-            enabled: (instanceData as { enabled?: boolean }).enabled !== false,
+            resolvedBlocks.push({
+              ...(instanceData as Record<string, unknown>),
+              ...(comp.settings || {}),
+              id: blockId,
+              componentKey: comp.componentKey || (instanceData as { componentKey?: string }).componentKey || '',
+              enabled: (instanceData as { enabled?: boolean }).enabled !== false,
+            });
           });
         });
       });
-    });
+    }
 
-    if (resolvedBlocks.length > 0) {
-      return resolvedBlocks;
+    // Fallback: If custom_instances dictionary exists and resolvedBlocks is empty, return all instances
+    if (resolvedBlocks.length === 0) {
+      const instanceValues = Object.entries(instancesMap).map(([id, data]) => ({
+        ...data,
+        id: (data.id as string) || id,
+        componentKey: data.componentKey || '',
+        enabled: data.enabled !== false,
+      }));
+      if (instanceValues.length > 0) {
+        resolvedBlocks = instanceValues;
+      }
+    }
+
+    // Standard fallback from blocks
+    if (resolvedBlocks.length === 0) {
+      const blocksObj = blocksJson.blocks || {};
+      resolvedBlocks = Object.entries(blocksObj).map(([key, data]) => ({
+        ...((data as Record<string, unknown>) || {}),
+        id: key,
+        componentKey: key,
+        enabled: (data as { enabled?: boolean })?.enabled !== false,
+      }));
     }
   }
 
-  // Fallback: If custom_instances dictionary exists, return all instances
-  const instanceValues = Object.entries(instancesMap).map(([id, data]) => ({
-    ...data,
-    id: (data.id as string) || id,
-    componentKey: data.componentKey || "",
-    enabled: data.enabled !== false,
-  }));
+  // Ensure main article HTML content (version.content_html) is included if not already represented
+  const hasRichArticleBlock = resolvedBlocks.some(
+    (b) => (b.componentKey === 'rich_article_content' || b.componentKey === 'richHtml') && b.enabled !== false
+  );
 
-  if (instanceValues.length > 0) {
-    return instanceValues;
+  if (version.content_html && !hasRichArticleBlock) {
+    resolvedBlocks.push({
+      id: 'rich_article_content_main',
+      componentKey: 'rich_article_content',
+      enabled: true,
+      html: version.content_html,
+    });
   }
 
-  // Standard fallback from blocks
-  const blocksObj = blocksJson.blocks || {};
-  return Object.entries(blocksObj).map(([key, data]) => ({
-    ...((data as Record<string, unknown>) || {}),
-    id: key,
-    componentKey: key,
-    enabled: (data as { enabled?: boolean })?.enabled !== false,
-  }));
+  return resolvedBlocks;
 }
 
 

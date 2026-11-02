@@ -70,6 +70,9 @@ export function BlogArticleBody({
   const blocks = version.blocks_json?.blocks;
   const sidebar = version.blocks_json?.sidebar;
 
+  // Track if share buttons have already rendered to prevent duplicate displays
+  let hasRenderedShare = false;
+
   // Custom-template sections carry an explicit, CMS-authored block order (and can
   // repeat the same componentKey, e.g. several rich_article_content blocks). That
   // order must be preserved as-is. The semantic BLOCK_ORDER sort below is only
@@ -90,7 +93,13 @@ export function BlogArticleBody({
 
     // ── Rich HTML (main article prose) ───────────────────────────────────
     if (key === "rich_article_content" || key === "richHtml") {
-      const htmlContent = (block.html as string) || version.content_html || "";
+      const htmlContent =
+        (block.html as string) ||
+        (block.content_html as string) ||
+        (block.content as string) ||
+        (block.body as string) ||
+        version.content_html ||
+        "";
       if (!htmlContent) return null;
       return (
         <div
@@ -133,8 +142,8 @@ export function BlogArticleBody({
       return <BlogTable key={block.id || index} data={block as unknown as BlogTableBlock} />;
     }
 
-    // ── Numbered List ─────────────────────────────────────────────────────
-    if (key === "numbered_list") {
+    // ── Numbered List / Symptoms ──────────────────────────────────────────
+    if (key === "numbered_list" || key === "symptoms") {
       return <BlogNumberedList key={block.id || index} data={block as unknown as BlogNumberedListBlock} />;
     }
 
@@ -219,6 +228,8 @@ export function BlogArticleBody({
 
     // ── Share ─────────────────────────────────────────────────────────────
     if (key === "share") {
+      if (hasRenderedShare) return null;
+      hasRenderedShare = true;
       return <BlogShareButtons key={block.id || index} title={title} url={url} />;
     }
 
@@ -238,15 +249,32 @@ export function BlogArticleBody({
 
   // ─── Template_config_json path (ordered blocks) ────────────────────────────
   if (resolvedBlocks.length > 0) {
+    // Additional safeguard: ensure version.content_html is present in blocks
+    const hasRichArticleBlock = resolvedBlocks.some(
+      (b) => (b.componentKey === "rich_article_content" || b.componentKey === "richHtml") && b.enabled !== false
+    );
+    const blocksToOrder = [...resolvedBlocks];
+    if (version.content_html && !hasRichArticleBlock) {
+      blocksToOrder.push({
+        id: "rich_article_content_main",
+        componentKey: "rich_article_content",
+        enabled: true,
+        html: version.content_html,
+      });
+    }
+
     const ordered = hasAuthoredSectionOrder
-      ? resolvedBlocks
-      : [...resolvedBlocks].sort(
+      ? blocksToOrder
+      : [...blocksToOrder].sort(
           (a, b) => blockOrderIndex(a.componentKey) - blockOrderIndex(b.componentKey)
         );
+
+    const shareEnabled = version.blocks_json?.blocks?.share?.enabled !== false;
+
     return (
       <article className={styles.article}>
         {ordered.map((block, index) => renderBlock(block, index))}
-        <BlogShareButtons title={title} url={url} />
+        {!hasRenderedShare && shareEnabled ? <BlogShareButtons title={title} url={url} /> : null}
       </article>
     );
   }
@@ -367,7 +395,7 @@ export function BlogArticleBody({
       ) : null}
 
       {/* 14. Share */}
-      {shareEnabled ? <BlogShareButtons title={title} url={url} /> : null}
+      {shareEnabled && !hasRenderedShare ? <BlogShareButtons title={title} url={url} /> : null}
     </article>
   );
 }
