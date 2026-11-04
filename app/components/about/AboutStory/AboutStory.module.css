@@ -1,114 +1,176 @@
 .storySection {
-  padding: 64px 0 72px;
+  padding: 72px 0 80px;
+  overflow: hidden;
+  width: 100%;
+  box-sizing: border-box;
 }
 
-.storySection :global(.story-layout) {
+.storyLayout {
   display: grid;
-  grid-template-columns: 360px minmax(0, 1fr);
-  gap: 54px;
+  grid-template-columns: minmax(340px, 440px) minmax(0, 1fr);
+  gap: 52px;
   align-items: center;
-  width: min(900px, calc(100% - 64px));
+  width: min(1140px, calc(100% - 64px));
+  max-width: 1140px;
+  margin: 0 auto;
+  box-sizing: border-box;
+}
+
+.storyImage {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
   margin: 0 auto;
 }
 
-.storySection :global(.story-image) {
-  position: relative;
-}
-
-.storySection :global(.story-image) img {
+.storyImage img {
   width: 100%;
-  aspect-ratio: 1.1;
+  height: auto;
+  max-height: 420px;
+  aspect-ratio: 1.15;
   object-fit: cover;
   border-radius: 18px;
-  box-shadow: 0 15px 28px rgba(26, 55, 92, 0.14);
+  box-shadow: 0 15px 30px rgba(26, 55, 92, 0.12);
+  display: block;
 }
 
-.storySection :global(.story-image) > b {
+.establishedBadge {
   position: absolute;
-  right: -16px;
-  bottom: -14px;
-  width: 160px;
-  min-height: 76px;
-  padding: 13px 16px;
-  display: grid;
-  grid-template-columns: 34px 1fr;
-  grid-template-rows: 34px 18px;
+  right: 16px;
+  bottom: 16px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   align-items: center;
-  border-radius: 16px;
+  text-align: center;
+  width: auto;
+  min-width: 170px;
+  padding: 12px 22px;
+  border-radius: 14px;
   background: linear-gradient(135deg, #21cce0, #18afd3);
-  box-shadow: 0 14px 24px rgba(24, 181, 215, 0.28);
+  box-shadow: 0 10px 24px rgba(24, 181, 215, 0.35);
+  border: 1.5px solid rgba(255, 255, 255, 0.4);
   color: #fff;
+  z-index: 5;
+  box-sizing: border-box;
+  pointer-events: none;
 }
 
-.storySection :global(.story-image) > b i {
-  grid-row: 1 / span 2;
-  font-style: normal;
-  font-size: 36px;
-  font-weight: 400;
-  line-height: 1;
-}
-
-.storySection :global(.story-image) > b strong {
-  font-size: 25px;
-  line-height: 1;
-}
-
-.storySection :global(.story-image) > b strong span {
-  font-size: inherit !important;
-  color: inherit !important;
-  display: inline !important;
-}
-
-.storySection :global(.story-image) > b small {
-  font-size: 9px;
-  line-height: 1;
+.establishedBadge strong {
+  display: block;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #ffffff;
+  text-align: center;
   white-space: nowrap;
+  letter-spacing: -0.01em;
+  margin: 0 0 3px 0;
 }
 
-.storySection h2 {
-  margin: 0 0 16px;
-  font-size: var(--font-h2);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
+.establishedBadge small {
+  display: block;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.2;
+  color: rgba(255, 255, 255, 0.95);
+  text-align: center;
+  white-space: nowrap;
+  letter-spacing: 0.02em;
+  margin: 0;
 }
 
-.storySection h2 span {
+.storyContent {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.storyContent h2 {
+  margin: 0 0 18px;
+  font-size: clamp(30px, 3.2vw, 42px);
+  line-height: 1.12;
+  letter-spacing: -0.035em;
+  color: #1e293b;
+  word-break: normal;
+  overflow-wrap: break-word;
+}
+
+.storyContent h2 span {
   color: #1fc6df;
 }
 
-.storySection p {
-  margin-bottom: 10px;
-  font-size: 14px;
-  line-height: 1.55;
+.storyContent p {
+  margin: 0 0 14px;
+  font-size: 15px;
+  line-height: 1.62;
   color: #475569;
+  word-break: normal;
+  overflow-wrap: break-word;
 }
 
-.storySection blockquote {
-  margin-top: 24px;
-  padding: 8px 0 8px 16px;
-  border-left: 3px solid #1fc6df;
-  font-size: 14px;
-  line-height: 1.45;
-  color: #1e293b;
-  font-style: italic;
+.storyContent p:last-child {
+  margin-bottom: 0;
 }
 
-.storySection blockquote small {
-  display: block;
-  margin-top: 7px;
-  font-size: 11px;
-  font-style: normal;
-  color: #64748b;
-}
-
-@media (max-width: 900px) {
-  .storySection :global(.story-layout) {
-    grid-template-columns: 1fr;
-    gap: 32px;
-    width: min(100% - 40px, 600px);
+@media (max-width: 992px) {
+  .storySection {
+    padding: 56px 0 64px;
   }
-  .storySection :global(.story-image) > b {
+
+  .storyLayout {
+    grid-template-columns: 1fr;
+    gap: 36px;
+    width: min(640px, calc(100% - 40px));
+  }
+
+  .storyImage {
+    max-width: 520px;
+  }
+
+  .establishedBadge {
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .storySection {
+    padding: 44px 0 52px;
+  }
+
+  .storyLayout {
+    gap: 24px;
+    width: calc(100% - 32px);
+  }
+
+  .storyImage {
+    max-width: 100%;
+  }
+
+  .establishedBadge {
     right: 12px;
-    bottom: -12px;
+    bottom: 12px;
+    padding: 10px 16px;
+    min-width: 145px;
+  }
+
+  .establishedBadge strong {
+    font-size: 14px;
+  }
+
+  .establishedBadge small {
+    font-size: 11px;
+  }
+
+  .storyContent h2 {
+    font-size: 28px;
+    margin-bottom: 14px;
+  }
+
+  .storyContent p {
+    font-size: 14px;
+    line-height: 1.58;
+    margin-bottom: 12px;
   }
 }

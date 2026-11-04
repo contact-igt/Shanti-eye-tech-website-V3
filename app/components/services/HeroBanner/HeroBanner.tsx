@@ -34,12 +34,15 @@ export function HeroBanner({ content, kind }: { content: HeroContent; kind: Serv
               Check Your Eligibility
             </Link>
           </div>
-          {kind !== "retina" && content.metrics && content.metrics.length > 0 && (
-            <div className={styles.metrics}>
+          {content.metrics && content.metrics.length > 0 && (
+            <div className={styles.metrics} aria-label="Treatment highlights">
               {content.metrics.map((metric) => (
-                <div key={metric.label}>
-                  <b>{metric.value}</b>
-                  <span>{metric.label}</span>
+                <div key={metric.label} className={styles.metricItem}>
+                  <span className={styles.metricIcon} aria-hidden="true" />
+                  <div className={styles.metricCopy}>
+                    <b>{metric.value}</b>
+                    <span>{metric.label}</span>
+                  </div>
                 </div>
               ))}
             </div>

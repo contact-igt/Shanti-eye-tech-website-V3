@@ -1,22 +1,18 @@
-import { CountUp } from "@/app/client";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./AboutStory.module.css";
 
 export function AboutStory() {
   return (
-    <section className={`section story-section ${styles.storySection}`}>
-      <div className="shell story-layout">
-        <div className="story-image">
+    <section className={`section ${styles.storySection}`}>
+      <div className={`shell ${styles.storyLayout}`}>
+        <div className={styles.storyImage}>
           <img src="/assets/about/about.jpg" alt="Shanti Eye Tech clinic" />
-          <b>
-            <i aria-hidden="true">♡</i>
-            <strong>
-              <CountUp value={97} suffix="%" />
-            </strong>
-            <small>Patient Satisfaction</small>
+          <b className={styles.establishedBadge}>
+            <strong>Established 2003</strong>
+            <small>Eye Care Clinic</small>
           </b>
         </div>
-        <div>
+        <div className={styles.storyContent}>
           <Eyebrow>WHO WE ARE</Eyebrow>
           <h2>
             Where Peace Meets<br />

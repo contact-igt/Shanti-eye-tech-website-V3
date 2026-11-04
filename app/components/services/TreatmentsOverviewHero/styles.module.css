@@ -118,18 +118,19 @@
 
 .metrics {
   display: flex;
-  align-items: center;
-  gap: clamp(18px, 2.6vw, 38px);
+  align-items: flex-start;
+  gap: clamp(16px, 2vw, 32px);
   margin-top: 34px;
   flex-wrap: nowrap;
+  width: 100%;
 }
 
 .metrics div {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 12px;
   min-width: 0;
-  flex: 0 1 auto;
+  flex: 1 1 0;
 }
 
 .metricIcon {
@@ -158,9 +159,9 @@
 .metrics b {
   display: block;
   color: #101114;
-  font-size: 28px;
+  font-size: clamp(17px, 1.25vw, 20px);
   font-weight: 700;
-  line-height: 1.05;
+  line-height: 1.2;
 }
 
 .metrics b span {

@@ -121,6 +121,12 @@ export type BenefitsContent = {
   items: BenefitItem[];
 };
 
+export type GuidanceItem = {
+  title: string;
+  description: string;
+  step?: string;
+};
+
 export type TestimonialItem = {
   quote: string;
   name: string;
@@ -132,7 +138,8 @@ export type TestimonialsContent = {
   title: string;
   accent: string;
   body: string;
-  items: TestimonialItem[];
+  guidanceItems?: GuidanceItem[];
+  items?: TestimonialItem[];
 };
 
 export type FAQItem = {

@@ -1,8 +1,6 @@
 import type { ReactNode } from "react";
 import Link from "next/link";
 import { CataractBenefitsCarousel } from "./cataract-benefits-carousel";
-import { TestimonialCarousel } from "./testimonials-carousel";
-import { GoogleReviewBadge } from "./components/common/GoogleReviewBadge/GoogleReviewBadge";
 import {
   AppointmentSection,
   Eyebrow,
@@ -141,7 +139,7 @@ const cataractBenefits = [
 ];
 const cataractTestimonials = [
   {
-    quote: "After years of struggling with cloudy vision, I can finally see my grandchildren clearly. The surgery was painless and recovery was quick. Dr. Kumar and the team made me feel comfortable every step of the way.",
+    quote: "After years of struggling with cloudy vision, I can finally see my grandchildren clearly. The surgery was painless and recovery was quick. Dr. Solanki and the team made me feel comfortable every step of the way.",
     name: "Ramesh Kumar",
     meta: "Cataract Surgery - 68 years",
   },
@@ -176,7 +174,7 @@ const serviceBenefitItems: Record<ServiceConfig["kind"], { image: string; title:
   lasik: [
     { image: "/assets/lasik/quick_recovery.jpeg", title: "Quick Recovery Time", description: "Most patients return to normal activities within 24 hours with minimal discomfort." },
     { image: "/assets/lasik/long_lasting.jpeg", title: "Long-Lasting Results", description: "LASIK provides permanent vision correction that can last a lifetime." },
-    { image: "/assets/lasik/vision_journey.jpeg", title: "Improved Quality of Life", description: "Freedom from glasses and contacts opens up new lifestyle possibilities." },
+    { image: "/assets/lasik/vision_journey.jpeg", title: "Improved Quality of Life", description: "Laser vision correction can open up new lifestyle possibilities for suitable patients." },
     { image: "/assets/lasik/improve_quality.jpeg", title: "Cost-Effective Solution", description: "Save money long-term by eliminating glasses, contacts, and solutions." },
     { image: "/assets/lasik/lasik-eye.webp", title: "Enhanced Sports Performance", description: "Participate in activities without worrying about glasses or contacts." },
   ],
@@ -280,7 +278,7 @@ const whyItems = [
   { icon: "05", title: "Quick Recovery", text: "Most patients resume activities within days" },
   { icon: "06", title: "Comprehensive Support", text: "Planned post-operative follow-up and monitoring as advised by your ophthalmologist." },
   { icon: "07", title: "Premium IOL Options", text: "Multiple lens choices for optimal vision correction" },
-  { icon: "08", title: "Proven Results", text: "15,000+ successful cataract procedures" },
+  { icon: "08", title: "Established Surgical Care", text: "Surgical procedures performed using advanced phacoemulsification technology and rigorous clinical safety protocols." },
 ];
 
 const lasikWhyItems = [
@@ -291,7 +289,7 @@ const lasikWhyItems = [
   { icon: whyIcon(<><circle cx="12" cy="12" r="9" /><path d="M12 7v5l3 2" /></>), title: "Quick Recovery", text: "Most patients resume normal activities within 24 hours" },
   { icon: whyIcon(<path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />), title: "Comprehensive Care", text: "Post-operative follow-up and monitoring as advised by your surgeon." },
   { icon: whyIcon(<><path d="M1.5 12s3.8-6 10.5-6 10.5 6 10.5 6-3.8 6-10.5 6S1.5 12 1.5 12z" /><circle cx="12" cy="12" r="3" /></>), title: "All-Laser LASIK", text: "No blades involved in any part of the procedure" },
-  { icon: whyIcon(<path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2z" />), title: "Trusted by Thousands", text: "25,000+ successful LASIK procedures performed" },
+  { icon: whyIcon(<path d="M12 2l3.1 6.3 6.9 1-5 4.9 1.2 6.8L12 17.8 5.8 21 7 14.2 2 9.3l6.9-1L12 2z" />), title: "Comprehensive Suitability Assessment", text: "Thorough pre-procedure diagnostics and clinical checks to recommend the most appropriate option." },
 ];
 
 export function ServicePage({ config }: { config: ServiceConfig }) {
@@ -589,11 +587,31 @@ export function ServicePage({ config }: { config: ServiceConfig }) {
             <CataractBenefitsCarousel benefits={serviceBenefitItems[config.kind]} />
           </div>
         </section>
-        <section className="section cataract-testimonials-section service-testimonials-section">
+        <section className="section cataract-testimonials-section service-testimonials-section" id="journey-guide">
           <div className="shell">
-            <SectionHeading eyebrow="PATIENT STORIES" title="You're Not Alone," accent="Hear From Others Like You" body={serviceStoryBodies[config.kind]} />
-            <GoogleReviewBadge reviewUrl={process.env.GOOGLE_REVIEW_URL} />
-            <TestimonialCarousel items={serviceTestimonials[config.kind]} />
+            <SectionHeading eyebrow="PATIENT GUIDE" title="Understanding Your" accent="Eye Care Journey" body="What to Expect During Your Evaluation & Treatment" />
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fit, minmax(260px, 1fr))", gap: "24px", marginTop: "36px" }}>
+              <article style={{ background: "#fff", padding: "28px 24px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                <span style={{ display: "inline-block", fontWeight: 700, color: "#0284c7", marginBottom: "12px" }}>Step 01</span>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Comprehensive Diagnostic Evaluation</h3>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, margin: 0 }}>Detailed clinical assessment and specialised diagnostic imaging to understand your unique ocular parameters.</p>
+              </article>
+              <article style={{ background: "#fff", padding: "28px 24px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                <span style={{ display: "inline-block", fontWeight: 700, color: "#0284c7", marginBottom: "12px" }}>Step 02</span>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Detailed Discussion of Clinical Findings</h3>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, margin: 0 }}>A transparent discussion explaining your examination findings and answering all questions about potential treatment pathways.</p>
+              </article>
+              <article style={{ background: "#fff", padding: "28px 24px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                <span style={{ display: "inline-block", fontWeight: 700, color: "#0284c7", marginBottom: "12px" }}>Step 03</span>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Tailored Treatment Planning</h3>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, margin: 0 }}>Formulating an evidence-based medical, laser, or surgical plan customized to your vision goals and clinical suitability.</p>
+              </article>
+              <article style={{ background: "#fff", padding: "28px 24px", borderRadius: "16px", border: "1px solid #e2e8f0" }}>
+                <span style={{ display: "inline-block", fontWeight: 700, color: "#0284c7", marginBottom: "12px" }}>Step 04</span>
+                <h3 style={{ fontSize: "17px", fontWeight: 700, color: "#0f172a", marginBottom: "8px" }}>Structured Post-Care Review</h3>
+                <p style={{ fontSize: "14px", color: "#475569", lineHeight: 1.6, margin: 0 }}>Regular clinical monitoring and scheduled follow-ups to track visual recovery and ensure long-term eye health.</p>
+              </article>
+            </div>
           </div>
         </section>
         <FAQ title={`${config.serviceName}`} accent="FAQs" service={config.serviceName.toLowerCase()} />

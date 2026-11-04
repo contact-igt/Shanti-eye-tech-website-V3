@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowRight, Award, Users, Phone, Star } from "lucide-react";
+import { ArrowRight, Award, Building2, CheckCircle2, Phone } from "lucide-react";
 import { CountUp } from "@/app/client";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./HeroBanner.module.css";
@@ -43,37 +43,41 @@ export function HeroBanner() {
                 <b>
                   <CountUp value={20} suffix="+" />
                 </b>
-                <span>Years Excellence</span>
+                <span>Clinical Ophthalmology Practice</span>
               </span>
             </div>
             <div>
               <span className="metric-icon" aria-hidden="true">
-                <Users size={20} strokeWidth={2} color="#22c44a" />
+                <Building2 size={20} strokeWidth={2} color="#22c44a" />
               </span>
               <span className="metric-copy">
-                <b>
-                  <CountUp value={50} suffix="K+" />
-                </b>
-                <span>Happy Patients</span>
+                <b>Modern OT</b>
+                <span>Dedicated Surgical Suites</span>
               </span>
             </div>
             <div>
               <span className="metric-icon" aria-hidden="true">
-                <Star size={20} strokeWidth={2} color="#22c44a" />
+                <CheckCircle2 size={20} strokeWidth={2} color="#22c44a" />
               </span>
               <span className="metric-copy">
-                <b>
-                  <CountUp value={97} suffix="%" />
-                </b>
-                <span>Patient Satisfaction</span>
+                <b>Comprehensive Care</b>
+                <span>Diagnostic &amp; Surgical Services</span>
               </span>
             </div>
           </div>
         </div>
       </div>
       <div className="hero-image">
-        <img src="/assets/solsanki_bg.png" alt="" className="hero-doctor-bg" />
-        <img src="/assets/solanski.png" alt="Dr. Solanki Specialist" className="hero-doctor-img" />
+        <img
+          src="/assets/solsanki_bg.png"
+          alt=""
+          className="hero-doctor-bg"
+        />
+        <img
+          src="/assets/solanski.png"
+          alt="Dr. Solanki Specialist"
+          className="hero-doctor-img"
+        />
       </div>
     </section>
   );

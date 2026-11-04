@@ -97,7 +97,7 @@ const cardData = [
         Indore, Madhya Pradesh 452001
       </>
     ),
-    linkHref: "https://www.google.com/maps/place/Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Best+Eye+Hospital+in+Indore/@22.7229045,75.8843484,655m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fd5037568439:0xb4160c93774cf232!8m2!3d22.7228996!4d75.8869233!16s%2Fg%2F11fn98lrpr?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+    linkHref: "https://maps.google.com/?cid=12976694665893343794",
     linkLabel: (
       <>
         <LocationIcon size={14} /> Get Directions

@@ -116,10 +116,10 @@
 }
 
 .doctorSection :global(.doctor-stats) {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  display: grid !important;
+  grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
   max-width: 620px;
-  gap: 48px;
+  gap: clamp(20px, 2.5vw, 40px);
   margin: 34px 0 44px;
 }
 

@@ -1,27 +1,5 @@
 import type { ServicePageContent, TestimonialItem } from "./types";
 
-// Real patient reviews (Google) not specific to one procedure — reused
-// across the retina, glaucoma, squint, and keratoconus pages, which don't
-// have enough procedure-specific reviews of their own yet.
-const commonTestimonials: TestimonialItem[] = [
-  { quote: "Our family recently had the opportunity to take laser and cataract surgery services at Shanti Eye Tech Hospital, and it was truly an amazing experience from start to finish. Dr. Amit Solanki and his dedicated staff went above and beyond in taking care of us. It's rare to find a place where advanced medical care meets such heartfelt compassion.", name: "Madan Agrawal", meta: "Patient Review" },
-  { quote: "Dr. Solanki explained everything clearly, which gave us a lot of confidence and comfort. The surgery was successful, and the post-operative care was also very attentive. His professionalism, calm nature, and expertise truly stand out.", name: "Naman Agrawal", meta: "Patient Review" },
-  { quote: "I had a very good experience at Shanti Eye Tech Clinic. Dr. Amit Solanki is extremely knowledgeable, patient, and attentive. He listened carefully to my concerns and explained the condition and treatment clearly, which made me feel very comfortable and confident.", name: "Sandeep Debnath", meta: "Patient Review" },
-  { quote: "Dr amit solanki is master in his field. He properly replied to our queries and doubts before surgery. His cooperative and friendly nature makes us more comfortable. His team is also polite and friendly.", name: "Manish V Jain", meta: "Patient Review" },
-  { quote: "Very well trained facilities and top surgeon to have surgery, and staff nature is very cooperative and well behaved. We are fully satisfied with our cataract surgery.", name: "Renuka Agrawal", meta: "Patient Review" },
-  { quote: "Had a great experience. Sir explained everything in detail and has a very polite nature.", name: "Anjali Singh", meta: "Patient Review" },
-  { quote: "Great experience and wonderful environment. Must visit for an eye checkup.", name: "Devendr Ghosar", meta: "Patient Review" },
-];
-
-// Reviews that don't reference a specific unrelated procedure (e.g. cataract
-// or LASIK surgery) — used on pages like glaucoma where most of
-// commonTestimonials would otherwise read as mismatched.
-const generalCareTestimonials: TestimonialItem[] = [
-  { quote: "I had a very good experience at Shanti Eye Tech Clinic. Dr. Amit Solanki is extremely knowledgeable, patient, and attentive. He listened carefully to my concerns and explained the condition and treatment clearly, which made me feel very comfortable and confident.", name: "Sandeep Debnath", meta: "Patient Review" },
-  { quote: "Had a great experience. Sir explained everything in detail and has a very polite nature.", name: "Anjali Singh", meta: "Patient Review" },
-  { quote: "Great experience and wonderful environment. Must visit for an eye checkup.", name: "Devendr Ghosar", meta: "Patient Review" },
-];
-
 const cataractComparison = {
   title: "Choose the",
   accent: "Vision You Want",
@@ -76,9 +54,9 @@ const classicContent: ServicePageContent = {
     text: "Explore vision-correction options that may reduce dependence on glasses or contact lenses, subject to detailed eye evaluation. Choose from Touchless LASIK, SMILE, PRK, ICL and PRELEX — advanced vision-correction procedures matched to your eyes and lifestyle.",
     image: "/assets/lasik/lasik-banner.png",
     metrics: [
-      { value: "20+", label: "Years Experience" },
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "97%", label: "Success Rate" },
+      { value: "20+", label: "Clinical Experience" },
+      { value: "Comprehensive", label: "Corneal Topography & Assessment" },
+      { value: "Customised", label: "Procedure Selection" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -88,14 +66,14 @@ const classicContent: ServicePageContent = {
     accent: "Shanti Eye Tech for Freedom From Glasses",
     body: "Combining advanced technology with personalized care for optimal vision correction results",
     items: [
-      { icon: "award", title: "Award-Winning Excellence", text: "Multiple awards and professional recognitions in ophthalmology." },
+      { icon: "award", title: "Dedicated Refractive Training", text: "Surgical procedures performed by specialists with dedicated fellowship and surgical training in refractive and corneal procedures." },
       { icon: "zap", title: "Multiple Advanced Options", text: "Touchless LASIK, SMILE, PRK, ICL and PRELEX under one roof" },
       { icon: "users", title: "Experienced Specialists", text: "Over 20 years of ophthalmology experience, with specialised LASIK/refractive surgical training." },
       { icon: "heart", title: "Personalized Treatment", text: "The right procedure recommended for your eyes, not the most popular one" },
-      { icon: "clock", title: "Recovery Varies", text: "Recovery time differs by procedure and individual healing. Your surgeon will provide personalised activity guidance." },
+      { icon: "clock", title: "Recovery Varies", text: "Recovery time differs by procedure and individual healing. Your surgeon will provide personalized activity guidance." },
       { icon: "shield", title: "Comprehensive Care", text: "Post-operative follow-up and monitoring as advised by your surgeon." },
       { icon: "eye", title: "Procedure-Specific Techniques", text: "The techniques and recovery considerations differ between laser, implantable-lens and lens-exchange procedures." },
-      { icon: "star", title: "Trusted by Thousands", text: "49,999+ successful vision correction procedures performed" },
+      { icon: "shield", title: "Structured Evaluation", text: "Detailed pre-operative screening including corneal thickness, topography, and tear film evaluation before any procedure recommendation." },
     ],
   },
   intro: {
@@ -105,7 +83,7 @@ const classicContent: ServicePageContent = {
     backgroundImage: "/assets/lasik/lasikbg.jpeg",
     paragraphs: [
       "Vision-correction procedures may reduce, and for some suitable patients remove, the need for glasses or contact lenses in daily activities. The appropriate option depends on your prescription, corneal measurements, age, eye health and visual needs.",
-      "Freedom From Glasses covers several advanced procedures — <strong>Touchless LASIK</strong>, <strong>SMILE</strong> and <strong>PRK</strong> (laser vision correction), <strong>ICL</strong> (Implantable Collamer Lens), and <strong>PRELEX</strong> (Presbyopic Lens Exchange) — so your treatment can be matched precisely to your eyes, age and lifestyle.",
+      "Freedom from Glasses covers several advanced procedures — <strong>Touchless LASIK</strong>, <strong>SMILE</strong> and <strong>PRK</strong> (laser vision correction), <strong>ICL</strong> (Implantable Collamer Lens), and <strong>PRELEX</strong> (Presbyopic Lens Exchange) — so your treatment can be matched precisely to your eyes, age and lifestyle.",
     ],
     callout: {
       title: "Which Option is Right for You?",
@@ -155,19 +133,17 @@ const classicContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "Real stories from real patients who found freedom from glasses at Shanti Eye Tech",
-    items: [
-      { quote: "I got my sister's vision correction surgery (LASIK) done from Dr Amit Solanki, and it was a very smooth process overall. The doctor was very professional and explained the whole procedure and helped us make the right decision. The staff was also very friendly and supportive.", name: "Ashish Masih", meta: "Patient Review" },
-      { quote: "I got touchless LASIK done by Dr Amit Solanki, and the experience was honestly great. He was super friendly, explained everything clearly, and made the whole thing feel easy. The clinic is clean, modern, and they did a really thorough job with all the tests. Definitely recommend!", name: "Dhruv Surana Jain", meta: "Patient Review" },
-      { quote: "I got touchless robotic LASIK surgery done by Dr. Amit Solanki. He is very genuine and explains everything in detail. I had no issues post surgery. He and his staff were always available for help. I am extremely happy with the surgery.", name: "Rashi Dawar", meta: "Patient Review" },
-      { quote: "Good experience — the doctor explained everything in detail and in a very friendly way. Throughout the LASIK surgery he was very supportive and kind. It was a good experience overall.", name: "Geetika Vishwakarma", meta: "Patient Review" },
-      { quote: "Dr. Solanki is excellent at his skill and extremely kind and helpful. He walked me through every aspect of the LASIK treatment and answered every question patiently and with utmost integrity. Highly recommend!", name: "Shreya Mundra", meta: "Patient Review" },
-      { quote: "I'm extremely happy and satisfied with my LASIK surgery performed by Dr. Amit Solanki. The friendly environment and the supportive nature of Dr. Amit as well as the staff made the whole experience very pleasant.", name: "Nainika Soni", meta: "Patient Review" },
-      { quote: "Dr. Amit Solanki was a wonderful surgeon, and the staff was always helpful and kind. They ensured I had a smooth prep, surgery, and follow-up. I am so glad I chose them for my LASIK eye surgery and would highly recommend to anyone.", name: "Ishita Sheel", meta: "Patient Review" },
+    eyebrow: "ELIGIBILITY & SAFETY",
+    title: "Key Factors in",
+    accent: "Refractive Suitability",
+    body: "Clinical necessity of thorough pre-operative corneal diagnostic investigations to determine procedure suitability",
+    guidanceItems: [
+      { step: "01", title: "Corneal Pachymetry & Thickness", description: "Ultrasonic or optical measurement of corneal thickness to ensure sufficient stromal tissue for safe laser reshaping." },
+      { step: "02", title: "Corneal Topography & Tomography", description: "High-resolution front and back corneal curvature mapping to verify symmetry and rule out subclinical ectasia or irregular astigmatism." },
+      { step: "03", title: "Refractive Stability", description: "Confirming that your spectacle or contact lens prescription has remained stable for a minimum recommended evaluation duration." },
+      { step: "04", title: "Anterior Segment & Tear Film Health", description: "Detailed biomicroscopic assessment of the ocular surface, tear film quality, and pupillary dynamics before procedure recommendation." },
     ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -205,9 +181,9 @@ const cataractContent: ServicePageContent = {
     text: "Cataract surgery in Indore at Shanti Eye Tech is aimed at helping restore your vision, supporting greater independence and clarity in everyday life.",
     image: "/assets/cataract/cataract-banner.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "97%", label: "Success Rate" },
-      { value: "Same Day", label: "Procedure" },
+      { value: "Detailed Assessment", label: "Pre-Operative Biometry" },
+      { value: "Modern Phaco", label: "Micro-Incision Surgery" },
+      { value: "Day Care", label: "Outpatient Procedure" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -224,7 +200,7 @@ const cataractContent: ServicePageContent = {
       { icon: "clock", title: "Quick Recovery", text: "Recovery varies. Your ophthalmologist will advise when you can safely resume specific activities." },
       { icon: "shield", title: "Comprehensive Support", text: "Planned post-operative follow-up and monitoring as advised by your ophthalmologist." },
       { icon: "eye", title: "Premium IOL Options", text: "Multiple lens choices for optimal vision correction" },
-      { icon: "star", title: "Proven Results", text: "49,999+ successful cataract procedures" },
+      { icon: "shield", title: "Established Surgical Care", text: "Surgical procedures performed using advanced phacoemulsification technology and rigorous clinical safety protocols." },
     ],
   },
   intro: {
@@ -277,19 +253,17 @@ const cataractContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "Real experiences from patients who restored their vision with cataract surgery",
-    items: [
-      { quote: "My mother recently underwent cataract surgery at this hospital, and we had a wonderful experience. The surgery was successful, and her vision has improved significantly. The doctors, nurses, and entire staff were caring, professional, and explained everything clearly throughout the process. We are very happy with the results and sincerely thank the entire team.", name: "Vaibhav Bairagi", meta: "Patient Review" },
-      { quote: "We had a great experience with Dr. Amit Solanki for cataract surgery. We came here for our parents' cataract surgery. He is a fantastic eye doctor and very humble. The surgery was handled with professionalism, and the hospital staff is equally supportive, polite, and cooperative.", name: "Sapna Sankhala", meta: "Patient Review" },
-      { quote: "Wife's cataract surgery was a success! Thanks to Dr. Amit and his staff for the amazing care. If anyone is thinking of it, go for it — best decision ever.", name: "Ramesh Oza", meta: "Patient Review" },
-      { quote: "I had my cataract surgery here. It was a great experience. Dr. explained everything clearly, and the service was very neat and clean. Staff was also very helpful and humble. Would definitely recommend.", name: "Rajesh Chouhan", meta: "Patient Review" },
-      { quote: "Dr. Amit Solanki ji did the cataract operation for my mother so quickly and excellently, without any pain. I highly recommend any type of eye patients to Shanti Eye Tech, Palasia, Indore.", name: "Hemant Saini", meta: "Patient Review" },
-      { quote: "My experience is very good, huge gratitude to Dr Amit sir and his staff, very happy with my cataract surgery.", name: "Girish Shrivastava", meta: "Patient Review" },
-      { quote: "I had a great experience with Dr Amit Solanki and Shanti Eye Tech staff during my cataract surgery. Thank you Shanti Eye Tech for wonderful care.", name: "Radha Sawner", meta: "Patient Review" },
+    eyebrow: "RECOVERY & CARE",
+    title: "What to Expect After",
+    accent: "Cataract Surgery",
+    body: "Structured post-operative care and follow-up guidance to support safe healing and optimal visual recovery",
+    guidanceItems: [
+      { step: "01", title: "Prescribed Eye Drop Regimens", description: "Administer antibiotic, anti-inflammatory, and lubricating eye drops strictly adhering to the post-operative dosage schedule." },
+      { step: "02", title: "Protective Eyewear", description: "Wear protective sunglasses outdoors to reduce glare and use the supplied eye shield while sleeping during the early healing phase." },
+      { step: "03", title: "Avoid Eye Rubbing & Water Contact", description: "Refrain from touching, rubbing, or splashing tap water directly into the operated eye to safeguard the delicate micro-incision." },
+      { step: "04", title: "Scheduled Follow-Up Visits", description: "Attend all scheduled review visits with your ophthalmologist to evaluate wound healing, intraocular pressure, and visual progression." },
     ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -325,9 +299,9 @@ const retinaContent: ServicePageContent = {
     text: "Retina care in Indore at Shanti Eye Tech focuses on early detection and expert evaluation to help protect your vision from serious, vision-threatening conditions.",
     image: "/assets/retina/retina-banner.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "97%", label: "Success Rate" },
-      { value: "Essential", label: "Early Detection" },
+      { value: "Dilated Examination", label: "Detailed Retinal Assessment" },
+      { value: "High-Resolution OCT", label: "Macular & Retinal Imaging" },
+      { value: "Timely Screening", label: "Diabetic & Hypertensive Retinopathy" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -405,11 +379,17 @@ const retinaContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "What Our Patients Say About Shanti EyeTech",
-    items: commonTestimonials,
+    eyebrow: "RETINAL HEALTH GUIDANCE",
+    title: "Managing Vision Health in",
+    accent: "Diabetes & Systemic Conditions",
+    body: "Essential clinical guidance on preserving retinal health, recognizing warning symptoms, and adhering to routine screenings",
+    guidanceItems: [
+      { step: "01", title: "Periodic Dilated Retinal Exams", description: "Individuals diagnosed with diabetes or hypertension should undergo periodic dilated fundus examinations for timely detection of microvascular changes." },
+      { step: "02", title: "High-Resolution OCT Imaging", description: "Non-invasive optical coherence tomography scans provide cross-sectional imaging to identify macular edema or retinal thickening early." },
+      { step: "03", title: "Monitoring Flashes and Floaters", description: "Immediate ophthalmic evaluation is essential if you experience sudden onset of new floaters, light flashes, or visual field darkening." },
+      { step: "04", title: "Systemic Blood Sugar & BP Control", description: "Coordinating clinical eye care with regular systemic health management helps minimize the risk of progressive retinopathy." },
+    ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -446,9 +426,9 @@ const glaucomaContent: ServicePageContent = {
     text: "Glaucoma care in Indore at Shanti Eye Tech focuses on protecting your vision. Glaucoma can gradually damage the optic nerve, often without noticeable symptoms in its early stages, and timely screening, regular monitoring and appropriate treatment can help protect remaining vision.",
     image: "/assets/glaucoma/glaucoma-banner.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "Risk-Based", label: "Screening Guidance" },
-      { value: "97%", label: "Patient Satisfaction" },
+      { value: "Diagnostic Suite", label: "OCT & Visual Field Analysis" },
+      { value: "Early Detection", label: "Intraocular Pressure Assessment" },
+      { value: "Long-Term Care", label: "Ongoing Progression Monitoring" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -526,11 +506,17 @@ const glaucomaContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "What Our Patients Say About Shanti EyeTech",
-    items: generalCareTestimonials,
+    eyebrow: "MONITORING GLAUCOMA",
+    title: "The Importance of Regular",
+    accent: "Visual Field & IOP Checks",
+    body: "Glaucoma often develops silently without early warning signs; consistent diagnostic review and medication adherence protect optic nerve health",
+    guidanceItems: [
+      { step: "01", title: "Intraocular Pressure (IOP) Tracking", description: "Regular tonometry assessments monitor fluid pressure within the eye to ensure pressure targets are maintained consistently." },
+      { step: "02", title: "Computerized Visual Field Testing", description: "Periodic perimetry tests detect subtle peripheral vision changes before noticeable visual field constriction occurs." },
+      { step: "03", title: "OCT Retinal Nerve Fiber Analysis", description: "High-resolution serial OCT scans measure retinal nerve fiber layer thickness to detect structural progression over time." },
+      { step: "04", title: "Continuous Eye Drop Adherence", description: "Strict adherence to daily prescribed pressure-lowering drops without interruptions is vital to halting progressive vision damage." },
+    ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -572,9 +558,9 @@ const squintContent: ServicePageContent = {
     text: "Squint, or strabismus, occurs when both eyes do not remain properly aligned and look in the same direction. Early evaluation can help identify the cause and determine the appropriate treatment, particularly in children.",
     image: "/assets/squint/squint-banner.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "20+ yrs", label: "Specialized Care" },
-      { value: "97%", label: "Patient Satisfaction" },
+      { value: "Orthoptic Evaluation", label: "Ocular Alignment Assessment" },
+      { value: "Bilateral Vision", label: "Binocular Single Vision Testing" },
+      { value: "Clinical Approaches", label: "Optical & Surgical Correction Guidance" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -661,11 +647,17 @@ const squintContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "Real experiences from patients and parents who chose squint evaluation and care",
-    items: commonTestimonials,
+    eyebrow: "CLINICAL OVERVIEW",
+    title: "Goals of Strabismus",
+    accent: "Evaluation & Management",
+    body: "Restoring ocular alignment, preventing amblyopia, and supporting binocular vision coordination for children and adults",
+    guidanceItems: [
+      { step: "01", title: "Accurate Deviation Measurement", description: "Comprehensive orthoptic evaluation using prism cover testing to quantify ocular alignment across primary and secondary gaze positions." },
+      { step: "02", title: "Restoring Binocular Single Vision", description: "Coordinating both eyes to work together, supporting fusion and the development of natural binocular depth perception." },
+      { step: "03", title: "Amblyopia Prevention & Care", description: "Timely diagnosis and management, including optical correction or occlusion therapy, to maintain visual acuity in both eyes." },
+      { step: "04", title: "Structured Long-Term Follow-up", description: "Periodic review visits to assess alignment stability, visual function development, and post-treatment progress." },
+    ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -715,9 +707,9 @@ const pediatricContent: ServicePageContent = {
     text: "Pediatric eye care in Indore at Shanti Eye Tech offers expert, child-friendly evaluations to help support your child's vision and eye health.",
     image: "/assets/pediatric/banner-new.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "20+ yrs", label: "Trusted Care" },
-      { value: "97%", label: "Patient Satisfaction" },
+      { value: "Age-Appropriate", label: "Child-Friendly Vision Assessment" },
+      { value: "Early Screening", label: "Amblyopia & Refractive Evaluation" },
+      { value: "Comprehensive", label: "Developmental Vision Checks" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -799,11 +791,17 @@ const pediatricContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "What Our Patients Say About Shanti EyeTech",
-    items: generalCareTestimonials,
+    eyebrow: "PARENT INFORMATION",
+    title: "Signs Your Child May Need an",
+    accent: "Eye Examination",
+    body: "Recognizing subtle childhood vision behaviors and developmental signs helps ensure timely professional eye care",
+    guidanceItems: [
+      { step: "01", title: "Frequent Squinting or Eye Rubbing", description: "Consistent squinting, squeezing the eyes, or frequent rubbing can indicate uncorrected refractive errors or ocular fatigue." },
+      { step: "02", title: "Sitting Very Close to Screens", description: "Holding books or screens unusually close to the face, or sitting close to television displays, often points to emerging near-sightedness." },
+      { step: "03", title: "Head Tilting or Eye Covering", description: "Tilting the head to one side or covering an eye while focusing suggests potential eye misalignment or visual disparity between eyes." },
+      { step: "04", title: "Complaints of Headaches or Fatigue", description: "Frequent headaches or losing place while reading can reflect visual accommodation issues that warrant an ophthalmology assessment." },
+    ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",
@@ -847,9 +845,9 @@ const keratoconusContent: ServicePageContent = {
     text: "Keratoconus causes the cornea to gradually thin and change shape, leading to distorted or blurred vision. Early evaluation and appropriate management can help monitor its progression and protect visual quality.",
     image: "/assets/keratoconus/keratoconus-banner.png",
     metrics: [
-      { value: "49K+", label: "Successful Procedures" },
-      { value: "20+ yrs", label: "Specialized Care" },
-      { value: "97%", label: "Patient Satisfaction" },
+      { value: "Corneal Topography", label: "Curvature & Thickness Mapping" },
+      { value: "Stabilisation Focus", label: "Corneal Cross-Linking (CXL) Guidance" },
+      { value: "Specialised Lenses", label: "Scleral & Custom Contact Lens Fitting" },
     ],
     reviewedBy: "Dr. Amit N. Solanki, MBBS, DOMS, DNB, FAECS",
   },
@@ -938,11 +936,17 @@ const keratoconusContent: ServicePageContent = {
     ],
   },
   testimonials: {
-    eyebrow: "PATIENT STORIES",
-    title: "You're Not Alone,",
-    accent: "Hear From Others Like You",
-    body: "What Our Patients Say About Shanti EyeTech",
-    items: commonTestimonials,
+    eyebrow: "CLINICAL ADVISORY",
+    title: "Managing Keratoconus &",
+    accent: "Preventing Progression",
+    body: "Essential patient advisory guidelines to protect corneal structural stability and support long-term visual comfort",
+    guidanceItems: [
+      { step: "01", title: "Avoid Vigorous Eye Rubbing", description: "Chronic eye rubbing applies mechanical trauma that weakens corneal collagen and significantly accelerates keratoconus progression." },
+      { step: "02", title: "UV Protection with Sunglasses", description: "Wearing UV-protective eyewear outdoors helps shield corneal collagen and preserves structural stability." },
+      { step: "03", title: "Periodic Topography Monitoring", description: "Regular computerized corneal curvature and thickness scans enable early detection of progression and timely intervention." },
+      { step: "04", title: "Specialised Scleral & RGP Care", description: "Following strict lens hygiene and scheduled follow-ups ensures optimal visual rehabilitation and corneal surface health." },
+    ],
+    items: [],
   },
   faq: {
     eyebrow: "COMMON QUESTIONS",

@@ -10,6 +10,7 @@ import { IntroSection } from "../IntroSection/IntroSection";
 import { TestimonialsSection } from "../TestimonialsSection/TestimonialsSection";
 import { TreatmentOptions } from "../TreatmentOptions/TreatmentOptions";
 import { WhyChoose } from "../WhyChoose/WhyChoose";
+import { TrustStrip } from "@/app/components/home/TrustStrip";
 import styles from "./styles.module.css";
 
 export function ServicePage({ content }: { content: ServicePageContent }) {
@@ -18,6 +19,7 @@ export function ServicePage({ content }: { content: ServicePageContent }) {
       <Header active="services" />
       <main className={`${styles.page} ${styles[content.kind]}`}>
         <HeroBanner content={content.hero} kind={content.kind} />
+        <TrustStrip />
         <IntroSection content={content.intro} kind={content.kind} />
         <WhyChoose content={content.whyChoose} kind={content.kind} />
         <EligibilitySection content={content.eligibility} kind={content.kind} />

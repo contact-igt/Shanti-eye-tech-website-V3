@@ -4,7 +4,7 @@ import { servicePages } from "../constants";
 
 export const metadata: Metadata = {
   title: {
-    absolute: "LASIK, ICL & PRELEX in Indore | Shanti Eye Tech",
+    absolute: "Freedom From Glasses in Indore | Shanti Eye Tech",
   },
   description:
     "Explore laser vision correction, ICL and PRELEX options at Shanti Eye Tech in Indore. Suitability is determined after a comprehensive eye examination.",

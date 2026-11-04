@@ -1,25 +1,27 @@
-import { CountUp } from "@/app/client";
 import styles from "./AboutImpactBand.module.css";
 
 export function AboutImpactBand() {
   return (
     <section className={`impact-band ${styles.impactBand}`}>
-      <div className="shell">
-        <h2>Our Impact in Numbers</h2>
-        <p>Two decades of excellence in eye care</p>
-        <div>
-          <b>
-            <CountUp value={20} suffix="+" />
-            <small>Years of Service</small>
-          </b>
-          <b>
-            <CountUp value={49999} suffix="+" />
-            <small>Successful Procedures</small>
-          </b>
-          <b>
-            <CountUp value={97} suffix="%" />
-            <small>Patient Satisfaction</small>
-          </b>
+      <div className={`shell ${styles.shell}`}>
+        <h2>Clinical Highlights</h2>
+        <p>Two decades of dedicated ophthalmic practice</p>
+        <div className={styles.highlightsGrid}>
+          <article className={styles.highlightCol}>
+            <span className={styles.highlightVal}>20+</span>
+            <span className={styles.underline} aria-hidden="true" />
+            <p className={styles.highlightDesc}>Years – Dedicated Eye Care Practice</p>
+          </article>
+          <article className={styles.highlightCol}>
+            <span className={styles.highlightVal}>6</span>
+            <span className={styles.underline} aria-hidden="true" />
+            <p className={styles.highlightDesc}>Eye Care Specialities</p>
+          </article>
+          <article className={styles.highlightCol}>
+            <span className={styles.highlightVal}>Comprehensive Care</span>
+            <span className={styles.underline} aria-hidden="true" />
+            <p className={styles.highlightDesc}>Diagnostic &amp; Surgical Facilities</p>
+          </article>
         </div>
       </div>
     </section>

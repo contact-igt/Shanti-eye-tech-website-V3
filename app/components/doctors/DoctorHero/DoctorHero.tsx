@@ -1,24 +1,29 @@
 import Link from "next/link";
-import { ArrowRight, Award, CalendarDays, GraduationCap } from "lucide-react";
+import { ArrowRight, Award, BookOpen, GraduationCap, Trophy } from "lucide-react";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./styles.module.css";
 
 const statistics = [
   {
-    value: "20+ Years",
-    label: "Ophthalmology Experience",
-    icon: Award,
-  },
-  {
     value: "MBBS, DOMS, DNB, FAECS",
-    label: "Qualifications",
+    label: "Verified Qualifications",
     icon: GraduationCap,
     compact: true,
   },
   {
-    value: "Since 2003",
-    label: "Dedicated to Ophthalmology",
-    icon: CalendarDays,
+    value: "20+ Years",
+    label: "Clinical Practice",
+    icon: Award,
+  },
+  {
+    value: "50+ Papers",
+    label: "Published Research",
+    icon: BookOpen,
+  },
+  {
+    value: "15+ Awards",
+    label: "Awards & Recognition",
+    icon: Trophy,
   },
 ];
 

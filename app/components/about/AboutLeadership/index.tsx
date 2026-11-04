@@ -1,5 +1,4 @@
 import Link from "next/link";
-import { CountUp } from "@/app/client";
 import { SectionHeading } from "@/app/site-components";
 import styles from "./AboutLeadership.module.css";
 
@@ -51,7 +50,9 @@ export function AboutLeadership() {
           </div>
           <div className="leadership-copy">
             <h2>Dr. Amit N Solanki</h2>
-            <h4>MBBS, DOMS, DNB, FAECS</h4>
+            <h4 style={{ fontSize: "14px", fontWeight: 600, color: "#475569", lineHeight: 1.4 }}>
+              MBBS, DOMS, DNB (Ophthalmology), FAECS (Fellowship in Cataract &amp; Glaucoma)
+            </h4>
             <p>
               Dr. Amit N. Solanki is a Cataract, Glaucoma &amp; Refractive-LASIK-LASER surgeon with more than 20 years of experience in ophthalmology.
             </p>
@@ -59,47 +60,36 @@ export function AboutLeadership() {
               Dr. Solanki completed MBBS at B.J. Medical College, Ahmedabad; DOMS at M. &amp; J. Western Regional Institute of Ophthalmology; DNB Ophthalmology at Aravind Eye Hospital; and advanced phacoemulsification and glaucoma training at Aravind Eye Care Hospital, Coimbatore.
             </p>
             <p>
-              This hands-on training honed his skills in advanced phaco cataract surgery as well as glaucoma diagnostics and management. Beyond clinical practice, Dr. Solanki has trained foreign doctors in Hanoi, Vietnam through the Alina Vision International Foundation, and is a sought-after speaker who has delivered numerous scientific talks as guest faculty at national and international conferences.
+              This hands-on training honed his skills in advanced phaco cataract surgery as well as glaucoma diagnostics and management. Beyond clinical practice, Dr. Solanki has trained foreign doctors in Hanoi, Vietnam through the Alina Vision International Foundation, and is a regular speaker who has delivered scientific talks as guest faculty at national and international conferences.
             </p>
-            <div className="leadership-stats">
-              <article>
-                <span className="leadership-stat-icon">
+            <div className={styles.leadershipStats}>
+              <article className={styles.statCard}>
+                <span className={styles.statIcon}>
                   <LeadershipIcon type="award" />
                 </span>
-                <b>
-                  <CountUp value={15} suffix="+" />
-                </b>
-                <strong>Awards</strong>
-                <small>National Recognition</small>
+                <h4 className={styles.statHeading}>MBBS, DOMS, DNB, FAECS</h4>
+                <p className={styles.statDesc}>Verified Qualifications</p>
               </article>
-              <article>
-                <span className="leadership-stat-icon">
-                  <LeadershipIcon type="book" />
-                </span>
-                <b>
-                  <CountUp value={50} suffix="+" />
-                </b>
-                <strong>Papers</strong>
-                <small>Published Research</small>
-              </article>
-              <article>
-                <span className="leadership-stat-icon">
-                  <LeadershipIcon type="users" />
-                </span>
-                <b>
-                  <CountUp value={49} suffix="K+" />
-                </b>
-                <strong>Surgeries</strong>
-                <small>Performed</small>
-              </article>
-              <article>
-                <span className="leadership-stat-icon">
+              <article className={styles.statCard}>
+                <span className={styles.statIcon}>
                   <LeadershipIcon type="calendar" />
                 </span>
-                <b>
-                  <CountUp value={20} suffix="+" /> Years
-                </b>
-                <strong>Experience</strong>
+                <h4 className={styles.statHeading}>20+ Years</h4>
+                <p className={styles.statDesc}>Clinical Practice</p>
+              </article>
+              <article className={styles.statCard}>
+                <span className={styles.statIcon}>
+                  <LeadershipIcon type="book" />
+                </span>
+                <h4 className={styles.statHeading}>50+ Papers</h4>
+                <p className={styles.statDesc}>Published Research</p>
+              </article>
+              <article className={styles.statCard}>
+                <span className={styles.statIcon}>
+                  <LeadershipIcon type="award" />
+                </span>
+                <h4 className={styles.statHeading}>15+ Awards</h4>
+                <p className={styles.statDesc}>Awards &amp; Recognition</p>
               </article>
             </div>
             <Link className="button button-primary leadership-cta" href="/contact">

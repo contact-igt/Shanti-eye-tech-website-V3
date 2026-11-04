@@ -10,8 +10,8 @@ export function AboutWhyChoose() {
           columns={2}
           items={[
             { icon: "♡", title: "Patient-Centered Care", text: "Every treatment plan is personalized to your unique needs and lifestyle goals." },
-            { icon: "♙", title: "Expert Team", text: "15+ experienced ophthalmologists with specialized training in all subspecialties." },
-            { icon: "♢", title: "Proven Track Record", text: "49,999+ successful procedures with 97% patient satisfaction." },
+            { icon: "♙", title: "Qualified Clinical Team", text: "Experienced ophthalmology care led by Dr. Amit N. Solanki, supported by trained optometrists, ophthalmic assistants and clinical staff." },
+            { icon: "♢", title: "Established Clinical Experience", text: "Over two decades of dedicated ophthalmic clinical practice, focusing on individualised evaluation and established surgical protocols." },
             { icon: "✦", title: "Continuous Innovation", text: "Investment in latest technology and ongoing training for optimal outcomes." },
           ]}
         />
