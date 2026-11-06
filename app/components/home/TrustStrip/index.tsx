@@ -1,85 +1,42 @@
-import { Award, ShieldCheck, Star, Target } from "lucide-react";
+import { Building2, Eye, HeartHandshake, Microscope } from "lucide-react";
 import styles from "./TrustStrip.module.css";
+
+const badgeItems = [
+  { icon: Building2, label: "Established Eye Care" },
+  { icon: Eye, label: "Comprehensive Eye Care" },
+  { icon: Microscope, label: "Modern Diagnostic Facilities" },
+  { icon: HeartHandshake, label: "Patient-Centred Care" },
+];
 
 export function TrustStrip() {
   return (
     <section className={`trust-strip ${styles.trustStrip}`} aria-hidden="true">
       <div className="trust-strip-marquee">
         <ul className="trust-strip-list">
-          <li>
-            <span>
-              <Award size={20} />
-            </span>{" "}
-            Best Eye Hospital 2024
-          </li>
-          <li>
-            <span>
-              <ShieldCheck size={20} />
-            </span>{" "}
-            NABH Accredited
-          </li>
-          <li>
-            <span>
-              <Award size={20} />
-            </span>{" "}
-            20+ Years Excellence
-          </li>
-          <li>
-            <span>
-              <Star size={20} />
-            </span>{" "}
-            97% Patient Satisfaction Rate
-          </li>
-          <li>
-            <span>
-              <Target size={20} />
-            </span>{" "}
-            State-of-the-Art Technology
-          </li>
-          <li>
-            <span>
-              <ShieldCheck size={20} />
-            </span>{" "}
-            ISO 9001:2015 Certified
-          </li>
+          {badgeItems.concat(badgeItems).map((badge, idx) => {
+            const Icon = badge.icon;
+            return (
+              <li key={`strip-1-${idx}`}>
+                <span>
+                  <Icon size={20} />
+                </span>{" "}
+                {badge.label}
+              </li>
+            );
+          })}
         </ul>
         <ul className="trust-strip-list">
-          <li>
-            <span>
-              <Award size={20} />
-            </span>{" "}
-            Best Eye Hospital 2024
-          </li>
-          <li>
-            <span>
-              <ShieldCheck size={20} />
-            </span>{" "}
-            NABH Accredited
-          </li>
-          <li>
-            <span>
-              <Award size={20} />
-            </span>{" "}
-            20+ Years Excellence
-          </li>
-          <li>
-            <span>
-              <Star size={20} />
-            </span>{" "}
-            97% Patient Satisfaction Rate
-          </li>
-          <li>
-            <span>
-              <Target size={20} />
-            </span>{" "}
-            State-of-the-Art Technology
-          </li>
-          <li>
-            <span>
-              <ShieldCheck size={20} />
-            </span>{" "}
-            ISO 9001:2015 Certified
-          </li>
+          {badgeItems.concat(badgeItems).map((badge, idx) => {
+            const Icon = badge.icon;
+            return (
+              <li key={`strip-2-${idx}`}>
+                <span>
+                  <Icon size={20} />
+                </span>{" "}
+                {badge.label}
+              </li>
+            );
+          })}
         </ul>
       </div>
     </section>

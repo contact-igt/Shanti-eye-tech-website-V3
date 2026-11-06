@@ -156,9 +156,9 @@
   bottom: 28px;
   z-index: 5;
   display: grid;
-  width: 58%;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1.12fr) minmax(0, 1fr);
-  gap: 12px;
+  width: 62%;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
 }
 
 .statistic {

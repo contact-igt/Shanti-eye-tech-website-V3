@@ -10,7 +10,7 @@ const milestones = [
   {
     year: "2017",
     title: "Dr. Ramesh Krishna Agarwal Memorial Award",
-    description: "Most prestigious award by M.P. State Ophthalmic Society at the MPSOS Annual Conference, Gwalior, October 2017.",
+    description: "Dr. Ramesh Krishna Agarwal Memorial Award — M.P. State Ophthalmic Society Annual Conference, Gwalior, 2017.",
   },
   {
     year: "2016",
@@ -18,24 +18,14 @@ const milestones = [
     description: "M.P. State Ophthalmic Society Annual Conference, Bhopal, 2016.",
   },
   {
-    year: "2014",
-    title: "Vice President of Lions International",
-    description: "Honoured as Vice President of Lions International, Sewa Ranjan, Indore, for the year 2013–14.",
-  },
-  {
-    year: "2013",
-    title: "Most Versatile Doctor of the Year",
-    description: "Honoured as “Most Versatile Doctor of the Year 2013” by Dr. A.M. Arun, Chairman, Vasan Eye Care Hospital.",
-  },
-  {
     year: "2011",
     title: "Best Surgical Video",
-    description: "Honoured with best surgical video titled “Small vs Large Rhexis for Endocapsular Phaco in White Mature Cataracts” by Professor Dr. Kevin Miller (U.S.A.) at Dr. Vasavada's National Phaco Workshop, Ahmedabad, September 2011.",
+    description: "Honoured with surgical video presentation titled “Small vs Large Rhexis for Endocapsular Phaco in White Mature Cataracts” at National Phaco Workshop, Ahmedabad, September 2011.",
   },
   {
     year: "2011",
     title: "Best Paper Award for Glaucoma",
-    description: "Best Paper Award for Glaucoma by Dr. Devendra Sood at Ophthalmology Tomorrow, Annual Conference by IDOS, Indore, June 2011.",
+    description: "Best Paper Award for Glaucoma at Ophthalmology Tomorrow, Annual Conference by IDOS, Indore, June 2011.",
   },
   {
     year: "2006",
@@ -46,11 +36,6 @@ const milestones = [
     year: "2005",
     title: "Third Rank in Gujarat University",
     description: "Third Rank in Gujarat University during postgraduate training in Ophthalmology at RIO, Ahmedabad, 2005.",
-  },
-  {
-    year: "1996",
-    title: "Topped in HSC",
-    description: "Topped in HSC at Karnavat Higher Secondary School, 1996.",
   },
 ];
 

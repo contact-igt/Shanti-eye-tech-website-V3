@@ -71,7 +71,7 @@ const education = [
   ["MBBS", "B.J. Medical College, New Civil Hospital, Ahmedabad"],
   ["DOMS – Diploma in Ophthalmology", "M. & J. Western Regional Institute of Ophthalmology, Civil Hospital, Ahmedabad"],
   ["DNB Ophthalmology", "Aravind Eye Hospital & Postgraduate Institute of Ophthalmology, Tamil Nadu"],
-  ["FAECS", "Aravind eye hospital and institue of ophthalmology, Tamilnadu"],
+  ["Fellowship in Cataract and Glaucoma (FAECS)", "Aravind Eye Hospital & Postgraduate Institute of Ophthalmology, Tamil Nadu"],
   ["Phacoemulsification & Glaucoma Training", "Aravind Eye Care Hospital, Coimbatore"],
   ["LASIK Surgical Training", "Vadodara, Gujarat"],
 ];
@@ -118,10 +118,10 @@ export function DoctorProfileSections() {
       <section className={`${styles.section} ${styles.trustSection}`} aria-labelledby="doctor-trust-title">
         <div className="shell">
           <SectionHeading
-            eyebrow="WHY CONSULT DR. AMIT SOLANKI"
+            eyebrow="CLINICAL PROFILE"
             support="Decades of clinical experience, advanced surgical training and a patient-focused approach to eye care."
           >
-            <span id="doctor-trust-title">Why Patients Trust </span><strong>Dr. Amit N. Solanki</strong>
+            <span id="doctor-trust-title">Clinical Background &amp; </span><strong>Surgical Training</strong>
           </SectionHeading>
           <div className={styles.trustGrid}>
             {trustPoints.map(({ icon: Icon, title, copy }) => (
@@ -143,6 +143,9 @@ export function DoctorProfileSections() {
           <div className={styles.aboutCopy}>
             <Eyebrow>ABOUT THE DOCTOR</Eyebrow>
             <h2 id="meet-doctor-title">Meet <strong>Dr. Amit N. Solanki</strong></h2>
+            <p style={{ fontWeight: 600, color: "#12bce1", fontSize: "16px", marginTop: "-4px", marginBottom: "14px" }}>
+              MBBS, DOMS, DNB, FAECS
+            </p>
             <p>
               Dr. Amit N. Solanki is the Director of Shanti Eye Tech and a Cataract, Glaucoma &amp; Refractive Surgeon, practising ophthalmology since 2003.
             </p>
@@ -154,8 +157,8 @@ export function DoctorProfileSections() {
                 <Award aria-hidden="true" />
               </span>
               <div>
-                <strong>20+ Years of Ophthalmology Experience</strong>
-                <span>Combining clinical experience with advanced surgical training and personalised patient care.</span>
+                <strong>20+ Years Clinical Experience &bull; 50+ Published Papers &bull; 15+ Awards</strong>
+                <span>Combining two decades of ophthalmic practice with published research, recognized contributions and dedicated patient care.</span>
               </div>
             </div>
           </div>

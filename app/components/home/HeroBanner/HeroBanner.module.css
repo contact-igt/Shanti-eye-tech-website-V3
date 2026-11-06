@@ -14,25 +14,26 @@
   align-items: stretch !important;
   justify-content: space-between !important;
   min-height: 690px !important;
+  z-index: 5 !important;
 }
 
 .homeHero :global(.hero-copy) {
   position: relative !important;
-  z-index: 2 !important;
-  flex: 1 1 50% !important;
-  max-width: 580px !important;
+  z-index: 6 !important;
+  flex: 1 1 auto !important;
+  max-width: 820px !important;
   padding-top: 70px !important;
   padding-bottom: 24px !important;
   align-self: center !important;
 }
 
 @media (min-width: 1201px) {
-  :global(.home-page) .homeHero :global(.hero-copy),
-  :global(.home-page) .homeHero :global(.hero-copy) h1 {
-    max-width: 700px !important;
+  :global(.home-page) .homeHero :global(.hero-copy) {
+    max-width: 860px !important;
   }
 
   :global(.home-page) .homeHero :global(.hero-copy) h1 {
+    max-width: 580px !important;
     font-size: clamp(2.1rem, 2.5vw, 3rem) !important;
     line-height: 1.1 !important;
     margin-bottom: 24px !important;
@@ -85,25 +86,19 @@
   justify-content: flex-end !important;
   z-index: 1 !important;
   pointer-events: none !important;
+  overflow: hidden !important;
 }
 
 .homeHero :global(.hero-doctor-bg) {
   position: absolute !important;
   right: 0 !important;
   bottom: -10px !important;
-  width: 50% !important;
+  width: 46% !important;
+  max-width: 680px !important;
   height: calc(60% + 1px) !important;
   object-position: top !important;
   object-fit: cover !important;
   z-index: 1 !important;
-    /* position: absolute !important;
-  right: 0 !important;
-  bottom: 0 !important; */
-  /* height: 0% !important; */
-  /* max-height: 100% !important; */
-  /* width: auto !important; */
-  /* max-width: 60% !important; */
-  /* object-position: right bottom !important; */
 }
 
 .homeHero :global(.hero-doctor-img) {
@@ -123,28 +118,36 @@
 
 .homeHero :global(.hero-metrics) {
   display: flex !important;
-  align-items: center !important;
-  gap: 32px !important;
-  margin-top: 20px !important;
-  flex-wrap: wrap !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: flex-start !important;
+  justify-content: flex-start !important;
+  gap: clamp(12px, 1.4vw, 22px) !important;
+  margin-top: 24px !important;
+  width: max-content !important;
+  max-width: 100% !important;
+  position: relative !important;
+  z-index: 6 !important;
 }
 
 .homeHero :global(.hero-metrics) > div {
   display: flex !important;
-  align-items: center !important;
-  gap: 12px !important;
+  flex-direction: row !important;
+  align-items: flex-start !important;
+  gap: 10px !important;
+  flex: 0 0 auto !important;
 }
 
 .homeHero :global(.metric-icon) {
   width: 38px !important;
   height: 38px !important;
   display: grid !important;
-  flex: 0 0 auto !important;
+  flex: 0 0 38px !important;
   place-items: center !important;
   border: 1px solid rgba(220, 229, 242, 1) !important;
   border-radius: 50% !important;
   color: #22c44a !important;
-  background: transparent !important;
+  background: rgba(255, 255, 255, 0.75) !important;
 }
 
 .homeHero :global(.metric-icon) svg {
@@ -155,14 +158,18 @@
 .homeHero :global(.metric-copy) {
   display: flex !important;
   flex-direction: column !important;
-  gap: 1px !important;
+  justify-content: center !important;
+  gap: 2px !important;
 }
 
 .homeHero :global(.hero-metrics) b {
-  font-size: 24px !important;
+  font-size: 20px !important;
   font-weight: 700 !important;
-  color: #101114 !important;
-  line-height: 32px !important;
+  color: #0f172a !important;
+  line-height: 1.2 !important;
+  letter-spacing: -0.01em !important;
+  margin: 0 !important;
+  display: block !important;
 }
 
 .homeHero :global(.hero-metrics) :global(.metric-copy) span {
@@ -171,12 +178,8 @@
   font-weight: 600 !important;
   line-height: 1.25 !important;
   white-space: nowrap !important;
-}
-
-.homeHero :global(.hero-metrics) :global(.metric-copy) span:nth-child(1) {
-  font-size: 24px !important;
-  font-weight: bold !important;
-  color: rgba(16, 17, 20, 1) !important;
+  margin: 0 !important;
+  display: block !important;
 }
 
 
@@ -353,9 +356,10 @@
     font-size: clamp(2rem, 4.9vw, 2.5rem) !important;
   }
   .homeHero :global(.hero-metrics) {
-    display: grid !important;
-    grid-template-columns: repeat(2, 1fr) !important;
-    gap: 18px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 16px 20px !important;
+    width: 100% !important;
   }
   .homeHero :global(.hero-image) {
     height: 420px !important;
@@ -404,14 +408,19 @@
     justify-content: center !important;
   }
   .homeHero :global(.hero-metrics) {
-    grid-template-columns: 1fr !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
     gap: 14px !important;
+    width: 100% !important;
   }
   .homeHero :global(.hero-metrics) > div {
-    flex-direction: column !important;
-    justify-content: center !important;
-    text-align: center !important;
-    gap: 8px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    text-align: left !important;
+    gap: 12px !important;
+    width: 100% !important;
   }
   .homeHero :global(.hero-image) {
     height: 380px !important;

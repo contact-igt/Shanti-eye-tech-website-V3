@@ -12,7 +12,7 @@ export type TreatmentItem = {
 
 const treatments: TreatmentItem[] = [
   {
-    title: "Freedom From Glasses",
+    title: "Freedom from Glasses",
     desc: "Touchless LASIK, ICL and PRELEX — advanced vision-correction options to reduce or eliminate dependence on glasses and contact lenses. Suitability and visual outcomes depend on a detailed eye examination.",
     image: "/assets/treatment-overview/freedom-glasses.png",
     href: "/services/lasik#service-banner",

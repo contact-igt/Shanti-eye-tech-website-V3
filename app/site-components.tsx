@@ -101,7 +101,7 @@ export function QuickActionButtons() {
     {
       key: "address",
       label: "Address",
-      href: "https://www.google.com/maps/place/Dr.+Amit+Solanki+Eye+Specialist+Shanti+EyeTech+Best+Eye+Hospital+in+Indore/@22.7229045,75.8843484,655m/data=!3m2!1e3!4b1!4m6!3m5!1s0x3962fd5037568439:0xb4160c93774cf232!8m2!3d22.7228996!4d75.8869233!16s%2Fg%2F11fn98lrpr?entry=ttu&g_ep=EgoyMDI2MDgxOS4wIKXMDSoASAFQAw%3D%3D",
+      href: "https://maps.google.com/?cid=12976694665893343794",
       className: "address",
       icon: (
         <svg viewBox="0 0 24 24" aria-hidden="true">
@@ -175,11 +175,11 @@ function TechnologyIcon({ title }: { title: string }) {
 function CommitmentIcon({ title }: { title: string }) {
   const icon = title === "Precision Diagnostics" ? (
     <><circle cx="12" cy="12" r="8" /><circle cx="12" cy="12" r="4.5" /><circle cx="12" cy="12" r="1.5" /></>
-  ) : title === "Patient-Centered Care" ? (
+  ) : title === "Patient-Centred Care" || title === "Patient-Centered Care" ? (
     <path d="M20.8 8.2c0 5-8.8 10.8-8.8 10.8S3.2 13.2 3.2 8.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.8 1.2Z" />
-  ) : title === "Proven Excellence" ? (
+  ) : title === "Clinical Standards" || title === "Proven Excellence" ? (
     <><path d="M12 3 19 6v5c0 4.5-3 7.9-7 9.5-4-1.6-7-5-7-9.5V6l7-3Z" /><path d="m9 12 2 2 4-4" /></>
-  ) : title === "Caring with a Spiritual Touch" ? (
+  ) : title === "Compassionate Communication" || title === "Caring with a Spiritual Touch" ? (
     <><path d="M20.8 8.2c0 5-8.8 10.8-8.8 10.8S3.2 13.2 3.2 8.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.8 1.2Z" /><path d="m12 6 .7 1.8 1.8.7-1.8.7L12 11l-.7-1.8-1.8-.7 1.8-.7L12 6Z" /></>
   ) : (
     <><path d="m13 2-8 11h6l-1 9 8-12h-6l1-8Z" /><path d="M18 4h3M19.5 2.5v3" /></>
@@ -188,11 +188,11 @@ function CommitmentIcon({ title }: { title: string }) {
 }
 
 function WhyChooseIcon({ title }: { title: string }) {
-  const icon = title === "Patient-Centered Care" ? (
+  const icon = title === "Patient-Centred Care" || title === "Patient-Centered Care" ? (
     <path d="M20.8 8.2c0 5-8.8 10.8-8.8 10.8S3.2 13.2 3.2 8.2A4.4 4.4 0 0 1 12 7a4.4 4.4 0 0 1 8.8 1.2Z" />
-  ) : title === "Expert Team" ? (
+  ) : title === "Qualified Clinical Team" || title === "Expert Team" ? (
     <><circle cx="9" cy="8" r="3" /><circle cx="17" cy="9" r="2.5" /><path d="M3.5 19c0-3.3 2.4-5.5 5.5-5.5s5.5 2.2 5.5 5.5M14 14c3 .1 5 2.1 5 5" /></>
-  ) : title === "Proven Track Record" ? (
+  ) : title === "Established Clinical Experience" || title === "Proven Track Record" ? (
     <><circle cx="12" cy="8" r="4" /><path d="M9 12 7.5 20l4.5-2.5 4.5 2.5L15 12" /></>
   ) : (
     <><path d="m13 2-8 11h6l-1 9 8-12h-6l1-8Z" /><path d="M18 4h3M19.5 2.5v3" /></>
@@ -227,7 +227,7 @@ export function FeatureGrid({
       {items.map((item, index) => (
         <article className={`feature-card ${gradientFirst && index === 0 ? "gradient-card" : ""}`} key={item.title}>
           {showNumbers && <span className="feature-number" aria-hidden="true">{String(index + 1).padStart(2, "0")}</span>}
-          <span className="icon-box">{showNumbers ? <TechnologyIcon title={item.title} /> : ["Patient-Centered Care", "Expert Team", "Proven Track Record", "Continuous Innovation"].includes(item.title) ? <WhyChooseIcon title={item.title} /> : ["Advanced Equipment", "Precision Diagnostics", "Safety Standards", "Rapid Recovery"].includes(item.title) ? <CapabilityIcon title={item.title} /> : ["Precision Diagnostics", "Proven Excellence", "Caring with a Spiritual Touch"].includes(item.title) ? <CommitmentIcon title={item.title} /> : item.icon}</span>
+          <span className="icon-box">{showNumbers ? <TechnologyIcon title={item.title} /> : ["Patient-Centred Care", "Patient-Centered Care", "Expert Team", "Qualified Clinical Team", "Proven Track Record", "Established Clinical Experience", "Continuous Innovation"].includes(item.title) ? <WhyChooseIcon title={item.title} /> : ["Advanced Equipment", "Precision Diagnostics", "Safety Standards", "Rapid Recovery"].includes(item.title) ? <CapabilityIcon title={item.title} /> : ["Precision Diagnostics", "Clinical Standards", "Proven Excellence", "Compassionate Communication", "Caring with a Spiritual Touch", "Patient-Centred Care", "Patient-Centered Care"].includes(item.title) ? <CommitmentIcon title={item.title} /> : item.icon}</span>
           <h3>{item.title}</h3>
           <p>{item.text}</p>
         </article>
@@ -297,7 +297,7 @@ export function AppointmentSection({
   const isOverview = kind === "overview";
   const serviceLabel = kind === "lasik" ? "LASIK" : kind === "retina" ? "retina care" : kind === "glaucoma" ? "glaucoma care" : "cataract treatment";
   const journeyCopy = kind === "lasik"
-    ? "Take the first step toward freedom from glasses. Our experienced team is ready to guide you through safe, precise LASIK treatment."
+    ? "Take the first step toward laser vision correction. Our experienced team is ready to guide you through safe, precise evaluation and treatment."
     : kind === "retina"
       ? "Protect your sight with timely retina evaluation and expert care. Our specialists are ready to guide you through every step."
       : kind === "glaucoma"
@@ -389,7 +389,7 @@ export function Footer({ home = false }: { home?: boolean }) {
           </div>
           <div className="footer-quick-links"><h4>Quick Links</h4><Link href="/about">About Us</Link><Link href="/doctors">Our Doctors</Link><Link href="/services">Services</Link><Link href="/#technology">Technology</Link><Link href="/blogs">Blog</Link></div>
           <div className="footer-services"><h4>Services</h4><Link href="/services/cataract#service-banner">Cataract Surgery</Link><Link href="/services/lasik#service-banner">Freedom From Glasses</Link><Link href="/services/retina#service-banner">Retina Care</Link><Link href="/services/glaucoma#service-banner">Glaucoma Treatment</Link>{/* <Link href="/services/squint#service-banner">Squint Treatment</Link> */}<Link href="/services/pediatric-eye-care#service-banner">Pediatric Eye Care</Link><Link href="/services/keratoconus#service-banner">Keratoconus Care</Link></div>
-          <div className="footer-resources"><h4>Resources</h4><Link href="/contact#contact-form">Patient Guide</Link><Link href="/contact#contact-form">Insurance Info</Link><Link href="/contact#faq">FAQs</Link><Link href="/#testimonials">Testimonials</Link><Link href="/contact#contact-form">Contact Us</Link></div>
+          <div className="footer-resources"><h4>Resources</h4><Link href="/contact#contact-form">Patient Guide</Link><Link href="/contact#contact-form">Insurance Info</Link><Link href="/contact#faq">Patient FAQs</Link><Link href="/about#facilities">Clinical Facilities</Link><Link href="/contact#contact-form">Contact Us</Link></div>
 
           <div className="socials">
             <a href="https://www.facebook.com/shantieyetech" target="_blank" rel="noopener noreferrer" aria-label="Facebook"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 8h3V4h-3c-3 0-5 2-5 5v3H6v4h3v5h4v-5h3l1-4h-4V9c0-.7.3-1 1-1Z" /></svg></a>

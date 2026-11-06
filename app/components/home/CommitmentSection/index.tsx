@@ -26,13 +26,13 @@ export function CommitmentSection() {
             },
             {
               icon: "🛡",
-              title: "Proven Excellence",
-              text: "With over 49,999 successful procedures and 97% patient satisfaction, our track record speaks to our commitment to exceptional outcomes.",
+              title: "Clinical Standards",
+              text: "We adhere to structured clinical protocols, aseptic surgical standards, and comprehensive post-procedure monitoring to support patient safety and optimal care.",
             },
             {
               icon: "✦",
-              title: "Caring with a Spiritual Touch",
-              text: "Healing with Positive Energy guides how we care for every patient, with compassion, reassurance, and a positive outlook throughout their treatment.",
+              title: "Compassionate Communication",
+              text: "We believe in empathetic patient interaction, taking the time to listen, explain diagnostic findings clearly, and provide reassurance throughout the treatment process.",
             },
           ]}
         />

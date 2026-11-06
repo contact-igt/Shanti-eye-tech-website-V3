@@ -5,7 +5,6 @@ import { AboutPhilosophy } from "../components/about/AboutPhilosophy";
 import { AboutLeadership } from "../components/about/AboutLeadership";
 import { AboutCapabilities } from "../components/about/AboutCapabilities";
 import { AboutWhyChoose } from "../components/about/AboutWhyChoose";
-import { AboutImpactBand } from "../components/about/AboutImpactBand";
 import { AboutFacilities } from "../components/about/AboutFacilities";
 import { AppointmentSection, Footer, Header } from "../site-components";
 
@@ -91,7 +90,6 @@ export default function AboutPage() {
         <AboutLeadership />
         <AboutCapabilities />
         <AboutWhyChoose />
-        <AboutImpactBand />
         <AboutFacilities />
         <div className="home-page">
           <AppointmentSection />

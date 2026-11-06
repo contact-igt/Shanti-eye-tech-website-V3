@@ -11,7 +11,7 @@ import {
 
 const serviceOptions = [
   { value: "Cataract", label: "Cataract Surgery" },
-  { value: "Lasik", label: "Freedom From Glasses" },
+  { value: "Lasik", label: "Freedom From Glasses (LASIK / Refractive)" },
   { value: "Retina", label: "Retina Care" },
   { value: "Glaucoma", label: "Glaucoma Treatment" },
   // { value: "Squint", label: "Squint Treatment" }, // temporarily unlisted — replaced by Pediatric Eye Care

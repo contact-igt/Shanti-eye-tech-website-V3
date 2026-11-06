@@ -1,12 +1,12 @@
-import { Award, Star, Users } from "lucide-react";
+import { Award, BookOpenCheck, Eye } from "lucide-react";
 import { ArrowRight } from "lucide-react";
 import { CountUp } from "@/app/client";
 import styles from "./styles.module.css";
 
 const metrics = [
-  { value: 20, suffix: "+", label: "Years Excellence", icon: Award },
-  { value: 50, suffix: "K+", label: "Happy Patients", icon: Users },
-  { value: 97, suffix: "%", label: "Patient Satisfaction", icon: Star },
+  { value: "20+", countUp: 20, suffix: "+", label: "Clinical Experience", icon: Award },
+  { value: "Comprehensive", label: "Ophthalmic Care Disciplines", icon: Eye },
+  { value: "Evidence-Based", label: "Clinical Guidance", icon: BookOpenCheck },
 ];
 
 export function TreatmentsOverviewHero() {
@@ -48,7 +48,11 @@ export function TreatmentsOverviewHero() {
                   </span>
                   <span className={styles.metricCopy}>
                     <b>
-                      <CountUp value={metric.value} suffix={metric.suffix} />
+                      {metric.countUp ? (
+                        <CountUp value={metric.countUp} suffix={metric.suffix} />
+                      ) : (
+                        metric.value
+                      )}
                     </b>
                     <span>{metric.label}</span>
                   </span>

@@ -52,19 +52,19 @@ export function AboutHero() {
               <b>
                 <CountUp value={20} suffix="+" />
               </b>
-              <span>Years</span>
+              <span>Years Practice</span>
             </div>
             <div>
               <b>
-                <CountUp value={50} suffix="K+" />
+                <CountUp value={6} />
               </b>
-              <span>Patients</span>
+              <span>Eye Care Specialities</span>
             </div>
             <div>
-              <b>
-                <CountUp value={97} suffix="%" />
+              <b style={{ fontSize: "1.15rem" }}>
+                Indore
               </b>
-              <span>Satisfaction</span>
+              <span>Center Location</span>
             </div>
           </div>
         </div>

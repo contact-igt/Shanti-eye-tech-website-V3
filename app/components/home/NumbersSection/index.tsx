@@ -34,47 +34,29 @@ export function NumbersSection() {
       </svg>
       <div className="shell">
         <SectionHeading
-          eyebrow="TRUSTED BY THOUSANDS"
-          title="Numbers That Speak"
-          accent="Our Excellence"
+          eyebrow="CLINICAL OVERVIEW"
+          title="Dedicated to Quality"
+          accent="Eye Care"
         />
         <div className="numbers-grid">
           <article>
-            <span className="number-watermark" aria-hidden="true">
-              20
-            </span>
             <b>
-              <CountUp value={20} suffix="+" />
+              <CountUp value={20} suffix="+" /> Years
             </b>
-            <span>Years of Excellence in Eye Care</span>
+            <span>Dedicated Eye Care Practice</span>
           </article>
           <article>
-            <span className="number-watermark" aria-hidden="true">
-              50K+
-            </span>
             <b>
-              <CountUp value={50} suffix="K+" />
+              <CountUp value={6} />
             </b>
-            <span>Successful Procedures Completed</span>
+            <span>Eye Care Specialities</span>
           </article>
           <article>
-            <span className="number-watermark" aria-hidden="true">
-              97
-            </span>
-            <b>
-              <CountUp value={97} suffix="%" />
+            <b className="stat-text-heading">
+              Modern <br className="break-line" />Infrastructure
             </b>
-            <span>Patient Satisfaction Rate</span>
+            <span>Diagnostic &amp; Surgical Systems</span>
           </article>
-          {/* <article>
-            <span className="number-watermark" aria-hidden="true">
-              15
-            </span>
-            <b>
-              <CountUp value={15} suffix="+" />
-            </b>
-            <span>Expert Ophthalmologists</span>
-          </article> */}
         </div>
       </div>
     </section>

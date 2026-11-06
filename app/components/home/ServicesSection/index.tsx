@@ -19,7 +19,7 @@ const services = [
   [
     "03",
     "Freedom From Glasses",
-    "Vision-correction options designed to reduce dependence on spectacles or contact lenses for suitable patients. Suitability and visual outcomes depend on a detailed eye examination.",
+    "Touchless LASIK, SMILE, PRK, ICL and PRELEX — vision-correction options designed to reduce or eliminate dependence on spectacles or contact lenses for suitable patients.",
     "/services/lasik",
   ],
   [

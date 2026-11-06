@@ -38,12 +38,17 @@
   position: relative;
   overflow: hidden;
   min-height: 238px;
-  padding: 44px 38px 36px;
+  height: 100%;
+  padding: 40px 30px 36px;
   border-radius: 20px;
   border: 1px solid #dce5f0;
   border-bottom: 4px solid transparent;
   background: #fff;
   box-shadow: 0 8px 24px rgba(35, 66, 108, 0.06);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .numbersSection :global(.numbers-grid) article:nth-child(1),
@@ -61,47 +66,63 @@
 }
 
 .numbersSection :global(.number-watermark) {
-  display: block !important;
-  position: absolute !important;
-  top: -8px !important;
-  right: 0 !important;
-  z-index: 0 !important;
-  color: #e8eef6 !important;
-  font-size: 110px !important;
-  font-weight: 800 !important;
-  line-height: 1 !important;
-  letter-spacing: -0.075em !important;
-  white-space: nowrap;
-  pointer-events: none;
+  display: none !important;
 }
 
 .numbersSection :global(.numbers-grid) b {
   display: block;
-  font-size: 58px;
-  line-height: 1;
+  font-size: 52px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin-bottom: 12px;
   position: relative;
   z-index: 1;
 }
 
+.numbersSection :global(.numbers-grid) b.stat-text-heading {
+  font-size: clamp(21px, 1.7vw, 24px) !important;
+  line-height: 1.2 !important;
+  font-weight: 800 !important;
+  letter-spacing: -0.015em !important;
+  margin-bottom: 12px !important;
+  word-break: normal !important;
+  white-space: normal !important;
+  overflow-wrap: normal !important;
+  display: block !important;
+}
+
+.numbersSection :global(.break-line) {
+  display: block !important;
+}
+
 .numbersSection :global(.numbers-grid) article > span:last-child {
-  display: block;
-  font-size: 16px;
-  line-height: 1.5;
-  position: relative;
-  z-index: 1;
+  display: block !important;
+  max-width: 100% !important;
+  font-size: 15px !important;
+  line-height: 1.45 !important;
+  color: #475569 !important;
+  font-weight: 500 !important;
+  position: relative !important;
+  z-index: 1 !important;
 }
 
 @media (min-width: 901px) {
   .numbersSection :global(.numbers-grid) {
     grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
     gap: 24px !important;
+    align-items: stretch !important;
   }
 
   .numbersSection :global(.numbers-grid) article {
     min-height: 238px !important;
-    padding: 44px 38px 36px !important;
+    height: 100% !important;
+    padding: 40px 30px 36px !important;
     border-radius: 20px !important;
     border-bottom-width: 6px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    box-sizing: border-box !important;
   }
 
   .numbersSection :global(.numbers-grid) article:nth-child(odd) {
@@ -113,12 +134,20 @@
   }
 
   .numbersSection :global(.numbers-grid) b {
-    font-size: 58px !important;
+    font-size: 52px !important;
+    line-height: 1.1 !important;
+  }
+
+  .numbersSection :global(.numbers-grid) b.stat-text-heading {
+    font-size: clamp(21px, 1.7vw, 24px) !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.015em !important;
   }
 
   .numbersSection :global(.numbers-grid) article > span:last-child {
-    font-size: 16px !important;
-    line-height: 1.5 !important;
+    font-size: 15px !important;
+    line-height: 1.45 !important;
+    max-width: 100% !important;
   }
 }
 
@@ -132,13 +161,23 @@
   .numbersSection :global(.numbers-grid) {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 20px;
+    align-items: stretch;
   }
   .numbersSection :global(.numbers-grid) article {
     min-height: 220px;
-    padding: 38px 34px 32px;
+    height: 100%;
+    padding: 36px 26px 32px;
+    box-sizing: border-box;
   }
   .numbersSection :global(.numbers-grid) b {
-    font-size: 52px;
+    font-size: 46px;
+  }
+  .numbersSection :global(.numbers-grid) b.stat-text-heading {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+  }
+  .numbersSection :global(.numbers-grid) article > span:last-child {
+    max-width: 100% !important;
   }
 }
 
@@ -155,16 +194,23 @@
   }
   .numbersSection :global(.numbers-grid) article {
     min-height: 178px;
-    padding: 32px 28px 28px;
+    padding: 30px 24px 26px;
     border-radius: 18px;
+    box-sizing: border-box;
   }
   .numbersSection :global(.numbers-grid) b {
-    margin-bottom: 12px;
-    font-size: 46px;
+    margin-bottom: 10px;
+    font-size: 42px;
+  }
+  .numbersSection :global(.numbers-grid) b.stat-text-heading {
+    font-size: 22px !important;
+    line-height: 1.2 !important;
+    margin-bottom: 10px !important;
+  }
+  .numbersSection :global(.numbers-grid) article > span:last-child {
+    max-width: 100% !important;
   }
   .numbersSection :global(.number-watermark) {
-    top: -6px !important;
-    right: 0 !important;
-    font-size: 80px !important;
+    display: none !important;
   }
 }

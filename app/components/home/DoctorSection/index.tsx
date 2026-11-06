@@ -4,13 +4,20 @@ import { CountUp } from "@/app/client";
 import { Eyebrow } from "@/app/site-components";
 import styles from "./DoctorSection.module.css";
 
-function DoctorStatIcon({ type }: { type: "award" | "cap" | "people" }) {
+function DoctorStatIcon({ type }: { type: "award" | "cap" | "people" | "book" }) {
   if (type === "cap")
     return (
       <svg viewBox="0 0 24 24" aria-hidden="true">
         <path d="m3 9 9-4 9 4-9 4-9-4Z" />
         <path d="M7 11.5V16c2.8 2.2 7.2 2.2 10 0v-4.5M21 10v5" />
         <circle cx="21" cy="17" r="1" />
+      </svg>
+    );
+  if (type === "book")
+    return (
+      <svg viewBox="0 0 24 24" aria-hidden="true">
+        <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+        <path d="M6 6h10M6 10h10" />
       </svg>
     );
   if (type === "people")
@@ -43,9 +50,9 @@ export function DoctorSection() {
         <div className="doctor-copy">
           <Eyebrow>DIRECTOR</Eyebrow>
           <h2>Dr. Amit N Solanki</h2>
-          <h4>Director — Shanti EyeTech Eye Care &amp; Laser Hospital<br /><span style={{fontWeight: 400, fontSize: "0.9em"}}>Cataract, Glaucoma &amp; Refractive-LASIK-LASER Surgeon</span></h4>
+          <h4>Director — Shanti EyeTech Eye Care &amp; Laser Hospital<br /><span style={{fontWeight: 400, fontSize: "0.9em"}}>MBBS, DOMS, DNB, FAECS</span></h4>
           <p>
-            Dedicated to ophthalmology since 2003 in cataract, glaucoma, and refractive surgery, Dr. Solanki is recognized internationally for his expertise in advanced phaco cataract surgery and glaucoma management.
+            Practising ophthalmology since 2003 with a focus on cataract surgery, glaucoma management and refractive evaluation. He has presented scientific papers and participated as invited guest faculty at national and international ophthalmology congresses.
           </p>
           <ul>
             <li>Cataract, Glaucoma and Refractive Surgeon</li>
@@ -55,21 +62,23 @@ export function DoctorSection() {
             <div>
               <DoctorStatIcon type="award" />
               <b>
-                <CountUp value={15} suffix="+" />
+                <CountUp value={20} suffix="+" /> Years
+              </b>
+              <span>Clinical Practice</span>
+            </div>
+            <div>
+              <DoctorStatIcon type="book" />
+              <b>
+                <CountUp value={50} suffix="+" /> Papers
+              </b>
+              <span>Published Research</span>
+            </div>
+            <div>
+              <DoctorStatIcon type="award" />
+              <b>
+                <CountUp value={15} suffix="+" /> Awards
               </b>
               <span>Awards &amp; Recognition</span>
-            </div>
-            <div>
-              <DoctorStatIcon type="cap" />
-              <b>FAECS</b>
-              <span>Professional Fellowship</span>
-            </div>
-            <div>
-              <DoctorStatIcon type="people" />
-              <b>
-                <CountUp value={49} suffix="K+" />
-              </b>
-              <span>Surgeries Performed</span>
             </div>
           </div>
           <div className="hero-buttons">
